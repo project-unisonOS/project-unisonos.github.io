@@ -1,0 +1,46 @@
+site_name: Project Unison
+site_description: Edge-first agentic computing platform
+site_url: https://project-unisonos.github.io
+
+docs_dir: docs
+theme:
+  name: mkdocs
+
+nav:
+  - Home: index.md
+  - Vision: vision.md
+  - Experience: experience.md
+  - Architecture:
+      - Overview: architecture/overview.md
+      - Deep Dive: architecture/deep-dive.md
+      - Edge & Cloud: architecture/edge-and-cloud.md
+      - Components: architecture/components.md
+  - Developers:
+      - Get Started: developers/get-started.md
+      - Prerequisites: developers/prerequisites.md
+      - Workspace & Repos: developers/workspace-and-repos.md
+      - Devstack Setup: developers/devstack.md
+      - Renderer & Shell: developers/renderer-and-shell.md
+      - Testing: developers/testing.md
+      - Hardware Deployment: developers/hardware.md
+      - Coding Conventions: developers/coding-conventions.md
+      - Contributing: developers/contributing.md
+  - Reference:
+      - Specs & Schemas: reference/specs.md
+      - APIs: reference/apis.md
+      - Security: reference/security.md
+      - Compatibility: reference/compatibility.md
+  - Project:
+      - Governance: project/governance.md
+      - Roadmap & DX: project/roadmap.md
+      - License: project/license.md
+
+plugins:
+  - search
+
+markdown_extensions:
+  - toc:
+      permalink: true
+  - admonition
+  - def_list
+  - footnotes
