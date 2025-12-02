@@ -20,6 +20,8 @@ Interactions are multimodal—using speech, vision, gesture, touch, and text—t
 
 Privacy, personalization, and trust are foundational. Context, history, and preferences stay on your device unless you explicitly choose otherwise. You decide which AI models to use, and because UnisonOS stores your data outside the model, you can switch providers at any time without losing continuity. You own your data, not the model.
 
+UnisonOS is an open-source project, developed in the open and designed to be inspectable, forkable, and extensible.
+
 ---
 
 ## Why UnisonOS Matters
@@ -66,9 +68,8 @@ For a deeper technical breakdown, see the [Architecture section](architecture/ov
 
 ## For Developers
 
-If you want to run the devstack, renderer, and services locally:
+UnisonOS is open source and built to be hacked on. If you want to run the devstack, renderer, and services locally:
 
 - Start at [Developers → Get Started](developers/get-started.md) for the full onboarding path.
 - See [Developers → Devstack Setup](developers/devstack.md) for running the Docker-based local environment.
 - See [Developers → Renderer & Shell](developers/renderer-and-shell.md) to run UI surfaces against the stack.
-

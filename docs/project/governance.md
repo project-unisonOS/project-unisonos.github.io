@@ -1,6 +1,6 @@
 # Governance
 
-Unison is maintained as a set of repositories under the `project-unisonOS` organization, with shared expectations for releases, coordination, and behavior.
+UnisonOS is maintained as a set of open-source repositories under the `project-unisonOS` organization, with shared expectations for releases, coordination, and behavior.
 
 ## Maintainers
 
@@ -21,4 +21,3 @@ Unison is maintained as a set of repositories under the `project-unisonOS` organ
 - Accessibility, documentation quality, and security are treated as shared responsibilities.
 
 For detailed policies, see the internal MAINTAINERS, CONTRIBUTING, and CODE_OF_CONDUCT documents.
-
