@@ -1,35 +1,59 @@
 # Introducing Unison
 
-Unison is an edge-first agentic computing platform that turns your devices into private, context-aware AI systems. It orchestrates identity, consent, context, and inference on the device, with optional, policy-controlled cloud support when you choose it.
+Unison is an AI-first computing platform that redefines how people interact with technology. It transforms everyday devices into private, deeply personalized AI systems that understand your goals, adapt to your preferences, and work entirely in your best interest.
 
-Build and deploy secure, multimodal agents that run where your users are—without surrendering their data.
+Instead of designing for “users” who must learn systems, Unison builds a more natural, symbiotic partnership between people and their technology. Interactions are multimodal, including speech, vision, gesture, and text. Experiences are generated in real time based on what you need in the moment. Unison does not pursue advertising or engagement objectives; its only objective is to help you accomplish yours.
 
-## How Unison Works (High Level)
+Privacy, personalization, and trust are built into the core. Context, intent, and preferences stay on your device by default, giving you the freedom to choose which AI models you use and to switch providers at any time without losing your history. You own your data, not the model.
 
-- **Edge-first control plane** – An intent graph and orchestrator coordinate services for policy, consent, identity, context, storage, and inference.
-- **Context and profiles** – A context graph and profile store fuse signals and preferences into a consent-aware view of each user.
-- **Multimodal I/O** – Renderer, shell, and IO services (speech, vision, core) emit events and render experiences on real devices.
-- **Inference gateway** – A dedicated inference service brokers calls to local and cloud model providers when policy allows it.
-
-For a detailed breakdown, see the Architecture section.
+---
 
 ## Why Unison Matters
 
-- **Privacy and autonomy** – Data stays on the device by default; cloud usage is explicit, logged, and policy-gated.
-- **Agentic computing** – Intents flow through a unified orchestration layer instead of ad‑hoc scripts and APIs.
-- **Secure edge profiles** – Profiles, preferences, and history are stored in consent-aware, encrypted services.
-- **Inclusive experiences** – Startup and interaction flows are modality-aware and align with accessibility requirements.
+### Personalization
+
+Unison gets to know your needs, preferences, routines, and goals, then generates bespoke experiences tailored specifically for you. It is always working on your behalf, never on behalf of others.
+
+### Privacy and autonomy
+
+Data stays on your device unless you choose otherwise. Cloud usage is explicit, transparent, and policy-controlled.
+
+### Secure edge profiles
+
+Your history and preferences live in consent-aware, encrypted services under your control.
+
+### Inclusive experiences
+
+Interaction and rendering flows follow accessibility best practices across modalities, ensuring that Unison adapts to you rather than requiring you to adapt to it.
+
+---
+
+## How Unison Works
+
+### Edge-first control plane
+
+An orchestrator and shared intent graph coordinate identity, consent, policy, context, storage, and inference services directly on the device.
+
+### Context and profiles
+
+Encrypted profiles and context graphs capture preferences, history, and real-time signals to understand what you want without sending data away.
+
+### Multilingual, multimodal I/O
+
+Speech, vision, text, and other interfaces are unified through a renderer, shell, and I/O services that emit events and shape experiences all on your device.
+
+### Inference freedom
+
+A dedicated inference gateway routes requests to local or cloud models based on your preferences and policies. All personal data and context remain outside the model so you can change models whenever you want without losing continuity.
+
+For a deeper technical breakdown, see the [Architecture section](architecture/overview.md).
+
+---
 
 ## For Developers
 
 If you want to run the devstack, renderer, and services locally:
 
-- Start at **Developers → Get Started** for the full onboarding path.
-- See **Developers → Devstack Setup** for running the Docker-based local stack.
-- See **Developers → Renderer & Shell** for running UI surfaces against the stack.
-
-## For Architects and Operators
-
-- See **Architecture → Overview** for a conceptual map of the control plane, data plane, and I/O surfaces.
-- See **Architecture → Deep Dive** for request flows, data/secret handling, and component interactions.
-
+- Start at [Developers → Get Started](developers/get-started.md) for the full onboarding path.
+- See [Developers → Devstack Setup](developers/devstack.md) for running the Docker-based local environment.
+- See [Developers → Renderer & Shell](developers/renderer-and-shell.md) to run UI surfaces against the stack.
