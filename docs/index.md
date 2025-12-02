@@ -1,50 +1,64 @@
-# Introducing Unison
+# Introducing UnisonOS
 
-Unison is an AI-first computing platform that redefines how people interact with technology. It transforms everyday devices into private, deeply personalized AI systems that understand your goals, adapt to your preferences, and work entirely in your best interest.
+UnisonOS is an Operating Surface—a new layer of computing designed around how people naturally think rather than how computers traditionally operate. It sits above files, folders, and apps, rendering every interaction and experience in real time.
 
-Instead of designing for “users” who must learn systems, Unison builds a more natural, symbiotic partnership between people and their technology. Interactions are multimodal, including speech, vision, gesture, and text. Experiences are generated in real time based on what you need in the moment. Unison does not pursue advertising or engagement objectives; its only objective is to help you accomplish yours.
+## The Next Step in a Long Journey of Abstraction
 
-Privacy, personalization, and trust are built into the core. Context, intent, and preferences stay on your device by default, giving you the freedom to choose which AI models you use and to switch providers at any time without losing your history. You own your data, not the model.
+Human cognition works through abstraction. We compress complexity into concepts—objects, patterns, goals—so we can think and act efficiently. Long before computers, written language, maps, musical notation, and mathematics all served as abstraction layers that helped people manage complexity without holding every detail in mind.
+
+Computing followed the same trajectory: machine code → programming languages → operating systems → graphical interfaces → apps. Each step hid unnecessary detail so people could focus on intentions, not mechanics.
+
+UnisonOS continues this progression. It removes the need for files, folders, and individual apps. Instead, it understands your goals, interprets your context, and generates the right experience on demand. It creates a symbiotic relationship between you and your technology—one aligned entirely to your objectives.
 
 ---
 
-## Why Unison Matters
+## What UnisonOS Is
+
+UnisonOS is an AI-first Operating Surface that transforms everyday devices into private, personalized, multimodal computing systems. It understands your goals, adapts to your preferences, and works only in your best interest.
+
+Interactions are multimodal—using speech, vision, gesture, touch, and text—to compose each experience dynamically rather than launching a static application. UnisonOS has no advertising incentives, no engagement motives, and no competing priorities. Its only purpose is to help you accomplish your personal goals.
+
+Privacy, personalization, and trust are foundational. Context, history, and preferences stay on your device unless you explicitly choose otherwise. You decide which AI models to use, and because UnisonOS stores your data outside the model, you can switch providers at any time without losing continuity. You own your data, not the model.
+
+---
+
+## Why UnisonOS Matters
 
 ### Personalization
 
-Unison gets to know your needs, preferences, routines, and goals, then generates bespoke experiences tailored specifically for you. It is always working on your behalf, never on behalf of others.
+UnisonOS learns your needs, routines, and preferences, generating bespoke experiences tailored specifically for you. It acts in your interest—always.
 
 ### Privacy and autonomy
 
-Data stays on your device unless you choose otherwise. Cloud usage is explicit, transparent, and policy-controlled.
+Everything stays on your device by default. Cloud use is optional, explicit, and fully policy-controlled.
 
 ### Secure edge profiles
 
-Your history and preferences live in consent-aware, encrypted services under your control.
+Your preferences, context, and history are stored in consent-aware, encrypted services under your control.
 
 ### Inclusive experiences
 
-Interaction and rendering flows follow accessibility best practices across modalities, ensuring that Unison adapts to you rather than requiring you to adapt to it.
+Interaction and rendering flows follow accessibility best practices across all modalities so UnisonOS adapts to you rather than the other way around.
 
 ---
 
-## How Unison Works
+## How UnisonOS Works
 
 ### Edge-first control plane
 
-An orchestrator and shared intent graph coordinate identity, consent, policy, context, storage, and inference services directly on the device.
+An orchestrator and intent graph coordinate identity, consent, policy, context, storage, and inference capabilities directly on the device.
 
 ### Context and profiles
 
-Encrypted profiles and context graphs capture preferences, history, and real-time signals to understand what you want without sending data away.
+Encrypted profiles and context graphs fuse signals, preferences, and history to understand goals without sending private data away.
 
 ### Multilingual, multimodal I/O
 
-Speech, vision, text, and other interfaces are unified through a renderer, shell, and I/O services that emit events and shape experiences all on your device.
+Speech, vision, text, and sensor-driven interactions are unified through a renderer, shell, and I/O services that generate experiences dynamically on your device.
 
 ### Inference freedom
 
-A dedicated inference gateway routes requests to local or cloud models based on your preferences and policies. All personal data and context remain outside the model so you can change models whenever you want without losing continuity.
+A dedicated inference gateway routes requests to local or cloud models based on your preferences. Personal data remains outside the model, giving you complete freedom to switch providers at any time.
 
 For a deeper technical breakdown, see the [Architecture section](architecture/overview.md).
 
@@ -57,3 +71,4 @@ If you want to run the devstack, renderer, and services locally:
 - Start at [Developers → Get Started](developers/get-started.md) for the full onboarding path.
 - See [Developers → Devstack Setup](developers/devstack.md) for running the Docker-based local environment.
 - See [Developers → Renderer & Shell](developers/renderer-and-shell.md) to run UI surfaces against the stack.
+
