@@ -23,6 +23,12 @@ The meta-repo workflow provides a single entry point:
   - Start the devstack.
   - Run end-to-end smoke tests.
 
+In the current workspace (`unison-workspace`):
+
+- `./scripts/bootstrap.sh` — initializes and updates all submodules.
+- `./scripts/up.sh` — brings up the devstack via `unison-devstack/docker-compose.yml`.
+- `./scripts/smoke.sh` — runs the devstack end-to-end smoke test (HTTP health checks and a basic voice/vision flow).
+
 This keeps versions aligned and makes it easy to run the full stack locally.
 
 ## Alternative: Side-by-Side Clones
@@ -34,4 +40,3 @@ Alternatively, you can clone the individual repos side-by-side under a common pa
 - For each Python service, create a virtual environment, install dependencies, and copy or create `.env` files.
 
 Use the approach that best fits your workflow; both are supported by the documentation and tools in the workspace.
-
