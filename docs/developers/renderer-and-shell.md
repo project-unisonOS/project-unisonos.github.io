@@ -27,5 +27,6 @@ The renderer and shell provide the primary experience surfaces for Unison.
   - Use Node.js 18+.
   - Install dependencies via the package manager.
   - Run the shell in development mode using the provided scripts.
+  - The shell surfaces the active wake word in its HUD by calling the rendererâ€™s `/wakeword` endpoint, and its panels follow basic accessibility guidance (headings, status messages, and keyboard-usable controls).
 
 With devstack running, both the renderer and shell can target the local services for end-to-end testing and experience development, including the dynamic dashboard / Operating Surface view.
