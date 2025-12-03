@@ -30,6 +30,17 @@ In the running system, the primary “Operating Surface” is a per-person dashb
 
 All dashboard state (cards, preferences, and metadata used for recall) lives on-device by default. When enabled, context-graph receives derived signals (for example, tags and timestamps) so past dashboard views can be recalled later (for example, “remind me about that workflow we were designing”). These traces carry no model-specific lock-in: they are stored in Unison’s own services, not in any external model provider.
 
+## Wake-Word & Always-On Companion
+
+The wake-word experience turns the dashboard into an always-available companion surface:
+
+- A default wake word (typically **“unison”**) is configured locally and can be customized per person via their profile (`voice.wakeword`), updated through the orchestrator’s `wakeword.update` skill.
+- When the renderer is running, a local wake-word detector (Porcupine WebAssembly or a lightweight fallback) runs alongside voice activity detection to start and stop speech capture on-device.
+- Detected speech is sent to the local speech service (`unison-io-speech`) for transcription, which forwards transcripts to the orchestrator’s `/voice/ingest` API as `companion.turn` requests.
+- The orchestrator calls the inference gateway, writes updated state to context/context-graph, and streams experiences (including cards and audio URLs) back to the renderer for display and playback.
+
+In “always-on” devstack profiles, the renderer can be configured to start the mic automatically when a device and browser allow it. The entire wake-word → STT → companion → renderer loop remains on-device by default; any cloud STT or inference providers must be explicitly enabled and governed by policy.
+
 ## Accessible by Design
 
 Interfaces and flows follow accessibility guidance similar to WCAG 2.2 AA:
