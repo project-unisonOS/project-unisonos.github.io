@@ -1,22 +1,42 @@
 # Vision & Value
 
-Unison exists to put intelligence back on the edge.
+## A New Relationship With Technology
 
-Most AI experiences today are rented from remote clouds: opaque, centralized, and difficult to shape to the needs of a single person or organization. Unison takes the opposite approach. It runs on your hardware, speaks to your sensors, and treats the cloud as an optional extension rather than a requirement.
+UnisonOS imagines a world where every person directs the objectives of their own AI, free from competing incentives or unwanted interference. It’s a computing experience shaped entirely around what you want to accomplish, expressed through natural interaction rather than commands, menus, or learned behavior.
 
-At the heart of Unison is an intent orchestration plane that coordinates services for identity, consent, context, storage, and inference. An agent never acts in isolation; every action flows through clear contracts, policy checks, and auditable decisions. The result is an agentic platform that is powerful, but never mysterious.
+UnisonOS creates an environment where technology adapts to the person, not the other way around. Interactions happen the way humans naturally think and communicate, through intent, context, and multimodal expression, without requiring anyone to interact directly with technical structures like apps, files, or workflows.
+
+## A Platform Built Around You
+
+UnisonOS is an Operating Surface that hosts and orchestrates your preferred AI models (local or cloud-based) under clear policies you control. Your context, history, and preferences evolve outside of any model, so nothing personal is shared by default and switching models never means losing your continuity.
+
+By keeping intelligence close to the person and separating personal data from model memory, UnisonOS supports deeply personalized experiences that remain private, portable, and aligned with your needs.
 
 ## Core Value Pillars
 
-- **Edge-first autonomy** – Unison is designed to run on real hardware (PCs, edge servers, future devices) with local models and storage so agents can keep working even when disconnected.
-- **Privacy and consent-by-design** – High-impact actions require explicit confirmation and logging. Policy and consent services make decisions visible and traceable.
-- **Secure edge profiles** – Context graph, context store, and storage combine into a secure profile that is under user control, with optional sync or backup when explicitly allowed.
-- **Unified orchestration** – A single orchestrator coordinates services for identity, policy, consent, context, storage, and inference instead of scattering logic across clients.
-- **Inclusive experience** – Accessibility and modality awareness are treated as core requirements, not afterthoughts.
+### Personalized intelligence
+
+UnisonOS learns your preferences, routines, and patterns while keeping all context under your control. Experiences are composed specifically for you and evolve as you evolve.
+
+### Your AI, your objectives
+
+Every model acts according to the objectives you set. There are no competing priorities, no advertising incentives, and no hidden agenda, just technology working on your behalf.
+
+### Privacy and consent by design
+
+Actions follow clear rules, policies, and consent flows. What you share and when you share it are always explicit decisions, not assumptions.
+
+### Platform-level orchestration
+
+Identity, policy, consent, context, storage, and inference are coordinated through a unified orchestration layer, creating reliable, predictable behavior across devices and models.
+
+### Inclusive from the start
+
+Multimodal, accessibility-first design ensures UnisonOS adapts naturally to different abilities, environments, and ways of interacting.
 
 ## Why Now
 
-Devices are more capable than ever, but most AI assistance is still centralized. That creates privacy risk, latency, and a disconnect between what users want and what centralized systems permit.
+Devices at the edge have become powerful enough to support meaningful local intelligence. At the same time, people increasingly want AI experiences that reflect their needs and not the priorities of third-parties.
 
-Unison offers a different path: keep intelligence close to the person, structure it around explicit contracts and consent, and give developers a coherent way to build and deploy agentic experiences across fleets of devices.
+UnisonOS brings these trends together. It keeps intelligence close to the person, maintains privacy by default, integrates local and cloud models through a consistent policy layer, and enables developers to build new kinds of experiences centered on intent, context, and trust.
 
