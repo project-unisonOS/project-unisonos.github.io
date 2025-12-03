@@ -13,14 +13,14 @@ This page summarizes how the core Unison services cooperate to deliver edge-firs
 ## Context, Storage, and Profiles
 
 - **Context Graph** – Fuses signals and preferences into a graph view of the user’s state.
-- **Context Store** – Provides profile and key–value storage with consent-aware reads and writes.
+- **Context Store** – Provides profile and key–value storage with consent-aware reads and writes (including per-person dashboards).
 - **Storage** – Encrypted working memory, vault, and long-term store for sensitive or durable data.
 
 Together, these services implement secure edge profiles that other components can read and update under policy and consent.
 
 ## Experience and I/O Surfaces
 
-- **Experience Renderer** – Renders UI/UX, mediates wake-word UX, and exchanges intents and responses with intent-graph and orchestrator.
+- **Experience Renderer** – Renders UI/UX, mediates wake-word UX, and exchanges intents and responses with intent-graph and orchestrator. It presents the dynamic dashboard “Operating Surface” as a per-person, card-based home view backed by the context store and orchestrator.
 - **Shell** – Electron-based onboarding and developer shell that proxies to renderer and intent-graph.
 - **Agent VDI** – Thin desktop/VDI agent that fronts renderer and intent-graph.
 - **IO Services (speech, vision, core)** – Device-side emitters that produce event envelopes from speech, vision, or other IO and send them into the control plane.

@@ -20,6 +20,16 @@ Startup flows detect available capabilities (audio, display, camera, and future 
 
 See the internal startup modality plan in `unison-docs/dev/startup-modality.md` for implementation details.
 
+## Dynamic Dashboard as Home Surface
+
+In the running system, the primary “Operating Surface” is a per-person dashboard rendered by the experience renderer:
+
+- Each person has a dashboard made up of **cards** (briefings, workflow summaries, tasks, and tool results) plus preferences such as layout, text size, and contrast.
+- The dashboard is stored locally in the context service and refreshed by the orchestrator’s `dashboard.refresh` skill, which reads profiles, current state, and recent activity.
+- The renderer fetches dashboard state on load and renders cards into a full-screen “Priority Cards” canvas, updating live as new experiences and workflows are emitted.
+
+All dashboard state (cards, preferences, and metadata used for recall) lives on-device by default. When enabled, context-graph receives derived signals (for example, tags and timestamps) so past dashboard views can be recalled later (for example, “remind me about that workflow we were designing”). These traces carry no model-specific lock-in: they are stored in Unison’s own services, not in any external model provider.
+
 ## Accessible by Design
 
 Interfaces and flows follow accessibility guidance similar to WCAG 2.2 AA:
