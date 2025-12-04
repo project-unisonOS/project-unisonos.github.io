@@ -30,6 +30,16 @@ In the running system, the primary “Operating Surface” is a per-person dashb
 
 All dashboard state (cards, preferences, and metadata used for recall) lives on-device by default. When enabled, context-graph receives derived signals (for example, tags and timestamps) so past dashboard views can be recalled later (for example, “remind me about that workflow we were designing”). These traces carry no model-specific lock-in: they are stored in Unison’s own services, not in any external model provider.
 
+## Touch and Gesture (First Steps)
+
+UnisonOS treats touch and gesture as incremental extensions of the same Operating Surface:
+
+- Devices that support touch can advertise this in capability reports (for example, via `touch.present` in `caps.report`).
+- The experience renderer turns card clicks/taps on the dashboard into `gesture.select` events, which are forwarded to the intent graph for later orchestration.
+- Gesture metadata (person, card id/title, timestamp) remains on-device and can be combined with context-graph traces and profiles to refine future flows.
+
+This initial touch path is intentionally simple: it formalizes touch as a first-class modality without introducing new cloud dependencies or complex UI. Future work can build on the same pattern for richer gestures, sign input, or other adapters, all under the same edge-first, consent-driven model.
+
 ## Wake-Word & Always-On Companion
 
 The wake-word experience turns the dashboard into an always-available companion surface:
@@ -55,4 +65,3 @@ See `unison-docs/dev/accessibility.md` for more on accessibility requirements.
 ## Observable and Predictable
 
 Every interaction flows through an orchestrator and a set of well-defined services. Developers can trace events end-to-end, understand why a decision was made, and reproduce behaviors across devices.
-
