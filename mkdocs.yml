@@ -10,6 +10,7 @@ nav:
   - Home: index.md
   - Vision: vision.md
   - Experience: experience.md
+  - BCI Overview: project/bci-overview.md
   - Architecture:
       - Overview: architecture/overview.md
       - Deep Dive: architecture/deep-dive.md
