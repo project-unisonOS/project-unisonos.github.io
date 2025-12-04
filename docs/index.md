@@ -64,6 +64,7 @@ UnisonOS is open source and built to be hacked on. If you want to run the devsta
 - Start at [Developers → Get Started](developers/get-started.md) for the full onboarding path.
 - See [Developers → Devstack Setup](developers/devstack.md) for running the Docker-based local environment.
 - See [Developers → Renderer & Shell](developers/renderer-and-shell.md) to run UI surfaces against the stack.
+- Browse the full repo directory in [Developers → Workspace & Repos](developers/workspace-and-repos.md) for direct links to each repo and README.
 
 ## The Next Step in a Long Journey of Abstraction
 
@@ -75,4 +76,3 @@ Each step hid unnecessary detail so people could focus on intentions, not mechan
 
 UnisonOS continues this progression.
 It removes the need for files, folders, and individual apps. Instead, it understands your goals, interprets your context, and generates the right experience on demand. It creates a symbiotic relationship between you and your technology, aligned entirely to your personal objectives.
-
