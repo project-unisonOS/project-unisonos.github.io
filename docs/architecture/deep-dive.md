@@ -1,49 +1,130 @@
 # Architecture Deep Dive
 
-This deep dive expands on the high-level overview and describes how requests flow through the system and where data lives.
+This deep dive explains how the current UnisonOS codebase is wired end-to-end. It is intentionally “in the weeds” and mirrors the implementation across the workspace (orchestrator, intent-graph, context, context-graph, storage, renderer/shell, IO, comms, wakeword, and devstack).
 
-## Request Flow
+---
 
-1. A client (renderer, shell, VDI, or IO stub) emits an event envelope that describes an intent.
-2. The intent graph normalizes and expands the intent and forwards it to the orchestrator.
-3. The orchestrator:
-   - Authenticates the request and checks consent and policy.
-   - Retrieves fused state from the context graph and profile or key–value data from the context store and storage.
-   - Calls the inference gateway for model requests when needed.
-   - Writes updated state back through context and storage as needed.
-4. A response flows back to the originating client to render UI or produce speech and other outputs.
+## Core Request Flow (Intent → Response)
 
-## Companion Session Flow (Voice)
+1. A client (renderer, shell, VDI, or IO service) emits an event envelope describing an intent.
+2. **Intent Graph** receives `caps.report` and intents, normalizes them, and forwards to the orchestrator.
+3. **Orchestrator**:
+   - Auth/authz: checks consent/policy as configured.
+   - State: reads profiles and dashboard from **context**, pulls graph/traces from **context-graph** when present.
+   - Inference: calls **inference** gateway (local-first; cloud optional/opt-in).
+   - Storage: writes durable KV/files to **storage** when needed.
+4. Responses go back to the client for UI (renderer) or audio (IO speech).
 
-The Natural Multimodal Companion builds on this flow to support voice-first interactions:
+Data boundaries:
+- Profiles and dashboard state live in `unison-context` (encrypted SQLite, Fernet optional).
+- Graph/traces live in `unison-context-graph` (WAL/TTL/PII scrubbing present).
+- KV/files live in `unison-storage`.
+- No cloud sync by default; any extra sinks require explicit env/policy.
 
-1. Speech input arrives at the speech IO service, which produces a transcript.
-2. The transcript, person identifier, and session identifier are sent to the orchestrator’s voice ingest endpoint.
-3. The orchestrator wraps this as a `companion.turn` request, consults the person’s profile and context, and calls the inference gateway with tool support enabled.
-4. The companion manager executes any required tools, stores the updated turn in the context service, and sends responses to the renderer and speech IO for playback.
+---
 
-## Dashboard and Operating Surface Flow
+## Companion Session (Voice/Multimodal)
 
-The Operating Surface is implemented as a dynamic, per-person dashboard that sits above traditional applications and files:
+Current loop (as implemented):
+1. **Wakeword/VAD** (renderer) starts audio capture locally (Porcupine optional, always-on flag off by default).
+2. Audio → **unison-io-speech** STT → transcript.
+3. Transcript + person/session → **orchestrator** `/voice/ingest` → `companion.turn`.
+4. **CompanionSessionManager** runs tools, calls inference with tool calling enabled, and persists short-term state to context.
+5. Results stream to **renderer** (cards + media) and to **speech** for TTS (best effort).
 
-1. The renderer (or shell) loads the dashboard view and calls the renderer’s `/dashboard` endpoint, which proxies to the context service’s `/dashboard/{person_id}` API.
-2. The context service returns the person’s dashboard state: cards, preferences, and metadata such as `updated_at`. All of this is stored locally in encrypted SQLite, optionally protected by a Fernet key.
-3. When a `dashboard.refresh` intent is emitted (for example, at startup or on user request), the orchestrator’s dashboard skill reads the person’s profile and current dashboard state, composes a small set of priority cards (briefings, communications, workflows, tasks), and writes the merged state back to the context service.
-4. The orchestrator also emits experiences to the renderer that include cards, tags, and timestamps; the renderer updates the on-screen “Priority Cards” panel in real time.
-5. When configured, the orchestrator records derived dashboard metadata into context-graph (for example, tags and `created_at` values) so workflows and past dashboard views can be recalled later (“show me the workflow we were designing yesterday”).
+Tracing/logging:
+- Baton/trace propagation is preserved where available.
+- Orchestrator logs key events to context-graph (origin_intent, tags, created_at) for recall.
 
-At no point does the dashboard require cloud storage or remote profile sync. All state lives on-device unless a deployment explicitly enables additional sinks for observability or backup, and those must be configured by policy.
+---
 
-## Data and Secrets
+## Operating Surface (Dashboard + Shared Space)
 
-- Long-term and sensitive data live in storage; transient session or graph data is managed by context and context-graph.
-- Secrets such as JWT keys, encryption keys, and provider tokens are provided via environment variables or configuration files and are surfaced into containers by devstack or production compose.
+Renderer/shell experience:
+1. Renderer `/dashboard` proxies to **context** `/dashboard/{person_id}`.
+2. Context returns cards + preferences (stored locally, encrypted-at-rest).
+3. `dashboard.refresh` skill (orchestrator) merges:
+   - Profile prefs (text scale, contrast).
+   - Cards from context + new cards (briefings, workflows, comms).
+   - Comm cards from **unison-comms** for both `email` and `unison` channels.
+4. Renderer displays:
+   - Priority Cards panel.
+   - Unison Shared Space panel (tags visible, auto-refresh every 15s).
+   - SSE listener for unison stream (live updates when new unison messages arrive).
 
-## Edge-First Deployment
+Context-graph:
+- Orchestrator logs dashboard and comms events into context-graph (tags, created_at, origin_intent) to support recall (“show me the workflow we were designing yesterday”).
 
-Devstack and production compose files are designed to run on a single edge device:
+---
 
-- All core services run locally (orchestrator, policy, auth, consent, context, context-graph, storage, inference, intent-graph, renderer, IO).
-- Optional tools (such as local model providers) can be added via compose profiles.
-- Observability tooling (for example, tracing and metrics backends) can be included alongside the stack.
+## Communications (Edge-First)
 
+Service: `unison-comms` (FastAPI)
+- Normalized message shape: `channel`, `participants`, `subject`, `body`, `thread_id`, `message_id`, `context_tags`, `metadata`.
+- Adapters:
+  - **Email**: stub + optional Gmail (IMAP/SMTP with app password). Gmail caches thread recipients for replies.
+  - **Unison**: local, encrypted store required (`COMMS_UNISON_KEY`, `COMMS_UNISON_STORE_PATH`).
+- Endpoints:
+  - `/comms/check|summarize|reply|compose`
+  - Meeting stubs: `/comms/join_meeting`, `/comms/prepare_meeting`, `/comms/debrief_meeting`
+  - SSE: `/stream/unison` for live unison-channel events.
+
+Orchestrator comms skills:
+- `comms.check|summarize|reply|compose|join_meeting|prepare_meeting|debrief_meeting`
+- Companion tools registered so LLM can invoke comms intents.
+- Logs provider tags (e.g., `unison`, `gmail`) into context-graph for recall.
+
+Renderer:
+- Shows comms tags inline on cards; Unison Shared Space auto-refreshes + SSE for unison events.
+
+Privacy:
+- Email secrets stay in env on-device; unison channel data is locally encrypted. No remote inbox sync.
+
+---
+
+## Wakeword & Always-On Companion
+
+Implemented in renderer + orchestrator:
+- Wakeword endpoint `/wakeword` (renderer) reads profile `voice.wakeword` from context; defaults to `UNISON_WAKEWORD_DEFAULT`.
+- Porcupine optional (WASM); always-on mic disabled by default; edge-only by default.
+- Orchestrator exposes `wakeword.update` to set `voice.wakeword` in profile.
+
+---
+
+## Meetings (Initial Stubs)
+
+Implemented paths:
+- `comms.join_meeting`, `comms.prepare_meeting`, `comms.debrief_meeting` in `unison-comms` (cards returned).
+- Orchestrator skills forward these and log to context-graph.
+- Renderer displays meeting cards alongside other comms cards; shared space shows unison-tagged items.
+
+Next (future):
+- Real connectors (Teams/Zoom) behind these intents; current code is local-only stubs.
+
+---
+
+## Storage, Profiles, Security
+
+- Profiles: `unison-context` encrypted SQLite (`profile_enc_key` optional); defaults to `unison_id = person_id` for unison addressing.
+- Dashboard: `unison-context` encrypted SQLite with Fernet optional.
+- Storage: `unison-storage` for durable KV/files; context and orchestrator use it for non-profile data.
+- Security docs: each repo ships SECURITY.md pointing to public security reference; tokens/keys are env-only.
+- Devstack runs all services locally (compose) with auth disabled for tests; production should supply real secrets and enable auth/consent.
+
+---
+
+## Devstack & Deployment
+
+- `unison-devstack/docker-compose.yml` runs: orchestrator, context, storage, policy, auth, consent, intent-graph, context-graph, inference, renderer, IO (speech/vision/core), comms, and optional payments.
+- Prebuilt `unison-common` wheel is shared across Python services.
+- CI: per-repo tests run with `PYTEST_DISABLE_PLUGIN_AUTOLOAD` and `OTEL_SDK_DISABLED`; context CI uses a unique SQLite path to avoid locks.
+
+---
+
+## Traceability and Recall
+
+- Context-graph receives:
+  - Dashboard refresh traces (cards, tags, created_at).
+  - Comms events (check/summarize/reply/compose/meeting), with provider tags.
+- Renderer streams experiences via SSE and refreshes dashboard on a timer to keep UI aligned with context.
+- No data leaves the device unless explicitly configured; all cloud usage is opt-in and policy-controlled.
