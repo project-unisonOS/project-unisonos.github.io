@@ -56,11 +56,21 @@ In “always-on” devstack profiles, the renderer can be configured to start th
 Interfaces and flows follow accessibility guidance similar to WCAG 2.2 AA:
 
 - Audio-first and visual-first onboarding paths.
-- Every visual element has a speech equivalent.
+- Every visual element has a speech equivalent, and critical focus text can be sent to Braille displays.
 - Spatial instructions have non-visual alternatives.
-- The system remembers user modality and preference choices.
+- The system remembers user modality and preference choices, including Braille table/6-dot vs 8-dot and active BCI decoders.
 
 See `unison-docs/dev/accessibility.md` for more on accessibility requirements.
+
+### Braille-first flow (new)
+- Startup detects Braille devices (USB/Bluetooth) via `unison-io-braille` and emits `caps.report` with cells/transport.
+- Renderer/onboarding publish focus text to `/braille/focus`; Braille displays receive cursor-aware frames and routing keys drive navigation.
+- Users can choose Braille table/grade and toggle 6/8-dot; preferences persist in context profiles.
+
+### BCI-driven intents (new)
+- `unison-io-bci` ingests BLE/serial EEG streams (e.g., Muse/OpenBCI), decodes SSVEP/SMR/bandpower, and forwards `bci.intent` to the orchestrator.
+- Context-aware decoder selection is per-person; shell/renderer can grant raw/intent scopes for attach/ingest/export flows.
+- HID mappings per user allow BCI events to synthesize key/gesture intents when evdev is present; exports are bounded by time/size.
 
 ## Observable and Predictable
 

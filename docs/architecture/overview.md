@@ -23,11 +23,10 @@ Together, these services implement secure edge profiles that other components ca
 - **Experience Renderer** – Renders UI/UX, mediates wake-word UX, and exchanges intents and responses with intent-graph and orchestrator. It presents the dynamic dashboard “Operating Surface” as a per-person, card-based home view backed by the context store and orchestrator.
 - **Shell** – Electron-based onboarding and developer shell that proxies to renderer and intent-graph.
 - **Agent VDI** – Thin desktop/VDI agent that fronts renderer and intent-graph.
-- **IO Services (speech, vision, core)** – Device-side emitters that produce event envelopes from speech, vision, or other IO and send them into the control plane.
+- **IO Services (speech, vision, core, bci, braille)** – Device-side emitters that produce event envelopes from speech, vision, BCI, Braille, or other IO and send them into the control plane.
 
 ## Runtime and Devstack
 
 - **Devstack** – Docker Compose wiring for local end-to-end runs. Brings up the control plane, inference gateway, renderer, IO stubs, and backing services such as Redis and Postgres.
 - **Base Images** – Shared base images used by service Dockerfiles.
 - **Shared Docs and Libraries** – Canonical specs and schemas plus shared Python helpers for auth, tracing, HTTP, and envelope validation.
-

@@ -57,6 +57,7 @@ Below is the current workspace directory with direct links to each repo and its 
 - [unison-io-speech](https://github.com/project-unisonOS/unison-io-speech) — speech IO (STT/TTS) ([README](https://github.com/project-unisonOS/unison-io-speech/blob/main/README.md))
 - [unison-io-vision](https://github.com/project-unisonOS/unison-io-vision) — vision capture/describe ([README](https://github.com/project-unisonOS/unison-io-vision/blob/main/README.md))
 - [unison-io-bci](https://github.com/project-unisonOS/unison-io-bci) — BCI ingest/decoder service (LSL/BLE/serial stubs, decoders, HID, raw snapshots, export) ([README](https://github.com/project-unisonOS/unison-io-bci/blob/main/README.md))
+- [unison-io-braille](https://github.com/project-unisonOS/unison-io-braille) — Braille IO service (device discovery, translators, HID/BT drivers, focus feed, profiles) ([README](https://github.com/project-unisonOS/unison-io-braille/blob/main/README.md))
 - [unison-auth](https://github.com/project-unisonOS/unison-auth) — auth service ([README](https://github.com/project-unisonOS/unison-auth/blob/main/README.md))
 - [unison-consent](https://github.com/project-unisonOS/unison-consent) — consent service ([README](https://github.com/project-unisonOS/unison-consent/blob/main/README.md))
 - [unison-policy](https://github.com/project-unisonOS/unison-policy) — policy enforcement service ([README](https://github.com/project-unisonOS/unison-policy/blob/main/README.md))
