@@ -1,0 +1,46 @@
+:root {
+  --nav-bg: #0a2a66;
+  --nav-text: #ffffff;
+}
+
+.navbar,
+.navbar-default,
+.navbar-default .navbar-collapse,
+.navbar-default .navbar-form {
+  background-color: var(--nav-bg);
+}
+
+.navbar a,
+.navbar-default .navbar-brand,
+.navbar-default .navbar-nav > li > a,
+.navbar-default .navbar-text {
+  color: var(--nav-text);
+}
+
+.navbar-default .navbar-nav > li > a:focus,
+.navbar-default .navbar-nav > li > a:hover,
+.navbar-default .navbar-brand:focus,
+.navbar-default .navbar-brand:hover {
+  color: var(--nav-text);
+  background-color: rgba(255, 255, 255, 0.12);
+}
+
+.navbar-default .navbar-nav > .active > a,
+.navbar-default .navbar-nav > .active > a:focus,
+.navbar-default .navbar-nav > .active > a:hover {
+  color: var(--nav-text);
+  background-color: rgba(255, 255, 255, 0.18);
+}
+
+.navbar-default .navbar-toggle {
+  border-color: var(--nav-text);
+}
+
+.navbar-default .navbar-toggle .icon-bar {
+  background-color: var(--nav-text);
+}
+
+.navbar-default .navbar-toggle:focus,
+.navbar-default .navbar-toggle:hover {
+  background-color: rgba(255, 255, 255, 0.12);
+}
