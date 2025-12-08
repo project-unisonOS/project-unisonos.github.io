@@ -10,7 +10,12 @@ nav:
   - Home: index.md
   - Vision: vision.md
   - Experience: experience.md
-  - BCI Overview: project/bci-overview.md
+  - Multimodal I/O:
+      - Speech: multimodal/speech.md
+      - Vision: multimodal/vision.md
+      - Braille: multimodal/braille.md
+      - Sign Language: multimodal/sign-language.md
+      - BCI: multimodal/bci.md
   - Architecture:
       - Overview: architecture/overview.md
       - Deep Dive: architecture/deep-dive.md
