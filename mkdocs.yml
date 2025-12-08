@@ -21,6 +21,7 @@ nav:
       - Deep Dive: architecture/deep-dive.md
       - Edge & Cloud: architecture/edge-and-cloud.md
       - Components: architecture/components.md
+      - Inference: architecture/inference.md
   - Developers:
       - Get Started: developers/get-started.md
       - Prerequisites: developers/prerequisites.md
