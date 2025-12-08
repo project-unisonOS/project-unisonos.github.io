@@ -3,9 +3,9 @@
 UnisonOS treats speech as a first-class, local-first modality for both input (ASR) and output (TTS). Voice commands flow into the same orchestrator as every other channel, so policy, consent, and skills routing stay consistent across modalities.
 
 ## Experience (person-first)
-- Speak naturally to issue intents (open apps, control devices, ask questions).
+- Speak naturally to issue intents (navigate, control, ask questions) without thinking in “apps.”
 - Hear concise, contextual responses; captioning is available in shell/renderer.
-- Works at lock screen, onboarding, and during sessions; opt-in hotword/press-to-talk per preferences.
+- Works at lock screen, onboarding, and during sessions; opt-in wakeword/press-to-talk per preferences.
 
 ## How it works
 - Input: `unison-io-speech` records audio, runs ASR locally when hardware permits, and emits `speech.intent` events with text + confidence.
