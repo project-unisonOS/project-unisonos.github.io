@@ -69,9 +69,11 @@ Use the approach that best fits your workflow; both are supported by the documen
 - [unison-common](https://github.com/project-unisonOS/unison-common) — shared Python library ([unison-common README](https://github.com/project-unisonOS/unison-common/blob/main/README.md))
 - [unison-payments](https://github.com/project-unisonOS/unison-payments) — optional payments service ([unison-payments README](https://github.com/project-unisonOS/unison-payments/blob/main/README.md))
 - [unison-agent-vdi](https://github.com/project-unisonOS/unison-agent-vdi) — VDI agent / renderer proxy ([unison-agent-vdi README](https://github.com/project-unisonOS/unison-agent-vdi/blob/main/README.md))
+- [unison-network-vpn](https://github.com/project-unisonOS/unison-network-vpn) — VPN sidecar for VDI/actuation egress ([unison-network-vpn README](https://github.com/project-unisonOS/unison-network-vpn/blob/main/README.md))
 - [unison-os](https://github.com/project-unisonOS/unison-os) — base OS image definitions ([unison-os README](https://github.com/project-unisonOS/unison-os/blob/main/README.md))
 - [unison-platform](https://github.com/project-unisonOS/unison-platform) — deployment/config/meta platform assets ([unison-platform README](https://github.com/project-unisonOS/unison-platform/blob/main/README.md))
 - [unison-comms](https://github.com/project-unisonOS/unison-comms) — communications service (email/unison channels) ([unison-comms README](https://github.com/project-unisonOS/unison-comms/blob/main/README.md))
+- [unison-docs](https://github.com/project-unisonOS/unison-docs) — internal docs and design notes ([unison-docs README](https://github.com/project-unisonOS/unison-docs/blob/main/README.md))
 - [project-unisonos.github.io](https://github.com/project-unisonOS/project-unisonos.github.io) — public docs site ([project-unisonos.github.io README](https://github.com/project-unisonOS/project-unisonos.github.io/blob/main/README.md))
 
 (If a repo is missing from this list, add it here and ensure its README links to the public docs.)
