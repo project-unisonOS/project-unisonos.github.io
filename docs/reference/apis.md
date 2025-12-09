@@ -31,3 +31,7 @@ All of these APIs are designed to work in an edge-only configuration. Any option
 
 As the APIs stabilize and converge on consistent conventions, this page can be expanded into a more detailed, cross-service reference.
 
+## Quick Links
+
+- **Storage API** – Memory, vault, objects, and audit surfaces for unified persistence.
+- **Actuation / VDI API** – VDI task submission and result retrieval, following the action envelope pattern.

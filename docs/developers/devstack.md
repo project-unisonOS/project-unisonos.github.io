@@ -28,3 +28,10 @@ The devstack provides a Docker-based local environment that brings up the full U
 
 For detailed commands and exact port mappings, refer to the internal developer guide and the devstack README.
 
+## VDI & VPN Setup and Usage
+
+- **Enable services** – The compose stack includes a VPN client container and the VDI agent container; VDI shares the VPN network namespace so all egress flows through the VPN.
+- **Environment** – Provide VPN configuration under `local/vpn/wg0.conf` (or the env/path your compose expects). Set any required tokens for VDI and storage in your `.env`.
+- **Run** – Start devstack normally (`docker compose up -d`). Check `/healthz` and `/readyz` on `network-vpn` and `agent-vdi` to confirm both are healthy before issuing tasks.
+- **Test a VDI task** – Call the actuation or VDI task endpoint (for example, a simple “open URL” action) and verify results appear in storage via the objects API. Use dev logs to confirm downloads are written and audit entries are recorded.
+- **Debugging** – VPN and VDI logs are available through `docker compose logs network-vpn` and `docker compose logs agent-vdi`. Storage audit logs capture VDI actions for traceability.

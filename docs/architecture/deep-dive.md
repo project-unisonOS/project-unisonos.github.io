@@ -15,6 +15,14 @@ This deep dive explains how the current UnisonOS codebase is wired end-to-end. I
    - Storage: writes durable KV/files to **storage** when needed.
 4. Responses go back to the client for UI (renderer) or audio (IO speech).
 
+## Intent → Event & Action Envelopes → Tools & Actuators
+
+- **Intent Envelopes** wrap incoming requests with person, device, time, and context snapshots so the orchestrator has the full picture.
+- **Event Envelopes** capture important state transitions (for example, “file stored”, “tool completed”, “policy check failed”) that the orchestrator emits and consumes during planning.
+- **Action Envelopes** describe what to do next and are routed to agents, tools, or actuators such as VDI. They form the consistent pattern: Intent → Action Envelope → Tool/Actuator → Result.
+- **Actuators as Specialized Tools** use the same envelope pattern for higher-impact actions. VDI is one such actuator (see [Actuation / VDI & VPN](components/actuation-vdi-vpn.md)).
+- Results flow back as envelopes and are persisted via [Storage & Persistence](components/storage-and-persistence.md) when durable artifacts or audit trails are required.
+
 Data boundaries:
 - Profiles and dashboard state live in `unison-context` (encrypted SQLite, Fernet optional).
 - Graph/traces live in `unison-context-graph` (WAL/TTL/PII scrubbing present).

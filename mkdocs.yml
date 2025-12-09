@@ -20,7 +20,10 @@ nav:
       - Overview: architecture/overview.md
       - Deep Dive: architecture/deep-dive.md
       - Edge & Cloud: architecture/edge-and-cloud.md
-      - Components: architecture/components.md
+      - Components:
+          - Summary: architecture/components.md
+          - Storage & Persistence: architecture/components/storage-and-persistence.md
+          - Actuation / VDI & VPN: architecture/components/actuation-vdi-vpn.md
       - Inference: architecture/inference.md
   - Developers:
       - Get Started: developers/get-started.md
@@ -34,7 +37,10 @@ nav:
       - Contributing: developers/contributing.md
   - Reference:
       - Specs & Schemas: reference/specs.md
-      - APIs: reference/apis.md
+      - APIs:
+          - Overview: reference/apis.md
+          - Storage API: reference/storage-api.md
+          - Actuation / VDI API: reference/actuation-vdi-api.md
       - Security: reference/security.md
       - Compatibility: reference/compatibility.md
   - Project:
