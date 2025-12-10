@@ -18,10 +18,11 @@ Thank you for your interest in improving Unison.
 
 ## Documentation and Accessibility
 
-- Follow accessibility guidance similar to WCAG 2.2 AA.
-- Use semantic headings and clear, plain-language summaries.
-- Provide alt text for all images and diagrams.
-- Update architecture or journey documentation when you change behavior.
+- Follow WCAG 2.2 AA guidance in `developers/accessibility.md`.
+- Use semantic headings, descriptive link text, and alt text for all meaningful images.
+- Keep tables accessible (`<th>` headers with scope, captions when complex); prefer lists when possible.
+- Run `npm run a11y:audit` (requires Playwright deps) before merging doc or layout changes; see `ACCESSIBILITY_AUDIT.md` for scope and results.
+- Update architecture or journey docs when behavior changes.
 
 ## Code of Conduct and Security
 
@@ -29,4 +30,3 @@ Thank you for your interest in improving Unison.
 - Security issues should be reported responsibly using the contact information in the security policy.
 
 For full details, see the internal CONTRIBUTING, CODE_OF_CONDUCT, and SECURITY documents in the docs repository.
-

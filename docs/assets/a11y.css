@@ -1,0 +1,81 @@
+:root {
+  --a11y-focus-outline: 2px solid #f6c344;
+  --a11y-focus-offset: 3px;
+  --a11y-link: #0a2a66;
+  --a11y-link-hover: #06305a;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+a:focus-visible,
+button:focus-visible,
+[role='button']:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible,
+.dropdown-item:focus-visible,
+.navbar-toggler:focus-visible {
+  outline: var(--a11y-focus-outline);
+  outline-offset: var(--a11y-focus-offset);
+  box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.2);
+}
+
+.navbar-dark .nav-link:focus-visible,
+.navbar-dark .dropdown-item:focus-visible {
+  background-color: rgba(255, 255, 255, 0.25);
+  color: #ffffff;
+  text-decoration: underline;
+}
+
+.dropdown-menu .dropdown-item:focus-visible {
+  background-color: #033c73;
+  color: #ffffff;
+}
+
+/* Increase contrast for sidebar/table-of-contents links */
+.col-md-3 .nav-link,
+.col-md-3 .dropdown-item,
+.col-md-3 .nav > li > a {
+  color: var(--a11y-link);
+  font-weight: 600;
+}
+
+.col-md-3 .nav-link:focus,
+.col-md-3 .nav-link:hover,
+.col-md-3 .dropdown-item:focus,
+.col-md-3 .dropdown-item:hover {
+  color: var(--a11y-link-hover);
+}
+
+/* Increase contrast for in-content links */
+main a {
+  color: var(--a11y-link);
+  font-weight: 600;
+}
+
+main a:hover,
+main a:focus,
+main a:active {
+  color: var(--a11y-link-hover);
+}
+
+footer a {
+  color: var(--a11y-link);
+  font-weight: 600;
+}
+
+footer a:hover,
+footer a:focus,
+footer a:active {
+  color: var(--a11y-link-hover);
+}
