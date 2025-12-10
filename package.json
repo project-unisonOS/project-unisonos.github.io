@@ -1,0 +1,15 @@
+{
+  "name": "project-unisonos-docs",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "a11y:audit": "bash -lc '. .venv/bin/activate && mkdocs build && node scripts/a11y-audit.js'"
+  },
+  "devDependencies": {
+    "@axe-core/playwright": "^4.10.0",
+    "axe-core": "^4.10.0",
+    "jsdom": "^26.0.0",
+    "playwright": "^1.48.2"
+  }
+}

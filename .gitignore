@@ -1,0 +1,17 @@
+# Python venv
+.venv/
+
+# Node dependencies and build output
+node_modules/
+site/
+
+# Accessibility tooling artifacts
+.playwright-libs/
+.apt-cache/
+.apt-state/
+a11y-report.json
+
+# Downloaded package artifacts
+*.deb
+
+# MkDocs overrides and scripts produce no gitignored output, keep sources tracked
