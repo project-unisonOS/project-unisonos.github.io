@@ -44,3 +44,46 @@
 .navbar-default .navbar-toggle:hover {
   background-color: rgba(255, 255, 255, 0.12);
 }
+
+/* Improve readability in high-contrast/forced-colors environments */
+@media (forced-colors: active) {
+  .navbar,
+  .navbar-default,
+  .navbar-default .navbar-collapse,
+  .navbar-default .navbar-form {
+    background-color: Canvas;
+    color: CanvasText;
+  }
+
+  .navbar a,
+  .navbar-default .navbar-brand,
+  .navbar-default .navbar-nav > li > a,
+  .navbar-default .navbar-text {
+    color: LinkText;
+    background-color: Canvas;
+  }
+
+  .navbar-default .navbar-nav > li > a:focus,
+  .navbar-default .navbar-nav > li > a:hover,
+  .navbar-default .navbar-brand:focus,
+  .navbar-default .navbar-brand:hover,
+  .navbar-default .navbar-nav > .active > a,
+  .navbar-default .navbar-nav > .active > a:focus,
+  .navbar-default .navbar-nav > .active > a:hover {
+    color: CanvasText;
+    background-color: Highlight;
+  }
+
+  .navbar-default .navbar-toggle {
+    border-color: ButtonText;
+  }
+
+  .navbar-default .navbar-toggle .icon-bar {
+    background-color: ButtonText;
+  }
+
+  .navbar-default .navbar-toggle:focus,
+  .navbar-default .navbar-toggle:hover {
+    background-color: Highlight;
+  }
+}
