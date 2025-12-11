@@ -35,6 +35,7 @@ nav:
       - Testing: developers/testing.md
       - Hardware Deployment: developers/hardware.md
       - Coding Conventions: developers/coding-conventions.md
+      - Repository Roles: developers/repo-roles.md
       - Accessibility: developers/accessibility.md
       - Contributing: developers/contributing.md
   - Reference:
