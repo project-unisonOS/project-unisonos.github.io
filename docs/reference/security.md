@@ -1,37 +1,33 @@
 # Security
 
-Security is a core concern in Unison’s design and deployment.
+Security and privacy are baked into UnisonOS by design. Here’s how we keep the platform trustworthy for people and their data.
 
-## Baseline
+## Core stance (plain language)
 
-- Services are intended to run with least privilege, behind well-defined network boundaries.
-- Authentication and authorization are centralized through dedicated services.
-- Consent and policy decisions are explicit and auditable.
-
-## Configuration
-
-- Secrets such as JWT keys, encryption keys, and provider tokens are provided via environment variables or dedicated configuration files.
-- For containerized deployments, secrets can be injected via environment, Docker secrets, or external secret managers.
+- **Identity and trust**: Every service proves who it is before it talks to another. We use mutual TLS (two-way HTTPS) so data only flows between trusted pieces.
+- **Least privilege everywhere**: Each component only gets the minimum access it needs. Networks are segmented so a compromise in one area doesn’t open the rest.
+- **Signed software**: Images and artifacts are cryptographically signed and verified before release to prevent tampering.
+- **Safe handling of secrets**: Passwords, keys, and tokens never live in source code. They’re injected at runtime from secure stores.
+- **Privacy by design**: Data is classified (public, internal, sensitive, highly sensitive) and treated accordingly—encrypted, access-checked, and minimally logged. Consent is enforced before sensitive data is used.
+- **Defense in depth**: Containers run as non‑root with locked-down permissions and security profiles. Health and safety checks are built in so services fail safely.
+- **Policy and consent enforcement**: A central policy layer governs who can access what, and high-risk actions (like device control) require extra confirmation and trusted devices.
+- **Logging and auditing with redaction**: We log important security events in a structured way, but avoid personal or secret data. Alerts trigger on unusual patterns (repeated login failures, policy denials, signature verification failures).
+- **Automation and updates**: Automated scans watch for vulnerable dependencies. Shared security checks run in every repository. Dependabot keeps components current.
+- **Accessibility and privacy for “labs” features**: Opt-in features like wake words default to off and can be centrally disabled. They’re designed to keep audio local unless explicitly configured otherwise.
 
 ## Wake-Word and Always-On Mic (Labs)
 
-Wake-word and always-on microphone behavior are treated as **labs** features and are opt-in:
+These features are opt-in and off by default:
 
-- Wake-word detection in the renderer runs locally (Porcupine WebAssembly where configured, or a lightweight stub); audio never leaves the device unless the operator explicitly wires a cloud STT provider behind `unison-io-speech`.
-- The active wake word is stored in the person’s profile (`voice.wakeword`) and updated via the orchestrator’s `wakeword.update` skill. Profiles remain in `unison-context` by default.
-- The “always-on” mic profile is controlled via environment flags:
-  - `UNISON_ALWAYS_ON_MIC=false` (default) — mic is only activated when the user explicitly starts it in the renderer UI.
-  - `UNISON_ALWAYS_ON_MIC=true` — renderer attempts to start the mic on load when the device and browser allow it.
-- Operators can centrally disable wake-word/mic behavior by:
-  - Leaving `PORCUPINE_ACCESS_KEY` and `PORCUPINE_KEYWORD_BASE64` unset (no Porcupine engine).
-  - Forcing `UNISON_ALWAYS_ON_MIC=false` in renderer deployments.
-  - Removing or gating wake-word-related UI in shells and renderers where appropriate.
-
-These options ensure that “labs” wake-word behavior stays aligned with Unison’s privacy and edge-first guarantees and can be disabled entirely for sensitive deployments.
+- Wake-word detection runs locally; audio stays on the device unless an operator explicitly connects a cloud speech provider behind `unison-io-speech`.
+- The active wake word lives in the person’s profile in `unison-context`.
+- Environment flags control “always-on” mic behavior:
+  - `UNISON_ALWAYS_ON_MIC=false` (default) — mic activates only when the user starts it.
+  - `UNISON_ALWAYS_ON_MIC=true` — mic starts on load when permitted by device/browser.
+- Operators can disable wake-word/mic by leaving Porcupine keys unset, forcing `UNISON_ALWAYS_ON_MIC=false`, or gating/removing related UI.
 
 ## Reporting Issues
 
-- Security vulnerabilities should be reported responsibly using contact information provided in the project’s security policy.
+Please report suspected vulnerabilities privately using the contact in the project’s security policy (e.g., **darryl.adams@accessinsights.net**). Do not open public issues for security findings.
 
-For detailed security notes and policies, refer to the internal SECURITY documents in the docs repository.
-
+For detailed technical notes, see the SECURITY documents and threat models in the docs repository.
