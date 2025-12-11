@@ -36,6 +36,7 @@ nav:
       - Hardware Deployment: developers/hardware.md
       - Coding Conventions: developers/coding-conventions.md
       - Repository Roles: developers/repo-roles.md
+      - Platform Docs Update Plan: developers/platform-docs-update-plan.md
       - Accessibility: developers/accessibility.md
       - Contributing: developers/contributing.md
   - Reference:
