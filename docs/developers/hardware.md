@@ -17,27 +17,20 @@ This page summarizes how to run Unison on physical devices or edge hardware.
 ## Prepare the Device
 
 - Install required packages such as Docker, Docker Compose, Python, and Git.
-- Enable and start the Docker service.
-- Add the user to the Docker group for convenience.
+- Enable and start the Docker service; add the user to the Docker group for convenience.
 - For IO adapters:
   - Enable `libusb`/`hidapi` support for USB Braille displays; ensure udev rules allow access to vendor VID/PIDs.
   - Install `evdev`/`pyedflib` where needed for BCI HID mappings and EDF exports; BLE adapters are required for Muse/OpenBCI.
 
-## Fetch Repos and Configure
+## Installation options
 
-- Clone the same set of repos you use in development (devstack and core services).
-- Copy environment templates (such as `.env.security`) to `.env` and update:
-  - JWT secrets.
-  - Consent secrets.
-  - Database credentials.
+- Installers (platform repo): `install-native.sh`, `install-docker.sh`, `install-wsl.sh` configure env, pull images, and enable the platform service.
+- Artifacts: WSL bundle, VM bundle, and ISO autoinstall seed are produced via `make image-wsl|image-vm|image-iso` (see Developers → Build, Artifacts, and Release Channels).
+- Manual: use devstack or production compose files with your own `.env` secrets.
 
 ## Run and Upgrade
 
-- Use the devstack or production compose files to start the stack on the device.
-- Access the renderer and APIs via the device’s IP and configured ports.
-- For upgrades:
-  - Pull latest code or images.
-  - Rebuild and restart the stack.
-  - Preserve data volumes as needed.
+- Start via installer (platform service) or compose files; access renderer/APIs via the device’s IP.
+- For upgrades, pull new images or code, rebuild/restart, and preserve volumes as needed.
 
 For more detailed commands and guidance, see the internal hardware deployment guide.
