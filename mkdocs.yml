@@ -37,6 +37,8 @@ nav:
           - Testing: developers/testing.md
           - Hardware Deployment: developers/hardware.md
           - Images, Builds, and Releases: developers/images-builds-and-releases.md
+      - Platform:
+          - Prompt Engine: developers/prompt-engine.md
       - Contribute and Standards:
           - Coding Conventions: developers/coding-conventions.md
           - Repository Roles: developers/repo-roles.md
@@ -53,6 +55,7 @@ nav:
   - Project:
       - Governance: project/governance.md
       - Roadmap & DX: project/roadmap.md
+      - User-Owned AI Personality: project/user-owned-ai-personality.md
       - License: project/license.md
 
 plugins:
