@@ -1,92 +1,71 @@
-# Introducing UnisonOS
+# UnisonOS is an Operating Surface
 
-UnisonOS is an Operating Surface that reimagines how people and technology work together. Instead of relying on apps, files, and other legacy constructs, UnisonOS composes experiences in real time based on your goals and preferred ways of interacting. It understands what you are trying to do, adapts to your context, and aligns completely with the objectives you set, creating a more natural computing experience.
+A new layer of computing designed around how you naturally think, not how computers have traditionally operated. Instead of navigating apps, files, and workflows, you express your intention and the system orchestrates what you need in real time. UnisonOS adapts to you, evolves with your context, and stays aligned with your objectives.
 
-________________________________________
+---
 
-## What UnisonOS Is
+## Time, Intention, and the Future of Computing
 
-UnisonOS is an AI-first Operating Surface that transforms everyday devices into private, personalized, multimodal computing systems.
-It understands your goals, adapts to your preferences, and works only in your best interest.
-Interactions are multimodal using speech, vision, gesture, touch and text to compose each experience dynamically rather than launching a static application. UnisonOS has no advertising incentives, no engagement motives, and no competing priorities. Its only objective is to help you accomplish yours.
-Privacy, personalization, and trust are foundational. Context, history, and preferences stay on your device unless you explicitly choose otherwise. You decide which AI models to use, and because UnisonOS stores your data outside the model, you can switch providers at any time without losing continuity. You own your data, not the model.
+You navigate each day with the same constraint as everyone else: time is the only currency you never replenish. Every moment is spent, invested, or simply allowed to pass. Some of your time goes toward consuming information and experiences; some goes toward creating things others may use or enjoy. And sometimes, when your creations reach others at scale, they become meaningful contributions.
 
-UnisonOS is an open-source project, developed in the open and designed to be inspectable, forkable, and extensible.
+These are not moral categories. They are the patterns of how you move through your digital and physical life. Yet our computing systems were never designed with these patterns in mind. Modern devices fragment your attention, impose cognitive overhead, and distract you from whatever you actually intend to do, whether that is consuming, creating, or contributing.
 
-________________________________________
+UnisonOS starts from a simple question: what if your computing systems respected your time as your most valuable resource?
 
-## A New Relationship With Technology
+This question leads naturally into a deeper exploration of abstraction. Computers are built on layers of abstraction, from circuits and machine code to operating systems and apps, but most of those layers leak complexity upward. Abstraction maximalism, as we describe it, is the pursuit of removing every unnecessary friction between your intention and your outcome. It is not about hiding complexity for its own sake. It is about lifting you above the operational details that currently consume so much of your limited time.
 
-UnisonOS imagines a world where you direct the objectives of your own AI, free from competing incentives or unwanted interference. It creates a computing experience shaped around what you want to accomplish, expressed through natural interaction rather than commands, menus, or learned behavior.
+UnisonOS applies this principle by shifting from an app-centric model to an intention-centric one. Instead of asking you to remember which tool, file, or workflow you need, the system interprets your goal and assembles what is required in real time. Inputs like voice, text, touch, sign, Braille, and BCI are treated equally. Your context is kept private, evolving with you and not shared with the model. The system adapts to you, not the other way around.
 
-Instead of asking you to adapt to applications, file systems, or fixed workflows, UnisonOS adapts to you. Interactions follow your intent, context, and preferred modes of expression so you can focus on what you are trying to achieve instead of how to drive the system.
+This approach is not meant to change how you choose to spend your time. You will always consume, create, or relax in the ways that make sense for you. The aim is to give you more agency over those choices, with less digital friction and more flow. If UnisonOS helps you focus on building something meaningful, or gives you back minutes that would have been wasted navigating layers of legacy software structure, it has achieved its purpose.
 
-## Why Now
+Ultimately, UnisonOS is shaped by three beliefs:
 
-Devices at the edge are now powerful enough to support meaningful local intelligence. At the same time, you expect AI experiences that reflect your needs rather than the priorities of third parties.
+1. Your time matters more than technology. Technology should honor your time rather than absorb it.
+2. Abstraction should liberate you, not constrain you. The right abstractions let you operate closer to your intentions.
+3. Your creation and contribution grow when tools get out of the way. When your effort is no longer spent managing complexity, more becomes possible.
 
-UnisonOS keeps intelligence close to you, maintains privacy by default, and integrates local and cloud models through a consistent policy layer. It creates a place where your goals guide orchestration while consent and policy control how data moves.
+These ideas are not prescriptions. They are design principles and practical foundations for a system that aims to feel natural, lightweight, and empowering. UnisonOS builds on decades of computing evolution, but its direction is anchored in something more human: helping you use your finite time in the ways that matter most to you.
 
-## Your Objectives, Orchestration, and Context
-
-UnisonOS separates three concerns that are often mixed together:
-
-- **User directed objectives** describe what you are trying to accomplish in plain language.
-- **Model orchestration** coordinates which tools and models to use to satisfy those objectives.
-- **Personal context** stays outside any model so you can change providers without losing continuity.
-
-This separation keeps the platform aligned with your intent while preserving privacy and portability for your data.
-
-________________________________________
+---
 
 ## How UnisonOS Works
 
-### Edge-first control plane
+Where traditional operating systems expect you to adapt to their structures, UnisonOS adapts to yours.
 
-An orchestrator and intent graph coordinate identity, consent, policy, context, storage, and inference capabilities directly on the device.
+### Key characteristics
 
-### Context and profiles
+- **Intention-centric interaction**: you express your goal and the system gathers what is needed, from information to coordinated agent behaviors.
+- **Real-time orchestration**: autonomous agents collaborate to produce outcomes; each action happens in context, not isolation.
+- **Multimodal by design**: voice, text, vision, sign, Braille, touch, and BCI are first-class input and output channels, so you can use whatever is natural in the moment.
+- **Privacy-preserving personalization**: your contextual information stays on your device. It evolves with you, but it is not fed back into the model.
+- **Abstraction maximalism**: the system removes unnecessary layers between your thought and its execution. Complexity is handled by the system, not by you.
 
-Encrypted profiles and context graphs fuse signals, preferences, and history to understand goals without sending private data away.
+---
 
-### Multilingual, multimodal I/O
+## What You Can Build With It
 
-Speech, vision, text, and sensor-driven interactions are unified through a renderer, shell, and I/O services that generate experiences dynamically on your device.
+Developers can go beyond traditional apps and build intent-responsive capabilities:
 
-### Inference freedom
+- Agents that collaborate to perform multi-step tasks.
+- IO modules for new modalities like Braille, sign language, or BCI.
+- Domain-specific reasoning engines.
+- Extensions that plug into the orchestration pipeline.
+- Interfaces that adapt to user context in real time.
 
-A dedicated inference gateway routes requests to local or cloud models based on your preferences. Personal data remains outside the model, giving you complete freedom to switch providers at any time.
-For a deeper technical breakdown, see the [Architecture section](architecture/overview.md).
+UnisonOS offers a platform where higher-level thinking directly shapes system behavior.
 
-________________________________________
+---
 
-## For Developers
+## The Road Ahead
 
-UnisonOS is open source and built to be hacked on. If you want to run the devstack, renderer, and services locally:
+UnisonOS is early in its journey, but the path is clear: a computing world where the system meets you where you are, understands what you want to accomplish, and reduces the cost of every interaction in time, friction, and cognitive load.
 
-- Start at [Developers → Get Started](developers/get-started.md) for the full onboarding path.
-- See [Developers → Devstack Setup](developers/devstack.md) for running the Docker-based local environment.
-- See [Developers → Renderer & Shell](developers/renderer-and-shell.md) to run UI surfaces against the stack.
-- Browse the full repo directory in [Developers → Workspace & Repos](developers/workspace-and-repos.md) for direct links to each repo and README.
+If the history of computing is a steady march toward more powerful abstraction, UnisonOS is the next frontier: a system where your intention is the primary interface.
 
-________________________________________
+---
 
-## Time, Intention, and Alignment
+## Explore the Project
 
-You bring time, energy, and attention to every task. UnisonOS treats those as scarce resources that the platform should respect. Instead of pulling you into engagement loops, it helps you define what matters now and then organizes tools, models, and services around those priorities.
-
-You describe outcomes in your own words and UnisonOS keeps them at the center of the experience. It remembers what you have already done, suggests next steps when they are useful, and steps back when they are not. Alignment is not a slogan but a contract between your stated objectives and how the system behaves.
-
-## Abstraction maximalism
-
-Human cognition works through abstraction. You compress complexity into concepts such as objects, patterns, and goals so you can think and act efficiently. Long before computers, written language, maps, musical notation, and mathematics all served as abstraction layers that helped people manage complexity without holding every detail in mind.
-
-Computing followed the same trajectory: machine code, programming languages, operating systems, graphical interfaces, and applications. Each step hid unnecessary detail so you could focus on intentions instead of mechanics.
-
-UnisonOS continues that progression. It reduces the need for files, folders, and individual applications. It understands your goals, interprets your context, and generates the right experience on demand so you can work at the level of intention rather than infrastructure.
-
-## Start building with UnisonOS
-
-If you want to go deeper, the next step is to run the stack yourself.
-
-[Start building with UnisonOS → Developers / Get Started](developers/get-started.md)
+- [Architecture](architecture/overview.md)
+- [Developer Guides](developers/get-started.md)
+- [Repositories](developers/workspace-and-repos.md)
