@@ -9,36 +9,39 @@ theme:
 
 nav:
   - Home: index.md
-  - Vision: vision.md
-  - Experience: experience.md
-  - Multimodal I/O:
+  - Experience:
+      - Experience Principles: experience.md
+      - Multimodal Interaction: experience/multimodal.md
       - Speech: multimodal/speech.md
-      - Vision: multimodal/vision.md
+      - Sign: multimodal/sign-language.md
       - Braille: multimodal/braille.md
-      - Sign Language: multimodal/sign-language.md
+      - Vision: multimodal/vision.md
       - BCI: multimodal/bci.md
   - Architecture:
-      - Overview: architecture/overview.md
-      - Deep Dive: architecture/deep-dive.md
+      - Architecture Overview: architecture/overview.md
+      - Architecture Deep Dive: architecture/deep-dive.md
       - Edge & Cloud: architecture/edge-and-cloud.md
-      - Components:
-          - Summary: architecture/components.md
-          - Storage & Persistence: architecture/components/storage-and-persistence.md
-          - Actuation / VDI & VPN: architecture/components/actuation-vdi-vpn.md
+      - Components: architecture/components.md
+      - Storage: architecture/components/storage-and-persistence.md
+      - Actuation: architecture/components/actuation-vdi-vpn.md
+      - VDI: architecture/vdi.md
       - Inference: architecture/inference.md
   - Developers:
-      - Get Started: developers/get-started.md
-      - Prerequisites: developers/prerequisites.md
-      - Workspace & Repos: developers/workspace-and-repos.md
-      - Devstack Setup: developers/devstack.md
-      - Renderer & Shell: developers/renderer-and-shell.md
-      - Testing: developers/testing.md
-      - Hardware Deployment: developers/hardware.md
-      - Coding Conventions: developers/coding-conventions.md
-      - Repository Roles: developers/repo-roles.md
-      - Build, Artifacts, and Release Channels: developers/build-and-release.md
-      - Accessibility: developers/accessibility.md
-      - Contributing: developers/contributing.md
+      - Onboarding:
+          - Get Started: developers/get-started.md
+          - Prerequisites: developers/prerequisites.md
+          - Workspace & Repos: developers/workspace-and-repos.md
+          - Devstack Setup: developers/devstack.md
+          - Renderer & Shell: developers/renderer-and-shell.md
+          - Build, Deploy, and Images: developers/workflow-design.md
+          - Testing: developers/testing.md
+          - Hardware Deployment: developers/hardware.md
+          - Images, Builds, and Releases: developers/images-builds-and-releases.md
+      - Contribute and Standards:
+          - Coding Conventions: developers/coding-conventions.md
+          - Repository Roles: developers/repo-roles.md
+          - Contributing: developers/contributing.md
+          - Accessibility: developers/accessibility.md
   - Reference:
       - Specs & Schemas: reference/specs.md
       - APIs:
@@ -54,6 +57,9 @@ nav:
 
 plugins:
   - search
+  - redirects:
+      redirect_maps:
+        vision.md: index.md
 
 markdown_extensions:
   - toc:

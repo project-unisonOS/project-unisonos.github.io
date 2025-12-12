@@ -1,8 +1,24 @@
 # Actuation / VDI API Reference
 
+## What this page covers
+
+- The HTTP endpoints used to submit and track VDI tasks.
+- The structure of action and result envelopes for actuation.
+- How these APIs relate to the broader actuation and VPN design.
+
+## Who this page is for
+
+- Developers integrating high impact workflows that rely on browser or desktop automation.
+- Operators who need to understand how VDI tasks are created, monitored, and audited.
+
+## Before you read this
+
+- Review [Architecture Overview](../architecture/overview.md) and [VDI in the Architecture](../architecture/vdi.md).
+- Read [Actuation / VDI and VPN](../architecture/components/actuation-vdi-vpn.md) for the component level view.
+
 ## Overview
 
-The actuation surface exposes endpoints used by the orchestrator to execute high-impact tasks. VDI is one actuator that follows the same envelope pattern as other tools.
+The actuation surface exposes endpoints used by the orchestrator to execute high impact tasks. VDI is one actuator that follows the same envelope pattern as other tools.
 
 ## VDI Task Endpoints
 

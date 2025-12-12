@@ -2,6 +2,22 @@
 
 Each core Unison service exposes an HTTP API, typically documented by its README and OpenAPI UI.
 
+## What this page covers
+
+- How to think about the APIs exposed by core UnisonOS services.
+- The main surfaces that back the Operating Surface and core experiences.
+- Pointers to more detailed per service API references.
+
+## Who this page is for
+
+- Developers calling UnisonOS services directly or building integrations.
+- Operators reviewing which external surfaces are exposed by the platform.
+
+## Before you read this
+
+- Review [Architecture Overview](../architecture/overview.md) for the main components and flows.
+- See the [Storage API](storage-api.md) and [Actuation and VDI API](actuation-vdi-api.md) pages for focused reference material.
+
 ## Service Index
 
 - Control plane services (orchestrator, intent-graph, policy, consent, auth, inference).
@@ -10,17 +26,17 @@ Each core Unison service exposes an HTTP API, typically documented by its README
 
 ## Dashboard and Operating Surface APIs
 
-The dynamic dashboard / Operating Surface is backed by a small set of cross-service APIs:
+The dynamic dashboard and Operating Surface are backed by a small set of cross service APIs:
 
 - **Context service (`unison-context`)**
-  - `GET /dashboard/{person_id}` — fetch per-person dashboard state (cards, preferences, metadata).
-  - `POST /dashboard/{person_id}` — store per-person dashboard state; data is kept on-device in encrypted SQLite when a profile key is configured.
+  - `GET /dashboard/{person_id}` fetches per person dashboard state, including cards, preferences, and metadata.
+  - `POST /dashboard/{person_id}` stores per person dashboard state. Data is kept on device in encrypted SQLite when a profile key is configured.
 - **Orchestrator (`unison-orchestrator`)**
-  - `dashboard.refresh` skill — reads the person’s profile and dashboard, composes priority cards, persists them via the context service, and emits experiences for the renderer.
-  - `workflow.design` / `workflow.recall` skills — integrate workflow documents with dashboard cards and, when enabled, context-graph traces for recall.
+  - `dashboard.refresh` reads the person profile and dashboard, composes priority cards, persists them via the context service, and emits experiences for the renderer.
+  - `workflow.design` and `workflow.recall` integrate workflow documents with dashboard cards and, when enabled, context graph traces for recall.
 - **Experience renderer (`unison-experience-renderer`)**
-  - `GET /dashboard?person_id=…` — proxies to the context service and renders the “Priority Cards” view as the user’s home surface.
-  - `POST /experiences` — accepts rendered experiences (including cards) and can persist them back into the dashboard for later resurfacing.
+  - `GET /dashboard?person_id=…` proxies to the context service and renders the “Priority Cards” view as the user home surface.
+  - `POST /experiences` accepts rendered experiences, including cards, and can persist them back into the dashboard for later resurfacing.
 
 All of these APIs are designed to work in an edge-only configuration. Any optional cloud or remote integrations must be explicitly configured and governed by policy.
 

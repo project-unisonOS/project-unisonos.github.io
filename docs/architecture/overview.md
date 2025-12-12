@@ -1,6 +1,22 @@
 # Architecture Overview
 
-This page summarizes how the core Unison services cooperate to deliver edge-first, agentic experiences.
+## What this page covers
+
+- How core UnisonOS services cooperate to deliver edge first, agentic experiences.
+- The roles of the control plane, context and storage services, and experience surfaces.
+- Where to go for deeper implementation details.
+
+## Who this page is for
+
+- Readers who want a high level mental model of the platform.
+- Developers and operators deciding where to plug in new services or experiences.
+
+## Before you read this
+
+- Review [Introducing UnisonOS](../index.md) for the product level overview.
+- Skim [Architecture Deep Dive](deep-dive.md) if you plan to work closely with the codebase.
+
+This page summarizes how the core Unison services cooperate to deliver edge first, agentic experiences.
 
 ## Core Control Plane
 

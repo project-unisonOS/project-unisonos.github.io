@@ -19,5 +19,5 @@ The fastest way to work with Unison is to run the devstack on a WSL2 or Linux ma
 - **Devstack Setup** – bring up the full stack locally: see [Developers → Devstack Setup](devstack.md).
 - **Renderer & Shell** – how to run UI surfaces: see [Developers → Renderer & Shell](renderer-and-shell.md).
 - **Testing** – unit tests, smoke tests, docs lint: see [Developers → Testing](testing.md).
+- **Images, Builds, and Releases** – image types, build commands, and release channels: see [Developers → Images, Builds, and Releases](images-builds-and-releases.md).
 - **Contributing** – branching model, PR guidelines, accessibility commitments: see [Developers → Contributing](contributing.md).
-

@@ -14,8 +14,8 @@ const baseUrl = process.env.A11Y_BASE_URL || `http://localhost:${port}`;
 
 const urls = [
   '/',
-  '/vision/',
   '/experience/',
+  '/experience/multimodal/',
   '/multimodal/speech/',
   '/multimodal/vision/',
   '/multimodal/braille/',
@@ -28,6 +28,7 @@ const urls = [
   '/architecture/components/storage-and-persistence/',
   '/architecture/components/actuation-vdi-vpn/',
   '/architecture/inference/',
+  '/architecture/vdi/',
   '/developers/get-started/',
   '/developers/prerequisites/',
   '/developers/workspace-and-repos/',
@@ -35,7 +36,9 @@ const urls = [
   '/developers/renderer-and-shell/',
   '/developers/testing/',
   '/developers/hardware/',
+  '/developers/workflow-design/',
   '/developers/coding-conventions/',
+  '/developers/images-builds-and-releases/',
   '/developers/contributing/',
   '/reference/specs/',
   '/reference/apis/',

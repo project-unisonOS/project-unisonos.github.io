@@ -20,5 +20,4 @@ Unison uses a combination of unit tests, integration tests, and end-to-end smoke
 - Workspace-level Markdown linting is configured via a shared configuration file.
 - New or updated documentation should pass lint checks before merging.
 
-For per-service test commands and details, refer to the internal repository map and service READMEs.
-
+For per service test commands and details, refer to the internal repository map and service READMEs. For image build verification and channel semantics, see [Developers → Images, Builds, and Releases](images-builds-and-releases.md).

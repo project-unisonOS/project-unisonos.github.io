@@ -1,10 +1,24 @@
 # Architecture Deep Dive
 
-This deep dive explains how the current UnisonOS codebase is wired end-to-end. It is intentionally “in the weeds” and mirrors the implementation across the workspace (orchestrator, intent-graph, context, context-graph, storage, renderer/shell, IO, comms, wakeword, and devstack).
+## What this page covers
 
----
+- How the current UnisonOS codebase is wired end to end.
+- Envelope patterns for intents, actions, and results across services.
+- Where core flows such as companion, dashboard, comms, and devstack are implemented.
 
-## Core Request Flow (Intent → Response)
+## Who this page is for
+
+- Developers reading or modifying UnisonOS services and devstack.
+- Operators who need to understand end to end behavior beyond the high level overview.
+
+## Before you read this
+
+- Start with [Architecture Overview](overview.md) for the main components.
+- Review [Storage and Persistence](components/storage-and-persistence.md) for data boundaries.
+
+This deep dive explains how the current UnisonOS codebase is wired end to end. It is intentionally detailed and mirrors the implementation across the workspace, including orchestrator, intent graph, context, context graph, storage, renderer and shell, IO, communications, wake word handling, and devstack.
+
+## Core Request Flow (Intent to Response)
 
 1. A client (renderer, shell, VDI, or IO service) emits an event envelope describing an intent.
 2. **Intent Graph** receives `caps.report` and intents, normalizes them, and forwards to the orchestrator.

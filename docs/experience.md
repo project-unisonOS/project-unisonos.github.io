@@ -1,22 +1,32 @@
 # Key Experience Principles
 
-Unison’s experience design is guided by a small set of principles that apply across devices, modalities, and use cases.
+UnisonOS experience design is guided by a small set of principles that apply across devices, modalities, and use cases.
+
+## Vision and Values in Practice
+
+These experience principles translate the platform vision into day to day behavior:
+
+- **Personalized intelligence** keeps experiences tailored to you while respecting consent and policy.
+- **User driven objectives** ensure that your goals shape orchestration rather than system level incentives.
+- **Privacy and consent** keep data handling explicit, auditable, and under your control.
+- **Platform level orchestration** coordinates identity, policy, consent, context, storage, and inference across services.
+- **Inclusive and multimodal by default** means that flows are designed to work across speech, visual, tactile, and future channels.
 
 ## Privacy by Default
 
-Data is processed on the device whenever possible. Any path that leaves the edge—such as cloud inference or profile sync—is explicit, auditable, and governed by policy and consent grants.
+Data is processed on the device whenever possible. Any path that leaves the edge, such as cloud inference or profile synchronization, is explicit, auditable, and governed by policy and consent grants.
 
-## Consent as a First-Class Concept
+## Consent as a First Class Concept
 
-High-impact actions are never implicit. Dedicated policy and consent services ensure that sensitive operations are authorized, logged, and easy to reason about after the fact.
+High impact actions are never implicit. Dedicated policy and consent services ensure that sensitive operations are authorized, logged, and easy to understand after the fact.
 
-## Edge-First, Cloud-Optional
+## Edge First, Cloud Optional
 
-Unison is designed to run entirely on local hardware using devstack and production compose configurations. Cloud capabilities—such as remote model providers—are an additive choice, controlled via configuration and policy.
+UnisonOS is designed to run entirely on local hardware using devstack and production compose configurations. Cloud capabilities, such as remote model providers, are an additive choice controlled via configuration and policy.
 
-## Modality-Aware from First Contact
+## Modality Aware from First Contact
 
-Startup flows detect available capabilities (audio, display, camera, and future adapters) and select the appropriate combination of voice and visual prompts. Every visual interaction has a speech equivalent, and vice versa.
+Startup flows detect available capabilities such as audio, display, camera, and future adapters and select the appropriate combination of voice and visual prompts. Every visual interaction has a speech equivalent, and every speech interaction has a visual or tactile alternative where possible.
 
 See the internal startup modality plan in `unison-docs/dev/startup-modality.md` for implementation details.
 
@@ -38,18 +48,18 @@ UnisonOS treats touch and gesture as incremental extensions of the same Operatin
 - The experience renderer turns card clicks/taps on the dashboard into `gesture.select` events, which are forwarded to the intent graph for later orchestration.
 - Gesture metadata (person, card id/title, timestamp) remains on-device and can be combined with context-graph traces and profiles to refine future flows.
 
-This initial touch path is intentionally simple: it formalizes touch as a first-class modality without introducing new cloud dependencies or complex UI. Future work can build on the same pattern for richer gestures, sign input, or other adapters, all under the same edge-first, consent-driven model.
+This initial touch path is intentionally simple. It formalizes touch as a first class modality without introducing new cloud dependencies or complex interfaces. Future work can build on the same pattern for richer gestures, sign input, or other adapters under the same edge first, consent driven model.
 
-## Wake-Word & Always-On Companion
+## Wake Word and Always On Companion
 
-The wake-word experience turns the dashboard into an always-available companion surface:
+The wake word experience turns the dashboard into an always available companion surface:
 
-- A default wake word (typically **“unison”**) is configured locally and can be customized per person via their profile (`voice.wakeword`), updated through the orchestrator’s `wakeword.update` skill.
-- When the renderer is running, a local wake-word detector (Porcupine WebAssembly or a lightweight fallback) runs alongside voice activity detection to start and stop speech capture on-device.
-- Detected speech is sent to the local speech service (`unison-io-speech`) for transcription, which forwards transcripts to the orchestrator’s `/voice/ingest` API as `companion.turn` requests.
-- The orchestrator calls the inference gateway, writes updated state to context/context-graph, and streams experiences (including cards and audio URLs) back to the renderer for display and playback.
+- A default wake word, typically “unison”, is configured locally and can be customized per person via their profile (`voice.wakeword`), updated through the orchestrator `wakeword.update` skill.
+- When the renderer is running, a local wake word detector, such as Porcupine WebAssembly or a lightweight fallback, runs alongside voice activity detection to start and stop speech capture on device.
+- Detected speech is sent to the local speech service (`unison-io-speech`) for transcription, which forwards transcripts to the orchestrator `/voice/ingest` API as `companion.turn` requests.
+- The orchestrator calls the inference gateway, writes updated state to context and context graph, and streams experiences, including cards and audio URLs, back to the renderer for display and playback.
 
-In “always-on” devstack profiles, the renderer can be configured to start the mic automatically when a device and browser allow it. The entire wake-word → STT → companion → renderer loop remains on-device by default; any cloud STT or inference providers must be explicitly enabled and governed by policy.
+In always on devstack profiles, the renderer can be configured to start the microphone automatically when a device and browser allow it. The entire wake word to speech to text to companion to renderer loop remains on device by default. Any cloud speech or inference providers must be explicitly enabled and governed by policy.
 
 ## Accessible by Design
 
