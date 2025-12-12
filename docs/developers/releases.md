@@ -12,12 +12,8 @@ Use the canonical install page (hosted in the platform repo):
 
 - [Install UnisonOS developer images](https://github.com/project-unisonOS/unison-platform/blob/main/docs/install.md)
 
-Direct links:
+Direct links to the current test builds:
 
-- [WSL2 install](https://github.com/project-unisonOS/unison-platform/blob/main/docs/install.md#windows--wsl2)
-- [Linux VM install](https://github.com/project-unisonOS/unison-platform/blob/main/docs/install.md#linux-vm)
-- [Bare-metal install](https://github.com/project-unisonOS/unison-platform/blob/main/docs/install.md#bare-metal)
-
-Downloads:
-
-- [Unison Platform Releases](https://github.com/project-unisonOS/unison-platform/releases)
+- WSL2: [`unisonos-wsl2-dev.tar.gz`](https://github.com/project-unisonOS/unison-platform/releases/download/v0.0.0-test-wsl/unisonos-wsl2-dev.tar.gz)
+- Linux VM: [`unisonos-linux-vm-dev.qcow2`](https://github.com/project-unisonOS/unison-platform/releases/download/v0.0.0-test-vm/unisonos-linux-vm-dev.qcow2) (optional [`unisonos-linux-vm-dev.vmdk`](https://github.com/project-unisonOS/unison-platform/releases/download/v0.0.0-test-vm/unisonos-linux-vm-dev.vmdk))
+- Bare metal: [`unisonos-bare-metal.iso`](https://github.com/project-unisonOS/unison-platform/releases/download/v0.0.0-test-metal/unisonos-bare-metal.iso)
