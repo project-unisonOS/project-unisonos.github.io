@@ -1,4 +1,6 @@
-# UnisonOS is an Operating Surface
+# Introducing UnisonOS
+
+## UnisonOS is an Operating Surface
 
 A new layer of computing designed around how you naturally think, not how computers have traditionally operated. Instead of navigating apps, files, and workflows, you express your intention and the system orchestrates what you need in real time. UnisonOS adapts to you, evolves with your context, and stays aligned with your objectives.
 
