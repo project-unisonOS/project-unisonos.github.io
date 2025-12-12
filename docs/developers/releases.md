@@ -8,12 +8,16 @@ Each release is **target-specific** (WSL2 OR VM OR bare metal). The release note
 
 ## Install instructions
 
-Use the canonical install page:
+Use the canonical install page (hosted in the platform repo):
 
-- [Install UnisonOS developer images](https://unisonos.ai/unison-platform/install)
+- [Install UnisonOS developer images](https://github.com/project-unisonOS/unison-platform/blob/main/docs/install.md)
 
 Direct links:
 
-- [WSL2 install](https://unisonos.ai/unison-platform/install#wsl2)
-- [Linux VM install](https://unisonos.ai/unison-platform/install#linux-vm)
-- [Bare-metal install](https://unisonos.ai/unison-platform/install#bare-metal)
+- [WSL2 install](https://github.com/project-unisonOS/unison-platform/blob/main/docs/install.md#windows--wsl2)
+- [Linux VM install](https://github.com/project-unisonOS/unison-platform/blob/main/docs/install.md#linux-vm)
+- [Bare-metal install](https://github.com/project-unisonOS/unison-platform/blob/main/docs/install.md#bare-metal)
+
+Downloads:
+
+- [Unison Platform Releases](https://github.com/project-unisonOS/unison-platform/releases)
