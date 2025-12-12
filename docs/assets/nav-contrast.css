@@ -45,6 +45,33 @@
   background-color: rgba(255, 255, 255, 0.12);
 }
 
+/*
+ * Bootstrap sets `.bg-primary` with `background-color: ... !important` and a
+ * gradient `background-image`. Override both so the header is consistently
+ * high-contrast, including dropdown + nested dropdown menus on mobile Safari.
+ */
+.navbar.bg-primary {
+  background-color: var(--nav-bg) !important;
+  background-image: none !important;
+}
+
+.navbar.bg-primary .navbar-brand,
+.navbar.bg-primary .nav-link,
+.navbar.bg-primary .dropdown-item {
+  color: var(--nav-text) !important;
+}
+
+.navbar.bg-primary .dropdown-menu {
+  background-color: var(--nav-bg) !important;
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
+.navbar.bg-primary .dropdown-item:focus,
+.navbar.bg-primary .dropdown-item:hover {
+  color: var(--nav-text) !important;
+  background-color: rgba(255, 255, 255, 0.12);
+}
+
 /* Improve readability in high-contrast/forced-colors environments */
 @media (forced-colors: active) {
   .navbar,
