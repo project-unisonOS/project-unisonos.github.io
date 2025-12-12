@@ -27,6 +27,7 @@ nav:
       - VDI: architecture/vdi.md
       - Inference: architecture/inference.md
   - Developers:
+      - Overview: developers/index.md
       - Onboarding:
           - Get Started: developers/get-started.md
           - Prerequisites: developers/prerequisites.md
