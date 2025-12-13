@@ -52,7 +52,6 @@ Use the approach that best fits your workflow; both are supported by the documen
 - [unison-context-graph](https://github.com/project-unisonOS/unison-context-graph) — context traces/recall graph ([unison-context-graph README](https://github.com/project-unisonOS/unison-context-graph/blob/main/README.md))
 - [unison-intent-graph](https://github.com/project-unisonOS/unison-intent-graph) — intent routing/cache ([unison-intent-graph README](https://github.com/project-unisonOS/unison-intent-graph/blob/main/README.md))
 - [unison-experience-renderer](https://github.com/project-unisonOS/unison-experience-renderer) — Operating Surface UI (dashboard, shared space) ([unison-experience-renderer README](https://github.com/project-unisonOS/unison-experience-renderer/blob/main/README.md))
-- [unison-shell](https://github.com/project-unisonOS/unison-shell) — lightweight Electron shell UI ([unison-shell README](https://github.com/project-unisonOS/unison-shell/blob/main/README.md))
 - [unison-io-core](https://github.com/project-unisonOS/unison-io-core) — generic IO ingress/egress ([unison-io-core README](https://github.com/project-unisonOS/unison-io-core/blob/main/README.md))
 - [unison-io-speech](https://github.com/project-unisonOS/unison-io-speech) — speech IO (STT/TTS) ([unison-io-speech README](https://github.com/project-unisonOS/unison-io-speech/blob/main/README.md))
 - [unison-io-vision](https://github.com/project-unisonOS/unison-io-vision) — vision capture/describe ([unison-io-vision README](https://github.com/project-unisonOS/unison-io-vision/blob/main/README.md))
