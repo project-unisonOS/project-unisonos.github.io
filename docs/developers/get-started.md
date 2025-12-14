@@ -5,9 +5,9 @@ The fastest way to work with Unison is to run the devstack on a WSL2 or Linux ma
 ## What You Will Do
 
 1. Install prerequisites (WSL2 or Linux, Docker Desktop, Python, Node).
-2. Clone the Unison workspace or the core repos side-by-side.
+2. Clone the Unison workspace (recommended) or the core repos side-by-side.
 3. Set up Python virtual environments using the shared constraints file.
-4. Start the devstack using Docker Compose.
+4. Start the devstack using workspace scripts (or Compose directly).
 5. Run the renderer and/or shell against the running stack.
 6. Run unit tests and end-to-end smoke tests.
 7. Create a feature branch, make changes, and open a pull request.

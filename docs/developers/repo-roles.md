@@ -4,7 +4,7 @@ Quick reference for where to work across UnisonOS repos. Canonical, detailed gui
 
 ## Primary Entry Points
 - **unison-workspace**: Developer meta-repo with all core submodules; start here for local dev and scripts.
-- **unison-devstack**: Canonical Docker Compose for local development and smoke/integration tests.
+- **unison-devstack**: Canonical Docker Compose wiring for local development and smoke/integration tests (ports are in `docker-compose.ports.yml`; security mode uses `docker-compose.security.yml`).
 - **unison-platform**: Productized platform distribution (prod Compose, installers, and image builders for WSL/VM/ISO).
 - **unison-os**: Base Ubuntu LTS container image for service Dockerfiles.
 - **unison-docs**: Canonical architecture/specs/compatibility docs.

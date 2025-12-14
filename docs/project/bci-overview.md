@@ -12,8 +12,10 @@ UnisonOS treats brain-computer interface (BCI) input as a first-class modality a
 - Specs/Docs: `unison-docs/dev/BCI_INTEGRATION.md`, `unison-docs/dev/specs/bci-permissions.md`, `unison-docs/dev/specs/schemas/event-envelope.md` (`bci.intent`, `input.hid`), `unison-docs/dev/startup-modality.md`.
 
 ## Try it in devstack (MVP)
-1) Clone workspace and start devstack: `docker compose up io-bci intent-graph orchestrator ...` from `unison-devstack`.
-2) `unison-io-bci` endpoints (default ports 8089/8094 in devstack):
+1) Clone workspace and start devstack from `unison-workspace`:
+   - Development mode: `./scripts/up.sh`
+   - Security overlay mode: `./scripts/up-security.sh` (no host ports; access via in-network smoke or `docker compose exec`)
+2) `unison-io-bci` endpoints (default port `8097` in devstack):
    - `GET /health`, `GET /ready`
    - `WS /bci/intents` (requires `bci.intent.subscribe` scope)
    - `WS /bci/raw?stream=<id>&limit=100` (requires `bci.raw.read`)

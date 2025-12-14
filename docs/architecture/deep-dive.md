@@ -137,7 +137,7 @@ Next (future):
 
 ## Devstack & Deployment
 
-- `unison-devstack/docker-compose.yml` runs: orchestrator, context, storage, policy, auth, consent, intent-graph, context-graph, inference, renderer, IO (speech/vision/core), comms, and optional payments.
+- `unison-devstack/docker-compose.yml` provides the canonical service wiring. For local development with published ports, use the ports overlay `unison-devstack/docker-compose.ports.yml`. For a no-host-port posture, apply `unison-devstack/docker-compose.security.yml` without the ports overlay.
 - Prebuilt `unison-common` wheel is shared across Python services.
 - CI: per-repo tests run with `PYTEST_DISABLE_PLUGIN_AUTOLOAD` and `OTEL_SDK_DISABLED`; context CI uses a unique SQLite path to avoid locks.
 

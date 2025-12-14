@@ -26,8 +26,10 @@ The meta-repo workflow provides a single entry point:
 In the current workspace (`unison-workspace`):
 
 - `./scripts/bootstrap.sh` — initializes and updates all submodules.
-- `./scripts/up.sh` — brings up the devstack via `unison-devstack/docker-compose.yml`.
+- `./scripts/up.sh` — brings up the devstack (uses `unison-devstack/docker-compose.yml` plus `unison-devstack/docker-compose.ports.yml`).
+- `./scripts/up-security.sh` — brings up devstack with the security overlay (`unison-devstack/docker-compose.security.yml`) and no host port publishing.
 - `./scripts/smoke.sh` — runs the devstack end-to-end smoke test (HTTP health checks and a basic voice/vision flow).
+- `./scripts/smoke-security.sh` — runs the smoke test inside the Docker network and asserts ports are not published in security overlay mode.
 
 This keeps versions aligned and makes it easy to run the full stack locally.
 

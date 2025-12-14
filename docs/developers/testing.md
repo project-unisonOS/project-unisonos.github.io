@@ -11,9 +11,9 @@ Unison uses a combination of unit tests, integration tests, and end-to-end smoke
 
 ## End-to-End Smoke Tests
 
-- The devstack repo provides a smoke test script that:
-  - Assumes devstack is running.
-  - Exercises a basic end-to-end flow through the stack.
+- With `unison-workspace`, smoke tests are run via scripts:
+  - Development mode: `./scripts/smoke.sh` (may run on host or in-network depending on your environment).
+  - Security overlay mode: `./scripts/smoke-security.sh` (runs in-network and asserts key ports are not published).
 
 ## Docs and Linting
 
