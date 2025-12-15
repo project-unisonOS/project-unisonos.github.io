@@ -55,15 +55,19 @@ nav:
       - Compatibility: reference/compatibility.md
   - Project:
       - Governance: project/governance.md
-      - Roadmap & DX: project/roadmap.md
       - User-Owned AI Personality: project/user-owned-ai-personality.md
       - License: project/license.md
+  - Docs:
+      - Docs Policy: DOCS_POLICY.md
+      - Org Docs Reality Audit: docs-audit/ORG_DOCS_REALITY_AUDIT.md
+      - Org Docs Inventory: docs-audit/INVENTORY.md
 
 plugins:
   - search
   - redirects:
       redirect_maps:
         vision.md: index.md
+        project/roadmap.md: developers/get-started.md
 
 markdown_extensions:
   - toc:
