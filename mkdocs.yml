@@ -57,10 +57,6 @@ nav:
       - Governance: project/governance.md
       - User-Owned AI Personality: project/user-owned-ai-personality.md
       - License: project/license.md
-  - Docs:
-      - Docs Policy: DOCS_POLICY.md
-      - Org Docs Reality Audit: docs-audit/ORG_DOCS_REALITY_AUDIT.md
-      - Org Docs Inventory: docs-audit/INVENTORY.md
 
 plugins:
   - search
