@@ -30,6 +30,7 @@ nav:
       - Releases: developers/releases.md
       - Onboarding:
           - Get Started: developers/get-started.md
+          - Install Options (Offline/Online): developers/install-options.md
           - Prerequisites: developers/prerequisites.md
           - Workspace & Repos: developers/workspace-and-repos.md
           - Devstack Setup: developers/devstack.md
@@ -40,6 +41,8 @@ nav:
           - Images, Builds, and Releases: developers/images-builds-and-releases.md
       - Platform:
           - Prompt Engine: developers/prompt-engine.md
+          - System Prompt Injection: developers/system-prompt-injection.md
+          - Model Packs: developers/model-packs.md
       - Contribute and Standards:
           - Coding Conventions: developers/coding-conventions.md
           - Repository Roles: developers/repo-roles.md
