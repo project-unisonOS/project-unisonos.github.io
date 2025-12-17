@@ -2,7 +2,15 @@
 
 ## Overview
 
-Storage is the unified persistence layer for UnisonOS. It fronts Postgres for structured data, Redis for ephemeral/cache state, and an optional object store for large binaries. Graph indexing is handled separately; storage simply exposes IDs that graph services can reference.
+Storage is the unified persistence layer for UnisonOS artifacts and durable service records. It provides a single API for:
+
+- Durable key/value records
+- Working memory entries
+- Vault entries (encrypted blobs)
+- Audit events
+- Objects (binary artifacts + metadata)
+
+In current implementations, the storage service persists metadata to **Postgres** (required in production; SQLite is only allowed for local/dev), and stores object payloads on the local storage volume.
 
 ## Responsibilities
 
@@ -22,8 +30,7 @@ Storage is the unified persistence layer for UnisonOS. It fronts Postgres for st
 ## How Other Components Use Storage
 
 - **Orchestrator** – Writes action/event logs and task outcomes.
-- **Inference** – Persists prompts, responses, and working memory slices.
-- **Payments** – Stores non-sensitive payment metadata and uses vault tokens for providers.
+- **Inference** – Reads/writes working state and artifacts when a flow requires durable references.
 - **VDI / Actuation** – Stores downloaded files and workflow outputs from remote browser sessions.
 - **Renderer** – Reads stored results and presents them according to the person’s profile and context.
 
@@ -39,3 +46,5 @@ Storage centralizes persistence, security, and auditability:
 - Per-person and per-tenant scoping enforced at the API layer.
 - Secrets and sensitive fields are encrypted at rest.
 - Audit events are append-only from the API perspective to preserve provenance.
+
+Note: Redis is used elsewhere in the stack for caching/coordination, but it is not the primary durable store for storage service records.

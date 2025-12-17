@@ -9,7 +9,7 @@ This page summarizes the main services and libraries in the Unison workspace and
 - **Policy** – Safety and policy evaluation for high-impact actions.
 - **Consent** – Dedicated service for consent grant issuance and introspection.
 - **Auth** – Authentication, RBAC, and token issuance.
-- **Inference** – Gateway service that fronts local and cloud model providers.
+- **Inference** – Gateway service that fronts local and optional remote model providers (see also: [Model packs](../developers/model-packs.md)).
 
 ## Context and Storage
 
@@ -20,9 +20,8 @@ This page summarizes the main services and libraries in the Unison workspace and
 
 ## Experience and IO
 
-- **Experience Renderer** – UI and UX renderer mediating wake-word and capability manifests.
-- **Shell** – Electron-based onboarding and developer shell.
-- **Agent VDI** – Thin desktop/VDI agent that fronts renderer and intent-graph.
+- **Experience Renderer** – Real-time renderer that turns state into an experience and emits intents back into the control plane.
+- **Agent VDI** – Desktop/browser automation actuator used for GUI-only workflows.
 - **IO Core / Speech / Vision** – Device-side services that emit event envelopes for different modalities.
 - See **Actuation / VDI & VPN** for how VDI operates as an actuator behind policy and consent.
 
@@ -33,7 +32,12 @@ This page summarizes the main services and libraries in the Unison workspace and
 - **Base OS Images** – Common container base images used by service Dockerfiles.
 - **Devstack** – Docker Compose stack and helper scripts for local end-to-end runs.
 
-For per-repo details and commands, refer to the internal repository map in `unison-docs/dev/unison-repo-map.md`.
+Key infrastructure technologies used in current stacks:
+
+- **Postgres** – Durable persistence for services such as context and storage.
+- **Redis** – Low-latency cache/coordination store.
+- **Neo4j** – Graph persistence in the devstack (used by graph services when configured).
+- **NATS/JetStream** – Asynchronous event streaming in the platform compose.
 
 ## Actuation Tools: VDI as an Example
 

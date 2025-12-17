@@ -1,152 +1,47 @@
 # Architecture Deep Dive
 
-## What this page covers
+This page describes how the current UnisonOS stack is wired end-to-end in the devstack and platform compose.
 
-- How the current UnisonOS codebase is wired end to end.
-- Envelope patterns for intents, actions, and results across services.
-- Where core flows such as companion, dashboard, comms, and devstack are implemented.
+## End-to-End Flow (Input → Intent → Outcome → Render)
 
-## Who this page is for
+1. **Input** arrives from an I/O service (speech, vision, BCI, etc.), the experience renderer, or an actuator (Agent VDI).
+2. **Intent Graph** normalizes the request and forwards it to the orchestrator.
+3. **Orchestrator** coordinates the turn:
+   - Reads/writes profile and session state via **Context**.
+   - Enforces **Auth**, **Policy**, and **Consent** for sensitive actions.
+   - Calls **Inference** when generation or planning is needed.
+   - Routes to tools/services (for example: **Storage**, **Comms**, or actuation via **Agent VDI**).
+4. **Results** are returned as structured outputs (and storage references for artifacts), then rendered by the experience renderer in real time.
 
-- Developers reading or modifying UnisonOS services and devstack.
-- Operators who need to understand end to end behavior beyond the high level overview.
+## Envelopes and Service Contracts
 
-## Before you read this
+Unison services share a small set of consistent patterns:
 
-- Start with [Architecture Overview](overview.md) for the main components.
-- Review [Storage and Persistence](components/storage-and-persistence.md) for data boundaries.
+- **Intent envelopes**: normalize “what the person wants” across modalities.
+- **Action envelopes**: describe tool/actuator work (including step plans for high-impact operations).
+- **Result/event envelopes**: return outcomes and emit state transitions for traceability.
 
-This deep dive explains how the current UnisonOS codebase is wired end to end. It is intentionally detailed and mirrors the implementation across the workspace, including orchestrator, intent graph, context, context graph, storage, renderer and shell, IO, communications, wake word handling, and devstack.
+These envelopes allow the orchestrator to reason over heterogeneous tools while keeping governance (policy/consent/audit) centralized.
 
-## Core Request Flow (Intent to Response)
+## Persistence and Messaging (What Runs Under the Hood)
 
-1. A client (renderer, shell, VDI, or IO service) emits an event envelope describing an intent.
-2. **Intent Graph** receives `caps.report` and intents, normalizes them, and forwards to the orchestrator.
-3. **Orchestrator**:
-   - Auth/authz: checks consent/policy as configured.
-   - State: reads profiles and dashboard from **context**, pulls graph/traces from **context-graph** when present.
-   - Inference: calls **inference** gateway (local-first; cloud optional/opt-in).
-   - Storage: writes durable KV/files to **storage** when needed.
-4. Responses go back to the client for UI (renderer) or audio (IO speech).
+In current deployments:
 
-## Intent → Event & Action Envelopes → Tools & Actuators
+- **Postgres** stores durable service state (context, storage metadata, and other service persistence).
+- **Redis** provides low-latency coordination and caching.
+- **Neo4j** is used in the devstack for graph persistence (context graph / intent graph); other deployments may run graph services without Neo4j.
+- **Artifacts** (downloads, generated files, etc.) are stored on the local storage volume via the storage service.
+- **NATS/JetStream** is used in the platform compose for asynchronous event streaming; the devstack primarily wires services together with HTTP for simplicity.
 
-- **Intent Envelopes** wrap incoming requests with person, device, time, and context snapshots so the orchestrator has the full picture.
-- **Event Envelopes** capture important state transitions (for example, “file stored”, “tool completed”, “policy check failed”) that the orchestrator emits and consumes during planning.
-- **Action Envelopes** describe what to do next and are routed to agents, tools, or actuators such as VDI. They form the consistent pattern: Intent → Action Envelope → Tool/Actuator → Result.
-- **Actuators as Specialized Tools** use the same envelope pattern for higher-impact actions. VDI is one such actuator (see [Actuation / VDI & VPN](components/actuation-vdi-vpn.md)).
-- Results flow back as envelopes and are persisted via [Storage & Persistence](components/storage-and-persistence.md) when durable artifacts or audit trails are required.
+## Devstack vs Platform Compose
 
-Data boundaries:
-- Profiles and dashboard state live in `unison-context` (encrypted SQLite, Fernet optional).
-- Graph/traces live in `unison-context-graph` (WAL/TTL/PII scrubbing present).
-- KV/files live in `unison-storage`.
-- No cloud sync by default; any extra sinks require explicit env/policy.
+- **Devstack (`unison-workspace/unison-devstack`)**: optimized for local development, includes Neo4j and optional tooling (for example, an Ollama provider for inference).
+- **Platform compose (`unison-platform/compose/compose.yaml`)**: reference service topology with Postgres/Redis and NATS/JetStream for event streaming, plus optional observability profiles.
 
----
+## Security and Governance Boundaries
 
-## Companion Session (Voice/Multimodal)
+- **No cloud dependency by default**: the platform is designed to run fully on local hardware.
+- **Remote calls are policy-gated**: if you enable a remote inference provider or external connector, it must be explicit, auditable, and consent-aware.
+- **Artifacts and sensitive state**: durable data flows through the storage and context APIs, not ad-hoc per-service databases.
 
-Current loop (as implemented):
-1. **Wakeword/VAD** (renderer) starts audio capture locally (Porcupine optional, always-on flag off by default).
-2. Audio → **unison-io-speech** STT → transcript.
-3. Transcript + person/session → **orchestrator** `/voice/ingest` → `companion.turn`.
-4. **CompanionSessionManager** runs tools, calls inference with tool calling enabled, and persists short-term state to context.
-5. Results stream to **renderer** (cards + media) and to **speech** for TTS (best effort).
-
-Tracing/logging:
-- Baton/trace propagation is preserved where available.
-- Orchestrator logs key events to context-graph (origin_intent, tags, created_at) for recall.
-
----
-
-## Operating Surface (Dashboard + Shared Space)
-
-Renderer/shell experience:
-1. Renderer `/dashboard` proxies to **context** `/dashboard/{person_id}`.
-2. Context returns cards + preferences (stored locally, encrypted-at-rest).
-3. `dashboard.refresh` skill (orchestrator) merges:
-   - Profile prefs (text scale, contrast).
-   - Cards from context + new cards (briefings, workflows, comms).
-   - Comm cards from **unison-comms** for both `email` and `unison` channels.
-4. Renderer displays:
-   - Priority Cards panel.
-   - Unison Shared Space panel (tags visible, auto-refresh every 15s).
-   - SSE listener for unison stream (live updates when new unison messages arrive).
-
-Context-graph:
-- Orchestrator logs dashboard and comms events into context-graph (tags, created_at, origin_intent) to support recall (“show me the workflow we were designing yesterday”).
-
----
-
-## Communications (Edge-First)
-
-Service: `unison-comms` (FastAPI)
-- Normalized message shape: `channel`, `participants`, `subject`, `body`, `thread_id`, `message_id`, `context_tags`, `metadata`.
-- Adapters:
-  - **Email**: stub + optional Gmail (IMAP/SMTP with app password). Gmail caches thread recipients for replies.
-  - **Unison**: local, encrypted store required (`COMMS_UNISON_KEY`, `COMMS_UNISON_STORE_PATH`).
-- Endpoints:
-  - `/comms/check|summarize|reply|compose`
-  - Meeting stubs: `/comms/join_meeting`, `/comms/prepare_meeting`, `/comms/debrief_meeting`
-  - SSE: `/stream/unison` for live unison-channel events.
-
-Orchestrator comms skills:
-- `comms.check|summarize|reply|compose|join_meeting|prepare_meeting|debrief_meeting`
-- Companion tools registered so LLM can invoke comms intents.
-- Logs provider tags (e.g., `unison`, `gmail`) into context-graph for recall.
-
-Renderer:
-- Shows comms tags inline on cards; Unison Shared Space auto-refreshes + SSE for unison events.
-
-Privacy:
-- Email secrets stay in env on-device; unison channel data is locally encrypted. No remote inbox sync.
-
----
-
-## Wakeword & Always-On Companion
-
-Implemented in renderer + orchestrator:
-- Wakeword endpoint `/wakeword` (renderer) reads profile `voice.wakeword` from context; defaults to `UNISON_WAKEWORD_DEFAULT`.
-- Porcupine optional (WASM); always-on mic disabled by default; edge-only by default.
-- Orchestrator exposes `wakeword.update` to set `voice.wakeword` in profile.
-
----
-
-## Meetings (Initial Stubs)
-
-Implemented paths:
-- `comms.join_meeting`, `comms.prepare_meeting`, `comms.debrief_meeting` in `unison-comms` (cards returned).
-- Orchestrator skills forward these and log to context-graph.
-- Renderer displays meeting cards alongside other comms cards; shared space shows unison-tagged items.
-
-Next (future):
-- Real connectors (Teams/Zoom) behind these intents; current code is local-only stubs.
-
----
-
-## Storage, Profiles, Security
-
-- Profiles: `unison-context` encrypted SQLite (`profile_enc_key` optional); defaults to `unison_id = person_id` for unison addressing.
-- Dashboard: `unison-context` encrypted SQLite with Fernet optional.
-- Storage: `unison-storage` for durable KV/files; context and orchestrator use it for non-profile data.
-- Security docs: each repo ships SECURITY.md pointing to public security reference; tokens/keys are env-only.
-- Devstack runs all services locally (compose) with auth disabled for tests; production should supply real secrets and enable auth/consent.
-
----
-
-## Devstack & Deployment
-
-- `unison-devstack/docker-compose.yml` provides the canonical service wiring. For local development with published ports, use the ports overlay `unison-devstack/docker-compose.ports.yml`. For a no-host-port posture, apply `unison-devstack/docker-compose.security.yml` without the ports overlay.
-- Prebuilt `unison-common` wheel is shared across Python services.
-- CI: per-repo tests run with `PYTEST_DISABLE_PLUGIN_AUTOLOAD` and `OTEL_SDK_DISABLED`; context CI uses a unique SQLite path to avoid locks.
-
----
-
-## Traceability and Recall
-
-- Context-graph receives:
-  - Dashboard refresh traces (cards, tags, created_at).
-  - Comms events (check/summarize/reply/compose/meeting), with provider tags.
-- Renderer streams experiences via SSE and refreshes dashboard on a timer to keep UI aligned with context.
-- No data leaves the device unless explicitly configured; all cloud usage is opt-in and policy-controlled.
+See [Storage & Persistence](components/storage-and-persistence.md) and [Actuation / VDI & VPN](components/actuation-vdi-vpn.md) for the concrete boundaries used by tools and actuators.

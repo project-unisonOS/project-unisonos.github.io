@@ -1,48 +1,38 @@
 # Architecture Overview
 
-## What this page covers
-
-- How core UnisonOS services cooperate to deliver edge first, agentic experiences.
-- The roles of the control plane, context and storage services, and experience surfaces.
-- Where to go for deeper implementation details.
-
-## Who this page is for
-
-- Readers who want a high level mental model of the platform.
-- Developers and operators deciding where to plug in new services or experiences.
-
-## Before you read this
-
-- Review [Introducing UnisonOS](../index.md) for the product level overview.
-- Skim [Architecture Deep Dive](deep-dive.md) if you plan to work closely with the codebase.
-
-This page summarizes how the core Unison services cooperate to deliver edge first, agentic experiences.
+This page summarizes how the core Unison services cooperate to deliver edge-first, real-time generated experiences.
 
 ## Core Control Plane
 
-- **Intent Graph** – First stop for user intents (from renderer, shell, VDI, or device I/O). Normalizes requests and forwards them to the orchestrator.
-- **Orchestrator** – Central router and planner. Enforces auth and consent, orchestrates skills, calls inference, and manages conversational or task state.
+- **Intent Graph** – First stop for intents coming from the experience renderer, Agent VDI, or I/O services. Normalizes requests and forwards them to the orchestrator.
+- **Orchestrator** – Central router and planner. Enforces auth and consent, orchestrates skills/tools, calls inference, and manages conversational or task state.
 - **Policy and Consent** – Evaluate safety and consent before actions are executed and provide audit records.
 - **Auth** – Issues and validates tokens for service-to-service and user-bound flows.
-- **Inference** – Gateway to model providers (local and cloud), invoked by orchestrator and intent-graph when generation or planning is needed.
+- **Inference** – Gateway to model providers (local-first; remote providers are optional), invoked by the orchestrator when generation is needed.
 
 ## Context, Storage, and Profiles
 
-- **Context Graph** – Fuses signals and preferences into a graph view of the user’s state.
-- **Context Store** – Provides profile and key–value storage with consent-aware reads and writes (including per-person dashboards).
-- **Storage** – Encrypted working memory, vault, and long-term store for sensitive or durable data.
+- **Context** – The consent-aware profile and session store (typically backed by Postgres in the devstack and platform compose).
+- **Context Graph** – Maintains graph-shaped context used for recall, relationships, and cross-signal fusion (devstack uses Neo4j; other deployments may run the graph service with Postgres-backed persistence).
+- **Storage** – Durable KV + artifacts + vault + audit, exposed through a single service API (metadata in Postgres; artifacts stored on the local storage volume).
 
 Together, these services implement secure edge profiles that other components can read and update under policy and consent.
 
 ## Experience and I/O Surfaces
 
-- **Experience Renderer** – Renders UI/UX, mediates wake-word UX, and exchanges intents and responses with intent-graph and orchestrator. It presents the dynamic dashboard “Operating Surface” as a per-person, card-based home view backed by the context store and orchestrator.
-- **Shell** – Electron-based onboarding and developer shell that proxies to renderer and intent-graph.
-- **Agent VDI** – Thin desktop/VDI agent that fronts renderer and intent-graph.
-- **IO Services (speech, vision, core, bci, braille)** – Device-side emitters that produce event envelopes from speech, vision, BCI, Braille, or other IO and send them into the control plane.
+- **Experience Renderer** – The real-time renderer that turns system state into an experience, and turns multimodal inputs into intents for the control plane.
+- **Agent VDI** – A desktop/browser automation actuator used when an outcome requires interacting with graphical software.
+- **I/O Services (speech, vision, core, BCI, braille, sign, …)** – Device-side emitters that normalize modality events into the control plane.
 
 ## Runtime and Devstack
 
-- **Devstack** – Docker Compose wiring for local end-to-end runs. Brings up the control plane, inference gateway, renderer, IO stubs, and backing services such as Redis and Postgres.
+- **Devstack** – Docker Compose wiring for local end-to-end runs. Brings up the control plane, inference, renderer, I/O services, and backing services such as Postgres, Redis, and Neo4j.
 - **Base Images** – Shared base images used by service Dockerfiles.
 - **Shared Docs and Libraries** – Canonical specs and schemas plus shared Python helpers for auth, tracing, HTTP, and envelope validation.
+
+## Models in the Architecture
+
+- **Inference is a service**: the orchestrator calls the inference service over HTTP to run models, rather than linking model runtimes into every service.
+- **Model packs**: releases ship versioned “model packs” that describe which models to load for a given modality/task and where to put them on disk. See [Model packs](../developers/model-packs.md).
+
+Next: see [Architecture Deep Dive](deep-dive.md) for flows and boundaries, and [Inference](inference.md) for how model execution is configured.
