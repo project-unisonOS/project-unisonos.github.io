@@ -18,8 +18,6 @@ Its purpose is to ensure that UnisonOS:
 - Scales coherently across domains, modalities, and form factors
 - Builds and preserves trust as the primary product
 
-This document is intended to be reused verbatim as **context for development agents (e.g., Codex)** to maintain conceptual consistency as the project scales.
-
 ---
 
 ## 1. Foundational Ethos
