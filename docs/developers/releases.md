@@ -4,16 +4,22 @@ UnisonOS platform images are delivered as **GitHub Release assets** from the `un
 
 ## What to download
 
-Each release is **target-specific** (WSL2 OR VM OR bare metal). The release notes will state who it’s for and which single asset to download.
+For `v0.5.0-alpha.N`, a single release tag includes **all** evaluation artifacts (WSL2 + VM + bare metal) plus a manifest and checksums. Start with `evaluate-alpha.md`.
 
 ## Install instructions
 
-Use the canonical install page (hosted in the platform repo):
+Use the canonical evaluator guide:
+
+- https://project-unisonos.github.io/developers/evaluate-alpha/
+
+Or the canonical install page (hosted in the platform repo):
 
 - [Install UnisonOS developer images](https://github.com/project-unisonOS/unison-platform/blob/main/docs/install.md)
 
-Direct links to the current test builds:
+Expected asset names (for `v0.5.0-alpha.N`):
 
-- WSL2: [`unisonos-wsl2-dev.tar.gz`](https://github.com/project-unisonOS/unison-platform/releases/download/v0.0.0-test-wsl/unisonos-wsl2-dev.tar.gz)
-- Linux VM: [`unisonos-linux-vm-dev.qcow2`](https://github.com/project-unisonOS/unison-platform/releases/download/v0.0.0-test-vm/unisonos-linux-vm-dev.qcow2) (optional [`unisonos-linux-vm-dev.vmdk`](https://github.com/project-unisonOS/unison-platform/releases/download/v0.0.0-test-vm/unisonos-linux-vm-dev.vmdk))
-- Bare metal: [`unisonos-bare-metal.iso`](https://github.com/project-unisonOS/unison-platform/releases/download/v0.0.0-test-metal/unisonos-bare-metal.iso)
+- `unisonos-wsl2-v0.5.0-alpha.N.tar.gz` (or `.zip`)
+- `unisonos-linux-vm-v0.5.0-alpha.N.qcow2` (and/or `.vmdk`)
+- `unisonos-baremetal-v0.5.0-alpha.N.iso`
+- `unisonos-manifest-v0.5.0-alpha.N.json`
+- `SHA256SUMS-v0.5.0-alpha.N.txt`

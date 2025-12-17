@@ -27,6 +27,7 @@ nav:
       - VDI: architecture/vdi.md
       - Inference: architecture/inference.md
   - Developers:
+      - Alpha Evaluation: developers/evaluate-alpha.md
       - Releases: developers/releases.md
       - Onboarding:
           - Get Started: developers/get-started.md
@@ -39,6 +40,11 @@ nav:
           - Testing: developers/testing.md
           - Hardware Deployment: developers/hardware.md
           - Images, Builds, and Releases: developers/images-builds-and-releases.md
+      - Deployment:
+          - Install (WSL2): developers/install-wsl2.md
+          - Install (Linux VM): developers/install-linux-vm.md
+          - Install (Bare Metal): developers/install-bare-metal.md
+          - Testing: developers/testing.md
       - Platform:
           - Prompt Engine: developers/prompt-engine.md
           - System Prompt Injection: developers/system-prompt-injection.md

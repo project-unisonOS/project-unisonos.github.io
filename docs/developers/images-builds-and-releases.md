@@ -13,15 +13,15 @@ UnisonOS ships as a set of images and installers you can run in WSL, virtual mac
 - `unisonos-wsl-<version>.tar.gz` plus a root file system tarball.
 - Runs on Windows via WSL for local experimentation and development.
 
-### VM bundle
+### Linux VM image
 
-- Directory containing `packer.pkr.hcl`, `provision.sh`, metadata, and when tools are installed, QCOW2 or VMDK images.
-- Runs in hypervisors such as QEMU, KVM, or VirtualBox for lab and edge scenarios.
+- `unisonos-linux-vm-<version>.qcow2` (and optionally `.vmdk`).
+- Bootable Ubuntu disk image; provisions UnisonOS on first boot and then auto-starts the platform service.
 
-### ISO seed
+### Bare-metal installer ISO
 
-- Autoinstall seed directory plus `unisonos-autoinstall-seed-<version>.iso` (NoCloud seed paired with an Ubuntu Server ISO).
-- Used to install UnisonOS on physical hardware or dedicated servers.
+- `unisonos-baremetal-<version>.iso`.
+- Full Ubuntu Server installer ISO remastered with embedded autoinstall payload (not seed-only).
 
 ### Installers
 
@@ -33,15 +33,16 @@ UnisonOS ships as a set of images and installers you can run in WSL, virtual mac
 Run these commands from the `unison-platform` repository after installing Docker and required tools:
 
 - `make image-wsl` builds the WSL bundle and root file system.
-- `make image-vm` builds the VM bundle and emits QCOW2 or VMDK images when `qemu-img` is installed.
-- `make image-iso` builds the autoinstall seed directory and seed ISO when `xorriso` or `genisoimage` is installed.
+- `make linux-vm` builds the VM disk image (QCOW2; optional VMDK).
+- `make baremetal-iso` builds the bootable installer ISO with embedded autoinstall payload.
 - `make qa-smoke` runs health and inference smoke tests against the built images.
 
 Tooling prerequisites:
 
 - Docker with Buildx enabled.
 - `qemu-img` from the `qemu-utils` package for QCOW2 or VMDK outputs.
-- `xorriso` or `genisoimage` for building the autoinstall seed ISO.
+- `xorriso` for building the bare-metal installer ISO.
+- For VM builds without virtualization acceleration (CI), `libguestfs-tools` is used to customize Ubuntu cloud images without KVM.
 
 ## Semantic versioning and channel semantics
 
