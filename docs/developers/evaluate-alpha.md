@@ -16,7 +16,7 @@ Use the GitHub Release `v0.5.0-alpha.N` in `unison-platform`:
 Required assets include:
 - `unisonos-wsl2-v0.5.0-alpha.N.*`
 - `unisonos-linux-vm-v0.5.0-alpha.N.*`
-- `unisonos-baremetal-v0.5.0-alpha.N.iso`
+- `unisonos-baremetal-v0.5.0-alpha.N.iso.part00` (and subsequent `part*`, plus `...REASSEMBLE.txt`)
 - `unisonos-manifest-v0.5.0-alpha.N.json`
 - `SHA256SUMS-v0.5.0-alpha.N.txt`
 
