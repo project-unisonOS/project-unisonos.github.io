@@ -42,22 +42,6 @@ The system adapts to the person.
 
 ---
 
-### 1.2 UnisonOS Is Not a Computer Experience
-
-UnisonOS is not designed to make computers easier to use.
-
-It is designed to make **the computer irrelevant**.
-
-If a person is thinking about:
-- Devices
-- Interfaces
-- Input mechanisms
-- Software tools
-
-then UnisonOS has failed to abstract sufficiently.
-
----
-
 ## 2. Abstraction as a Core Principle
 
 ### 2.1 Intent as an Abstraction Boundary
@@ -151,11 +135,12 @@ What appears is:
 
 ### 5.1 Modality Independence
 
-Every experience must assume:
-- No screen
-- No keyboard
-- Possibly no speech
-- Possibly multiple simultaneous modalities
+Every experience must be **capability-aware**:
+- If a screen is available, the renderer can use it.
+- If there is no screen, the experience must remain complete.
+- Do not assume a keyboard is present.
+- Speech may be unavailable or inappropriate.
+- Multiple simultaneous modalities may be available and should remain coherent.
 
 If an experience collapses when one modality is removed, it is incomplete.
 
