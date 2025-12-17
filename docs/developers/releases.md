@@ -8,10 +8,10 @@ UnisonOS platform images are delivered as **GitHub Release assets** from the `un
 
 Alpha releases are intended for developer evaluation: installable, boots to “ready”, and end-to-end interaction works — with expected rough edges.
 
-- Release assets (WSL2 + Linux VM + bare metal + manifest + checksums): https://github.com/project-unisonOS/unison-platform/releases/tag/v0.5.0-alpha.1
-- WSL2 download/install (GitHub): https://github.com/project-unisonOS/unison-platform/blob/main/docs/install.md#windows--wsl2
-- Linux VM download/install (GitHub): https://github.com/project-unisonOS/unison-platform/blob/main/docs/install.md#linux-vm
-- Bare metal download/install (GitHub): https://github.com/project-unisonOS/unison-platform/blob/main/docs/install.md#bare-metal
+- [Release assets (WSL2 + Linux VM + bare metal + manifest + checksums)](https://github.com/project-unisonOS/unison-platform/releases/tag/v0.5.0-alpha.1)
+- [WSL2 download/install (GitHub)](https://github.com/project-unisonOS/unison-platform/blob/main/docs/install.md#windows--wsl2)
+- [Linux VM download/install (GitHub)](https://github.com/project-unisonOS/unison-platform/blob/main/docs/install.md#linux-vm)
+- [Bare metal download/install (GitHub)](https://github.com/project-unisonOS/unison-platform/blob/main/docs/install.md#bare-metal)
 
 On this site, use the quickstarts:
 
@@ -39,4 +39,4 @@ Expected asset names (for `v0.5.0-alpha.N`):
 
 ## Reporting Issues
 
-- Packaging/install/release issues: https://github.com/project-unisonOS/unison-platform/issues
+- [Packaging/install/release issues](https://github.com/project-unisonOS/unison-platform/issues)
