@@ -8,7 +8,7 @@ A new layer of computing designed around how you naturally think, not how comput
 
 ## Time, Intention, and the Future of Computing
 
-You navigate each day with the same constraint as everyone else: time is the only currency you never replenish. Every moment is spent, invested, or simply allowed to pass. Some of your time goes toward consuming information and experiences; some goes toward creating things others may use or enjoy. And sometimes, when your creations reach others at scale, they become meaningful contributions.
+You navigate each day with the same constraint as everyone else: time is the only currency you never replenish. Every moment is spent, invested, or simply allowed to pass. Some of your time goes toward consuming information and experiences; some goes toward creating things,and someimes when you create things for others to enjoy, you produce meaningful contributions.
 
 These are not moral categories. They are the patterns of how you move through your digital and physical life. Yet our computing systems were never designed with these patterns in mind. Modern devices fragment your attention, impose cognitive overhead, and distract you from whatever you actually intend to do, whether that is consuming, creating, or contributing.
 
@@ -16,7 +16,7 @@ UnisonOS starts from a simple question: what if your computing systems respected
 
 This question leads naturally into a deeper exploration of abstraction. Computers are built on layers of abstraction, from circuits and machine code to operating systems and apps, but most of those layers leak complexity upward. Abstraction maximalism, as we describe it, is the pursuit of removing every unnecessary friction between your intention and your outcome. It is not about hiding complexity for its own sake. It is about lifting you above the operational details that currently consume so much of your limited time.
 
-UnisonOS applies this principle by shifting from an app-centric model to an intention-centric one. Instead of asking you to remember which tool, file, or workflow you need, the system interprets your goal and assembles what is required in real time. Inputs like voice, text, touch, sign, Braille, and BCI are treated equally. Your context is kept private, evolving with you and not shared with the model. The system adapts to you, not the other way around.
+UnisonOS applies this principle by shifting from an app-centric model to an intention-centric one. Instead of asking you to remember which tool, file, or workflow you need, the system interprets your goal and assembles what is required in real time. Inputs like voice, text, touch, sign, Braille, and BCI are treated equally. Your context is kept private, evolving with you and not shared outside of the system. The system adapts to you, not the other way around.
 
 This approach is not meant to change how you choose to spend your time. You will always consume, create, or relax in the ways that make sense for you. The aim is to give you more agency over those choices, with less digital friction and more flow. If UnisonOS helps you focus on building something meaningful, or gives you back minutes that would have been wasted navigating layers of legacy software structure, it has achieved its purpose.
 
