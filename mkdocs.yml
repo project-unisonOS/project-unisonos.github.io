@@ -62,6 +62,7 @@ plugins:
         vision.md: index.md
         project/roadmap.md: developers/get-started.md
         developers/evaluate-alpha.md: developers/releases.md
+        developers/renderer-and-shell.md: developers/renderer.md
 
 markdown_extensions:
   - toc:

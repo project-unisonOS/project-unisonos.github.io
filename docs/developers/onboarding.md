@@ -40,11 +40,11 @@ Devstack is the canonical local wiring of the core control plane, renderer, infe
 
 - Bring-up and profiles: [Devstack Setup](devstack.md)
 
-## 6) Renderer & Shell
+## 6) Renderer
 
 The experience renderer is the primary “surface” during development and evaluation.
 
-- How to run and connect surfaces: [Renderer & Shell](renderer-and-shell.md)
+- How to run and connect surfaces: [Renderer](renderer.md)
 
 ## 7) Build, Deploy, and Images
 
@@ -70,4 +70,3 @@ Use the hardware guidance when you’re validating device installs, networking, 
 One tag → one GitHub Release → multiple artifacts (WSL2 + Linux VM + bare metal) plus checksums/manifest.
 
 - Start here: [Releases](releases.md)
-
