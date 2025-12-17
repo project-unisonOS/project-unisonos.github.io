@@ -11,8 +11,6 @@ nav:
   - Home: index.md
   - Experience:
       - Experience Principles: experience.md
-      - Experience Doctrine: experience/doctrine.md
-      - Renderer Design Language: experience/renderer-design-language.md
       - Multimodal Interaction: experience/multimodal.md
       - Speech: multimodal/speech.md
       - Sign: multimodal/sign-language.md
@@ -55,7 +53,6 @@ nav:
           - Coding Conventions: developers/coding-conventions.md
           - Repository Roles: developers/repo-roles.md
           - Contributing: developers/contributing.md
-          - Accessibility: developers/accessibility.md
   - Reference:
       - Specs & Schemas: reference/specs.md
       - APIs:

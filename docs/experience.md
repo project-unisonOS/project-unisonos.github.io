@@ -72,10 +72,6 @@ This makes UnisonOS inherently accessible:
 - Presentation is tailored (for example: contrast, text size, pacing, audio behavior, Braille focus).
 - Generated experiences implicitly adhere to WCAG-style guidelines (structure, contrast, focus order, readable text, and non-visual alternatives).
 
-For accessibility requirements and guidance, see:
-
-- [Accessibility](developers/accessibility.md)
-
 ## Observable and Predictable
 
 Every interaction flows through an orchestrator and a set of well-defined services. Developers can trace events end-to-end, understand why a decision was made, and reproduce behaviors across devices.

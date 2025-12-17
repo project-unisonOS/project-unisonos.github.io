@@ -18,7 +18,7 @@ Thank you for your interest in improving Unison.
 
 ## Documentation and Accessibility
 
-- Follow WCAG 2.2 AA guidance in `developers/accessibility.md`.
+- Prioritize accessible outcomes by ensuring generated experiences adapt to people’s needs and preferences (for example: modality completeness, readable contrast, and non-visual alternatives).
 - Use semantic headings, descriptive link text, and alt text for all meaningful images.
 - Keep tables accessible (`<th>` headers with scope, captions when complex); prefer lists when possible.
 - Run `npm run a11y:audit` (requires Playwright deps) before merging doc or layout changes; see `ACCESSIBILITY_AUDIT.md` for scope and results.
