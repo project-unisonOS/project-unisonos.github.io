@@ -9,11 +9,13 @@ These principles are derived from two canonical documents:
 
 ## Vision and Values in Practice
 
-These experience principles translate the platform vision into day to day behavior:
+These experience principles translate the platform vision into day-to-day behavior:
 
 - **Generated, intention-centric experiences** keep you focused on outcomes, not tools, apps, or navigation.
-- **Personalized experiences** adapt to each person’s needs and preferences, moment to moment.
+- **Personalized, capability-aware experiences** adapt to each person’s needs and preferences and the system’s current capabilities (for example: available display, audio, input, or assistive devices).
+- **Presence before information** keeps the system calm and non-demanding when there is nothing useful to present.
 - **Privacy and consent** keep data handling explicit, auditable, and under your control.
+- **Trust as the product** means experiences must be predictable, coherent, and safe; surprising behavior is a trust violation.
 - **Edge-first by default** ensures the system works fully on local hardware; cloud is optional and policy-governed.
 - **Inclusive and multimodal by default** means every experience works across Voice, Vision, gesture, touch, Braille, sign, and BCI.
 
