@@ -32,8 +32,6 @@ Its responsibility is to:
 - Maintain trust
 - Disappear when not needed
 
-If the renderer draws attention to itself, it has failed.
-
 ---
 
 ## 2. Presence Before Information
@@ -389,4 +387,3 @@ The renderer is successful when it feels:
 - Forgettable
 
 The best renderer is the one a person never thinks about.
-
