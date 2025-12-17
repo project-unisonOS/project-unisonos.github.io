@@ -1,42 +1,28 @@
 # Multimodal Interaction
 
-This page introduces how UnisonOS treats speech, sign, Braille, vision, and BCI as first class ways for you to interact with the system.
-
-## What this page covers
-
-- How multimodal interaction fits into the overall experience principles.
-- The role of each modality in the UnisonOS Operating Surface.
-- Where to go for detailed behavior and implementation notes.
-
-## Who this page is for
-
-- People who want to understand how UnisonOS supports different ways of interacting.
-- Designers and developers who plan experiences that span multiple modalities.
-
-## Before you read this
-
-- Read [Experience Principles](../experience.md) for the foundations of privacy, consent, and edge first behavior.
-- Review [Architecture Overview](../architecture/overview.md) to see how IO services connect to the control plane.
+UnisonOS is multimodal by default: it generates experiences in real time based on the system’s current capabilities and a person’s needs and preferences. If a screen is present, the renderer can use it. If it isn’t, the experience remains complete.
 
 ## Multimodal interaction in practice
 
-UnisonOS is designed to remember how you prefer to interact and to make every experience available through speech, visual surfaces, and tactile channels where possible. Startup flows detect which capabilities are present on a device and choose appropriate prompts and outputs so you can stay in your preferred mode.
+UnisonOS does not treat any modality as “primary.” Instead, it treats modalities as co-equal channels for expressing intent and receiving outcomes. The same intent can be rendered through different combinations of output and input without changing the meaning.
 
-Each modality contributes a different strength:
+Key commitments:
 
-- **Speech** supports hands free, conversational control and feedback.
-- **Sign** supports visual language for people who sign or who communicate in noisy or silent environments.
-- **Braille** supports tactile reading and navigation for people who use refreshable displays.
-- **Vision** covers camera and display based interactions that provide rich visual context.
-- **BCI** explores direct intent signals from supported headsets in highly constrained scenarios.
+- **Capability-aware rendering**: use what is available (display, camera, audio, assistive devices), but never strand a person when a capability is missing.
+- **Cross-modal coherence**: when multiple modalities are active, they reinforce the same meaning without duplicating excessively or contradicting each other.
+- **Privacy and consent**: modality choices and data paths remain governed by consent and policy; on-device operation is the default.
 
-Every high level flow aims to provide equivalent paths across modalities instead of treating one channel as primary and the others as add ons.
+Each modality contributes different strengths:
 
-## Where to go next
+- **Voice** (speech and audio) supports conversational interaction and hands-free use.
+- **Vision** (display and camera) supports rich visual context and visual perception where appropriate.
+- **Touch and gesture** support direct interaction with rendered experiences when available.
+- **Sign** supports visual language for people who sign and for environments where speech is unavailable or undesirable.
+- **Braille** supports tactile reading and navigation via refreshable displays.
+- **BCI** supports intent signals from configured headsets for highly constrained input scenarios.
 
-- Learn about [Speech I/O](../multimodal/speech.md).
-- Explore [Sign language interaction](../multimodal/sign-language.md).
-- Review [Braille support](../multimodal/braille.md).
-- See [Vision I/O](../multimodal/vision.md).
-- Read about [BCI I/O](../multimodal/bci.md).
-
+- [Speech](../multimodal/speech.md)
+- [Sign](../multimodal/sign-language.md)
+- [Braille](../multimodal/braille.md)
+- [Vision](../multimodal/vision.md)
+- [BCI](../multimodal/bci.md)
