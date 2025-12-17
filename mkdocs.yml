@@ -27,7 +27,6 @@ nav:
       - VDI: architecture/vdi.md
       - Inference: architecture/inference.md
   - Developers:
-      - Alpha Evaluation: developers/evaluate-alpha.md
       - Releases: developers/releases.md
       - Onboarding:
           - Get Started: developers/get-started.md
@@ -72,6 +71,7 @@ plugins:
       redirect_maps:
         vision.md: index.md
         project/roadmap.md: developers/get-started.md
+        developers/evaluate-alpha.md: developers/releases.md
 
 markdown_extensions:
   - toc:
