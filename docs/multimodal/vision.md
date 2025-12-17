@@ -1,24 +1,25 @@
 # Vision I/O
 
-Vision is a core modality for UnisonOS: cameras inform context, capture scenes, and enable assistive experiences. All vision inputs flow into the same orchestrator intent path used by speech, sign, Braille, and BCI.
+Vision is a core modality for UnisonOS: cameras and displays enable perception, context, and assistive experiences. Vision interactions flow through the same orchestration path as other modalities.
 
-## Experience (person-first)
-- Use the camera for on-demand capture, describe, or assistive guidance.
-- Vision assists other modalities (e.g., sign-language keypoints, object references).
-- Clear indicators when the camera is active; user-controlled toggles in onboarding and shell.
+## Experience
+
+- Use the camera for on-demand capture, describe, or assistive guidance when enabled.
+- Combine vision with other modalities (for example: pairing camera context with voice or sign).
+- Clear indicators when the camera is active; control remains with the person.
 
 ## How it works
-- Input: `unison-io-vision` provides camera access, optional keypoint extraction, and capture/describe endpoints.
-- Pipelines: frames can be routed to downstream services (sign detector/interpreter, assistive describe, object prompts).
-- Gateway: vision-derived intents (e.g., describe scene, select object) are adapted into `IntentRequest` (channel `vision`).
-- Orchestrator: central policy/skills routing; channel metadata ensures consistent consent and auditing.
+
+- Input: the vision service provides camera access and capture/describe capabilities.
+- Orchestration: vision-derived intents are converted into intent requests and routed through the orchestrator.
+- Output: results can be rendered visually, narrated via voice, or combined with other outputs as appropriate.
 
 ## Privacy & locality
-- Camera access requires policy/consent; defaults to local processing and no raw frame egress.
-- Keypoints/derived representations preferred over raw images where possible.
+
+- Camera access requires consent and policy; on-device processing is the default.
+- Prefer derived representations over raw frames when possible; any sharing is explicit and opt-in.
 
 ## Developer notes
-- Repo: [`unison-io-vision`](https://github.com/project-unisonOS/unison-io-vision)
-- Channel id: `vision`
-- Config: camera tokens/constraints, keypoint extraction, downstream routing to other I/O services.
-- Testing: stub capture/describe endpoints plus replay fixtures for keypoints/frames.
+
+- Repo: `https://github.com/project-unisonOS/unison-io-vision`
+- Channel: `vision`

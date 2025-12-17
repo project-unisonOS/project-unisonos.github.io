@@ -20,7 +20,6 @@ Each modality contributes different strengths:
 - **Sign** supports visual language for people who sign and for environments where speech is unavailable or undesirable.
 - **Braille** supports tactile reading and navigation via refreshable displays.
 - **BCI** supports intent signals from configured headsets for highly constrained input scenarios.
-
 - [Speech](../multimodal/speech.md)
 - [Sign](../multimodal/sign-language.md)
 - [Braille](../multimodal/braille.md)

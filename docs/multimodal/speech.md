@@ -1,24 +1,25 @@
 # Speech I/O
 
-UnisonOS treats speech as a first-class, local-first modality for both input (ASR) and output (TTS). Voice commands flow into the same orchestrator as every other channel, so policy, consent, and skills routing stay consistent across modalities.
+Speech is a first-class modality in UnisonOS for both input (ASR) and output (TTS). Speech interactions flow through the same orchestration path as other modalities so policy, consent, and auditing stay consistent.
 
-## Experience (person-first)
-- Speak naturally to issue intents (navigate, control, ask questions) without thinking in “apps.”
-- Hear concise, contextual responses; captioning is available in shell/renderer.
-- Works at lock screen, onboarding, and during sessions; opt-in wakeword/press-to-talk per preferences.
+## Experience
+
+- Speak naturally to express intent without thinking in “apps.”
+- Receive concise spoken responses when audio is available; when a screen is available, responses can also be rendered as text.
+- Prefer hands-free interaction when it fits the environment and a person’s preferences.
 
 ## How it works
-- Input: `unison-io-speech` records audio, runs ASR locally when hardware permits, and emits `speech.intent` events with text + confidence.
-- Gateway: `unison-io-speech` adapts transcripts into `IntentRequest` (channel `speech`), forwards to the core orchestrator.
-- Output: orchestrator responses can include TTS payloads; renderer/shell plays audio and shows captions.
-- Orchestrator: single brain for identity, consent, policy, and skills routing; speech is just another channel id.
+
+- Input: the speech service captures audio and produces transcripts (local-first, configurable).
+- Orchestration: transcripts are converted into intent requests and routed through the orchestrator like any other modality.
+- Output: responses can include TTS; when a display is present, content can be rendered visually for readability and accessibility.
 
 ## Privacy & locality
-- Audio stays on-device by default; remote ASR/TTS is opt-in.
-- Mic access is mediated via policy/consent; channel-tagged intents enable per-channel auditing.
+
+- Audio stays on-device by default; any remote ASR/TTS is opt-in and policy-governed.
+- Microphone access is mediated by consent and policy; modality metadata supports auditing.
 
 ## Developer notes
-- Repo: [`unison-io-speech`](https://github.com/project-unisonOS/unison-io-speech)
-- Channel id: `speech`
-- Config: ASR/TTS providers (local-first), hotword/press-to-talk options, caption display via shell.
-- Testing: unit + integration paths in repo; use replay audio fixtures for deterministic validation.
+
+- Repo: `https://github.com/project-unisonOS/unison-io-speech`
+- Channel: `speech`

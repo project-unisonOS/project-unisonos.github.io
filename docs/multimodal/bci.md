@@ -1,25 +1,25 @@
 # BCI I/O
 
-Brain-computer interface (BCI) input is treated as a first-class modality alongside speech, vision, Braille, and sign. BCI intents flow through the same orchestrator channel, so policy, consent, and skills routing stay consistent.
+Brain-computer interface (BCI) input is treated as a first-class modality alongside voice, vision, Braille, and sign. BCI intents flow through the same orchestration path so policy, consent, and auditing stay consistent.
 
-## Experience (person-first)
-- Pair supported headsets/streams; clear indicators when BCI is active.
-- Use BCI-derived intents for control or assistive inputs; opt-in at onboarding and in-session.
-- Profiles/calibration persist locally; users can pause/disable at any time.
+## Experience
+
+- Pair supported headsets/streams with clear indicators when BCI is active.
+- Use BCI-derived intent as an assistive input path when appropriate.
+- Calibration and preferences persist locally; BCI can be paused or disabled at any time.
 
 ## How it works
-- Service: `unison-io-bci` ingests LSL/BLE/serial streams (e.g., Muse/OpenBCI), manages decoders, HID mapping, and exports.
-- Endpoints: `/bci/devices{attach,get}`, `/bci/decoders`, `/bci/intents` (WS), `/bci/raw` (WS), `/bci/export`, `/bci/hid-map`, health/metrics.
-- Gateway: BCI-derived intents are adapted into `IntentRequest` (channel `bci`) and sent to the core orchestrator.
-- Orchestrator: central policy/skills routing; channel metadata enables per-channel scopes and auditing.
+
+- Input: the BCI service ingests device streams and produces derived signals and/or intent events.
+- Orchestration: BCI intent is converted into intent requests and routed through the orchestrator like any other modality.
+- Output: responses are rendered through available outputs (visual, voice, Braille, etc.).
 
 ## Privacy & locality
-- Raw streams stay local; exports are opt-in and scoped.
-- Consent/policy scopes (e.g., `bci.intent.subscribe`, `bci.raw.read`, `bci.export`) gate access.
-- Profiles/calibration stored locally (context/storage services).
+
+- Raw streams stay local by default; any export is explicit and policy-governed.
+- Profiles and calibration are stored locally.
 
 ## Developer notes
-- Repo: [`unison-io-bci`](https://github.com/project-unisonOS/unison-io-bci)
-- Channel id: `bci`
-- Config: device profiles, decoder registry, HID maps, export limits.
-- Docs/specs: `unison-docs/dev/BCI_INTEGRATION.md`, `unison-docs/dev/specs/bci-permissions.md`, `unison-docs/dev/specs/schemas/event-envelope.md`.
+
+- Repo: `https://github.com/project-unisonOS/unison-io-bci`
+- Channel: `bci`

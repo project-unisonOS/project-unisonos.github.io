@@ -1,23 +1,24 @@
 # Braille I/O
 
-Braille is a first-class modality in UnisonOS for tactile reading and input. Braille devices plug into the same orchestrator channel system, ensuring policy and skills routing are consistent with speech, sign, vision, and BCI.
+Braille is a first-class modality in UnisonOS for tactile reading and input. Braille interaction flows through the same orchestration path as other modalities so consent, policy, and auditing are consistent.
 
-## Experience (person-first)
-- Read system responses and app content via Braille output.
-- Input via Braille keyboard/controls, with immediate feedback and confirmation prompts.
-- Available at lock screen, onboarding, and throughout sessions; clear device status and pairing flows.
+## Experience
+
+- Read responses and focus text via refreshable Braille output.
+- Use Braille input to express intent when available (for example: routing keys, navigation, and entry).
+- Pairing and device status are explicit and under the person’s control.
 
 ## How it works
-- Service: `unison-io-braille` discovers/pairs devices (HID/BT), handles translators, drivers, and focus feeds.
-- Gateway: Braille input is adapted into `IntentRequest` (channel `braille`); Braille output renders orchestrator responses.
-- Orchestrator: central policy, consent, and skills routing; channel metadata enables per-channel auditing and preferences.
+
+- Device I/O: the Braille service discovers and pairs devices, manages translation, and provides a focus feed.
+- Orchestration: Braille input is converted into intent requests; output is rendered from orchestrator responses and focus state.
 
 ## Privacy & locality
-- Device pairing and profiles stored locally; no remote sharing of text/controls unless explicitly allowed.
-- Channel-tagged intents enable fine-grained consent/policy across tactile interactions.
+
+- Pairing and profiles are stored locally; sharing is explicit and policy-governed.
+- Modality metadata supports consent/policy decisions and auditing.
 
 ## Developer notes
-- Repo: [`unison-io-braille`](https://github.com/project-unisonOS/unison-io-braille)
-- Channel id: `braille`
-- Config: device drivers, translators, focus feed options, pairing profiles.
-- Testing: use simulated devices/HID events; replay fixtures for focus feed and output rendering.
+
+- Repo: `https://github.com/project-unisonOS/unison-io-braille`
+- Channel: `braille`
