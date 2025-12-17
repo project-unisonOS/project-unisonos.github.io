@@ -28,17 +28,7 @@ nav:
       - Inference: architecture/inference.md
   - Developers:
       - Releases: developers/releases.md
-      - Onboarding:
-          - Get Started: developers/get-started.md
-          - Install Options (Offline/Online): developers/install-options.md
-          - Prerequisites: developers/prerequisites.md
-          - Workspace & Repos: developers/workspace-and-repos.md
-          - Devstack Setup: developers/devstack.md
-          - Renderer & Shell: developers/renderer-and-shell.md
-          - Build, Deploy, and Images: developers/workflow-design.md
-          - Testing: developers/testing.md
-          - Hardware Deployment: developers/hardware.md
-          - Images, Builds, and Releases: developers/images-builds-and-releases.md
+      - Onboarding: developers/onboarding.md
       - Deployment:
           - Install (WSL2): developers/install-wsl2.md
           - Install (Linux VM): developers/install-linux-vm.md
