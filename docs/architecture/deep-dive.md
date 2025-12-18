@@ -90,6 +90,7 @@ Core control plane:
 - **Intent Graph** – Front-end for routing intents into the orchestrator.
 - **Policy / Consent / Auth** – Governance and identity primitives for all sensitive flows.
 - **Inference** – Model execution gateway (local-first, provider-backed).
+- **Capability Resolver** – Capability discovery/installation/execution gate that enforces manifests, policy, and safe defaults.
 
 State and data:
 
@@ -109,6 +110,83 @@ Infrastructure commonly used:
 - **Redis** (cache/coordination)
 - **Neo4j** (graph persistence in devstack)
 - **NATS/JetStream** (event streaming in platform compose)
+
+## System Capabilities (Resolver, Manifests, and Safe Execution)
+
+UnisonOS uses a capability system to connect intents to concrete tools, connectors, MCP servers, and skill packs. This system is designed to keep execution **policy-governed** and **auditable**, and to prevent ad-hoc “direct tool calls” that bypass platform controls.
+
+### Authority model (planner contract)
+
+At a high level:
+
+- The **interaction model** turns input into structured intent (it does not execute).
+- The **planner/orchestrator** is responsible for planning and must resolve capabilities before any execution step.
+- The **capability resolver** is the execution gate:
+  - discovers candidates for an intent
+  - installs (when allowed)
+  - runs an installed/declared capability
+  - persists manifest state
+  - enforces policy, permissions, and safe defaults
+
+This separation is what allows UnisonOS to add new tools and integrations without expanding the trusted surface area of the orchestrator itself.
+
+### Capability lifecycle (end-to-end)
+
+In a compliant flow:
+
+1. Planner calls `capability.search(intent, constraints)` to discover candidates.
+2. Planner calls `capability.resolve(step)` to select/validate a concrete candidate.
+3. Planner calls `capability.install(candidate)` if the capability is not already available locally (and policy allows).
+4. Planner calls `capability.run(capability_id, args)` to execute.
+5. Resolver persists state and exposes inventory operations (`capability.list/get/remove`).
+
+### Manifests: the source of truth (and why they matter)
+
+Capabilities are declared in a manifest and validated against a platform schema before being persisted or executed. A manifest describes:
+
+- the capability **type** (tool, MCP server, skill pack, A2A peer, workflow)
+- **version pinning** (exact semver, not ranges)
+- **origin/provenance** (local or URL + digest/signature fields)
+- **runtime** characteristics
+- **permissions** (especially network egress allowlists)
+- **trust level** and enablement state
+- **secrets** as references only (never embedded values)
+
+### Seeded capabilities: base + local layering
+
+Images can ship with a curated baseline manifest:
+
+- `manifest.base.json` – read-only, shipped in the image
+- `manifest.local.json` – mutable, persisted on disk
+
+Resolver view = merge(base + local), where local overrides base entries by `id`. Runtime writes (installs, enablement changes, secret bindings) always go to the local manifest.
+
+This makes “out-of-the-box” experiences fast (common local tools resolve immediately), while still allowing safe customization and resets (local state can be cleared without modifying the shipped baseline).
+
+### Connectors, OAuth onboarding, and secrets (no secrets in manifests)
+
+Network connectors (email/calendar/chat/etc.) are typically shipped **disabled by default** and require explicit onboarding:
+
+- The resolver supports OAuth device authorization flows suitable for headless / voice-first environments.
+- Refresh tokens are stored in a secrets backend and referenced in the manifest via opaque handles (for example, `secret://...`).
+- Audit logs are structured and redacted so token material never appears in logs.
+
+### Egress controls and runtime enforcement
+
+All outbound calls for registry discovery, OAuth, MCP tool invocation, and A2A delegation are expected to pass through a single egress control point:
+
+- **deny-by-default** for non-loopback egress unless allowlisted by policy
+- per-capability `permissions.network` enforcement with explicit allowlists
+- safe defaults for binding and authentication (local-only service surfaces unless explicitly configured)
+
+### How comms fits now (refactor impact)
+
+Historically, the orchestrator called `unison-comms` directly (`/comms/*`). In the current direction:
+
+- `unison-comms` provides a domain-level comms surface and normalization logic.
+- comms actions are exposed as a tool surface, and the orchestrator executes them by resolving and running `comms.*` capabilities via the resolver.
+
+This keeps “what to do” (planning) separate from “how to safely do it” (resolver enforcement), and ensures that connectors and network behavior remain policy-governed and auditable.
 
 ## Storage and Persistence
 
