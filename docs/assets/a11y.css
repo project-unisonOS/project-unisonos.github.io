@@ -17,6 +17,36 @@
   border: 0;
 }
 
+.skip-link {
+  position: fixed;
+  left: 0.75rem;
+  top: 0.75rem;
+  padding: 0.5rem 0.75rem;
+  background: Canvas;
+  color: CanvasText;
+  border: 2px solid CanvasText;
+  border-radius: 0.25rem;
+  z-index: 1100;
+  transform: translateY(-200%);
+  transition: transform 120ms ease-in-out;
+}
+
+.skip-link:focus,
+.skip-link:focus-visible {
+  transform: translateY(0);
+  outline: var(--a11y-focus-outline);
+  outline-offset: var(--a11y-focus-offset);
+}
+
+.decorative-separator {
+  border-top: 1px solid rgba(0, 0, 0, 0.2);
+  margin: 1.5rem 0;
+}
+
+html[data-bs-theme='dark'] .decorative-separator {
+  border-top-color: rgba(255, 255, 255, 0.25);
+}
+
 a:focus-visible,
 button:focus-visible,
 [role='button']:focus-visible,
