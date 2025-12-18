@@ -15,7 +15,7 @@ Phase 1.1 supports a lean base install plus post-install **model packs**.
 
 - Offline model packs: `unison-models install --path /path/to/pack.tgz`
 - Online model packs: `unison-models install --fetch https://…/pack.tgz`
-- Details: [Install Options](install-options.md) and [Model Packs](model-packs.md)
+- Details: [Install Options](install-options.md) and [Inference (Model Packs)](../architecture/inference.md#model-packs)
 
 ## 3) Prerequisites
 

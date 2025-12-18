@@ -9,7 +9,7 @@ This page summarizes the main services and libraries in the Unison workspace and
 - **Policy** – Safety and policy evaluation for high-impact actions.
 - **Consent** – Dedicated service for consent grant issuance and introspection.
 - **Auth** – Authentication, RBAC, and token issuance.
-- **Inference** – Gateway service that fronts local and optional remote model providers (see also: [Model packs](../developers/model-packs.md)).
+- **Inference** – Gateway service that fronts local and optional remote model providers (see [Inference](../architecture/inference.md)).
 
 ## Context and Storage
 
