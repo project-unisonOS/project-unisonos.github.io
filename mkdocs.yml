@@ -75,6 +75,3 @@ extra_css:
   - assets/nav-contrast.css
   - assets/a11y.css
   - assets/nav-submenu.css
-
-extra_javascript:
-  - assets/nav-submenu.js
