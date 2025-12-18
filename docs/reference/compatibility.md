@@ -9,6 +9,6 @@ Unison services are versioned to work together in known combinations.
 
 Existing compatibility matrix (canonical docs):
 
-- https://github.com/project-unisonOS/unison-docs/blob/main/dev/compatibility-matrix.md
+- [Link to Compatibility Matrix](https://github.com/project-unisonOS/unison-docs/blob/main/dev/compatibility-matrix.md)
 
 When planning upgrades, coordinate updates across orchestrator, context, inference, IO, policy, and storage services.
