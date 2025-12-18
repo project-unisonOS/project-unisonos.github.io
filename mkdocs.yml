@@ -12,11 +12,7 @@ nav:
   - Experience:
       - Experience Principles: experience.md
       - Multimodal Interaction: experience/multimodal.md
-      - Speech: multimodal/speech.md
-      - Sign: multimodal/sign-language.md
-      - Braille: multimodal/braille.md
-      - Vision: multimodal/vision.md
-      - BCI: multimodal/bci.md
+      - AI Personality: project/user-owned-ai-personality.md
   - Architecture:
       - Architecture Overview: architecture/overview.md
       - Architecture Deep Dive: architecture/deep-dive.md
@@ -37,7 +33,6 @@ nav:
       - Compatibility: reference/compatibility.md
   - Project:
       - Governance: project/governance.md
-      - AI Personality: project/user-owned-ai-personality.md
       - License: project/license.md
 
 plugins:

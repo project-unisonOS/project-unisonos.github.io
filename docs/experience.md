@@ -58,11 +58,6 @@ When generating an experience, UnisonOS considers available capability + a perso
 Related docs:
 
 - [Multimodal Interaction](experience/multimodal.md)
-- [Speech](multimodal/speech.md)
-- [Sign](multimodal/sign-language.md)
-- [Braille](multimodal/braille.md)
-- [Vision](multimodal/vision.md)
-- [BCI](multimodal/bci.md)
 
 ## Accessibility as Personalization
 
