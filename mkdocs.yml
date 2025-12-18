@@ -12,7 +12,7 @@ nav:
   - Experience:
       - Experience Principles: experience.md
       - Multimodal Interaction: experience/multimodal.md
-      - AI Personality: project/user-owned-ai-personality.md
+      - AI Personality: experience/ai-personality.md
   - Architecture:
       - Architecture Overview: architecture/overview.md
       - Architecture Deep Dive: architecture/deep-dive.md

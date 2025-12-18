@@ -2,7 +2,7 @@
 
 UnisonOS makes assistant personality and priorities **person-specific**, portable, and independent from any specific model.
 
-See also: [Default System Prompt (Canonical)](../experience/system-prompt.md).
+See also: [Default System Prompt (Canonical)](system-prompt.md).
 
 ## Why Separate Model from Identity?
 Models change. Hardware changes. Providers change.
