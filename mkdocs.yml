@@ -32,10 +32,7 @@ nav:
       - Contributing: developers/contributing.md
   - Reference:
       - Specs & Schemas: reference/specs.md
-      - APIs:
-          - Overview: reference/apis.md
-          - Storage API: reference/storage-api.md
-          - Actuation / VDI API: reference/actuation-vdi-api.md
+      - APIs: reference/apis.md
       - Security: reference/security.md
       - Compatibility: reference/compatibility.md
   - Project:

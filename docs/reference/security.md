@@ -1,21 +1,5 @@
 # Security
 
-## What this page covers
-
-- The core security and privacy stance for UnisonOS.
-- How identity, policy, consent, and logging work together.
-- Where to report issues and find deeper security material.
-
-## Who this page is for
-
-- Operators responsible for running UnisonOS in production or lab environments.
-- Developers who need to understand the security expectations for services and features.
-
-## Before you read this
-
-- Review [Architecture Overview](../architecture/overview.md) for the main components and flows.
-- See [Storage API](storage-api.md) for details on how data and audit events are persisted.
-
 Security and privacy are baked into UnisonOS by design. The sections that follow describe how the platform remains trustworthy for people and their data.
 
 ## Core stance (plain language)
@@ -31,16 +15,13 @@ Security and privacy are baked into UnisonOS by design. The sections that follow
 - **Automation and updates**: Automated scans watch for vulnerable dependencies. Shared security checks run in every repository and dependency management keeps components current.
 - **Accessibility and privacy for labs features**: Opt in features such as wake words default to off and can be centrally disabled. They are designed to keep audio local unless explicitly configured otherwise.
 
-## Wake Word and Always On Mic (Labs)
+## Data Boundaries and Auditability
 
-These features are opt in and off by default:
+- **Context** holds per-person profile/session state (consent-aware).
+- **Storage** holds artifacts, vault entries, and audit events.
+- **Graph services** may maintain graph-shaped state for recall and relationships.
 
-- Wake word detection runs locally. Audio stays on the device unless an operator explicitly connects a cloud speech provider behind `unison-io-speech`.
-- The active wake word lives in the person profile in `unison-context`.
-- Environment flags control always on microphone behavior:
-  - `UNISON_ALWAYS_ON_MIC=false` (default) means the microphone activates only when the user starts it.
-  - `UNISON_ALWAYS_ON_MIC=true` means the microphone starts on load when permitted by the device and browser.
-- Operators can disable wake word and microphone behavior by leaving Porcupine keys unset, forcing `UNISON_ALWAYS_ON_MIC=false`, or removing related user interface elements.
+Sensitive flows should emit audit events and avoid logging personal data or secrets.
 
 ## Reporting Issues
 

@@ -20,4 +20,4 @@ These guarantees align with the broader platform stance on privacy, consent, and
 
 Files and other artifacts produced by VDI runs are written to the storage service. The orchestrator and experience renderer then use storage identifiers to retrieve and present results as part of the generated experience.
 
-For low level API details, see the [Actuation and VDI API reference](../reference/actuation-vdi-api.md).
+For low level API details, see [Reference → APIs](../reference/apis.md#actuation--vdi-api-reference).

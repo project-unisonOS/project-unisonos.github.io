@@ -23,6 +23,24 @@ Unison services share a small set of consistent patterns:
 
 These envelopes allow the orchestrator to reason over heterogeneous tools while keeping governance (policy/consent/audit) centralized.
 
+## Shared Library: `unison-common`
+
+Most Python services in the stack share a common runtime library: `unison-common`.
+
+What it provides today:
+
+- **Envelope validation**: programmatic + JSON Schema validation helpers used across services.
+- **Schemas shipped with the runtime**: model pack manifest schema, prompt schemas/templates, and the multimodal manifest schema.
+- **Prompt engine + injection**: compiles layered prompt inputs under `UNISON_PROMPT_ROOT` and injects the compiled system prompt at model call sites.
+- **Model pack tooling**: validates and resolves model pack manifests and supports “required pack” enforcement via configuration.
+- **Tracing + logging**: OpenTelemetry helpers, middleware, and structured logging utilities.
+- **Auth and request utilities**: JWT helpers, idempotency middleware, HTTP client helpers, and replay tooling used for debugging.
+
+Where to look:
+
+- Repo: https://github.com/project-unisonOS/unison-common
+- Runtime schemas: `unison-common/src/unison_common/schemas/`
+
 ## Persistence and Messaging (What Runs Under the Hood)
 
 In current deployments:
