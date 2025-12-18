@@ -56,11 +56,13 @@ UnisonOS separates the **model** from the **assistant identity**. The model is t
 UnisonOS assembles a deterministic system prompt from four layers:
 
 1. **Unison Base Policy** (immutable)
-2. **User Identity & Values** (persistent)
-3. **User Priorities & Directives** (mutable)
+2. **Person Identity & Values** (persistent)
+3. **Person Priorities & Directives** (mutable)
 4. **Session Context** (ephemeral)
 
-### Prompt Root (User-Owned)
+See [Default System Prompt (Canonical)](../experience/system-prompt.md) for the base prompt text.
+
+### Prompt Root (Person-Owned)
 
 Prompt root directory:
 
