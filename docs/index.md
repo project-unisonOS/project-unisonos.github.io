@@ -52,7 +52,7 @@ Developers can go beyond traditional apps and build intent-responsive capabiliti
 - IO modules for new modalities like Braille, sign language, or BCI.
 - Domain-specific reasoning engines.
 - Extensions that plug into the orchestration pipeline.
-- Interfaces that adapt to user context in real time.
+- Interfaces that adapt to a person’s context in real time.
 
 UnisonOS offers a platform where higher-level thinking directly shapes system behavior.
 

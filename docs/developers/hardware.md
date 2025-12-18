@@ -17,7 +17,7 @@ This page summarizes how to run Unison on physical devices or edge hardware.
 ## Prepare the Device
 
 - Install required packages such as Docker, Docker Compose, Python, and Git.
-- Enable and start the Docker service; add the user to the Docker group for convenience.
+- Enable and start the Docker service; add your account to the Docker group for convenience.
 - For IO adapters:
   - Enable `libusb`/`hidapi` support for USB Braille displays; ensure udev rules allow access to vendor VID/PIDs.
   - Install `evdev`/`pyedflib` where needed for BCI HID mappings and EDF exports; BLE adapters are required for Muse/OpenBCI.

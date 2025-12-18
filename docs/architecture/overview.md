@@ -7,7 +7,7 @@ This page summarizes how the core Unison services cooperate to deliver edge-firs
 - **Intent Graph** – First stop for intents coming from the experience renderer, Agent VDI, or I/O services. Normalizes requests and forwards them to the orchestrator.
 - **Orchestrator** – Central router and planner. Enforces auth and consent, orchestrates skills/tools, calls inference, and manages conversational or task state.
 - **Policy and Consent** – Evaluate safety and consent before actions are executed and provide audit records.
-- **Auth** – Issues and validates tokens for service-to-service and user-bound flows.
+- **Auth** – Issues and validates tokens for service-to-service and person-bound flows.
 - **Inference** – Gateway to model providers (local-first; remote providers are optional), invoked by the orchestrator when generation is needed.
 
 ## Context, Storage, and Profiles

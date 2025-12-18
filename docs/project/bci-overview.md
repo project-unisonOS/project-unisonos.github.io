@@ -30,6 +30,6 @@ UnisonOS treats brain-computer interface (BCI) input as a first-class modality a
 - Raw data stays local; exports are opt-in and scoped; profiles/calibration should be stored encrypted (`unison-context`/`unison-storage`).
 
 ## Roadmap highlights
-- Add tested BLE/serial streaming for specific headsets, richer decoders (SSVEP/SMR), per-user profiles/HID mappings.
+- Add tested BLE/serial streaming for specific headsets, richer decoders (SSVEP/SMR), per-person profiles/HID mappings.
 - Linux/WSL CI to run `unison-io-bci` tests (auth/export/raw).
 - UI/UX hooks in renderer/VDI for BCI control mode and indicators.
