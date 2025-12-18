@@ -37,7 +37,7 @@ nav:
       - Compatibility: reference/compatibility.md
   - Project:
       - Governance: project/governance.md
-      - User-Owned AI Personality: project/user-owned-ai-personality.md
+      - AI Personality: project/user-owned-ai-personality.md
       - License: project/license.md
 
 plugins:
