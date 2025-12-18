@@ -33,6 +33,7 @@ nav:
       - Compatibility: reference/compatibility.md
   - Project:
       - Governance: project/governance.md
+      - Roadmap: project/roadmap.md
       - License: project/license.md
 
 plugins:
