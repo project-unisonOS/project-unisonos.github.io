@@ -29,19 +29,11 @@ nav:
   - Developers:
       - Releases: developers/releases.md
       - Onboarding: developers/onboarding.md
-      - Deployment:
-          - Install (WSL2): developers/install-wsl2.md
-          - Install (Linux VM): developers/install-linux-vm.md
-          - Install (Bare Metal): developers/install-bare-metal.md
-          - Testing: developers/testing.md
       - Platform:
           - Prompt Engine: developers/prompt-engine.md
           - System Prompt Injection: developers/system-prompt-injection.md
           - Model Packs: developers/model-packs.md
-      - Contribute and Standards:
-          - Coding Conventions: developers/coding-conventions.md
-          - Repository Roles: developers/repo-roles.md
-          - Contributing: developers/contributing.md
+      - Contributing: developers/contributing.md
   - Reference:
       - Specs & Schemas: reference/specs.md
       - APIs:
@@ -63,6 +55,11 @@ plugins:
         project/roadmap.md: developers/get-started.md
         developers/evaluate-alpha.md: developers/releases.md
         developers/renderer-and-shell.md: developers/renderer.md
+        developers/install-wsl2.md: developers/releases.md
+        developers/install-linux-vm.md: developers/releases.md
+        developers/install-bare-metal.md: developers/releases.md
+        developers/coding-conventions.md: developers/contributing.md
+        developers/repo-roles.md: developers/contributing.md
 
 markdown_extensions:
   - toc:

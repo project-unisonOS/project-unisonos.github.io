@@ -13,12 +13,6 @@ Alpha releases are intended for developer evaluation: installable, boots to “r
 - [Linux VM download/install (GitHub)](https://github.com/project-unisonOS/unison-platform/blob/main/docs/install-linux-vm.md)
 - [Bare metal download/install (GitHub)](https://github.com/project-unisonOS/unison-platform/blob/main/docs/install-bare-metal.md)
 
-On this site, use the quickstarts:
-
-- WSL2: `install-wsl2.md`
-- Linux VM: `install-linux-vm.md`
-- Bare metal: `install-bare-metal.md`
-
 ## What To Download
 
 For `v0.5.0-alpha.N`, a single release tag includes **all** evaluation artifacts (WSL2 + VM + bare metal) plus a manifest and checksums.
