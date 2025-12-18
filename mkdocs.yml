@@ -74,4 +74,3 @@ markdown_extensions:
 extra_css:
   - assets/nav-contrast.css
   - assets/a11y.css
-  - assets/nav-submenu.css
