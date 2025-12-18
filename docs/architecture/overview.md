@@ -33,6 +33,6 @@ Together, these services implement secure edge profiles that other components ca
 ## Models in the Architecture
 
 - **Inference is a service**: the orchestrator calls the inference service over HTTP to run models, rather than linking model runtimes into every service.
-- **Model packs**: releases ship versioned “model packs” that describe which models to load for a given modality/task and where to put them on disk. See [Inference](inference.md#model-packs).
+- **Model packs**: releases ship versioned “model packs” that describe which models to load for a given modality/task and where to put them on disk. See [Model Packs](deep-dive.md#model-packs).
 
-Next: see [Architecture Deep Dive](deep-dive.md) for flows and boundaries, and [Inference](inference.md) for how model execution is configured.
+Next: see [Architecture Deep Dive](deep-dive.md) for flows, boundaries, and model execution details.

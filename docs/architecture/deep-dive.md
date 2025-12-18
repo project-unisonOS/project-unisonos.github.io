@@ -62,4 +62,125 @@ In current deployments:
 - **Remote calls are policy-gated**: if you enable a remote inference provider or external connector, it must be explicit, auditable, and consent-aware.
 - **Artifacts and sensitive state**: durable data flows through the storage and context APIs, not ad-hoc per-service databases.
 
-See [Storage & Persistence](components/storage-and-persistence.md) and [Actuation / VDI & VPN](components/actuation-vdi-vpn.md) for the concrete boundaries used by tools and actuators.
+## Edge-First and Optional Cloud
+
+UnisonOS is designed to run primarily on edge devices. Cloud connectivity is optional and must be explicitly configured, auditable, and consent-aware.
+
+### Edge First Runtime
+
+- Core services (orchestrator, policy, auth, consent, context, context-graph, storage, inference, intent-graph, renderer, I/O) run on the device.
+- Local models are loaded via inference when configured (for example, through devstack profiles or production compose).
+- Profiles and context are stored locally in consent-aware services backed by local infrastructure (for example: Postgres + Redis, and Neo4j in the devstack).
+
+### Optional Cloud Inference
+
+- Inference can be configured to reach remote model providers.
+- Whether remote providers are used is controlled by configuration, policy, and consent.
+
+### Profile Sync (Current Status)
+
+- Current releases treat **profiles, context, and artifacts as on-device state**. There is no default “profile sync to cloud” behavior in the core stack.
+- If you add synchronization as an integration, treat it as a high-impact data flow: explicit consent, audit events, and offline-first behavior.
+
+## Components (Current Stack)
+
+Core control plane:
+
+- **Orchestrator** – Central intent router and coordinator.
+- **Intent Graph** – Front-end for routing intents into the orchestrator.
+- **Policy / Consent / Auth** – Governance and identity primitives for all sensitive flows.
+- **Inference** – Model execution gateway (local-first, provider-backed).
+
+State and data:
+
+- **Context** – Profile + session store (consent-aware).
+- **Context Graph** – Graph-shaped context used for recall/relationships (Neo4j in devstack).
+- **Storage** – Durable KV + artifacts + vault + audit behind a single service API.
+
+Actuation and I/O:
+
+- **Experience Renderer** – Real-time renderer that turns state into an experience and emits intents back into the control plane.
+- **Agent VDI** – Desktop/browser automation actuator used for GUI-only workflows.
+- **I/O services** – Speech, vision, sign, Braille, BCI, and other modality adapters.
+
+Infrastructure commonly used:
+
+- **Postgres** (durable persistence)
+- **Redis** (cache/coordination)
+- **Neo4j** (graph persistence in devstack)
+- **NATS/JetStream** (event streaming in platform compose)
+
+## Storage and Persistence
+
+Storage is the unified persistence layer for UnisonOS artifacts and durable service records. It provides a single API for:
+
+- Durable key/value records
+- Working memory entries
+- Vault entries (encrypted blobs)
+- Audit events
+- Objects (binary artifacts + metadata)
+
+In current implementations, the storage service persists metadata to **Postgres** (required in production; SQLite is only allowed for local/dev), and stores object payloads on the local storage volume.
+
+Responsibilities:
+
+- **Working memory** – Long-lived state for tasks and sessions, including summaries and embeddings metadata.
+- **Vault** – Encrypted secrets such as credentials, tokens, and API keys.
+- **Objects and files** – Documents, downloads, and artifacts with metadata.
+- **Audit** – Append-only records of who did what and when for sensitive operations.
+
+Security and privacy:
+
+- Per-person and per-tenant scoping is enforced at the API layer.
+- Secrets and sensitive fields are encrypted at rest.
+- Audit events are append-only to preserve provenance.
+
+## Actuation (VDI and VPN)
+
+Actuation is the layer that allows UnisonOS to cause effects in external systems beyond returning text or speech. Actuators are governed by policy and consent.
+
+VDI provides a headless desktop/browser environment used for GUI-style web flows (multi-page sites, downloads, workflows that lack APIs).
+
+VPN boundary:
+
+- The VDI container shares a network namespace with a VPN client.
+- All VDI egress is expected to pass through that VPN boundary so traffic has predictable egress and can fail closed.
+
+Intent → VDI flow (high level):
+
+1. Intent arrives and is normalized into an envelope.
+2. Orchestrator checks policy/consent.
+3. Orchestrator emits an Action Envelope describing steps.
+4. Actuation selects VDI when a browser/desktop workflow is required.
+5. VDI executes steps and writes artifacts to storage.
+6. Results return to the orchestrator and are rendered in the experience.
+
+API details live in [Reference → APIs](../reference/apis.md#actuation-vdi-api-reference).
+
+## Inference and Model Execution
+
+Inference is a dedicated service that runs models and exposes a stable API to the rest of the platform. Providers are swappable behind the inference boundary.
+
+Common configuration knobs:
+
+- `UNISON_INFERENCE_PROVIDER` (example: `ollama`)
+- `UNISON_INFERENCE_MODEL` (example: `qwen2.5:1.5b`)
+- `UNISON_MODEL_DIR` (example: `/var/lib/unison/models`)
+
+### Model Packs
+
+Phase 1.1 ships lean base images and distributes model weights as **model packs** that can be installed offline or fetched online.
+
+- Default model directory: `/var/lib/unison/models` (override: `UNISON_MODEL_DIR`)
+- CLI: `unison-models list|verify|install --path <pack.tgz>|install --fetch <url-or-alias>`
+- Boot enforcement: `UNISON_MODEL_PACK_REQUIRED=pack_id@version`
+
+### Prompt Engine and System Prompt Injection
+
+UnisonOS separates the model from the assistant identity. The model is treated as stateless: UnisonOS compiles and injects the active system prompt at runtime.
+
+- Prompt root: `UNISON_PROMPT_ROOT` (default: `~/.unison/prompt`)
+- Compiled prompt path: `~/.unison/prompt/compiled/active_system_prompt.md`
+- Observability: `prompt.injection.applied` trace events include prompt path + hash (prompt content is never logged).
+
+See [Default System Prompt (Canonical)](../experience/system-prompt.md) for the base prompt text.

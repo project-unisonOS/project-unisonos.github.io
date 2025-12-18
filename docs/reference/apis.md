@@ -16,7 +16,7 @@ See Architecture pages for system roles:
 
 - [Architecture Overview](../architecture/overview.md)
 - [Architecture Deep Dive](../architecture/deep-dive.md)
-- [Inference](../architecture/inference.md)
+- [Inference and Model Execution](../architecture/deep-dive.md#inference-and-model-execution)
 
 ## API Documentation
 
@@ -44,7 +44,7 @@ Common endpoints:
   - `POST /audit` – Append structured audit events (actor, action, target, timestamps).
   - `GET /audit` – Query audit records where enabled.
 
-For architectural context, see [Storage & Persistence](../architecture/components/storage-and-persistence.md).
+For architectural context, see [Storage & Persistence](../architecture/deep-dive.md#storage-and-persistence).
 
 ## Actuation / VDI API (Reference)
 
@@ -55,4 +55,4 @@ Common endpoints:
 - `POST /vdi/tasks` – Submit an Action Envelope describing browser/desktop steps. Returns a task ID.
 - `GET /vdi/tasks/{id}` – Retrieve task status and result envelope, including any storage object IDs created during execution.
 
-See [Actuation / VDI & VPN](../architecture/components/actuation-vdi-vpn.md) for the intent → action → result flow and the VPN boundary.
+See [Actuation / VDI & VPN](../architecture/deep-dive.md#actuation-vdi-and-vpn) for the intent → action → result flow and the VPN boundary.
