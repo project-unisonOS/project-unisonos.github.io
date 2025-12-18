@@ -140,7 +140,7 @@ In a compliant flow:
 4. Planner calls `capability.run(capability_id, args)` to execute.
 5. Resolver persists state and exposes inventory operations (`capability.list/get/remove`).
 
-### Manifests: the source of truth (and why they matter)
+### Manifests: the source of truth
 
 Capabilities are declared in a manifest and validated against a platform schema before being persisted or executed. A manifest describes:
 
@@ -178,15 +178,6 @@ All outbound calls for registry discovery, OAuth, MCP tool invocation, and A2A d
 - **deny-by-default** for non-loopback egress unless allowlisted by policy
 - per-capability `permissions.network` enforcement with explicit allowlists
 - safe defaults for binding and authentication (local-only service surfaces unless explicitly configured)
-
-### How comms fits now (refactor impact)
-
-Historically, the orchestrator called `unison-comms` directly (`/comms/*`). In the current direction:
-
-- `unison-comms` provides a domain-level comms surface and normalization logic.
-- comms actions are exposed as a tool surface, and the orchestrator executes them by resolving and running `comms.*` capabilities via the resolver.
-
-This keeps “what to do” (planning) separate from “how to safely do it” (resolver enforcement), and ensures that connectors and network behavior remain policy-governed and auditable.
 
 ## Storage and Persistence
 
