@@ -4,7 +4,8 @@
 
 function closeSiblingSubmenus(parentMenu, keepMenu) {
   if (!parentMenu) return;
-  for (const submenu of parentMenu.querySelectorAll(":scope > .dropdown-submenu > .dropdown-menu.show")) {
+  const siblings = parentMenu.querySelectorAll(".dropdown-submenu > .dropdown-menu.show");
+  for (const submenu of siblings) {
     if (submenu !== keepMenu) submenu.classList.remove("show");
   }
 }
@@ -18,7 +19,9 @@ document.addEventListener("DOMContentLoaded", () => {
       const li = trigger.closest(".dropdown-submenu");
       if (!li) return;
 
-      const submenu = li.querySelector(":scope > .dropdown-menu");
+      const submenu = Array.from(li.children).find(
+        (child) => child instanceof HTMLElement && child.classList.contains("dropdown-menu"),
+      );
       if (!submenu) return;
 
       const parentMenu = li.closest(".dropdown-menu");
@@ -37,4 +40,3 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 });
-
