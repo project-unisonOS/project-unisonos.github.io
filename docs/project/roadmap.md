@@ -19,11 +19,25 @@ UnisonOS delivers a calm, intention-centric, real-time generated experience that
   - Repo: https://github.com/project-unisonOS/unison-payments
 - **Policy-governed monetization**: ensure financial actions are explicit, confirmable, and auditable, with safe defaults and clear rollback paths.
 
+## Evolving Actuation (Embodiment of AI)
+
+- **Smart home integration**: privacy-preserving control over home devices and automations (lights, climate, security, media) with explicit consent and audit.
+- **Immersive experiences**: richer actuation surfaces (spatial/3D, AR/VR-style presentation and control) while keeping the experience intention-centric.
+- **Robotic actuation**: integrate safe, policy-governed control over physical actuators (robot arms, mobile robots, assistive devices).
+- **Expanded tool safety**: stronger guardrails for high-impact actions (scoped permissions, confirmation patterns, rollback semantics, and per-tool policy).
+
 ## Performance and Device-Specific Optimization
 
 - **Device-aware profiles**: tune default behavior for different device classes (WSL2, VM, bare metal, low-power devices) while keeping the same core experience model.
 - **Latency and throughput**: focus on startup time, turn latency, streaming responsiveness, and resource usage (CPU/GPU/RAM/IO) across the full stack.
 - **Model efficiency**: improve model selection and runtime settings per device capability (quantization, context sizing, batching) while remaining local-first.
+
+## Vertical Domain Support (Privacy-Preserving Specialist Insight)
+
+- **PII-heavy domains**: add first-class domain capabilities for managing and reasoning over sensitive content (e.g., personal health records, personal finance records).
+- **Beyond record storage**: treat domains as privacy-preserving methods of gaining specialist insights (summaries, risk flags, trend analysis, decision support), not just databases.
+- **Consent-first access patterns**: support scoped sharing, explicit approvals, and audit trails for every domain access and transformation.
+- **Local-first by default**: keep ingestion, indexing, and retrieval on-device when possible; allow policy-governed remote compute only when explicitly enabled.
 
 ## Updates and Lifecycle Management
 
