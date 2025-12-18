@@ -55,11 +55,6 @@ plugins:
         project/roadmap.md: developers/get-started.md
         developers/evaluate-alpha.md: developers/releases.md
         developers/renderer-and-shell.md: developers/renderer.md
-        developers/install-wsl2.md: developers/releases.md
-        developers/install-linux-vm.md: developers/releases.md
-        developers/install-bare-metal.md: developers/releases.md
-        developers/coding-conventions.md: developers/contributing.md
-        developers/repo-roles.md: developers/contributing.md
 
 markdown_extensions:
   - toc:
