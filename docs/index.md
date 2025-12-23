@@ -60,7 +60,7 @@ UnisonOS offers a platform where higher-level thinking directly shapes system be
 
 ## The Road Ahead
 
-UnisonOS is early in its journey, but the path is clear: a computing world where the system meets you where you are, understands what you want to accomplish, and reduces the cost of every interaction in time, friction, and cognitive load.
+UnisonOS is early in its journey, but the path is clear: a computing world where the system meets you where you are, understands what you want to accomplish, and reduces the cost of every interaction in time, friction, and cognitive load. UnisonOS is a step forward in the evolution of our relationship with technology, both in terms of how we directly interact with technology and how technology can mediate how we interact with each other.
 
 If the history of computing is a steady march toward more powerful abstraction, UnisonOS is the next frontier: a system where your intention is the primary interface.
 
