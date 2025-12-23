@@ -38,6 +38,8 @@ UnisonOS inverts this relationship.
 
 The system adapts to the person.
 
+Language matters. As Edward Tufte observed, “There are only two industries that call their customers ‘users’: illegal drugs and software.” UnisonOS rejects that framing. People are not “users” of the system. The system exists to serve, adapt to, and respect the person.
+
 ---
 
 ## 2. Abstraction as a Core Principle
