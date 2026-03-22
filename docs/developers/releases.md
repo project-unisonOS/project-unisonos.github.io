@@ -1,6 +1,8 @@
 # Releases
 
-UnisonOS platform images are delivered as **GitHub Release assets** from the `unison-platform` repository (not GHCR).
+UnisonOS platform artifacts are delivered from the `unison-platform` repository.
+
+For the current production-track milestone, the supported installation target is Ubuntu 24.04 native on x86_64 hardware. Release images for WSL2, Linux VM, and bare metal remain evaluation channels.
 
 ## Latest Release Spotlight
 
@@ -17,11 +19,21 @@ Alpha releases are intended for developer evaluation: installable, boots to “r
 
 For `v0.5.0-alpha.N`, a single release tag includes **all** evaluation artifacts (WSL2 + VM + bare metal) plus a manifest and checksums.
 
-## Install instructions
+## Install Instructions
 
-Canonical install page (hosted in the platform repo):
+Canonical install page:
 
-- [Install UnisonOS developer images](https://github.com/project-unisonOS/unison-platform/blob/main/docs/install.md)
+- [Install UnisonOS](https://github.com/project-unisonOS/unison-platform/blob/main/docs/install.md)
+
+Canonical supported path for Milestone 1:
+
+- [Ubuntu native installation](https://github.com/project-unisonOS/unison-platform/blob/main/docs/deployment/ubuntu-native.md)
+
+Evaluation-only paths:
+
+- [WSL2 evaluation install](https://github.com/project-unisonOS/unison-platform/blob/main/docs/install-wsl2.md)
+- [Linux VM evaluation install](https://github.com/project-unisonOS/unison-platform/blob/main/docs/install-linux-vm.md)
+- [Bare metal evaluation install](https://github.com/project-unisonOS/unison-platform/blob/main/docs/install-bare-metal.md)
 
 Expected asset names (for `v0.5.0-alpha.N`):
 
