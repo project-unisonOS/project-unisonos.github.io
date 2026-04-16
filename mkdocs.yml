@@ -19,8 +19,19 @@ nav:
       - Architecture Deep Dive: architecture/deep-dive.md
   - Developers:
       - Install UnisonOS: developers/install-unisonos.md
+      - WSL2 Evaluation Install: developers/install-wsl2.md
+      - Linux VM Evaluation Install: developers/install-linux-vm.md
+      - Bare Metal Evaluation Install: developers/install-bare-metal.md
       - Releases: developers/releases.md
       - Onboarding: developers/onboarding.md
+      - Prerequisites: developers/prerequisites.md
+      - Workspace & Repos: developers/workspace-and-repos.md
+      - Devstack Setup: developers/devstack.md
+      - Renderer: developers/renderer.md
+      - Testing: developers/testing.md
+      - Build, Deploy, and Images: developers/workflow-design.md
+      - Images, Builds, and Releases: developers/images-builds-and-releases.md
+      - Install Options: developers/install-options.md
       - Contributing: developers/contributing.md
   - Reference:
       - Specs & Schemas: reference/specs.md
