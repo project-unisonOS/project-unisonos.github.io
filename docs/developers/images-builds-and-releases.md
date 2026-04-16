@@ -17,6 +17,8 @@ UnisonOS may also publish evaluation images and installers for WSL, virtual mach
 
 ### Evaluation image channels
 
+These channels are intentionally secondary to the supported Ubuntu native install route.
+
 ### WSL bundle
 
 - `unisonos-wsl-<version>.tar.gz` plus a root file system tarball.
@@ -35,7 +37,8 @@ UnisonOS may also publish evaluation images and installers for WSL, virtual mach
 ### Installers
 
 - `install-docker.sh`, `install-native.sh`, and `install-wsl.sh` in `unison-platform/installer/`.
-- Configure the environment, pull images, and enable platform services on supported hosts.
+- For Milestone 1, `install-native.sh` is the canonical supported installer path and pairs with `unisonctl`, `.env.native.template`, and `compose/compose.native.yaml`.
+- These installers configure the environment, pull images, and enable platform services on supported hosts.
 
 ## Build commands and local reproduction
 

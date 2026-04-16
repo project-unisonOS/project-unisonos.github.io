@@ -6,9 +6,10 @@ For the current production-track milestone, the supported installation target is
 
 ## Supported Install Route
 
-Canonical install page:
+Canonical install pages:
 
 - [Install UnisonOS](https://github.com/project-unisonOS/unison-platform/blob/main/docs/install.md)
+- [Milestone 1 native runtime profile](https://github.com/project-unisonOS/unison-platform/blob/main/docs/deployment/milestone-1-native-runtime-profile.md)
 
 Canonical supported path for Milestone 1:
 
@@ -27,7 +28,7 @@ Alpha releases are intended for developer evaluation: installable, boots to “r
 
 ## What To Download
 
-If your goal is the supported Milestone 1 install path, use the Ubuntu native install docs first.
+If your goal is the supported Milestone 1 install path, use the Ubuntu native install docs first and treat evaluation artifacts as optional secondary channels.
 
 If you are intentionally evaluating alpha image channels, a release tag may include WSL2, VM, and bare-metal artifacts plus a manifest and checksums.
 

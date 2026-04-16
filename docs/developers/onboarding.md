@@ -50,6 +50,8 @@ The experience renderer is the primary “surface” during development and eval
 
 For the current Milestone 1 production-track release, the supported installation route is Ubuntu 24.04 native on x86_64.
 
+The concrete platform-side contract for that route lives in `unison-platform` and centers on `install-native.sh`, `unisonctl`, `.env.native.template`, and `compose/compose.native.yaml`.
+
 Platform releases may also publish evaluator artifacts for WSL2, Linux VM, and bare metal, but those are secondary to the canonical native install path.
 
 - How builds/releases are orchestrated: [Build, Deploy, and Images](workflow-design.md)
