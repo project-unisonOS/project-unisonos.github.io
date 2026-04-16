@@ -8,12 +8,8 @@ For the current production-track milestone, the supported installation target is
 
 Canonical install pages:
 
-- [Install UnisonOS](https://github.com/project-unisonOS/unison-platform/blob/main/docs/install.md)
-- [Milestone 1 native runtime profile](https://github.com/project-unisonOS/unison-platform/blob/main/docs/deployment/milestone-1-native-runtime-profile.md)
-
-Canonical supported path for Milestone 1:
-
-- [Ubuntu native installation](https://github.com/project-unisonOS/unison-platform/blob/main/docs/deployment/ubuntu-native.md)
+- [Install UnisonOS](install-unisonos.md)
+- [Ubuntu native installation contract](install-unisonos.md#supported-milestone-1-route)
 
 ## Evaluation Release Spotlight
 
@@ -22,9 +18,9 @@ Canonical supported path for Milestone 1:
 Alpha releases are intended for developer evaluation: installable, boots to “ready”, and end-to-end interaction works, with expected rough edges.
 
 - [Release assets (evaluation artifacts + manifest + checksums)](https://github.com/project-unisonOS/unison-platform/releases/tag/v0.5.0-alpha.1)
-- [WSL2 evaluation install (GitHub)](https://github.com/project-unisonOS/unison-platform/blob/main/docs/install-wsl2.md)
-- [Linux VM evaluation install (GitHub)](https://github.com/project-unisonOS/unison-platform/blob/main/docs/install-linux-vm.md)
-- [Bare metal evaluation install (GitHub)](https://github.com/project-unisonOS/unison-platform/blob/main/docs/install-bare-metal.md)
+- [WSL2 evaluation install](install-wsl2.md)
+- [Linux VM evaluation install](install-linux-vm.md)
+- [Bare metal evaluation install](install-bare-metal.md)
 
 ## What To Download
 
@@ -36,9 +32,9 @@ If you are intentionally evaluating alpha image channels, a release tag may incl
 
 Evaluation-only paths:
 
-- [WSL2 evaluation install](https://github.com/project-unisonOS/unison-platform/blob/main/docs/install-wsl2.md)
-- [Linux VM evaluation install](https://github.com/project-unisonOS/unison-platform/blob/main/docs/install-linux-vm.md)
-- [Bare metal evaluation install](https://github.com/project-unisonOS/unison-platform/blob/main/docs/install-bare-metal.md)
+- [WSL2 evaluation install](install-wsl2.md)
+- [Linux VM evaluation install](install-linux-vm.md)
+- [Bare metal evaluation install](install-bare-metal.md)
 
 Typical evaluation asset names (for `v0.5.0-alpha.N`):
 

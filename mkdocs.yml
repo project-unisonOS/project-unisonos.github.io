@@ -18,6 +18,7 @@ nav:
       - Architecture Overview: architecture/overview.md
       - Architecture Deep Dive: architecture/deep-dive.md
   - Developers:
+      - Install UnisonOS: developers/install-unisonos.md
       - Releases: developers/releases.md
       - Onboarding: developers/onboarding.md
       - Contributing: developers/contributing.md
