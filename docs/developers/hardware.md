@@ -24,8 +24,9 @@ This page summarizes how to run Unison on physical devices or edge hardware.
 
 ## Installation options
 
-- Installers (platform repo): `install-native.sh`, `install-docker.sh`, `install-wsl.sh` configure env, pull images, and enable the platform service.
-- Artifacts: WSL bundle, Linux VM disk image, and bare-metal installer ISO are produced via `make image-wsl`, `make linux-vm`, and `make baremetal-iso` (see Developers → Images, Builds, and Releases).
+- Supported Milestone 1 route: Ubuntu native installation via `install-native.sh` and `unisonctl`.
+- Evaluation-only channels: WSL bundle, Linux VM disk image, and bare-metal installer ISO may be produced via `make image-wsl`, `make linux-vm`, and `make baremetal-iso` (see Developers → Images, Builds, and Releases).
+- Additional installers: `install-docker.sh` and `install-wsl.sh` remain useful for non-primary or evaluator scenarios.
 - Manual: use devstack or production compose files with your own `.env` secrets.
 
 ## Run and Upgrade

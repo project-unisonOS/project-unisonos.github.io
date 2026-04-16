@@ -48,7 +48,9 @@ The experience renderer is the primary “surface” during development and eval
 
 ## 7) Build, Deploy, and Images
 
-Platform releases ship evaluator artifacts for WSL2, Linux VM, and bare metal from a single tag.
+For the current Milestone 1 production-track release, the supported installation route is Ubuntu 24.04 native on x86_64.
+
+Platform releases may also publish evaluator artifacts for WSL2, Linux VM, and bare metal, but those are secondary to the canonical native install path.
 
 - How builds/releases are orchestrated: [Build, Deploy, and Images](workflow-design.md)
 - Image types + local reproduction commands: [Images, Builds, and Releases](images-builds-and-releases.md)
@@ -67,6 +69,8 @@ Use the hardware guidance when you’re validating device installs, networking, 
 
 ## 10) Releases
 
-One tag → one GitHub Release → multiple artifacts (WSL2 + Linux VM + bare metal) plus checksums/manifest.
+Release docs should be read with one priority in mind:
+- supported route first: Ubuntu native
+- evaluator artifacts second: WSL2, Linux VM, bare metal
 
 - Start here: [Releases](releases.md)

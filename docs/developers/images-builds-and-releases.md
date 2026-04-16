@@ -4,9 +4,18 @@ This page summarizes how UnisonOS images are built, how release channels work, a
 
 ## Overview
 
-UnisonOS ships as a set of images and installers you can run in WSL, virtual machines, and on physical hardware. All images come from the same platform build workflows so behavior and compatibility stay consistent across environments.
+For the current Milestone 1 production-track release, the supported installation route is Ubuntu 24.04 native on x86_64 via the native installer path in `unison-platform`.
 
-## Image types and use cases
+UnisonOS may also publish evaluation images and installers for WSL, virtual machines, and physical hardware. Those channels are useful for demos, developer evaluation, and hardware exploration, but they are not the canonical supported install path.
+
+## Artifact types and use cases
+
+### Canonical supported route
+
+- Ubuntu native installation via `install-native.sh` and `unisonctl`.
+- This is the primary Milestone 1 install path and the route public install docs should foreground.
+
+### Evaluation image channels
 
 ### WSL bundle
 
@@ -69,12 +78,13 @@ Images are configured with security defaults that you should preserve and extend
 - Inject production secrets via environment files such as `platform.env` rather than baking them into images.
 - Verify that only required services are exposed on external interfaces and that logs avoid sensitive content.
 
-## Latest images
+## Latest images and release assets
 
-You can find published images and release notes in these locations:
+You can find published release assets and notes in these locations:
 
-- GitHub Releases for `unison-platform` list platform versions and attach WSL, VM, and ISO artifacts.
-- GHCR namespaces host container images for core services and devstack.
+- the canonical install docs in `unison-platform` for the supported Ubuntu native route
+- GitHub Releases for `unison-platform`, which may attach evaluator artifacts such as WSL, VM, and ISO images
+- GHCR namespaces for container images used by core services and devstack
 
 Follow the instructions in each release to verify signatures and checksums before installing on production hardware.
 
@@ -82,7 +92,8 @@ Follow the instructions in each release to verify signatures and checksums befor
 
 Platform tags starting with `v` trigger the main release workflow in `unison-platform/.github/workflows/release.yml`. That workflow:
 
-- Builds platform images for the supported targets.
+- Publishes the release assets needed for the canonical supported install path.
+- May also build evaluator images for WSL, VM, and bare-metal channels.
 - Publishes artifacts to GitHub Releases.
 - Pushes tagged images to GHCR with channel-aware tags.
 - Includes rendered model metadata such as `models.json` from `images/models.yaml`.
