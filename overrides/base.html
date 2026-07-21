@@ -216,6 +216,11 @@
         <script src="{{ 'js/darkmode.js'|url }}"></script>
         {%- endif %}
 
+        <aside class="status-banner" aria-label="Project maturity">
+          <strong>Pre-release engineering:</strong> working prototypes and plans are not a supported personal appliance.
+          <a href="{{ 'current-status/'|url }}">Read current status</a>.
+        </aside>
+
         <div class="container">
             <div class="row">
                 {%- block content %}
@@ -231,7 +236,7 @@
             {%- if config.copyright %}
                 <p>{{ config.copyright }}</p>
             {%- endif %}
-            <p>UnisonOS Copyright 2025</p>
+            <p>Project UnisonOS &copy; 2026. Built for people, privacy, and accessible participation.</p>
           {%- endblock %}
         </footer>
 

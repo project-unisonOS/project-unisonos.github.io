@@ -1,0 +1,61 @@
+:root {
+  --unison-ink: #132238;
+  --unison-muted: #42546b;
+  --unison-paper: #f7f9fc;
+  --unison-surface: #ffffff;
+  --unison-navy: #102a43;
+  --unison-blue: #075ea8;
+  --unison-blue-dark: #03477f;
+  --unison-teal: #087f78;
+  --unison-border: #cad5e2;
+  --unison-focus: #f6c344;
+  --unison-radius: 0.75rem;
+  --a11y-link: var(--unison-blue);
+  --a11y-link-hover: var(--unison-blue-dark);
+  --a11y-focus-outline: 3px solid var(--unison-focus);
+}
+
+body {
+  color: var(--unison-ink);
+  background: var(--unison-paper);
+  font-size: 1.05rem;
+  line-height: 1.65;
+}
+
+main {
+  background: var(--unison-surface);
+  border: 1px solid var(--unison-border);
+  border-radius: var(--unison-radius);
+  padding: clamp(1.25rem, 3vw, 3rem);
+}
+
+.status-banner {
+  margin: 4.75rem auto 1rem;
+  max-width: 71rem;
+  padding: .75rem 1rem;
+  border-left: .35rem solid var(--unison-teal);
+  background: #e6f3f2;
+  color: var(--unison-ink);
+}
+.status-banner a { color: var(--unison-blue-dark); font-weight: 600; }
+
+h1, h2, h3 { color: var(--unison-navy); line-height: 1.2; }
+h1 { font-size: clamp(2.25rem, 6vw, 4.75rem); max-width: 15ch; }
+h2 { margin-top: 2.5rem; }
+
+.hero-lede { color: var(--unison-muted); font-size: clamp(1.2rem, 2.5vw, 1.65rem); max-width: 46rem; }
+.cta { display: inline-block; margin: .5rem .5rem 1rem 0; padding: .7rem 1rem; border: 2px solid var(--unison-blue); border-radius: .45rem; text-decoration: none; }
+.cta-primary { color: #fff !important; background: var(--unison-blue); }
+.cta-secondary { color: var(--unison-blue) !important; background: #fff; }
+.principle-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(13rem, 1fr)); gap: 1rem; }
+.principle-card { border-top: .3rem solid var(--unison-teal); padding: 1rem; background: #eef7f6; border-radius: .35rem; }
+.principle-card h3 { margin-top: 0; }
+.hljs-built_in { color: #963800; }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { scroll-behavior: auto !important; transition-duration: .01ms !important; animation-duration: .01ms !important; }
+}
+
+@media (forced-colors: active) {
+  main, .principle-card, .cta { border: 1px solid CanvasText; background: Canvas; color: CanvasText; }
+}
