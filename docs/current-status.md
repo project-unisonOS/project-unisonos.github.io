@@ -1,7 +1,7 @@
 # Current status
 
-**Overall maturity: pre-release engineering.** Phases 0 and 1 are complete. Phase
-2 has an implementation candidate under architecture/security review. The
+**Overall maturity: pre-release engineering.** Phases 0, 1, and 2 are complete.
+Phase 3 has an implementation candidate under architecture/security review. The
 multi-person identity and trusted request-binding gate passed after publication,
 fresh-clone validation, and human acceptance; this is still not a supported
 product release.
@@ -22,6 +22,9 @@ product release.
   explicit record sharing, correction, deletion, retention, and export.
 - Two-person canary tests across memory, summary, index, search, prompt, and export,
   plus semantic keyboard-native context/privacy controls.
+- A Phase 3 review candidate for default-deny trust decisions, disclosure
+  minimization, one-use confirmation, task credentials, bounded capability
+  authority, untrusted-content handling, and accessible decision review.
 
 ## Approved, not yet implemented end to end
 
@@ -30,9 +33,10 @@ product release.
 - Provider-blind encrypted backup and replacement-device restore.
 - A supported Ubuntu 24.04 x86_64 appliance installer and update channel.
 
-The accepted Phase 2 implementation builds governed relationship context spaces on the completed
-Phase 1 identity boundary, but it is not a supported product release yet. It does not
-deliver Phase 3 disclosure/capability policy, remote-channel identity assurance,
+The accepted Phase 2 implementation builds governed relationship context spaces
+on the completed Phase 1 identity boundary, but it is not a supported product
+release yet. The Phase 3 candidate is not yet accepted and does not deliver
+remote-channel identity assurance,
 provider-blind backup, or a supported downloadable appliance. Public pages use **implemented**,
 **experimental**, **planned**, and **long-term vision** to distinguish evidence
 from intent.
