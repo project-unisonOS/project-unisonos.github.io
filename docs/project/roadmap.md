@@ -8,10 +8,10 @@ UnisonOS delivers a calm, intention-centric, real-time generated experience that
 
 ## Near-Term Focus (Now → Next)
 
-- **Household proof gate**: review the bounded two-independent-adult Phase 4
-  candidate, including isolation, shared calendar/grocery coordination, quotas,
+- **Household proof gate**: completed for the bounded two-independent-adult Phase
+  4 profile, including isolation, shared calendar/grocery coordination, quotas,
   recovery, and accessible administration.
-- **Secure remote text**: after a separate Phase 5 authorization, normalize one
+- **Secure remote text**: the authorized Phase 5 work will normalize one
   remote channel with pairing, revocation, replay defense, assurance, and step-up.
 - **Provider-blind recovery**: design and review per-person encrypted backup and
   replacement-device restore before implementation.
