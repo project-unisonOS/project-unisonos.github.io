@@ -12,44 +12,54 @@ const siteDir = path.join(process.cwd(), 'site');
 const port = process.env.A11Y_PORT || 8000;
 const baseUrl = process.env.A11Y_BASE_URL || `http://localhost:${port}`;
 
-const urls = [
-  '/',
-  '/experience/',
-  '/experience/multimodal/',
-  '/multimodal/speech/',
-  '/multimodal/vision/',
-  '/multimodal/braille/',
-  '/multimodal/sign-language/',
-  '/multimodal/bci/',
-  '/architecture/overview/',
-  '/architecture/deep-dive/',
-  '/architecture/edge-and-cloud/',
-  '/architecture/components/',
-  '/architecture/components/storage-and-persistence/',
-  '/architecture/components/actuation-vdi-vpn/',
-  '/architecture/inference/',
-  '/architecture/vdi/',
-  '/developers/get-started/',
-  '/developers/prerequisites/',
-  '/developers/workspace-and-repos/',
-  '/developers/devstack/',
-  '/developers/renderer-and-shell/',
-  '/developers/testing/',
-  '/developers/hardware/',
-  '/developers/workflow-design/',
-  '/developers/coding-conventions/',
-  '/developers/images-builds-and-releases/',
-  '/developers/contributing/',
-  '/reference/specs/',
-  '/reference/apis/',
-  '/reference/storage-api/',
-  '/reference/actuation-vdi-api/',
-  '/reference/security/',
-  '/reference/compatibility/',
-  '/project/governance/',
-  '/project/roadmap/',
-  '/project/license/'
-];
+function builtPageUrls(directory, relative = '') {
+  return fs.readdirSync(directory, { withFileTypes: true }).flatMap((entry) => {
+    const childRelative = path.join(relative, entry.name);
+    const childPath = path.join(directory, entry.name);
+    if (entry.isDirectory()) {
+      return builtPageUrls(childPath, childRelative);
+    }
+    if (!entry.isFile() || entry.name !== 'index.html' || childRelative.startsWith(`search${path.sep}`)) {
+      return [];
+    }
+    const html = fs.readFileSync(childPath, 'utf-8');
+    if (/http-equiv=["']refresh["']/i.test(html)) {
+      return [];
+    }
+    const parent = path.dirname(childRelative).split(path.sep).join('/');
+    return [parent === '.' ? '/' : `/${parent}/`];
+  });
+}
+
+const urls = fs.existsSync(siteDir) ? builtPageUrls(siteDir).sort() : [];
+
+function validateBuiltInternalLinks() {
+  let checked = 0;
+  for (const urlPath of urls) {
+    const relativePath = urlPath === '/' ? 'index.html' : path.join(urlPath.slice(1), 'index.html');
+    const html = fs.readFileSync(path.join(siteDir, relativePath), 'utf-8');
+    const dom = new JSDOM(html, { url: `${baseUrl}${urlPath}` });
+    for (const anchor of dom.window.document.querySelectorAll('a[href]')) {
+      const href = anchor.getAttribute('href');
+      if (!href || href.startsWith('#') || /^(mailto:|tel:|javascript:)/i.test(href)) {
+        continue;
+      }
+      const target = new URL(href, `${baseUrl}${urlPath}`);
+      if (target.origin !== new URL(baseUrl).origin) {
+        continue;
+      }
+      const pathname = decodeURIComponent(target.pathname);
+      const targetPath = pathname.endsWith('/')
+        ? path.join(siteDir, pathname.slice(1), 'index.html')
+        : path.join(siteDir, pathname.slice(1));
+      if (!fs.existsSync(targetPath)) {
+        throw new Error(`Broken internal link on ${urlPath}: ${href}`);
+      }
+      checked += 1;
+    }
+  }
+  console.log(`[links] ${checked} internal links resolve to built files.`);
+}
 
 function startServer() {
   if (!fs.existsSync(siteDir)) {
@@ -99,6 +109,24 @@ async function runWithPlaywright() {
       const pageUrl = `${baseUrl}${urlPath}`;
       const page = await context.newPage();
       await page.goto(pageUrl, { waitUntil: 'domcontentloaded' });
+      if (page.url() !== pageUrl) {
+        throw new Error(`Unexpected navigation while auditing ${pageUrl}: ${page.url()}`);
+      }
+      if (urlPath === '/') {
+        await page.keyboard.press('Tab');
+        const firstFocusClass = await page.evaluate(() => document.activeElement?.className || '');
+        if (!String(firstFocusClass).includes('skip-link')) {
+          throw new Error(`Keyboard smoke failed: first focus target was ${firstFocusClass || 'unknown'}`);
+        }
+        await page.emulateMedia({ reducedMotion: 'reduce', forcedColors: 'active' });
+        const mediaPreferences = await page.evaluate(() => ({
+          reducedMotion: window.matchMedia('(prefers-reduced-motion: reduce)').matches,
+          forcedColors: window.matchMedia('(forced-colors: active)').matches
+        }));
+        if (!mediaPreferences.reducedMotion || !mediaPreferences.forcedColors) {
+          throw new Error('Media preference smoke failed for reduced motion or forced colors.');
+        }
+      }
 
       const axeBuilder = new AxeBuilder({ page }).withTags(['wcag2a', 'wcag2aa']);
       const report = await axeBuilder.analyze();
@@ -159,8 +187,7 @@ async function runWithJsdom() {
     const filePath = path.join(siteDir, relativePath);
     const pageUrl = `${baseUrl}${urlPath}`;
     if (!fs.existsSync(filePath)) {
-      console.warn(`[a11y/jsdom] Skipping missing file for ${pageUrl}: ${filePath}`);
-      continue;
+      throw new Error(`Built page disappeared before audit: ${filePath}`);
     }
 
     const html = fs.readFileSync(filePath, 'utf-8');
@@ -188,6 +215,10 @@ async function runWithJsdom() {
 }
 
 async function runAudit() {
+  if (urls.length === 0) {
+    throw new Error('No built pages were found for accessibility audit.');
+  }
+  validateBuiltInternalLinks();
   let results;
   let playwrightError;
   try {
@@ -210,6 +241,11 @@ async function runAudit() {
   const outputPath = path.join(process.cwd(), 'a11y-report.json');
   fs.writeFileSync(outputPath, JSON.stringify(results, null, 2));
   console.log(`Audit complete. Results written to ${outputPath}`);
+
+  const violations = results.reduce((count, result) => count + result.violations.length, 0);
+  if (violations > 0) {
+    throw new Error(`${violations} WCAG A/AA violation group(s) found across ${results.length} pages.`);
+  }
 
   if (playwrightError) {
     console.warn('Note: Playwright failed. Install required system libraries or run in a container with Chromium to enable real-browser coverage. Set A11Y_USE_JSDOM=1 to skip Playwright or A11Y_REQUIRE_PLAYWRIGHT=1 to fail when Playwright is unavailable.');

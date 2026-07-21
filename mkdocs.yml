@@ -1,5 +1,5 @@
 site_name: UnisonOS
-site_description: Edge-first agentic computing platform
+site_description: A private, household-hosted personal assistant that works for the person it serves.
 site_url: https://project-unisonos.github.io
 
 docs_dir: docs
@@ -9,6 +9,13 @@ theme:
 
 nav:
   - Home: index.md
+  - Vision: vision.md
+  - How It Works: how-unison-works.md
+  - Personal Node: personal-node.md
+  - Context Spaces: household-context-spaces.md
+  - Privacy & Security: privacy-security.md
+  - Trust Decisions: trust-decisions.md
+  - Accessibility: accessibility.md
   - Experience:
       - Experience Principles: experience.md
       - Multimodal Interaction: experience/multimodal.md
@@ -39,6 +46,8 @@ nav:
       - Security: reference/security.md
       - Compatibility: reference/compatibility.md
   - Project:
+      - Current Status: current-status.md
+      - Terminology: terminology.md
       - Governance: project/governance.md
       - Roadmap: project/roadmap.md
       - License: project/license.md
@@ -59,6 +68,7 @@ markdown_extensions:
   - footnotes
 
 extra_css:
+  - assets/design-tokens.css
   - assets/nav-contrast.css
   - assets/a11y.css
 

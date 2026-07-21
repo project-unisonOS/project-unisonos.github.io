@@ -1,8 +1,8 @@
 :root {
   --a11y-focus-outline: 2px solid #f6c344;
   --a11y-focus-offset: 3px;
-  --a11y-link: #0a2a66;
-  --a11y-link-hover: #06305a;
+  --a11y-link: #075ea8;
+  --a11y-link-hover: #03477f;
 }
 
 .sr-only {

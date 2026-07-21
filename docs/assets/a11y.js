@@ -25,10 +25,19 @@
       });
   };
 
+  const makeScrollableCodeKeyboardReachable = () => {
+    document.querySelectorAll("pre code").forEach((code) => {
+      code.setAttribute("tabindex", "0");
+      if (!code.getAttribute("aria-label")) {
+        code.setAttribute("aria-label", "Scrollable code example");
+      }
+    });
+  };
+
   document.addEventListener("DOMContentLoaded", () => {
     markHrDecorative();
     improveHeaderlinkA11y();
     preventDropdownJump();
+    makeScrollableCodeKeyboardReachable();
   });
 })();
-
