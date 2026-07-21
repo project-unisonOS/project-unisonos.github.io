@@ -16,7 +16,7 @@ ceremonies, and provider partnerships remain subject to security review.
 
 ## Honest limits
 
-Unison is not production-ready. The Phase 2 candidate tests governed private/shared
+Unison is not production-ready. The accepted Phase 2 implementation tests governed private/shared
 context isolation locally, but it does not yet provide the complete appliance,
 encrypted-backup, signed-update, or recovery guarantees described here. When a
 person enables a remote model or communication channel,

@@ -17,7 +17,7 @@ product release.
 - Signed principal context with protected-service audience, revocation, and
   caller-identity mismatch enforcement.
 - Accessible first-person enrollment and additional-adult invitation foundations.
-- A Phase 2 review candidate for private/shared context spaces, non-authorizing
+- An accepted Phase 2 implementation for private/shared context spaces, non-authorizing
   relationship context, governed memory, personal charters, goals, commitments,
   explicit record sharing, correction, deletion, retention, and export.
 - Two-person canary tests across memory, summary, index, search, prompt, and export,
@@ -30,8 +30,8 @@ product release.
 - Provider-blind encrypted backup and replacement-device restore.
 - A supported Ubuntu 24.04 x86_64 appliance installer and update channel.
 
-The Phase 2 candidate builds governed relationship context spaces on the completed
-Phase 1 identity boundary, but it is not accepted or released yet. It does not
+The accepted Phase 2 implementation builds governed relationship context spaces on the completed
+Phase 1 identity boundary, but it is not a supported product release yet. It does not
 deliver Phase 3 disclosure/capability policy, remote-channel identity assurance,
 provider-blind backup, or a supported downloadable appliance. Public pages use **implemented**,
 **experimental**, **planned**, and **long-term vision** to distinguish evidence
