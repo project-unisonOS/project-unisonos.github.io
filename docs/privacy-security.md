@@ -9,7 +9,7 @@ channel assurance must deny by default. Remote models and connectors receive onl
 task-minimum information after an explicit disclosure decision. Sensitive actions
 need understandable confirmation and a cancellation or recovery path.
 
-The Phase 3 review candidate implements this policy boundary for synthetic and
+The accepted Phase 3 implementation provides this policy boundary for synthetic and
 local integration tests. It denies unknown authority, requires a recorded local
 alternative check before remote inference, removes undisclosed fields and
 credentials, treats external content as untrusted, and uses exact, expiring,
@@ -22,8 +22,7 @@ ceremonies, and provider partnerships remain subject to security review.
 
 ## Honest limits
 
-Unison is not production-ready. The accepted Phase 2 implementation and Phase 3
-review candidate test governed private/shared
+Unison is not production-ready. The accepted Phase 2 and Phase 3 implementations test governed private/shared
 context isolation locally, but it does not yet provide the complete appliance,
 encrypted-backup, signed-update, or recovery guarantees described here. When a
 person enables a remote model or communication channel,

@@ -1,7 +1,7 @@
 # Current status
 
-**Overall maturity: pre-release engineering.** Phases 0, 1, and 2 are complete.
-Phase 3 has an implementation candidate under architecture/security review. The
+**Overall maturity: pre-release engineering.** Phases 0, 1, 2, and 3 are complete.
+The Phase 3 architecture/security gate passed on 2026-07-21. The
 multi-person identity and trusted request-binding gate passed after publication,
 fresh-clone validation, and human acceptance; this is still not a supported
 product release.
@@ -22,7 +22,7 @@ product release.
   explicit record sharing, correction, deletion, retention, and export.
 - Two-person canary tests across memory, summary, index, search, prompt, and export,
   plus semantic keyboard-native context/privacy controls.
-- A Phase 3 review candidate for default-deny trust decisions, disclosure
+- An accepted Phase 3 implementation for default-deny trust decisions, disclosure
   minimization, one-use confirmation, task credentials, bounded capability
   authority, untrusted-content handling, and accessible decision review.
 
@@ -35,7 +35,7 @@ product release.
 
 The accepted Phase 2 implementation builds governed relationship context spaces
 on the completed Phase 1 identity boundary, but it is not a supported product
-release yet. The Phase 3 candidate is not yet accepted and does not deliver
+release yet. Accepted Phase 3 does not deliver
 remote-channel identity assurance,
 provider-blind backup, or a supported downloadable appliance. Public pages use **implemented**,
 **experimental**, **planned**, and **long-term vision** to distinguish evidence
