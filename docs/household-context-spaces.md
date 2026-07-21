@@ -28,3 +28,22 @@ not yet a supported release.
 The first household model is for independently consenting adults. Child,
 dependent, caregiving, incapacity, and emergency-access roles require a dedicated
 design and safety review and are not represented as ordinary administrator access.
+
+## Phase 4 review candidate
+
+The current candidate composes two separate adult assistants on one synthetic
+Ubuntu appliance profile. Each receives distinct identity, key, credential, data,
+cache, index, private context, audit, and backup-policy namespaces. Both can add
+calendar events and grocery items to one explicit household space. Coordination
+reports that it reads zero private sources, and cross-person probes use the same
+denial as nonexistent-resource probes.
+
+The candidate also adds per-assistant queue, concurrency, CPU, and memory budgets
+so one assistant cannot monopolize the shared scheduler. Invitation, removal,
+share preview, shared artifacts, audit, cancellation, and recovery have semantic,
+keyboard-native controls and status announcements.
+
+This is published for architecture/security review, not as a supported release.
+It does not claim protection from a compromised host administrator, production
+timing-side-channel certification, child/caregiving models, remote channels, or
+provider-blind backup.

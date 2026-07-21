@@ -1,7 +1,8 @@
 # Current status
 
 **Overall maturity: pre-release engineering.** Phases 0, 1, 2, and 3 are complete.
-The Phase 3 architecture/security gate passed on 2026-07-21. The
+Phase 4 is in review; it is not yet accepted. The Phase 3 architecture/security
+gate passed on 2026-07-21. The
 multi-person identity and trusted request-binding gate passed after publication,
 fresh-clone validation, and human acceptance; this is still not a supported
 product release.
@@ -25,6 +26,10 @@ product release.
 - An accepted Phase 3 implementation for default-deny trust decisions, disclosure
   minimization, one-use confirmation, task credentials, bounded capability
   authority, untrusted-content handling, and accessible decision review.
+- A Phase 4 review candidate for two independent adult assistants on one node,
+  with explicit shared calendar/grocery coordination, cross-person canary tests,
+  minimized household administration, fair resource quotas, and accessible
+  invitation/removal/share-preview controls.
 
 ## Approved, not yet implemented end to end
 
