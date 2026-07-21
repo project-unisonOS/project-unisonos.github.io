@@ -16,8 +16,9 @@ ceremonies, and provider partnerships remain subject to security review.
 
 ## Honest limits
 
-Unison is not production-ready. Running current prototypes does not yet provide
-the complete isolation, encrypted backup, signed-update, or recovery guarantees
-described here. When a person enables a remote model or communication channel,
+Unison is not production-ready. The Phase 2 candidate tests governed private/shared
+context isolation locally, but it does not yet provide the complete appliance,
+encrypted-backup, signed-update, or recovery guarantees described here. When a
+person enables a remote model or communication channel,
 that provider necessarily receives the minimized information required to perform
 the chosen function. Product documentation must identify that boundary clearly.
