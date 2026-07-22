@@ -1,6 +1,7 @@
 # Current status
 
 **Overall maturity: pre-release engineering.** Phases 0 through 4 are complete.
+The Phase 5 Channel Gateway and Telegram remote-text candidate is in architecture/security review; it is not yet accepted as complete.
 The Phase 4 architecture/security gate passed on 2026-07-21. The Phase 3 architecture/security
 gate passed on 2026-07-21. The
 multi-person identity and trusted request-binding gate passed after publication,
@@ -30,18 +31,21 @@ product release.
   with explicit shared calendar/grocery coordination, cross-person canary tests,
   minimized household administration, fair resource quotas, and accessible
   invitation/removal/share-preview controls.
+- A Phase 5 review candidate for private-chat Telegram long polling, strong local
+  pairing, per-person encrypted credentials and bindings, replay/rate/outage
+  defenses, low-assurance step-up, draft-first outbound messaging, revocation,
+  accessible disclosure, and a no-public-listener deployment profile.
 
 ## Approved, not yet implemented end to end
 
 - Consolidated six-boundary appliance topology.
-- Outbound-first remote channels and assurance escalation.
 - Provider-blind encrypted backup and replacement-device restore.
 - A supported Ubuntu 24.04 x86_64 appliance installer and update channel.
 
 The accepted Phase 2 implementation builds governed relationship context spaces
 on the completed Phase 1 identity boundary, but it is not a supported product
-release yet. Accepted Phase 3 does not deliver
-remote-channel identity assurance,
-provider-blind backup, or a supported downloadable appliance. Public pages use **implemented**,
+release yet. Phase 5 is still awaiting its final human gate and does not turn
+Telegram into a high-assurance or end-to-end encrypted surface. It also does not
+deliver provider-blind backup or a supported downloadable appliance. Public pages use **implemented**,
 **experimental**, **planned**, and **long-term vision** to distinguish evidence
 from intent.
