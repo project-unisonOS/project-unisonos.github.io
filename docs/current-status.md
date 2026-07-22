@@ -1,7 +1,7 @@
 # Current status
 
-**Overall maturity: pre-release engineering.** Phases 0 through 4 are complete.
-The Phase 5 Channel Gateway and Telegram remote-text candidate is in architecture/security review; it is not yet accepted as complete.
+**Overall maturity: pre-release engineering.** Phases 0 through 5 are complete.
+The Phase 5 Channel Gateway and Telegram remote-text boundary passed its architecture/security gate on 2026-07-21. Phase 6 is not started.
 The Phase 4 architecture/security gate passed on 2026-07-21. The Phase 3 architecture/security
 gate passed on 2026-07-21. The
 multi-person identity and trusted request-binding gate passed after publication,
@@ -31,7 +31,7 @@ product release.
   with explicit shared calendar/grocery coordination, cross-person canary tests,
   minimized household administration, fair resource quotas, and accessible
   invitation/removal/share-preview controls.
-- A Phase 5 review candidate for private-chat Telegram long polling, strong local
+- The accepted Phase 5 boundary for private-chat Telegram long polling, strong local
   pairing, per-person encrypted credentials and bindings, replay/rate/outage
   defenses, low-assurance step-up, draft-first outbound messaging, revocation,
   accessible disclosure, and a no-public-listener deployment profile.
@@ -44,7 +44,7 @@ product release.
 
 The accepted Phase 2 implementation builds governed relationship context spaces
 on the completed Phase 1 identity boundary, but it is not a supported product
-release yet. Phase 5 is still awaiting its final human gate and does not turn
+release yet. The accepted Phase 5 boundary does not turn
 Telegram into a high-assurance or end-to-end encrypted surface. It also does not
 deliver provider-blind backup or a supported downloadable appliance. Public pages use **implemented**,
 **experimental**, **planned**, and **long-term vision** to distinguish evidence
