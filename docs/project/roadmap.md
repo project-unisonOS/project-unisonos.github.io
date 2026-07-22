@@ -11,8 +11,9 @@ UnisonOS delivers a calm, intention-centric, real-time generated experience that
 - **Household proof gate**: completed for the bounded two-independent-adult Phase
   4 profile, including isolation, shared calendar/grocery coordination, quotas,
   recovery, and accessible administration.
-- **Secure remote text**: the authorized Phase 5 work will normalize one
-  remote channel with pairing, revocation, replay defense, assurance, and step-up.
+- **Secure remote text**: the accepted Phase 5 boundary normalizes Telegram
+  private-chat long polling with pairing, revocation, replay defense, per-person
+  credentials, low assurance, local step-up, and no public appliance listener.
 - **Provider-blind recovery**: design and review per-person encrypted backup and
   replacement-device restore before implementation.
 - **Standardized Skills**: define and enforce a consistent “skill” interface for intent handlers (registration, discovery, versioning, schema validation, and policy hooks).
