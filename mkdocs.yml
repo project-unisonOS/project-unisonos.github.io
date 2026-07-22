@@ -9,43 +9,47 @@ theme:
 
 nav:
   - Home: index.md
-  - Vision: vision.md
-  - How It Works: how-unison-works.md
-  - Personal Node: personal-node.md
-  - Context Spaces: household-context-spaces.md
-  - Remote Assistant: remote-assistant.md
-  - Privacy & Security: privacy-security.md
-  - Trust Decisions: trust-decisions.md
-  - Accessibility: accessibility.md
+  - Product:
+      - Vision: vision.md
+      - How It Works: how-unison-works.md
+      - Personal Node: personal-node.md
+      - Context Spaces: household-context-spaces.md
+      - Remote Assistant: remote-assistant.md
   - Experience:
       - Experience Principles: experience.md
       - Multimodal Interaction: experience/multimodal.md
       - AI Personality: experience/ai-personality.md
       - System Capabilities: experience/system-capabilities.md
-  - Architecture:
-      - Architecture Overview: architecture/overview.md
-      - Architecture Deep Dive: architecture/deep-dive.md
+      - Accessibility: accessibility.md
+  - Trust:
+      - Privacy & Security: privacy-security.md
+      - Trust Decisions: trust-decisions.md
   - Developers:
-      - Install UnisonOS: developers/install-unisonos.md
-      - WSL2 Evaluation Install: developers/install-wsl2.md
-      - Linux VM Evaluation Install: developers/install-linux-vm.md
-      - Bare Metal Evaluation Install: developers/install-bare-metal.md
-      - Releases: developers/releases.md
-      - Onboarding: developers/onboarding.md
-      - Prerequisites: developers/prerequisites.md
-      - Workspace & Repos: developers/workspace-and-repos.md
-      - Devstack Setup: developers/devstack.md
-      - Renderer: developers/renderer.md
-      - Testing: developers/testing.md
-      - Build, Deploy, and Images: developers/workflow-design.md
-      - Images, Builds, and Releases: developers/images-builds-and-releases.md
-      - Install Options: developers/install-options.md
-      - Contributing: developers/contributing.md
-  - Reference:
-      - Specs & Schemas: reference/specs.md
-      - APIs: reference/apis.md
-      - Security: reference/security.md
-      - Compatibility: reference/compatibility.md
+      - Architecture:
+          - Overview: architecture/overview.md
+          - Deep Dive: architecture/deep-dive.md
+      - Get Started:
+          - Install UnisonOS: developers/install-unisonos.md
+          - WSL2 Evaluation: developers/install-wsl2.md
+          - Linux VM Evaluation: developers/install-linux-vm.md
+          - Bare Metal Evaluation: developers/install-bare-metal.md
+          - Install Options: developers/install-options.md
+          - Prerequisites: developers/prerequisites.md
+          - Onboarding: developers/onboarding.md
+      - Build & Operate:
+          - Workspace & Repos: developers/workspace-and-repos.md
+          - Devstack Setup: developers/devstack.md
+          - Renderer: developers/renderer.md
+          - Testing: developers/testing.md
+          - Build & Deploy: developers/workflow-design.md
+          - Images & Releases: developers/images-builds-and-releases.md
+          - Releases: developers/releases.md
+          - Contributing: developers/contributing.md
+      - Reference:
+          - Specs & Schemas: reference/specs.md
+          - APIs: reference/apis.md
+          - Security: reference/security.md
+          - Compatibility: reference/compatibility.md
   - Project:
       - Current Status: current-status.md
       - Terminology: terminology.md
@@ -64,6 +68,7 @@ plugins:
 markdown_extensions:
   - toc:
       permalink: true
+  - attr_list
   - admonition
   - def_list
   - footnotes

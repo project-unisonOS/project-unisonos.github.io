@@ -72,21 +72,6 @@ textarea:focus-visible,
   color: #ffffff;
 }
 
-/* Increase contrast for sidebar/table-of-contents links */
-.col-md-3 .nav-link,
-.col-md-3 .dropdown-item,
-.col-md-3 .nav > li > a {
-  color: var(--a11y-link);
-  font-weight: 600;
-}
-
-.col-md-3 .nav-link:focus,
-.col-md-3 .nav-link:hover,
-.col-md-3 .dropdown-item:focus,
-.col-md-3 .dropdown-item:hover {
-  color: var(--a11y-link-hover);
-}
-
 /* Increase contrast for in-content links */
 main a {
   color: var(--a11y-link);
