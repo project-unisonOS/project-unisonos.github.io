@@ -71,13 +71,13 @@
     <body{% if page and page.is_homepage %} class="homepage"{% endif %}>
         <a class="skip-link" href="#main-content">Skip to main content</a>
         <nav class="navbar fixed-top navbar-expand-lg navbar-{% if config.theme.nav_style == "light" %}light{% else %}dark{% endif %} bg-{{ config.theme.nav_style }}" aria-label="Primary">
-            <div class="container">
+            <div class="container site-nav-container">
 
                 {%- block site_name %}
                 <a class="navbar-brand" href="{{ nav.homepage.url|url }}">{{ config.site_name }}</a>
                 {%- endblock %}
 
-                {%- if nav|length>1 or (page and (page.next_page or page.previous_page)) or config.repo_url %}
+                {%- if nav|length>1 or config.repo_url %}
                 <!-- Expander button -->
                 <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbar-collapse" aria-controls="navbar-collapse" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon" aria-hidden="true"></span>
@@ -122,25 +122,10 @@
                       {%- block search_button %}
                         {%- if 'search' in config.plugins %}
                         <li class="nav-item">
-                            <a href="#" class="nav-link" data-bs-toggle="modal" data-bs-target="#mkdocs_search_modal">
-                                <i class="fa fa-search" aria-hidden="true"></i> {% trans %}Search{% endtrans %}
+                            <a href="#" class="nav-link nav-search" data-bs-toggle="modal" data-bs-target="#mkdocs_search_modal" aria-label="{% trans %}Search{% endtrans %}" title="{% trans %}Search{% endtrans %}">
+                                <i class="fa fa-search" aria-hidden="true"></i><span class="visually-hidden">{% trans %}Search{% endtrans %}</span>
                             </a>
                         </li>
-                        {%- endif %}
-                      {%- endblock %}
-
-                      {%- block next_prev %}
-                        {%- if page and (page.next_page or page.previous_page) %}
-                            <li class="nav-item">
-                                <a rel="prev" {% if page.previous_page %}href="{{ page.previous_page.url|url }}" class="nav-link"{% else %}class="nav-link disabled"{% endif %}>
-                                    <i class="fa fa-arrow-left" aria-hidden="true"></i> {% trans %}Previous{% endtrans %}
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a rel="next" {% if page.next_page %}href="{{ page.next_page.url|url }}" class="nav-link"{% else %}class="nav-link disabled"{% endif %}>
-                                    {% trans %}Next{% endtrans %} <i class="fa fa-arrow-right" aria-hidden="true"></i>
-                                </a>
-                            </li>
                         {%- endif %}
                       {%- endblock %}
 
@@ -221,13 +206,10 @@
           <a href="{{ 'current-status/'|url }}">Read current status</a>.
         </aside>
 
-        <div class="container">
-            <div class="row">
-                {%- block content %}
-                    <nav class="col-md-3" aria-label="Page outline">{% include "toc.html" %}</nav>
-                    <main id="main-content" class="col-md-9" role="main" tabindex="-1">{% include "content.html" %}</main>
-                {%- endblock %}
-            </div>
+        <div class="container page-shell">
+            {%- block content %}
+                <main id="main-content" class="content-column" role="main" tabindex="-1">{% include "content.html" %}</main>
+            {%- endblock %}
         </div>
 
         <footer class="col-md-12">

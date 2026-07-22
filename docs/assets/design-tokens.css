@@ -29,9 +29,18 @@ main {
   padding: clamp(1.25rem, 3vw, 3rem);
 }
 
+.page-shell {
+  max-width: 64rem;
+  padding-inline: clamp(1rem, 3vw, 2rem);
+}
+
+.content-column {
+  width: 100%;
+}
+
 .status-banner {
   margin: 4.75rem auto 1rem;
-  max-width: 71rem;
+  max-width: 62rem;
   padding: .75rem 1rem;
   border-left: .35rem solid var(--unison-teal);
   background: #e6f3f2;
@@ -51,6 +60,12 @@ h2 { margin-top: 2.5rem; }
 .principle-card { border-top: .3rem solid var(--unison-teal); padding: 1rem; background: #eef7f6; border-radius: .35rem; }
 .principle-card h3 { margin-top: 0; }
 .hljs-built_in { color: #963800; }
+
+footer {
+  max-width: 64rem;
+  margin-inline: auto;
+  padding-inline: clamp(1rem, 3vw, 2rem);
+}
 
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { scroll-behavior: auto !important; transition-duration: .01ms !important; animation-duration: .01ms !important; }
