@@ -3,7 +3,7 @@
 Unison should never make a sensitive decision feel like a vague permission box.
 Before external or high-risk work, it presents the exact action, recipients,
 information used, purpose, consequence, reversibility, cost, and alternatives.
-The person can confirm that exact action, use less information, choose a local
+You can confirm that exact action, use less information, choose a local
 alternative, authenticate more strongly, or cancel.
 
 Unknown identity, purpose, audience, context space, assurance, data class,

@@ -1,10 +1,10 @@
 # Your assistant should work for *you*.
 
 Unison is an open, private personal-assistant platform designed to return time to
-the person it serves. **UnisonOS** is the downloadable appliance runtime being
-built to run Unison on a trusted device, usually in a person's home.
+you. **UnisonOS** is the downloadable appliance runtime being built to run Unison
+on your own trusted device.
 
-<p class="hero-lede">One home node. An independently governed assistant for each person. Explicit spaces for the context people choose to share.</p>
+<p class="hero-lede">One home node. Your own independently governed assistant. Explicit spaces for the context you choose to share.</p>
 
 [Understand the vision](vision.md){ .cta .cta-primary }
 [See the current status](current-status.md){ .cta .cta-secondary }
@@ -29,15 +29,15 @@ and time returned to you.
 
 ## One assistant across daily life
 
-At home, a person can interact locally. Away from home, approved channels such
-as messaging or voice can connect back to the authoritative node through an
+At home, you can interact locally. Away from home, approved channels such as
+messaging or voice can connect you back to the authoritative node through an
 outbound-first gateway. A low-assurance channel can ask, draft, or notify; a
 sensitive action requires stronger authentication and an understandable
 confirmation.
 
-Unison is not meant to replace the phone or the apps people enjoy. It is meant
-to become an excellent personal, administrative, and executive assistant that
-can coordinate those tools without turning a person's context into a product.
+Unison is not meant to replace your phone or the apps you enjoy. It is meant to
+become an excellent personal, administrative, and executive assistant that can
+coordinate those tools without turning your context into a product.
 
 ## What exists today
 

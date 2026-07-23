@@ -1,6 +1,6 @@
 # Security
 
-Security and privacy are baked into UnisonOS by design. The sections that follow describe how the platform remains trustworthy for people and their data.
+Security and privacy are built into UnisonOS by design. The sections that follow describe how the platform remains trustworthy for you and your data.
 
 ## Core stance (plain language)
 

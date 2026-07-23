@@ -4,7 +4,7 @@ The experience renderer is the primary “surface” for UnisonOS development an
 
 ## What It Does
 
-- Renders a real-time, generated experience based on system state and a person’s preferences.
+- Renders your real-time, generated experience based on system state and your preferences.
 - Exchanges intents and results with the control plane (intent graph + orchestrator).
 - Acts as the main UI entry point for local devstack runs.
 

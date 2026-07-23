@@ -27,7 +27,6 @@ Unison is not production-ready. The accepted Phase 2 and Phase 3 implementations
 test governed private/shared context isolation locally, and Phase 6 passed its
 bounded architecture/security gate. It does not yet provide a supported
 appliance, backup subscription, signed-update, TPM,
-or provider-partnership guarantee. When a
-person enables a remote model or communication channel,
+or provider-partnership guarantee. When you enable a remote model or communication channel,
 that provider necessarily receives the minimized information required to perform
-the chosen function. Product documentation must identify that boundary clearly.
+your chosen function. Product documentation must identify that boundary clearly.

@@ -1,6 +1,9 @@
 # Multimodal Interaction
 
-UnisonOS is multimodal by default: it generates experiences in real time based on the system’s current capabilities and a person’s needs and preferences. If a screen is present, the renderer can use it. If it isn’t, the experience remains complete.
+UnisonOS is multimodal by default: it generates your experience in real time
+based on the system’s current capabilities and your needs and preferences. If a
+screen is present, the renderer can use it. If it isn’t, your experience remains
+complete.
 
 ## Multimodal interaction in practice
 
@@ -8,7 +11,7 @@ UnisonOS does not treat any modality as “primary.” Instead, it treats modali
 
 Key commitments:
 
-- **Capability-aware rendering**: use what is available (display, camera, audio, assistive devices), but never strand a person when a capability is missing.
+- **Capability-aware rendering**: use what is available (display, camera, audio, assistive devices), but never strand you when a capability is missing.
 - **Cross-modal coherence**: when multiple modalities are active, they reinforce the same meaning without duplicating excessively or contradicting each other.
 - **Privacy and consent**: modality choices and data paths remain governed by consent and policy; on-device operation is the default.
 
@@ -29,7 +32,7 @@ Speech is a first-class modality in UnisonOS for both input (ASR) and output (TT
 
 - Speak naturally to express intent without thinking in “apps.”
 - Receive concise spoken responses when audio is available; when a screen is available, responses can also be rendered as text.
-- Prefer hands-free interaction when it fits the environment and a person’s preferences.
+- Prefer hands-free interaction when it fits your environment and preferences.
 
 ### How it works
 
@@ -84,7 +87,7 @@ Braille is a first-class modality in UnisonOS for tactile reading and input. Bra
 
 - Read responses and focus text via refreshable Braille output.
 - Use Braille input to express intent when available (for example: routing keys, navigation, and entry).
-- Pairing and device status are explicit and under the person’s control.
+- Pairing and device status are explicit and under your control.
 
 ### How it works
 
@@ -109,7 +112,7 @@ Vision is a core modality for UnisonOS: cameras and displays enable perception, 
 
 - Use the camera for on-demand capture, describe, or assistive guidance when enabled.
 - Combine vision with other modalities (for example: pairing camera context with voice or sign).
-- Clear indicators when the camera is active; control remains with the person.
+- Clear indicators when the camera is active; control remains with you.
 
 ### How it works
 
