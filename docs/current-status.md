@@ -1,6 +1,7 @@
 # Current status
 
 **Overall maturity: pre-release engineering.** Phases 0 through 6 are complete.
+Phase 7 bounded assistant workflows are an engineering review candidate.
 The Phase 6 provider-blind backup and replacement-device restore boundary
 passed its architecture/security gate on 2026-07-23. The Phase 5 Channel
 Gateway and Telegram remote-text boundary passed

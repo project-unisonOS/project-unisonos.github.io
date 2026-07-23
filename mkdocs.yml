@@ -24,6 +24,7 @@ nav:
   - Trust:
       - Privacy & Security: privacy-security.md
       - Backup & Recovery: backup-recovery.md
+      - Assistant Workflows: assistant-workflows.md
       - Trust Decisions: trust-decisions.md
   - Developers:
       - Architecture:
