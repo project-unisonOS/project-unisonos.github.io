@@ -1,9 +1,9 @@
 # Current status
 
-**Overall maturity: pre-release engineering.** Phases 0 through 5 are complete.
-The Phase 6 provider-blind backup and replacement-device restore implementation
-is a review candidate; its final architecture/security gate has not yet been
-approved. The Phase 5 Channel Gateway and Telegram remote-text boundary passed
+**Overall maturity: pre-release engineering.** Phases 0 through 6 are complete.
+The Phase 6 provider-blind backup and replacement-device restore boundary
+passed its architecture/security gate on 2026-07-23. The Phase 5 Channel
+Gateway and Telegram remote-text boundary passed
 its architecture/security gate on 2026-07-21.
 The Phase 4 architecture/security gate passed on 2026-07-21. The Phase 3 architecture/security
 gate passed on 2026-07-21. The
@@ -38,7 +38,7 @@ product release.
   pairing, per-person encrypted credentials and bindings, replay/rate/outage
   defenses, low-assurance step-up, draft-first outbound messaging, revocation,
   accessible disclosure, and a no-public-listener deployment profile.
-- A Phase 6 review candidate for independent person/shared-space encrypted
+- The accepted Phase 6 boundary for independent person/shared-space encrypted
   backups, signed anchored lineage, hostile-provider detection, retention,
   encrypted export and deletion, provider migration, and clean-device restore
   with revocation and key rotation.
@@ -52,7 +52,7 @@ The accepted Phase 2 implementation builds governed relationship context spaces
 on the completed Phase 1 identity boundary, but it is not a supported product
 release yet. The accepted Phase 5 boundary does not turn
 Telegram into a high-assurance or end-to-end encrypted surface. It also does not
-make the Phase 6 review candidate a supported backup service or deliver a
+make the accepted Phase 6 boundary a supported backup service or deliver a
 supported downloadable appliance. Public pages use **implemented**,
 **experimental**, **planned**, and **long-term vision** to distinguish evidence
 from intent.

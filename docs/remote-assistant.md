@@ -22,4 +22,4 @@ Telegram reports that pending Bot API updates are retained for no longer than 24
 
 Revoke the channel from a trusted local device. If a bot token may be stolen, revoke it with BotFather too, create a replacement, and repeat strong local pairing. Disconnect clears the stored credential and revokes the binding; it never silently restores or transfers the prior connection.
 
-The proof uses a fake provider with no real credentials to test two independent people, pairing and reassignment defense, stolen senders, replay and delay, outage and reconnect, rate limits, step-up, encrypted drafts, revocation, and the no-public-listener topology. The Phase 5 architecture/security gate passed on 2026-07-21. Phase 6 backup and restore is a separate review candidate.
+The proof uses a fake provider with no real credentials to test two independent people, pairing and reassignment defense, stolen senders, replay and delay, outage and reconnect, rate limits, step-up, encrypted drafts, revocation, and the no-public-listener topology. The Phase 5 architecture/security gate passed on 2026-07-21. The separate Phase 6 backup and restore boundary passed on 2026-07-23.
