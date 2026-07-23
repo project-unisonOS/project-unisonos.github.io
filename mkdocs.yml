@@ -23,6 +23,7 @@ nav:
       - Accessibility: accessibility.md
   - Trust:
       - Privacy & Security: privacy-security.md
+      - Backup & Recovery: backup-recovery.md
       - Trust Decisions: trust-decisions.md
   - Developers:
       - Architecture:
