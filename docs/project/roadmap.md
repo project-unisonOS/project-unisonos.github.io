@@ -22,6 +22,11 @@ UnisonOS delivers a calm, intention-centric, real-time generated experience that
   accepted identity, context, policy, household, channel, and recovery
   boundaries into seven inspectable administrative workflow families with
   local outcome evidence and no engagement optimization.
+- **Governed ecosystem expansion**: Phase 8 is in progress through independently
+  certified slices. The initial engineering slice covers local speech/captions,
+  adaptive visual controls, policy-bound model routing, and signed/revocable
+  capability packages. Specialized hardware adapters remain experimental until
+  representative user and hardware evidence exists.
 - **Standardized Skills**: define and enforce a consistent “skill” interface for intent handlers (registration, discovery, versioning, schema validation, and policy hooks).
 - **Tool registry as a first-class concept**: keep a central list of available tools/skills/service APIs and their constraints so the system never guesses capabilities.
 - **Multi-agent orchestration**: enable orchestrator-driven delegation to specialist agents for parallel work (research, code, extraction, actuation), with clear boundaries and deterministic interfaces where required.
