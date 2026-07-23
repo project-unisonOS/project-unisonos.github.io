@@ -18,7 +18,7 @@ UnisonOS delivers a calm, intention-centric, real-time generated experience that
   per-person/shared-space encryption, signed anchored manifests, replaceable
   backends, corruption/rollback detection, and clean replacement-device restore.
   Production hardware and provider validation remain separate release work.
-- **Time-returning workflows**: the Phase 7 review candidate composes the
+- **Time-returning workflows**: the completed Phase 7 engineering gate composes the
   accepted identity, context, policy, household, channel, and recovery
   boundaries into seven inspectable administrative workflow families with
   local outcome evidence and no engagement optimization.

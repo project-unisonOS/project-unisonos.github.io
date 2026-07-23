@@ -1,9 +1,9 @@
 # Assistant workflows
 
-**Maturity: Phase 7 review candidate, not a supported production service.**
+**Maturity: Phase 7 engineering gate complete; not a supported production service.**
 
 Phase 7 focuses on measurable administrative competence rather than broad
-autonomy. The bounded candidate covers:
+autonomy. The bounded engineering profile covers:
 
 - calendar coordination;
 - email triage, summary, and draft preparation;
