@@ -1,60 +1,51 @@
 # Current status
 
-**Overall maturity: pre-release engineering.** Phases 0 through 6 are complete.
-Phase 7 bounded assistant workflows passed their engineering gate on
-2026-07-23. They remain pre-release and are not a supported production service.
-The Phase 6 provider-blind backup and replacement-device restore boundary
-passed its architecture/security gate on 2026-07-23. The Phase 5 Channel
-Gateway and Telegram remote-text boundary passed
-its architecture/security gate on 2026-07-21.
-The Phase 4 architecture/security gate passed on 2026-07-21. The Phase 3 architecture/security
-gate passed on 2026-07-21. The
-multi-person identity and trusted request-binding gate passed after publication,
-fresh-clone validation, and human acceptance; this is still not a supported
-product release.
+**UnisonOS is pre-release engineering software.** The core architecture and
+several complete product journeys are working and tested, but there is not yet a
+supported appliance release for everyday installation.
 
-## Implemented foundations
+## What is in place
 
-- Multiple Python service prototypes and shared JSON contracts.
-- Unit coverage for orchestration, policy, communications, capabilities, and rendering.
-- Docker Compose development topology and native-appliance experiments.
-- Semantic multimodal response and accessibility-oriented web foundations.
-- Transactional people, assistant instances, households, memberships, devices,
-  channels, workloads, sessions, passkeys, invitations, and per-person isolation handles.
-- Signed principal context with protected-service audience, revocation, and
-  caller-identity mismatch enforcement.
-- Accessible first-person enrollment and additional-adult invitation foundations.
-- An accepted Phase 2 implementation for private/shared context spaces, non-authorizing
-  relationship context, governed memory, personal charters, goals, commitments,
-  explicit record sharing, correction, deletion, retention, and export.
-- Two-person canary tests across memory, summary, index, search, prompt, and export,
-  plus semantic keyboard-native context/privacy controls.
-- An accepted Phase 3 implementation for default-deny trust decisions, disclosure
-  minimization, one-use confirmation, task credentials, bounded capability
-  authority, untrusted-content handling, and accessible decision review.
-- An accepted Phase 4 implementation for two independent adult assistants on one node,
-  with explicit shared calendar/grocery coordination, cross-person canary tests,
-  minimized household administration, fair resource quotas, and accessible
-  invitation/removal/share-preview controls.
-- The accepted Phase 5 boundary for private-chat Telegram long polling, strong local
-  pairing, per-person encrypted credentials and bindings, replay/rate/outage
-  defenses, low-assurance step-up, draft-first outbound messaging, revocation,
-  accessible disclosure, and a no-public-listener deployment profile.
-- The accepted Phase 6 boundary for independent person/shared-space encrypted
-  backups, signed anchored lineage, hostile-provider detection, retention,
-  encrypted export and deletion, provider migration, and clean-device restore
-  with revocation and key rotation.
+- **Personal and household foundations:** independent identities, assistants,
+  private data domains, invitations, and explicit shared context spaces.
+- **Privacy and control:** default-deny policy, minimized disclosure, clear
+  confirmations, revocable permissions, audit records, and untrusted-content
+  handling.
+- **Useful assistant workflows:** bounded calendar, mail, commitment, household,
+  contact, research, and travel journeys with cancellation and recovery paths.
+- **Flexible interaction:** semantic responses, local speech, captions,
+  interruption controls, keyboard operation, high contrast, reduced motion, and
+  simplified-language preferences.
+- **Remote access:** a private remote-text reference channel with local pairing,
+  encrypted credentials, replay protection, draft-first sending, and revocation.
+- **Backup and recovery:** provider-independent encrypted backups, tamper and
+  rollback detection, migration between storage providers, and clean-device
+  restore.
+- **Replaceable components:** policy-aware model routing and signed, revocable
+  capability packages with compatibility and permission review.
+- **Engineering foundations:** shared contracts, automated tests, security
+  scanning, accessible web documentation, and reproducible development tooling.
 
-## Approved, not yet implemented end to end
+## What is on the roadmap
 
-- Consolidated six-boundary appliance topology.
-- A supported Ubuntu 24.04 x86_64 appliance installer and update channel.
+- A supported downloadable appliance, installer, update channel, and clear
+  hardware compatibility guidance.
+- Production hardening, long-running reliability evidence, operational support,
+  and practiced recovery and incident procedures.
+- More communication channels, model providers, capabilities, and integrations
+  without weakening privacy or local control.
+- Broader assistive-technology support, backed by research with disabled people
+  and testing on representative hardware.
+- Continued refinement of daily assistant workflows, evaluation, and measurable
+  time returned to you.
 
-The accepted Phase 2 implementation builds governed relationship context spaces
-on the completed Phase 1 identity boundary, but it is not a supported product
-release yet. The accepted Phase 5 boundary does not turn
-Telegram into a high-assurance or end-to-end encrypted surface. It also does not
-make the accepted Phase 6 boundary a supported backup service or deliver a
-supported downloadable appliance. Public pages use **implemented**,
-**experimental**, **planned**, and **long-term vision** to distinguish evidence
-from intent.
+## What that means today
+
+You can explore the architecture, run the development stack, and review tested
+product boundaries. You should not yet depend on UnisonOS as a supported
+production appliance or assume that experimental integrations are ready for
+personal data.
+
+As the project develops, this site uses **implemented**, **experimental**,
+**planned**, and **long-term vision** to distinguish what works now from what
+comes next.

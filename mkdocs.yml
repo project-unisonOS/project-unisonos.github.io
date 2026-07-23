@@ -64,7 +64,6 @@ plugins:
   - search
   - redirects:
       redirect_maps:
-        vision.md: index.md
         developers/evaluate-alpha.md: developers/releases.md
         developers/renderer-and-shell.md: developers/renderer.md
 

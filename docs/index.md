@@ -9,11 +9,6 @@ on your own trusted device.
 [Understand the vision](vision.md){ .cta .cta-primary }
 [See the current status](current-status.md){ .cta .cta-secondary }
 
-!!! warning "Development status"
-    UnisonOS is pre-release research and engineering software. The repository
-    contains working service prototypes and tests, but there is not yet a
-    supported appliance image for personal use.
-
 ## A different incentive
 
 Unison is intended to optimize for your objectives, not advertising, sponsored
@@ -43,13 +38,14 @@ coordinate those tools without turning your context into a product.
 
 | Area | Maturity | Meaning |
 | --- | --- | --- |
-| Service prototypes and shared contracts | Experimental | Code and unit tests exist; boundaries are being reconciled. |
-| Semantic experience renderer | Experimental | A working foundation, not a complete multimodal product. |
-| Household isolation model | Designed | Approved architecture; enforcement implementation has not begun. |
+| Core services and shared contracts | Experimental | Integrated prototypes and automated tests cover the core architecture. |
+| Personal and shared context | Implemented boundary | Independent identities, private data domains, and explicit shared spaces are enforced. |
+| Trust and permissions | Implemented boundary | Disclosure, confirmation, capability authority, and revocation deny by default. |
+| Multimodal experience | Implemented boundary | Semantic output, speech, captions, interruption, and adaptive visual preferences are tested. |
 | Installable UnisonOS appliance | Planned | Ubuntu 24.04 x86_64 is the first target; no supported image yet. |
-| Remote text channel | Implemented boundary | Phase 5 private Telegram long polling passed its gate; it remains low assurance. |
-| Encrypted backup and restore | Implemented boundary | Phase 6 provider-blind format, hostile-provider tests, MinIO portability, and clean-device restore passed their gate. |
-| High-value assistant workflows | Engineering gate complete | Seven bounded calendar, mail, commitment, household, contact, research, and travel journeys passed recovery, accessibility, and zero-incident gates. |
+| Remote text channel | Implemented boundary | Private Telegram long polling is tested as a low-assurance reference channel. |
+| Encrypted backup and restore | Implemented boundary | Provider-independent backup, tamper detection, migration, and clean-device restore are tested. |
+| High-value assistant workflows | Implemented boundary | Bounded calendar, mail, commitment, household, contact, research, and travel journeys include recovery and accessibility controls. |
 
 Continue with [how Unison works](how-unison-works.md), the
 [privacy and security promise](privacy-security.md), or the
