@@ -21,6 +21,7 @@ nav:
       - AI Personality: experience/ai-personality.md
       - System Capabilities: experience/system-capabilities.md
       - Accessibility: accessibility.md
+      - Modalities and Ecosystem: ecosystem.md
   - Trust:
       - Privacy & Security: privacy-security.md
       - Backup & Recovery: backup-recovery.md
