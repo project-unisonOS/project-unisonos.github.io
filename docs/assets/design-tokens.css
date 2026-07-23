@@ -39,7 +39,7 @@ main {
 }
 
 .status-banner {
-  margin: 4.75rem auto 1rem;
+  margin: 4rem auto .5rem;
   max-width: 62rem;
   padding: .75rem 1rem;
   border-left: .35rem solid var(--unison-teal);
