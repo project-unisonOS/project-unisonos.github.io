@@ -4,7 +4,7 @@ Unison is an open, private personal-assistant platform designed to return time t
 you. **UnisonOS** is the downloadable appliance runtime being built to run Unison
 on your own trusted device.
 
-<p class="hero-lede">One home node. Your own independently governed assistant. Explicit spaces for the context you choose to share.</p>
+<p class="hero-lede">One assistant that works for you. Your information stays private. You decide what to share.</p>
 
 [Understand the vision](vision.md){ .cta .cta-primary }
 [See the current status](current-status.md){ .cta .cta-secondary }
