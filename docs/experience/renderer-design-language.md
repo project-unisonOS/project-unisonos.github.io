@@ -386,4 +386,4 @@ The renderer is successful when it feels:
 - Obvious
 - Forgettable
 
-The best renderer is the one a person never thinks about.
+The best renderer is the one you never have to think about.

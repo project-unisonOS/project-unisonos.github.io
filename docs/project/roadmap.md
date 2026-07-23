@@ -4,7 +4,9 @@ This roadmap is high-level directional guidance for the evolution of UnisonOS. I
 
 ## North Star
 
-UnisonOS delivers a calm, intention-centric, real-time generated experience that adapts to each person and each device’s capabilities, while keeping privacy, consent, and auditability central.
+UnisonOS delivers a calm, intention-centric, real-time generated experience that
+adapts to you and your devices’ capabilities while keeping privacy, consent, and
+auditability central.
 
 ## Near-Term Focus (Now → Next)
 

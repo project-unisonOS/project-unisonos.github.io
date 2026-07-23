@@ -15,5 +15,5 @@
 | **Capability Host** | The architectural boundary for sandboxed tools and connectors. The repository is `unison-capability`; the runtime service identifier is `unison-capability-host`. |
 
 UnisonOS is not a claim to replace a phone or general-purpose operating system.
-“Local-first” does not mean external providers receive no data when a person has
+“Local-first” does not mean external providers receive no data when you have
 explicitly enabled a remote model, channel, connector, or backup destination.

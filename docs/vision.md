@@ -1,17 +1,17 @@
 # Vision
 
-Unison exists to give people more agency over their time. It should handle the
-administrative friction of daily life so a person can invest more attention in
-work, rest, creativity, community, and relationships that matter to them.
+Unison exists to give you more agency over your time. It should handle the
+administrative friction of daily life so you can invest more attention in work,
+rest, creativity, community, and relationships that matter to you.
 
-The assistant acts for one person. It learns preferences and commitments with
-that person's authority, keeps continuity on a trusted home node, and explains
-what it is doing. It does not create an engagement loop or quietly substitute a
-third party's objective for the person's own.
+Your assistant acts for you. It learns your preferences and commitments with
+your authority, keeps continuity on your trusted home node, and explains what it
+is doing. It does not create an engagement loop or quietly substitute a third
+party's objective for your own.
 
 ## Product principles
 
-- The person is the principal, not the product.
+- You are the principal, not the product.
 - Local authority and replaceable providers preserve continuity and choice.
 - Relationship awareness never becomes automatic access.
 - Accessibility is part of correctness, including confirmation and recovery.

@@ -1,8 +1,11 @@
 # System Capabilities
 
-UnisonOS connects to tools, services, and external resources through a growing set of **system capabilities**. Capabilities are the bridge between what a person asks for (“intent”) and the concrete mechanism that fulfills it (local tools, connectors, MCP servers, or skill packs).
+UnisonOS connects to tools, services, and external resources through a growing
+set of **system capabilities**. Capabilities bridge what you ask for (your
+“intent”) and the concrete mechanism that fulfills it, such as local tools,
+connectors, MCP servers, or skill packs.
 
-## What a person experiences
+## What you experience
 
 Capabilities are designed to feel like “Unison just knows how to do it,” while still keeping safety, consent, and privacy explicit where it matters.
 
@@ -38,7 +41,7 @@ At a high level, the platform can represent capabilities as:
 
 Some capabilities require account access (email/calendar/chat). Those are shipped **disabled by default** and require onboarding before use.
 
-In practice, a person can expect:
+In practice, you can expect:
 
 1. **Clear enablement moments**
    - Unison will not silently turn on connectors or network access.
@@ -62,4 +65,3 @@ This means the set of available capabilities will expand over time as:
 - safety policies and trust verification improve.
 
 The goal is consistent: UnisonOS grows its ability to help, without growing a “wild west” of uncontrolled integrations.
-

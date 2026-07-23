@@ -28,7 +28,7 @@ UnisonOS does not have users.
 
 There are **people**.
 
-A person is:
+You are:
 - Intent-driven, not task-driven
 - Objective-oriented, not workflow-bound
 - Continuous over time, not session-bound
@@ -36,9 +36,12 @@ A person is:
 The term *user* implies adaptation to a system.  
 UnisonOS inverts this relationship.
 
-The system adapts to the person.
+The system adapts to you.
 
-Language matters. As Edward Tufte observed, “There are only two industries that call their customers ‘users’: illegal drugs and software.” UnisonOS rejects that framing. People are not “users” of the system. The system exists to serve, adapt to, and respect the person.
+Language matters. As Edward Tufte observed, “There are only two industries that
+call their customers ‘users’: illegal drugs and software.” UnisonOS rejects that
+framing. You are not a “user” of the system. The system exists to serve, adapt
+to, and respect you.
 
 ---
 
@@ -50,7 +53,7 @@ Intent is the primary abstraction layer in UnisonOS.
 
 A guiding principle:
 
-> If a person believes they need a keyboard to accomplish something, the system has not achieved sufficient abstraction.
+> If you believe you need a keyboard to accomplish something, the system has not achieved sufficient abstraction.
 
 Key implications:
 - Keyboards are not primary interfaces
@@ -71,7 +74,7 @@ Traditional systems require people to:
 
 UnisonOS inverts this model.
 
-A person expresses:
+You express:
 - What they want to accomplish
 - Why it matters
 - Constraints and preferences
@@ -81,7 +84,7 @@ The system determines:
 - Which abstraction layers apply
 - Which tools or embodiments are appropriate
 
-The person remains focused on **outcomes**, not actions.
+You remain focused on **outcomes**, not actions.
 
 ---
 
@@ -214,7 +217,7 @@ They are accessed via:
 - Background execution
 
 Rules:
-- The person should not know when legacy systems are involved
+- You should not need to know when legacy systems are involved
 - Legacy flows are fallback mechanisms
 - VDI is a means, never the experience
 
@@ -339,7 +342,7 @@ The system exists to:
 
 When instructing agents, UnisonOS must always be framed as:
 
-> An intention-centric, multimodal operating surface that abstracts tools, interfaces, and embodiments to generate real-time digital and physical experiences in service of a person’s objectives.
+> An intention-centric, multimodal operating surface that abstracts tools, interfaces, and embodiments to generate real-time digital and physical experiences in service of your objectives.
 
 This statement is approved for direct reuse as agent system context.
 

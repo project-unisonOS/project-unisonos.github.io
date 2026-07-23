@@ -7,7 +7,7 @@ See also: [Default System Prompt (Canonical)](system-prompt.md).
 ## Why Separate Model from Identity?
 Models change. Hardware changes. Providers change.
 
-If personality lives inside a model configuration, a person loses continuity during upgrades and replacements. UnisonOS instead stores:
+If personality lives inside a model configuration, you lose continuity during upgrades and replacements. UnisonOS instead stores:
 - persistent identity and values
 - mutable priorities and directives
 outside the model, then compiles and injects the active system prompt at runtime.
@@ -16,8 +16,8 @@ outside the model, then compiles and injects the active system prompt at runtime
 
 ### Option A: Edit Files Directly
 Edit:
-- `~/.unison/prompt/user/identity.json` (the person’s identity and values)
-- `~/.unison/prompt/user/priorities.json` (the person’s priorities and directives)
+- `~/.unison/prompt/user/identity.json` (your identity and values)
+- `~/.unison/prompt/user/priorities.json` (your priorities and directives)
 
 Changes apply on the next turn by default.
 

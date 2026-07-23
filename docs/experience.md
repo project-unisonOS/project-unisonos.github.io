@@ -12,7 +12,7 @@ These principles are derived from two canonical documents:
 These experience principles translate the platform vision into day-to-day behavior:
 
 - **Generated, intention-centric experiences** keep you focused on outcomes, not tools, apps, or navigation.
-- **Personalized, capability-aware experiences** adapt to each person’s needs and preferences and the system’s current capabilities (for example: available display, audio, input, or assistive devices).
+- **Personalized, capability-aware experiences** adapt to your needs and preferences and the system’s current capabilities (for example: available display, audio, input, or assistive devices).
 - **Presence before information** keeps the system calm and non-demanding when there is nothing useful to present.
 - **Privacy and consent** keep data handling explicit, auditable, and under your control.
 - **Trust as the product** means experiences must be predictable, coherent, and safe; surprising behavior is a trust violation.
@@ -33,7 +33,7 @@ UnisonOS is designed to run entirely on local hardware using devstack and produc
 
 ## Real-Time, Generated Experience (Not Navigation)
 
-UnisonOS does not ask people to learn a persistent interface structure. Instead, it generates an experience in real time that fits the current intent and context.
+UnisonOS does not ask you to learn a persistent interface structure. Instead, it generates an experience in real time that fits your current intent and context.
 
 Implications:
 
@@ -45,7 +45,7 @@ Implications:
 
 UnisonOS treats modalities as first-class and co-equal. Experiences must remain complete even when one modality is unavailable.
 
-When generating an experience, UnisonOS considers available capability + a person’s preferences across:
+When generating your experience, UnisonOS considers available capabilities and your preferences across:
 
 - **Voice**
 - **Vision**
@@ -61,7 +61,7 @@ Related docs:
 
 ## Accessibility as Personalization
 
-Because experiences are rendered in real time, accessibility is not a separate “mode” or a set of after-the-fact accommodations. The system generates an experience that meets each person’s specific needs and preferences.
+Because experiences are rendered in real time, accessibility is not a separate “mode” or a set of after-the-fact accommodations. The system generates an experience that meets your specific needs and preferences.
 
 This makes UnisonOS inherently accessible:
 

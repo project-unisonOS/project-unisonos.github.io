@@ -23,13 +23,13 @@ cannot decrypt another person's private content or recover that assistant.
 Backup remains separate from synchronization and remote access. The home node
 is still the only authoritative writer.
 
-## Recovery belongs to the person
+## Recovery belongs to you
 
 Each adult enrolls a separate recovery kit through a strongly authenticated
 local, non-voice surface. The kit can be complemented by a trusted device that
 holds the current signed checkpoint. Voice, Telegram, another low-assurance
 channel, the storage provider, and a household administrator cannot substitute
-for the person's recovery proof.
+for your recovery proof.
 
 A clean device verifies the recovery proof, checkpoint, manifest lineage, and
 every encrypted object before activating restored state. Activation revokes the

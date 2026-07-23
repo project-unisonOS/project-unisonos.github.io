@@ -17,7 +17,7 @@ This page describes how the current UnisonOS stack is wired end-to-end in the de
 
 Unison services share a small set of consistent patterns:
 
-- **Intent envelopes**: normalize “what the person wants” across modalities.
+- **Intent envelopes**: normalize what you want across modalities.
 - **Action envelopes**: describe tool/actuator work (including step plans for high-impact operations).
 - **Result/event envelopes**: return outcomes and emit state transitions for traceability.
 
