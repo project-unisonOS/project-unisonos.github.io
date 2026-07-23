@@ -18,6 +18,10 @@ UnisonOS delivers a calm, intention-centric, real-time generated experience that
   per-person/shared-space encryption, signed anchored manifests, replaceable
   backends, corruption/rollback detection, and clean replacement-device restore.
   Production hardware and provider validation remain separate release work.
+- **Time-returning workflows**: the Phase 7 review candidate composes the
+  accepted identity, context, policy, household, channel, and recovery
+  boundaries into seven inspectable administrative workflow families with
+  local outcome evidence and no engagement optimization.
 - **Standardized Skills**: define and enforce a consistent “skill” interface for intent handlers (registration, discovery, versioning, schema validation, and policy hooks).
 - **Tool registry as a first-class concept**: keep a central list of available tools/skills/service APIs and their constraints so the system never guesses capabilities.
 - **Multi-agent orchestration**: enable orchestrator-driven delegation to specialist agents for parallel work (research, code, extraction, actuation), with clear boundaries and deterministic interfaces where required.
