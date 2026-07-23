@@ -14,10 +14,10 @@ UnisonOS delivers a calm, intention-centric, real-time generated experience that
 - **Secure remote text**: the accepted Phase 5 boundary normalizes Telegram
   private-chat long polling with pairing, revocation, replay defense, per-person
   credentials, low assurance, local step-up, and no public appliance listener.
-- **Provider-blind recovery**: the Phase 6 review candidate implements
+- **Provider-blind recovery**: the accepted Phase 6 boundary implements
   per-person/shared-space encryption, signed anchored manifests, replaceable
-  backends, corruption/rollback detection, and clean replacement-device restore;
-  the final gate and production hardware/provider validation remain.
+  backends, corruption/rollback detection, and clean replacement-device restore.
+  Production hardware and provider validation remain separate release work.
 - **Standardized Skills**: define and enforce a consistent “skill” interface for intent handlers (registration, discovery, versioning, schema validation, and policy hooks).
 - **Tool registry as a first-class concept**: keep a central list of available tools/skills/service APIs and their constraints so the system never guesses capabilities.
 - **Multi-agent orchestration**: enable orchestrator-driven delegation to specialist agents for parallel work (research, code, extraction, actuation), with clear boundaries and deterministic interfaces where required.

@@ -1,13 +1,13 @@
 # Provider-blind backup and recovery
 
-**Maturity: Phase 6 review candidate, not a supported production service.**
+**Maturity: accepted Phase 6 engineering boundary, not a supported production service.**
 
 UnisonOS encrypts backup content on the home node before any provider receives
 it. Every adult and every shared context space has an independent backup key
 domain. A storage provider or household administrator can see backup health but
 cannot decrypt another person's private content or recover that assistant.
 
-## What the candidate implements
+## What Phase 6 implements
 
 - AES-256-GCM client-side envelope encryption with independent chunk data keys.
 - Encrypted, Ed25519-signed, monotonically linked manifests.
@@ -56,7 +56,7 @@ copies already obtained.
 
 ## Current limits
 
-- The implementation is an engineering review candidate, not a supported backup
+- The implementation passed its bounded engineering gate; it is not a supported backup
   subscription or partnership.
 - The S3-compatible contract does not imply endorsement of a particular public
   provider.

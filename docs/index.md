@@ -48,7 +48,7 @@ can coordinate those tools without turning a person's context into a product.
 | Household isolation model | Designed | Approved architecture; enforcement implementation has not begun. |
 | Installable UnisonOS appliance | Planned | Ubuntu 24.04 x86_64 is the first target; no supported image yet. |
 | Remote text channel | Implemented boundary | Phase 5 private Telegram long polling passed its gate; it remains low assurance. |
-| Encrypted backup and restore | Review candidate | Phase 6 provider-blind format, hostile-provider tests, and clean-device restore await the final gate. |
+| Encrypted backup and restore | Implemented boundary | Phase 6 provider-blind format, hostile-provider tests, MinIO portability, and clean-device restore passed their gate. |
 
 Continue with [how Unison works](how-unison-works.md), the
 [privacy and security promise](privacy-security.md), or the
