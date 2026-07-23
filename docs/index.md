@@ -1,4 +1,4 @@
-# Your assistant should work for you.
+# Your assistant should work for *you*.
 
 Unison is an open, private personal-assistant platform designed to return time to
 the person it serves. **UnisonOS** is the downloadable appliance runtime being
@@ -16,7 +16,7 @@ built to run Unison on a trusted device, usually in a person's home.
 
 ## A different incentive
 
-Unison is intended to optimize for your objectives—not advertising, sponsored
+Unison is intended to optimize for your objectives, not advertising, sponsored
 placement, engagement, or a provider's commercial agenda. Its success should be
 measured in useful outcomes, commitments completed, accessibility, recoverability,
 and time returned to you.

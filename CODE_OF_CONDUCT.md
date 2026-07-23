@@ -26,7 +26,7 @@ Examples of unacceptable behavior include:
 
 ## Enforcement Responsibilities
 Project maintainers are responsible for clarifying and enforcing standards of acceptable behavior.  
-They may take corrective action — such as warnings, PR rejections, or removal from collaboration — when behavior violates this Code.
+They may take corrective action, such as warnings, PR rejections, or removal from collaboration, when behavior violates this Code.
 
 ---
 

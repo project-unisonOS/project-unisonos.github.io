@@ -8,7 +8,7 @@ alternative, authenticate more strongly, or cancel.
 
 Unknown identity, purpose, audience, context space, assurance, data class,
 channel, recipient, or capability authority denies. Email, websites, documents,
-tools, and model responses are treated as content with provenance—not as
+tools, and model responses are treated as content with provenance, not as
 instructions that can grant themselves permission.
 
 Remote inference requires an explicit disclosure decision and a recorded check

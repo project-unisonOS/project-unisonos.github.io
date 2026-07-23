@@ -8,8 +8,8 @@ Recommended entry point is `unison-workspace` (meta repo) because it pins compat
 
 Devstack supports two common local modes:
 
-1) **Development mode (host ports published)** — easiest for day-to-day work. Services are reachable on `localhost`.
-2) **Security overlay mode (no host ports published)** — closer to a “least exposure” deployment posture. Services are only reachable from inside Docker networks (use `docker compose exec …` or in-network smoke tests).
+1) **Development mode (host ports published)**: easiest for day-to-day work. Services are reachable on `localhost`.
+2) **Security overlay mode (no host ports published)**: closer to a “least exposure” deployment posture. Services are only reachable from inside Docker networks (use `docker compose exec …` or in-network smoke tests).
 
 ## Development Mode (published ports)
 

@@ -7,7 +7,7 @@ This document applies to all repositories under the **project-unisonOS** organiz
 
 ## Overview
 Project Unison is an experimental, modular platform that merges context-aware AI with open computing principles.  
-All contributions — code, documentation, research, or accessibility testing — help shape a more inclusive and adaptive computing future.
+All contributions, including code, documentation, research, and accessibility testing, help shape a more inclusive and adaptive computing future.
 
 ---
 
@@ -52,7 +52,8 @@ All contributions — code, documentation, research, or accessibility testing �
 
 ## Accessibility Commitments
 Unison’s foundation is inclusive design.  
-If you introduce features that affect human interaction — input, display, or policy behavior — confirm that:
+If you introduce features that affect human interaction, including input,
+display, or policy behavior, confirm that:
 - Keyboard and screen reader use cases are supported.  
 - Default color palettes meet contrast ratios.  
 - Audio or visual indicators have redundant cues.
