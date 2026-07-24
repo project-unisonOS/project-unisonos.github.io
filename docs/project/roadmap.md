@@ -23,10 +23,12 @@ complete repair/removal integration.
 
 ### Signed updates and rollback
 
-Threshold-signed channel metadata and attack simulations are in place.
-Remaining work connects verified metadata to download, checkpoint, staging,
-boot, bounded health checks, promotion, automatic rollback, release notes,
-offline updates, revocation, and end-of-support procedures.
+Threshold-signed metadata, independently verified staging authorization,
+checkpointed complete-target staging, atomic activation, bounded health
+promotion, safe resume, and automatic or explicit rollback simulations are in
+place. Remaining work connects these controls to real promoted downloads,
+physical reboot cycles, release notes, offline updates, revocation, and
+end-of-support procedures.
 
 ### Hardware qualification
 

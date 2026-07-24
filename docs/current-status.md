@@ -53,14 +53,20 @@ The candidate release path now has:
 - simulated transactional installation with atomic activation, idempotent
   reinstall, interruption recovery, repair, safe uninstall, and separately
   confirmed factory reset, plus a receipt that reconciles the installed tree
-  with its release manifest and source commit; and
+  with its release manifest and source commit;
 - threshold-signed update metadata with expiration, monotonic channel and target
   versions, channel/hardware binding, artifact integrity, and dual-authority
-  root-key rotation.
+  root-key rotation; and
+- an independently verified staging authorization, pre-update data and receipt
+  checkpoint, complete target staging, atomic activation, bounded health
+  promotion, safe interruption resume, and automatic or explicit rollback.
 
 Update simulations reject replay, freeze, expiration, wrong-channel metadata,
 corrupt artifacts, wrong architecture, target rollback, signed-payload
-tampering, and invalid root rotation.
+tampering, invalid root rotation, changed authorization, expired roots, and
+insufficient disk. They exercise successful `N-1` to `N`, failed `N` to
+`N+1`, migration failure, staged and post-activation interruption, and
+replacement-restored state without losing the last known good release or data.
 
 ## What is still required
 
@@ -71,8 +77,8 @@ Before promotion, the project still needs:
   public-download verification wired into the bundle transaction;
 - deeper installer onboarding, repair, export, backup, and accessible first-run
   integration;
-- promoted update activation, health gating, automatic rollback, and repeated
-  upgrade-cycle evidence;
+- real promoted update downloads, reboot health gating, repeated physical
+  upgrade and rollback cycles, offline updates, and revocation procedures;
 - two named reference systems and a versioned compatibility matrix;
 - physical audio, firmware, Secure Boot, TPM, suspend, thermal, power, backup,
   restore, install, update, rollback, removal, and factory-reset results; and
