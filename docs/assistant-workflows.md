@@ -1,9 +1,9 @@
 # Assistant workflows
 
-**Maturity: Phase 7 engineering gate complete; not a supported production service.**
+**Maturity: tested engineering foundation; not a supported production service.**
 
-Phase 7 focuses on measurable administrative competence rather than broad
-autonomy. The bounded engineering profile covers:
+The current implementation focuses on measurable administrative competence
+rather than broad autonomy. Its bounded engineering profile covers:
 
 - calendar coordination;
 - email triage, summary, and draft preparation;
@@ -27,7 +27,7 @@ privacy policy.
 ## Draft and proposal first
 
 Email remains draft-first. Calendar coordination remains proposal-first. The
-Phase 7 boundary does not automatically send, publish, book, purchase, pay, or
+current boundary does not automatically send, publish, book, purchase, pay, or
 perform high-impact actuation.
 
 ## Failures stay visible

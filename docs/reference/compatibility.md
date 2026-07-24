@@ -1,14 +1,46 @@
 # Compatibility
 
-Unison services are versioned to work together in known combinations.
+No physical configuration is currently represented as supported. Ubuntu 24.04
+LTS, x86-64, and UEFI define the first candidate boundary.
 
-## Compatibility Matrix
+## Support tiers
 
-- A compatibility matrix tracks which versions of core services are known to work together for each platform release.
-- For release artifacts, the most reliable “what’s inside” reference is the release manifest asset (for example: `unisonos-manifest-v0.5.0-alpha.1.json` attached to the GitHub Release).
+| Tier | Meaning |
+| --- | --- |
+| Reference | A named system on which the complete release gate is repeated |
+| Compatible | A configuration that meets the enforced profile and passes the published suite |
+| Community-tested | Useful external evidence that has not completed the maintained support gate |
+| Unsupported | Known incompatible or outside the declared target |
 
-Existing compatibility matrix (canonical docs):
+## Candidate minimums
 
-- [Link to Compatibility Matrix](https://github.com/project-unisonOS/unison-docs/blob/main/dev/compatibility-matrix.md)
+- Ubuntu 24.04 LTS
+- x86-64 CPU with virtualization support
+- UEFI
+- 4 CPU cores
+- 8 GB RAM
+- 20 GB free storage for the minimum model profile
+- Docker 26–29 and Docker Compose 2.24–2.x
 
-When planning upgrades, coordinate updates across orchestrator, context, inference, IO, policy, and storage services.
+These are enforced software-contract values, not proof that a particular
+machine is supported. Recommended capacity will be set from measured latency,
+memory, storage, acoustic, thermal, and energy results.
+
+## Physical evidence still pending
+
+The qualification ledger contains 17 tests covering:
+
+- cold start, reboot, shutdown, disk pressure, clock skew, and dependency loss;
+- clean install, interruption, repeat install, repair, removal, and reset;
+- keyboard, screen reader, captions, and non-voice onboarding;
+- real update and automatic rollback cycles;
+- firmware, Secure Boot, TPM, storage, thermals, and power;
+- USB and Bluetooth microphones and speakers;
+- suspend, resume, and peripheral reconnection;
+- backup and replacement restore;
+- public-download installation; and
+- a full reference-matrix pilot.
+
+Installer warnings and this page will eventually be generated from the same
+versioned matrix. Until that matrix contains candidate-bound lab records, no
+model or peripheral should be inferred as supported.

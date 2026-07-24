@@ -11,7 +11,7 @@ Recommended path: run the devstack locally (WSL2 or Linux) and iterate against r
 
 ## 2) Install Options (Offline / Online)
 
-Phase 1.1 supports a lean base install plus post-install **model packs**.
+Model packs are experimental, versioned additions to the development stack.
 
 - Offline model packs: `unison-models install --path /path/to/pack.tgz`
 - Online model packs: `unison-models install --fetch https://…/pack.tgz`
@@ -48,11 +48,15 @@ The experience renderer is the primary “surface” during development and eval
 
 ## 7) Build, Deploy, and Images
 
-For the current Milestone 1 production-track release, the supported installation route is Ubuntu 24.04 native on x86_64.
+There is no supported installation yet. Ubuntu 24.04 LTS on x86-64 UEFI
+hardware is the first native support candidate.
 
-The concrete platform-side contract for that route lives in `unison-platform` and centers on `install-native.sh`, `unisonctl`, `.env.native.template`, and `compose/compose.native.yaml`.
+The candidate contract lives in `unison-platform` and centers on the native
+installer, `unisonctl`, `compose/compose.supported.yaml`, digest-pinned image
+inputs, and the deterministic release manifest.
 
-Platform releases may also publish evaluator artifacts for WSL2, Linux VM, and bare metal, but those are secondary to the canonical native install path.
+Platform releases may also publish evaluator artifacts for WSL2, Linux VM, and
+bare metal. None is currently supported.
 
 - How builds/releases are orchestrated: [Build, Deploy, and Images](workflow-design.md)
 - Image types + local reproduction commands: [Images, Builds, and Releases](images-builds-and-releases.md)
@@ -72,7 +76,7 @@ Use the hardware guidance when you’re validating device installs, networking, 
 ## 10) Releases
 
 Release docs should be read with one priority in mind:
-- supported route first: Ubuntu native
+- support-candidate route first: Ubuntu native
 - evaluator artifacts second: WSL2, Linux VM, bare metal
 
 - Start here: [Releases](releases.md)

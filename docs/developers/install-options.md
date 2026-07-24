@@ -1,20 +1,25 @@
-# Install Options (Offline / Online)
+# Install options
 
-For the current Milestone 1 production-track release, the supported install route is Ubuntu 24.04 native on x86_64 via the native installer path in `unison-platform`.
+There is no supported installation yet. Ubuntu 24.04 LTS on x86-64 UEFI
+hardware is the first native support candidate.
 
-Phase 1.1 supports:
+## Native candidate
 
-- Lean base install (devstack or deployment images)
-- Post-install Model Packs for offline-capable weights distribution
+The candidate uses `compose/compose.supported.yaml`, a release manifest, and
+digest-pinned images. Automated preflight and transaction tests exist, but
+physical installation is still pending.
 
-Evaluation artifacts such as WSL2, Linux VM, and bare-metal ISO remain secondary channels for testing and demos, not the canonical supported install path.
+## Evaluator environments
 
-## Offline
+- WSL2 for Windows-hosted development
+- Linux VM images for isolated evaluation
+- Bare-metal ISO for hardware exploration
+- Development Compose for repository work
 
-- `unison-models install --path /path/to/pack.tgz`
+These environments do not establish appliance compatibility.
 
-## Online
+## Model packs
 
-- `unison-models install --fetch https://…/pack.tgz`
-- Or alias via `UNISON_MODEL_PACK_ALIAS_MAP_JSON`
-
+Offline and online model-pack installation remains experimental. Signed
+capability and model metadata must pass compatibility, permission, and
+revocation policy before entering a promoted appliance release.

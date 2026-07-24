@@ -42,7 +42,7 @@ coordinate those tools without turning your context into a product.
 | Personal and shared context | Implemented boundary | Independent identities, private data domains, and explicit shared spaces are enforced. |
 | Trust and permissions | Implemented boundary | Disclosure, confirmation, capability authority, and revocation deny by default. |
 | Multimodal experience | Implemented boundary | Semantic output, speech, captions, interruption, and adaptive visual preferences are tested. |
-| Installable UnisonOS appliance | Planned | Ubuntu 24.04 x86_64 is the first target; no supported image yet. |
+| Appliance release path | In progress | Digest-pinned runtime, reproducible manifest, installer simulations, and signed update metadata are tested; no supported release yet. |
 | Remote text channel | Implemented boundary | Private Telegram long polling is tested as a low-assurance reference channel. |
 | Encrypted backup and restore | Implemented boundary | Provider-independent backup, tamper detection, migration, and clean-device restore are tested. |
 | High-value assistant workflows | Implemented boundary | Bounded calendar, mail, commitment, household, contact, research, and travel journeys include recovery and accessibility controls. |
