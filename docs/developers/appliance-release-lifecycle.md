@@ -74,11 +74,35 @@ Ed25519 roles have explicit thresholds. The verifier checks:
 This prevents replay, freeze, rollback, wrong-channel, wrong-hardware, corrupt,
 and tampered metadata from reaching staging.
 
+## Activation and rollback
+
+The update verifier emits a staging receipt that retains the original signed
+channel metadata. Before staging, the privileged lifecycle independently checks
+that evidence against its pinned update root and verifies the signed release
+bundle. The authorization must match the exact channel, metadata and target
+versions, release version, hardware, artifact length, artifact SHA-256, restart
+requirement, and checkpoint requirement.
+
+The simulated transaction then:
+
+1. checks capacity for the bundle, checkpoint, and rollback;
+2. copies and verifies personal data and the current installation receipt;
+3. stages the complete target without changing the active release;
+4. atomically activates the target;
+5. runs a bounded health sequence; and
+6. promotes the new receipt only after health succeeds.
+
+Failed migration, health, or post-activation interruption restores the
+last-known-good release, receipt, and data automatically. A pre-activation
+interruption leaves the old release active and can resume the same verified
+target. A promoted target retains its checkpoint for explicit owner rollback.
+
 ## Evidence boundary
 
 All results above are automated software evidence. They do not establish that a
 candidate survives real UEFI installation, power interruption, reboot, audio
-hardware, suspend, thermal load, update activation, or automatic rollback.
+hardware, suspend, thermal load, promoted-image activation, or physical
+automatic rollback.
 Those results remain in the physical-validation ledger until tested against an
 exact immutable release candidate.
 
