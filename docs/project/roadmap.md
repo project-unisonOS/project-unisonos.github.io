@@ -7,17 +7,19 @@ or CI gate does not substitute for physical-device evidence.
 
 ### Deterministic runtime and release inputs
 
-The digest-required runtime and reproducible manifest contract are in place.
-Next, the release pipeline must attach real promoted digests, SBOMs, provenance,
-source correspondence, signatures, checksums, release notes, and compatibility
-metadata to one immutable candidate.
+The digest-required runtime, reproducible manifest, signed deterministic bundle,
+pre-privilege verifier, and installation receipt are in place. Next, the
+release pipeline must attach real promoted digests, image signatures, SBOMs,
+provenance, source correspondence, checksums, release notes, and compatibility
+metadata to one immutable candidate and verify it from the public location.
 
 ### Installer and first run
 
-Preflight and filesystem transaction simulations are in place. Remaining work
-includes signed bootstrap verification, system-change preview, local owner
-enrollment, recovery material, privacy choices, audio/model selection, backup
-setup, accessible onboarding, export, and complete repair/removal integration.
+Preflight, signed bootstrap verification, exact system-change preview, receipt
+reconciliation, and filesystem transaction simulations are in place. Remaining
+work includes local owner enrollment, recovery material, privacy choices,
+audio/model selection, backup setup, accessible onboarding, export, and
+complete repair/removal integration.
 
 ### Signed updates and rollback
 

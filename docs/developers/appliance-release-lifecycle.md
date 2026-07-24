@@ -24,6 +24,19 @@ The release manifest records:
 Identical source and inputs must produce byte-identical manifests. A publishable
 manifest rejects missing, mutable, and example zero digests.
 
+## Bundle trust
+
+The candidate assembler packages the manifest and all declared runtime inputs
+under a canonical Ed25519-signed index. The bootstrap checks the signature
+against a separately trusted public key before privilege elevation. It rejects
+changed, missing, extra, or duplicate content; unsafe archive paths; a
+substituted key; and disagreement among the manifest, Compose file, image
+environment, host requirements, licenses, and model profile.
+
+Verification produces a system-change plan whose SHA-256 binds the bundle
+index, trusted key, installation prefix, and personal-data path. Installation
+requires acceptance of that exact hash.
+
 ## Installer lifecycle
 
 Preflight currently distinguishes hard blockers from warnings. Unsupported OS,
@@ -38,6 +51,12 @@ repair can restore a completely staged release.
 Software removal preserves the separate personal-data directory. Factory reset
 requires the exact destruction phrase and reports that personal data was
 destroyed.
+
+Successful bootstrap writes an installation receipt outside the immutable
+release tree. It records the bundle index, manifest, source commit, complete
+file inventory, and installed-tree hashes. Reinstalling identical content is
+idempotent, while ordinary removal deletes the software receipt without
+destroying personal data.
 
 ## Update trust
 
