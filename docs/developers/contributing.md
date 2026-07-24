@@ -5,8 +5,8 @@ Thank you for your interest in improving Unison.
 ## Branching Model
 
 - `main` - Reviewed integration branch; it does not imply a production-ready appliance.
-- `dev` – Active development and integration branch.
-- `feature/*` or `fix/*` – Short-lived branches for specific changes.
+- `dev`: Active development and integration branch.
+- `feature/*` or `fix/*`: Short-lived branches for specific changes.
 
 ## Workflow Summary
 

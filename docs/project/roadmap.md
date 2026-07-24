@@ -8,10 +8,15 @@ or CI gate does not substitute for physical-device evidence.
 ### Deterministic runtime and release inputs
 
 The digest-required runtime, reproducible manifest, signed deterministic bundle,
-pre-privilege verifier, and installation receipt are in place. Next, the
-release pipeline must attach real promoted digests, image signatures, SBOMs,
-provenance, source correspondence, checksums, release notes, and compatibility
-metadata to one immutable candidate and verify it from the public location.
+pre-privilege verifier, and installation receipt are in place. The first public
+preview now attaches digest-pinned images, image signatures, an SPDX inventory,
+provenance, source correspondence, checksums, release notes, support status,
+and vulnerability evidence to one immutable candidate. The release pipeline
+verifies the published assets again from their public location.
+
+Next, the project must qualify that exact candidate on physical hardware,
+complete the remaining product journeys and release procedures, and make an
+explicit human promotion decision before describing any channel as supported.
 
 ### Installer and first run
 

@@ -3,6 +3,19 @@
 UnisonOS is building one narrow support candidate before expanding to additional
 platforms: a signed native bundle for Ubuntu 24.04 LTS on x86-64 UEFI systems.
 
+## Current preview evidence
+
+[v0.6.0-preview.1](https://github.com/project-unisonOS/unison-platform/releases/tag/v0.6.0-preview.1)
+is the first public software-only appliance preview. Its published assets
+include the signed bundle and checksum inventory, 13 digest-pinned images,
+source correspondence, an SPDX inventory, provenance, support status,
+vulnerability results, Ed25519 signatures, and Sigstore evidence.
+
+The release workflow downloaded those public assets again, verified their
+integrity and signatures, completed an installer transaction, and confirmed
+that incomplete and tampered mirrors fail closed. This is release-path
+evidence, not physical-device qualification or a support announcement.
+
 ## Runtime contract
 
 The candidate profile contains 13 services. Every image reference must include

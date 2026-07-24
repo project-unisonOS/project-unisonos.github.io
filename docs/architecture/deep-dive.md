@@ -86,23 +86,23 @@ UnisonOS is designed to run primarily on edge devices. Cloud connectivity is opt
 
 Core control plane:
 
-- **Orchestrator** – Central intent router and coordinator.
-- **Intent Graph** – Front-end for routing intents into the orchestrator.
-- **Policy / Consent / Auth** – Governance and identity primitives for all sensitive flows.
-- **Inference** – Model execution gateway (local-first, provider-backed).
-- **Capability Resolver** – Capability discovery/installation/execution gate that enforces manifests, policy, and safe defaults.
+- **Orchestrator**: Central intent router and coordinator.
+- **Intent Graph**: Front-end for routing intents into the orchestrator.
+- **Policy / Consent / Auth**: Governance and identity primitives for all sensitive flows.
+- **Inference**: Model execution gateway (local-first, provider-backed).
+- **Capability Resolver**: Capability discovery/installation/execution gate that enforces manifests, policy, and safe defaults.
 
 State and data:
 
-- **Context** – Profile + session store (consent-aware).
-- **Context Graph** – Graph-shaped context used for recall/relationships (Neo4j in devstack).
-- **Storage** – Durable KV + artifacts + vault + audit behind a single service API.
+- **Context**: Profile + session store (consent-aware).
+- **Context Graph**: Graph-shaped context used for recall/relationships (Neo4j in devstack).
+- **Storage**: Durable KV + artifacts + vault + audit behind a single service API.
 
 Actuation and I/O:
 
-- **Experience Renderer** – Real-time renderer that turns state into an experience and emits intents back into the control plane.
-- **Agent VDI** – Desktop/browser automation actuator used for GUI-only workflows.
-- **I/O services** – Speech, vision, sign, Braille, BCI, and other modality adapters.
+- **Experience Renderer**: Real-time renderer that turns state into an experience and emits intents back into the control plane.
+- **Agent VDI**: Desktop/browser automation actuator used for GUI-only workflows.
+- **I/O services**: Speech, vision, sign, Braille, BCI, and other modality adapters.
 
 Infrastructure commonly used:
 
@@ -156,8 +156,8 @@ Capabilities are declared in a manifest and validated against a platform schema 
 
 Images can ship with a curated baseline manifest:
 
-- `manifest.base.json` – read-only, shipped in the image
-- `manifest.local.json` – mutable, persisted on disk
+- `manifest.base.json`: read-only, shipped in the image
+- `manifest.local.json`: mutable, persisted on disk
 
 Resolver view = merge(base + local), where local overrides base entries by `id`. Runtime writes (installs, enablement changes, secret bindings) always go to the local manifest.
 
@@ -193,10 +193,10 @@ In current implementations, the storage service persists metadata to **Postgres*
 
 Responsibilities:
 
-- **Working memory** – Long-lived state for tasks and sessions, including summaries and embeddings metadata.
-- **Vault** – Encrypted secrets such as credentials, tokens, and API keys.
-- **Objects and files** – Documents, downloads, and artifacts with metadata.
-- **Audit** – Append-only records of who did what and when for sensitive operations.
+- **Working memory**: Long-lived state for tasks and sessions, including summaries and embeddings metadata.
+- **Vault**: Encrypted secrets such as credentials, tokens, and API keys.
+- **Objects and files**: Documents, downloads, and artifacts with metadata.
+- **Audit**: Append-only records of who did what and when for sensitive operations.
 
 Security and privacy:
 

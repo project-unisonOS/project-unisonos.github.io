@@ -55,8 +55,9 @@ The candidate contract lives in `unison-platform` and centers on the native
 installer, `unisonctl`, `compose/compose.supported.yaml`, digest-pinned image
 inputs, and the deterministic release manifest.
 
-Platform releases may also publish evaluator artifacts for WSL2, Linux VM, and
-bare metal. None is currently supported.
+The current platform release publishes one native x86-64 unsupported preview.
+WSL2 remains useful for development, but current releases do not publish WSL,
+VM, or ISO images.
 
 - How builds/releases are orchestrated: [Build, Deploy, and Images](workflow-design.md)
 - Image types + local reproduction commands: [Images, Builds, and Releases](images-builds-and-releases.md)
@@ -76,7 +77,8 @@ Use the hardware guidance when you’re validating device installs, networking, 
 ## 10) Releases
 
 Release docs should be read with one priority in mind:
-- support-candidate route first: Ubuntu native
-- evaluator artifacts second: WSL2, Linux VM, bare metal
+
+- current Ubuntu native preview and its verification evidence first
+- historical evaluator artifacts only as archived engineering context
 
 - Start here: [Releases](releases.md)

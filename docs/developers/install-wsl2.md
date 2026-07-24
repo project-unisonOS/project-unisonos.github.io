@@ -5,11 +5,12 @@ Evaluation-only note:
 - the canonical native path is documented in [Install UnisonOS](install-unisonos.md)
 - this WSL2 path is for developer evaluation, not a supported install route
 
-## Typical release assets
+## Archived channel
 
-For alpha evaluator releases, expect assets like:
-- `unisonos-wsl2-v0.5.0-alpha.N.tar.gz` (or `.zip`)
-- `SHA256SUMS-v0.5.0-alpha.N.txt`
+The current release does not publish a WSL2 image. Older alpha files are
+archived engineering artifacts and are not current download options. Use WSL2
+for repository development, or start from the
+[current native preview](releases.md).
 
 ## Install overview
 
@@ -20,5 +21,4 @@ Typical flow:
 - start the bundled stack
 - verify renderer and inference health
 
-Canonical platform doc:
-- [WSL2 evaluation install in unison-platform](https://github.com/project-unisonOS/unison-platform/blob/main/docs/install-wsl2.md)
+This historical flow is not maintained as current installation guidance.

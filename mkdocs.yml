@@ -34,9 +34,9 @@ nav:
       - Get Started:
           - Install UnisonOS: developers/install-unisonos.md
           - Appliance Release Lifecycle: developers/appliance-release-lifecycle.md
-          - WSL2 Evaluation: developers/install-wsl2.md
-          - Linux VM Evaluation: developers/install-linux-vm.md
-          - Bare Metal Evaluation: developers/install-bare-metal.md
+          - Archived WSL2 Channel: developers/install-wsl2.md
+          - Archived Linux VM Channel: developers/install-linux-vm.md
+          - Archived Bare Metal Channel: developers/install-bare-metal.md
           - Install Options: developers/install-options.md
           - Prerequisites: developers/prerequisites.md
           - Onboarding: developers/onboarding.md

@@ -42,11 +42,11 @@ coordinate those tools without turning your context into a product.
 | Personal and shared context | Implemented boundary | Independent identities, private data domains, and explicit shared spaces are enforced. |
 | Trust and permissions | Implemented boundary | Disclosure, confirmation, capability authority, and revocation deny by default. |
 | Multimodal experience | Implemented boundary | Semantic output, speech, captions, interruption, and adaptive visual preferences are tested. |
-| Appliance release path | In progress | Digest-pinned runtime, reproducible manifest, installer simulations, and signed update metadata are tested; no supported release yet. |
+| Appliance release path | Public preview | A signed, digest-pinned x86-64 bundle and its verification evidence are downloadable; hardware qualification and support promotion remain open. |
 | Remote text channel | Implemented boundary | Private Telegram long polling is tested as a low-assurance reference channel. |
 | Encrypted backup and restore | Implemented boundary | Provider-independent backup, tamper detection, migration, and clean-device restore are tested. |
 | High-value assistant workflows | Implemented boundary | Bounded calendar, mail, commitment, household, contact, research, and travel journeys include recovery and accessibility controls. |
 
 Continue with [how Unison works](how-unison-works.md), the
 [privacy and security promise](privacy-security.md), or the
-[engineering documentation](developers/get-started.md).
+[current preview download](developers/releases.md).

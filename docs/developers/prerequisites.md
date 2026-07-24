@@ -11,8 +11,8 @@ Unison is developed and tested primarily on Ubuntu (including WSL2) with Docker.
 
 - Minimum: 4 CPUs and 8 GB RAM.
 - Recommended for smoother Docker builds and inference:
-  - 6–8 CPUs.
-  - 12–16 GB RAM.
+  - 6 to 8 CPUs.
+  - 12 to 16 GB RAM.
 - At least 40 GB of free SSD storage.
 
 ## Tools

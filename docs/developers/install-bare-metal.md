@@ -5,12 +5,12 @@ Evaluation-only note:
 - the canonical native path is documented in [Install UnisonOS](install-unisonos.md)
 - this bare-metal ISO path is for evaluation and hardware exploration, not a supported install route
 
-## Typical release assets
+## Archived channel
 
-For alpha evaluator releases, expect assets like:
-- `unisonos-baremetal-v0.5.0-alpha.N.iso.part00` and subsequent parts
-- `unisonos-baremetal-v0.5.0-alpha.N.iso.REASSEMBLE.txt`
-- `SHA256SUMS-v0.5.0-alpha.N.txt`
+The current release does not publish an installer ISO. Older split alpha ISO
+files are archived engineering artifacts and are not current download options.
+Use the [current native preview](releases.md) only on disposable evaluation
+systems, with the hardware limitations described there.
 
 ## Install overview
 
@@ -21,5 +21,4 @@ Typical flow:
 - allow autoinstall to complete
 - verify renderer and inference health after first boot
 
-Canonical platform doc:
-- [Bare-metal evaluation install in unison-platform](https://github.com/project-unisonOS/unison-platform/blob/main/docs/install-bare-metal.md)
+This historical flow is not maintained as current installation guidance.

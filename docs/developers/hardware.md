@@ -33,9 +33,10 @@ measured latency, memory, storage, thermal, acoustic, and energy envelopes.
 
 ## Evaluation guidance
 
-You may use WSL2, VM, or bare-metal evaluator tooling to explore behavior, but
-those results cannot satisfy UEFI, firmware, Secure Boot, TPM, audio, Bluetooth,
-suspend, thermal, power, or physical fresh-install requirements.
+You may use WSL2 or a normal VM as a development environment, but those results
+cannot satisfy UEFI, firmware, Secure Boot, TPM, audio, Bluetooth, suspend,
+thermal, power, or physical fresh-install requirements. The current release
+does not publish WSL, VM, or ISO images.
 
 See [compatibility](../reference/compatibility.md) for the support-tier model
 and [current status](../current-status.md) for the complete evidence boundary.
