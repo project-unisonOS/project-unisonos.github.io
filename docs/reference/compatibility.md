@@ -20,7 +20,7 @@ LTS, x86-64, and UEFI define the first candidate boundary.
 - 4 CPU cores
 - 8 GB RAM
 - 20 GB free storage for the minimum model profile
-- Docker 26–29 and Docker Compose 2.24–2.x
+- Docker 26 to 29 and Docker Compose 2.24 or newer
 
 These are enforced software-contract values, not proof that a particular
 machine is supported. Recommended capacity will be set from measured latency,

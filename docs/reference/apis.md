@@ -32,16 +32,16 @@ Storage exposes an HTTP surface for unified persistence. Most services access st
 Common endpoints:
 
 - Memory:
-  - `POST /memory` – Write or update session memory entries with optional TTL.
-  - `GET /memory/{session_id}` – Retrieve a session memory entry.
+  - `POST /memory`: Write or update session memory entries with optional TTL.
+  - `GET /memory/{session_id}`: Retrieve a session memory entry.
 - Vault:
-  - `POST /vault` – Store or update a secret or token blob.
-  - `GET /vault/{key_id}` – Retrieve a secret when authorized.
+  - `POST /vault`: Store or update a secret or token blob.
+  - `GET /vault/{key_id}`: Retrieve a secret when authorized.
 - Objects:
-  - `POST /objects` – Upload files or binary artifacts; returns a storage ID and metadata.
-  - `GET /objects/{obj_id}` – Download an object by ID with appropriate authorization.
+  - `POST /objects`: Upload files or binary artifacts; returns a storage ID and metadata.
+  - `GET /objects/{obj_id}`: Download an object by ID with appropriate authorization.
 - Audit:
-  - `POST /audit` – Append structured audit events (actor, action, target, timestamps).
+  - `POST /audit`: Append structured audit events (actor, action, target, timestamps).
 
 For architectural context, see [Storage & Persistence](../architecture/deep-dive.md#storage-and-persistence).
 
@@ -51,9 +51,9 @@ The actuation surface exposes endpoints used by the orchestrator to execute high
 
 Common endpoints:
 
-- `POST /actuate` – Submit an Action Envelope for deterministic execution.
-- `POST /vdi/tasks/browse` – Ask the actuation service to run a browser-navigation task through the VDI agent.
-- `POST /vdi/tasks/form-submit` – Submit a form task through the VDI path.
-- `POST /vdi/tasks/download` – Run a download task through the VDI path and persist resulting artifacts.
+- `POST /actuate`: Submit an Action Envelope for deterministic execution.
+- `POST /vdi/tasks/browse`: Ask the actuation service to run a browser-navigation task through the VDI agent.
+- `POST /vdi/tasks/form-submit`: Submit a form task through the VDI path.
+- `POST /vdi/tasks/download`: Run a download task through the VDI path and persist resulting artifacts.
 
 See [Actuation / VDI & VPN](../architecture/deep-dive.md#actuation-vdi-and-vpn) for the intent → action → result flow and the VPN boundary.

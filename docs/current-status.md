@@ -5,6 +5,10 @@ workflow, backup, multimodal, installer, and update foundations are increasingly
 complete and tested. There is still no supported appliance release for everyday
 installation.
 
+The first public software-only appliance preview is now available:
+[v0.6.0-preview.1](https://github.com/project-unisonOS/unison-platform/releases/tag/v0.6.0-preview.1).
+It remains unsupported while physical validation and promotion gates are open.
+
 ## What is in place
 
 - **Personal and household foundations:** independent identities, assistants,
@@ -27,8 +31,8 @@ installation.
 ## Appliance release work now implemented
 
 The first support candidate is a native Ubuntu 24.04 LTS, x86-64, UEFI
-installation bundle. WSL2, VM, bare-metal ISO, and arm64 builds remain
-evaluation-only.
+installation bundle. The current release does not publish WSL2, VM,
+bare-metal ISO, or arm64 downloads.
 
 The candidate release path now has:
 
@@ -60,6 +64,15 @@ The candidate release path now has:
 - an independently verified staging authorization, pre-update data and receipt
   checkpoint, complete target staging, atomic activation, bounded health
   promotion, safe interruption resume, and automatic or explicit rollback.
+- a public unsupported prerelease containing a signed x86-64 bundle, 13
+  digest-pinned runtime images, checksums, source correspondence, SPDX
+  inventory, provenance, support status, vulnerability evidence, Ed25519
+  signatures, and Sigstore evidence;
+- keyless signatures and scans for ten source-correspondent project images,
+  with current base OS security updates and rejection of fixable critical
+  findings; and
+- a public-download job that verifies the published bytes, performs an
+  installer transaction, and rejects incomplete or tampered mirrors.
 
 Update simulations reject replay, freeze, expiration, wrong-channel metadata,
 corrupt artifacts, wrong architecture, target rollback, signed-payload
@@ -73,8 +86,8 @@ replacement-restored state without losing the last known good release or data.
 These controls are implementation and CI evidence, not a support announcement.
 Before promotion, the project still needs:
 
-- real promoted image digests and signatures, SBOMs, provenance, and
-  public-download verification wired into the bundle transaction;
+- promotion of the preview image digests and trust roots into a supported
+  channel after the remaining gates pass;
 - deeper installer onboarding, repair, export, backup, and accessible first-run
   integration;
 - real promoted update downloads, reboot health gating, repeated physical
@@ -91,10 +104,10 @@ mistaken for hardware acceptance.
 ## What that means for you
 
 You can inspect the contracts, run the development stack, and evaluate the
-native support candidate. You should not yet depend on UnisonOS as a supported
-production appliance or put irreplaceable personal data into an evaluator
-installation.
+native preview. You should not yet depend on UnisonOS as a supported production
+appliance or put irreplaceable personal data into an evaluator installation.
 
 Continue with the [appliance release lifecycle](developers/appliance-release-lifecycle.md),
+[current download](developers/releases.md),
 [installation status](developers/install-unisonos.md), or
 [compatibility guidance](reference/compatibility.md).
