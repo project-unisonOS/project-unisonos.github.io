@@ -42,11 +42,18 @@ The candidate release path now has:
   versions, model-profile hash, and licenses;
 - byte-for-byte manifest reproducibility tests and rejection of missing,
   mutable, or placeholder image digests;
+- a deterministic Ed25519-signed bundle containing the manifest, Compose
+  contract, immutable image environment, host requirements, licenses, and
+  model profile;
+- pre-privilege bootstrap verification that rejects tamper, missing or extra
+  files, substituted trust roots, and service/image reassignment, then binds
+  confirmation to the exact bundle, key, installation path, and data path;
 - installer preflight checks for the supported OS, architecture, CPU, memory,
   storage, virtualization, UEFI, Docker/Compose, clock, and audio;
 - simulated transactional installation with atomic activation, idempotent
   reinstall, interruption recovery, repair, safe uninstall, and separately
-  confirmed factory reset; and
+  confirmed factory reset, plus a receipt that reconciles the installed tree
+  with its release manifest and source commit; and
 - threshold-signed update metadata with expiration, monotonic channel and target
   versions, channel/hardware binding, artifact integrity, and dual-authority
   root-key rotation.
@@ -60,8 +67,8 @@ tampering, and invalid root rotation.
 These controls are implementation and CI evidence, not a support announcement.
 Before promotion, the project still needs:
 
-- real release images, SBOMs, provenance, signatures, and public-download
-  verification wired into one release transaction;
+- real promoted image digests and signatures, SBOMs, provenance, and
+  public-download verification wired into the bundle transaction;
 - deeper installer onboarding, repair, export, backup, and accessible first-run
   integration;
 - promoted update activation, health gating, automatic rollback, and repeated

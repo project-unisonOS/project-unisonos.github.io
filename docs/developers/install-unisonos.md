@@ -13,7 +13,9 @@ uses:
 - `compose/compose.supported.yaml`;
 - a release-provided environment containing one digest-pinned image reference
   for every required service; and
-- a deterministic supported-release manifest.
+- a deterministic supported-release manifest; and
+- a signed deterministic bundle, pre-privilege verifier, exact system-change
+  plan, transactional activation, and installation receipt.
 
 The older `compose.native.yaml` route and repository-oriented installer remain
 useful engineering inputs, but they are not a supported public appliance.
