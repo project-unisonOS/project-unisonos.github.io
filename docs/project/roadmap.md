@@ -1,77 +1,66 @@
 # Roadmap
 
-This roadmap is high-level directional guidance for the evolution of UnisonOS. It describes what we intend to standardize and harden over time, without committing to specific dates.
+This roadmap describes the order of work, not a release date. Passing a software
+or CI gate does not substitute for physical-device evidence.
 
-## North Star
+## Now: complete the appliance release path
 
-UnisonOS delivers a calm, intention-centric, real-time generated experience that
-adapts to you and your devices’ capabilities while keeping privacy, consent, and
-auditability central.
+### Deterministic runtime and release inputs
 
-## Near-Term Focus (Now → Next)
+The digest-required runtime and reproducible manifest contract are in place.
+Next, the release pipeline must attach real promoted digests, SBOMs, provenance,
+source correspondence, signatures, checksums, release notes, and compatibility
+metadata to one immutable candidate.
 
-- **Household proof gate**: completed for the bounded two-independent-adult Phase
-  4 profile, including isolation, shared calendar/grocery coordination, quotas,
-  recovery, and accessible administration.
-- **Secure remote text**: the accepted Phase 5 boundary normalizes Telegram
-  private-chat long polling with pairing, revocation, replay defense, per-person
-  credentials, low assurance, local step-up, and no public appliance listener.
-- **Provider-blind recovery**: the accepted Phase 6 boundary implements
-  per-person/shared-space encryption, signed anchored manifests, replaceable
-  backends, corruption/rollback detection, and clean replacement-device restore.
-  Production hardware and provider validation remain separate release work.
-- **Time-returning workflows**: the completed Phase 7 engineering gate composes the
-  accepted identity, context, policy, household, channel, and recovery
-  boundaries into seven inspectable administrative workflow families with
-  local outcome evidence and no engagement optimization.
-- **Governed ecosystem expansion**: Phase 8 is in progress through independently
-  certified slices. The initial engineering slice covers local speech/captions,
-  adaptive visual controls, policy-bound model routing, and signed/revocable
-  capability packages. Specialized hardware adapters remain experimental until
-  representative user and hardware evidence exists.
-- **Standardized Skills**: define and enforce a consistent “skill” interface for intent handlers (registration, discovery, versioning, schema validation, and policy hooks).
-- **Tool registry as a first-class concept**: keep a central list of available tools/skills/service APIs and their constraints so the system never guesses capabilities.
-- **Multi-agent orchestration**: enable orchestrator-driven delegation to specialist agents for parallel work (research, code, extraction, actuation), with clear boundaries and deterministic interfaces where required.
-- **MCP-enabled extensions**: add support for Model Context Protocol (MCP) servers as a standard way to extend tools and context sources safely and consistently.
+### Installer and first run
 
-## Platform and Payments
+Preflight and filesystem transaction simulations are in place. Remaining work
+includes signed bootstrap verification, system-change preview, local owner
+enrollment, recovery material, privacy choices, audio/model selection, backup
+setup, accessible onboarding, export, and complete repair/removal integration.
 
-- **Payments capability**: integrate the payments service into end-to-end flows (intent → policy/consent → payment approval → audit trail).
-  - Repo: https://github.com/project-unisonOS/unison-payments
-- **Policy-governed monetization**: ensure financial actions are explicit, confirmable, and auditable, with safe defaults and clear rollback paths.
+### Signed updates and rollback
 
-## Evolving Actuation (Embodiment of AI)
+Threshold-signed channel metadata and attack simulations are in place.
+Remaining work connects verified metadata to download, checkpoint, staging,
+boot, bounded health checks, promotion, automatic rollback, release notes,
+offline updates, revocation, and end-of-support procedures.
 
-- **Smart home integration**: privacy-preserving control over home devices and automations (lights, climate, security, media) with explicit consent and audit.
-- **Immersive experiences**: richer actuation surfaces (spatial/3D, AR/VR-style presentation and control) while keeping the experience intention-centric.
-- **Robotic actuation**: integrate safe, policy-governed control over physical actuators (robot arms, mobile robots, assistive devices).
-- **Expanded tool safety**: stronger guardrails for high-impact actions (scoped permissions, confirmation patterns, rollback semantics, and per-tool policy).
+### Hardware qualification
 
-## Performance and Device-Specific Optimization
+The project will name at least two reference x86-64 systems and publish support
+tiers: reference, compatible, community-tested, and unsupported. Installer
+enforcement and public guidance will derive from the same versioned matrix.
+Seventeen physical checks are waiting for compatible hardware.
 
-- **Device-aware profiles**: tune default behavior for different device classes (WSL2, VM, bare metal, low-power devices) while keeping the same core experience model.
-- **Latency and throughput**: focus on startup time, turn latency, streaming responsiveness, and resource usage (CPU/GPU/RAM/IO) across the full stack.
-- **Model efficiency**: improve model selection and runtime settings per device capability (quantization, context sizing, batching) while remaining local-first.
+### Release candidate and pilot
 
-## Vertical Domain Support (Privacy-Preserving Specialist Insight)
+The candidate must pass clean install, first run, supported journeys, update,
+rollback, backup, replacement restore, support-bundle generation, uninstall,
+factory reset, accessibility review, security review, and a reliability pilot.
+Only an explicit human decision can promote it.
 
-- **PII-heavy domains**: add first-class domain capabilities for managing and reasoning over sensitive content (e.g., personal health records, personal finance records).
-- **Beyond record storage**: treat domains as privacy-preserving methods of gaining specialist insights (summaries, risk flags, trend analysis, decision support), not just databases.
-- **Consent-first access patterns**: support scoped sharing, explicit approvals, and audit trails for every domain access and transformation.
-- **Local-first by default**: keep ingestion, indexing, and retrieval on-device when possible; allow policy-governed remote compute only when explicitly enabled.
+## Next: broaden a proven base
 
-## Updates and Lifecycle Management
+- Additional communication channels and provider integrations with the same
+  identity, disclosure, confirmation, replay, and revocation boundaries.
+- Additional local and remote model profiles with explicit data, cost, risk,
+  and availability policies.
+- More capabilities and daily workflows with recoverable external execution.
+- Representative assistive-technology research and hardware qualification.
+- ARM64 and additional appliance forms only after the x86-64 lifecycle passes.
 
-- **Kernel and OS updates**: enable safe, reversible updates for the underlying OS and kernel where applicable.
-- **UnisonOS capability updates**: support updating core services and capabilities with compatibility-aware versioning and clear release notes.
-- **Model updates**: support predictable model pack updates (install, verify, roll back) and safe prompt/template evolution.
+## Later exploration
 
-## Longer-Term Exploration
+- Multi-device and multi-writer synchronization.
+- Federation between independently governed homes.
+- Richer spatial, haptic, sign, Braille, switch, and AAC interaction.
+- Carefully bounded smart-home and physical actuation.
 
-- **Richer orchestration patterns**: higher-level workflows, background monitoring with consent, and more powerful actuation patterns with stronger guarantees.
-- **New interaction modes**: broaden the set of supported interaction modes while keeping modality-complete outcomes (voice, vision, sign, Braille, BCI, gesture, touch).
+## Where to follow implementation
 
-## Where to Track Work
-
-- Platform releases and artifact strategy: https://github.com/project-unisonOS/unison-platform
-- Shared runtime library (schemas, prompt engine, model packs): https://github.com/project-unisonOS/unison-common
+- [Current status](../current-status.md)
+- [Appliance release lifecycle](../developers/appliance-release-lifecycle.md)
+- [Platform repository](https://github.com/project-unisonOS/unison-platform)
+- [Update repository](https://github.com/project-unisonOS/unison-updates)
+- [Authoritative workspace plan](https://github.com/project-unisonOS/unison-workspace/blob/main/docs/planning/UNISON_IMPLEMENTATION_PLAN.md)

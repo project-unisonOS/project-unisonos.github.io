@@ -1,5 +1,5 @@
 site_name: UnisonOS
-site_description: A private, household-hosted personal assistant that works for you.
+site_description: A private personal assistant designed to work for you on your own trusted device.
 site_url: https://project-unisonos.github.io
 
 docs_dir: docs
@@ -33,6 +33,7 @@ nav:
           - Deep Dive: architecture/deep-dive.md
       - Get Started:
           - Install UnisonOS: developers/install-unisonos.md
+          - Appliance Release Lifecycle: developers/appliance-release-lifecycle.md
           - WSL2 Evaluation: developers/install-wsl2.md
           - Linux VM Evaluation: developers/install-linux-vm.md
           - Bare Metal Evaluation: developers/install-bare-metal.md

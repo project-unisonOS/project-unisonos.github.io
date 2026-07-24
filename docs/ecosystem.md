@@ -1,7 +1,7 @@
 # Modalities and governed ecosystem
 
-Phase 8 expands Unison through independently certified slices. The initial
-engineering slice supports local streaming speech with captions and interruption,
+Unison expands through independently certified slices. The current engineering
+foundation supports local streaming speech with captions and interruption,
 an adaptive keyboard/screen-reader visual surface, privacy/cost/risk-aware model
 routing, and signed, compatibility-checked, revocable capability packages.
 
@@ -28,7 +28,7 @@ with people who use those access methods are complete. Simulation alone is not
 release evidence.
 
 BCI, robotics, spatial control, and autonomous financial actions remain
-deferred and are not part of this supported boundary.
+deferred and are not part of the current engineering boundary.
 
 ## Extension requirements
 

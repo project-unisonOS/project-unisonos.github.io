@@ -238,7 +238,9 @@ Common configuration knobs:
 
 ### Model Packs
 
-Phase 1.1 ships lean base images and distributes model weights as **model packs** that can be installed offline or fetched online.
+Model-pack tooling provides a development and evaluation path for installing
+weights offline or from a configured source. Model packs are not yet part of a
+supported appliance release.
 
 - Default model directory: `/var/lib/unison/models` (override: `UNISON_MODEL_DIR`)
 - CLI: `unison-models list|verify|install --path <pack.tgz>|install --fetch <url-or-alias>`

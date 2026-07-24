@@ -1,9 +1,9 @@
 # Install UnisonOS on Bare Metal
 
 Evaluation-only note:
-- the supported Milestone 1 route is Ubuntu 24.04 native on x86_64
+- the first support candidate is Ubuntu 24.04 LTS native on x86-64 UEFI hardware
 - the canonical native path is documented in [Install UnisonOS](install-unisonos.md)
-- this bare-metal ISO path is for evaluation and hardware exploration, not the primary supported install route
+- this bare-metal ISO path is for evaluation and hardware exploration, not a supported install route
 
 ## Typical release assets
 
