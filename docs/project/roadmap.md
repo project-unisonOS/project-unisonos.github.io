@@ -67,6 +67,12 @@ The adaptive-maintenance software slices are implemented:
 - full-stack eligibility, calibration metrics, support runbooks, and pilot
   promotion gates.
 
+Integration hardening is also complete. Persistent owner grants now connect to
+the existing checkpointed update and rollback transaction, safety budgets
+survive restart, System wellbeing supports authenticated grant, revoke, and
+defer decisions, and the preview bundle carries a hardened maintenance timer
+plus a release-signed read-only source registry.
+
 The remaining gates require physical qualification on the named reference
 systems, a real opt-in pilot, and explicit human promotion of each automatic
 action class. Firmware remains blocked until vendor recovery passes on the

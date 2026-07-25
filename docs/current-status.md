@@ -114,6 +114,21 @@ models, capabilities, and data/configuration. Firmware stays blocked until
 recovery is verified on the exact hardware. System wellbeing also exposes
 allowlisted maintenance history and discovery-only test proposals.
 
+The maintenance pieces are now connected into one restart-safe appliance
+workflow. An authenticated device owner can grant one reversible action for a
+short window, revoke it, or defer a recommendation. The renderer only queues
+that decision. Appliance Lifecycle independently verifies the grant, signed
+artifact, checkpoint, health gate, and rollback before changing anything.
+Grants, budgets, cooldowns, circuit breakers, decisions, and receipts persist
+across service restarts.
+
+The signed preview bundle now contains the maintenance service and hourly
+timer. Its release-signed source registry begins with read-only Unison release,
+Ubuntu security notice, GitHub reviewed advisory, and Hacker News discovery
+feeds. Collectors enforce HTTPS, signed host limits, redirect and size checks,
+JSON parsing, content hashes, and private local snapshots. Hacker News remains
+discovery-only and cannot authorize an action.
+
 ## What is still required
 
 These controls are implementation and CI evidence, not a support announcement.
