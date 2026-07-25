@@ -4,8 +4,7 @@
 
 This document defines the **design language and behavioral contract** of the UnisonOS renderer.
 
-The renderer is not a UI framework, a windowing system, or a visualization layer.  
-It is a **real-time experiential surface** that translates intent into perception.
+The renderer is a **real-time experiential surface** that translates intent into perception.
 
 This specification governs:
 - Motion
@@ -25,7 +24,6 @@ All renderer implementations must conform to this document to avoid regression i
 
 The renderer sits **between intent and perception**.
 
-Its responsibility is not to expose system structure.  
 Its responsibility is to:
 - Reveal meaning
 - Reduce cognitive load
@@ -38,12 +36,12 @@ Its responsibility is to:
 
 ### 2.1 Presence Is the First State
 
-The renderer’s default state is **presence**, not content.
+The renderer’s default state is **presence**. Content appears when it adds value.
 
 Presence means:
 - The system feels available
 - The system feels attentive
-- The system is not demanding interaction
+- The system remains quietly available
 
 Presence may be expressed through:
 - Subtle motion
@@ -60,7 +58,7 @@ Presence must never:
 
 ### 2.2 Empty Is a Valid State
 
-An empty renderer is not a failure.
+An empty renderer is a valid response.
 
 Silence, darkness, or stillness may be the **correct response** to intent.
 
@@ -73,7 +71,7 @@ Presence ≠ activity.
 
 ---
 
-## 3. Layout: Field, Not Frames
+## 3. Layout as a Single Field
 
 ### 3.1 No Windows, No Panels, No Cards
 
@@ -117,7 +115,7 @@ Hierarchy is conveyed through:
 - Motion
 - Temporal sequencing
 
-Not through:
+Avoid relying on:
 - Borders
 - Containers
 - UI chrome
@@ -142,7 +140,7 @@ If motion does not convey meaning, it must be removed.
 
 ---
 
-### 4.2 Organic, Not Mechanical
+### 4.2 Organic Motion
 
 Motion characteristics:
 - Continuous
@@ -156,13 +154,13 @@ Avoid:
 - Elastic UI effects
 - Gamified transitions
 
-The renderer should feel **alive**, not animated.
+The renderer should feel **alive** through restrained, meaningful motion.
 
 ---
 
-### 4.3 Motion as Feedback, Not Control
+### 4.3 Motion as Feedback
 
-Motion confirms action. It does not request it.
+Motion confirms action while leaving initiation with you.
 
 The renderer should never:
 - Prompt interaction through motion
@@ -193,12 +191,12 @@ Time is **contextual**.
 
 Loading states, spinners, and progress bars are discouraged.
 
-Instead:
+The renderer should:
 - Acknowledge intent immediately
 - Transition into presence
 - Reveal progress implicitly through motion or state evolution
 
-Waiting should feel like **thinking**, not blocking.
+Waiting should convey active thought and progress.
 
 ---
 
@@ -270,7 +268,7 @@ When multiple modalities are active:
 - They must not duplicate excessively
 - They must not contradict
 
-The renderer orchestrates modalities; it does not mirror them.
+The renderer orchestrates modalities into one coherent experience.
 
 ---
 
@@ -338,14 +336,14 @@ The renderer shifts tone to reinforce seriousness.
 
 ## 10. Actuation Representation
 
-### 10.1 Physical Action Is Reflected, Not Simulated
+### 10.1 Physical Action Is Reflected
 
 When physical actuation occurs:
 - The renderer reflects state and outcome
-- It does not mimic robotics controls
-- It does not expose mechanical detail unless requested
+- It reflects the meaningful state and outcome
+- It reserves mechanical detail for requests that need it
 
-Actuation is treated as **intent resolution**, not device control.
+Actuation is treated as **intent resolution**. Mechanical detail remains available when you request it.
 
 ---
 

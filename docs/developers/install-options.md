@@ -5,7 +5,7 @@ hardware is the first native support candidate.
 
 The current downloadable option is the
 [v0.6.0-preview.1 native x86-64 bundle](https://github.com/project-unisonOS/unison-platform/releases/tag/v0.6.0-preview.1).
-It is an unsupported software preview, not a hardware-qualified appliance.
+It is an unsupported software preview. Hardware qualification remains open.
 
 ## Native candidate
 

@@ -23,10 +23,10 @@ or recovery keys. Each adult controls an independent local recovery ceremony.
 
 ## Honest limits
 
-Unison is not production-ready. Automated tests cover governed private/shared
-context isolation, policy enforcement, provider-blind backup, and signed-update
-metadata verification. These results do not yet provide a supported appliance,
-backup subscription, TPM, hardware-backed update, or provider-partnership
-guarantee. When you enable a remote model or communication channel,
+Unison remains in pre-release engineering. Automated tests cover governed
+private/shared context isolation, policy enforcement, provider-blind backup,
+and signed-update metadata verification. Supported-appliance validation, a
+backup subscription, TPM and hardware-backed update validation, and provider
+partnership guarantees remain ahead. When you enable a remote model or communication channel,
 that provider necessarily receives the minimized information required to perform
 your chosen function. Product documentation must identify that boundary clearly.

@@ -1,6 +1,6 @@
 # Provider-blind backup and recovery
 
-**Maturity: tested engineering foundation; not a supported production service.**
+**Maturity: tested engineering foundation. Production support remains pending.**
 
 UnisonOS encrypts backup content on the home node before any provider receives
 it. Every adult and every shared context space has an independent backup key
@@ -56,8 +56,8 @@ copies already obtained.
 
 ## Current limits
 
-- The implementation passed its bounded engineering gate; it is not a supported backup
-  subscription or partnership.
+- The implementation passed its bounded engineering gate. Supported backup
+  subscriptions and provider partnerships require separate decisions.
 - The S3-compatible contract does not imply endorsement of a particular public
   provider.
 - The software key protector is for development and evaluation. Production TPM

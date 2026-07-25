@@ -3,7 +3,7 @@
 Evaluation-only note:
 - the first support candidate is Ubuntu 24.04 LTS native on x86-64 UEFI hardware
 - the canonical native path is documented in [Install UnisonOS](install-unisonos.md)
-- this VM path is for demos and evaluation, not a supported install route
+- this VM path is limited to demos and evaluation; supported-install qualification remains open
 
 ## Archived channel
 

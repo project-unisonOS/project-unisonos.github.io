@@ -43,7 +43,8 @@ so one assistant cannot monopolize the shared scheduler. Invitation, removal,
 share preview, shared artifacts, audit, cancellation, and recovery have semantic,
 keyboard-native controls and status announcements.
 
-The architecture/security gate passed on 2026-07-21, but this is not a supported release.
+The architecture and security gate passed on 2026-07-21. Supported-release
+qualification remains open.
 It does not claim protection from a compromised host administrator, production
 timing-side-channel certification, child/caregiving models, remote channels, or
 provider-blind backup.

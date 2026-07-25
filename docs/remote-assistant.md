@@ -1,6 +1,6 @@
 # Remote assistant
 
-Phase 5 established an accepted boundary for reaching the same personal assistant through one remote text channel. Telegram Bot API long polling is the first reference provider. This is a bounded engineering proof, not a supported release or a claim that Telegram is private infrastructure.
+Phase 5 established an accepted boundary for reaching the same personal assistant through one remote text channel. Telegram Bot API long polling is the first reference provider. This is a bounded engineering proof. Supported-release qualification remains open, and Telegram remains third-party infrastructure.
 
 ## What the boundary means
 

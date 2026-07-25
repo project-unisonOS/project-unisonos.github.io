@@ -11,7 +11,7 @@ These principles are derived from two canonical documents:
 
 These experience principles translate the platform vision into day-to-day behavior:
 
-- **Generated, intention-centric experiences** keep you focused on outcomes, not tools, apps, or navigation.
+- **Generated, intention-centric experiences** keep you focused on outcomes while tools, apps, and navigation recede from view.
 - **Personalized, capability-aware experiences** adapt to your needs and preferences and the system’s current capabilities (for example: available display, audio, input, or assistive devices).
 - **Presence before information** keeps the system calm and non-demanding when there is nothing useful to present.
 - **Privacy and consent** keep data handling explicit, auditable, and under your control.
@@ -31,14 +31,14 @@ High impact actions are never implicit. Dedicated policy and consent services en
 
 UnisonOS is designed to run entirely on local hardware using devstack and production compose configurations. Cloud capabilities, such as remote model providers, are an additive choice controlled via configuration and policy.
 
-## Real-Time, Generated Experience (Not Navigation)
+## Real-time generated experience
 
-UnisonOS does not ask you to learn a persistent interface structure. Instead, it generates an experience in real time that fits your current intent and context.
+UnisonOS generates an experience in real time that fits your current intent and context. The experience removes the need to learn a persistent interface structure.
 
 Implications:
 
-- The default state can be quiet presence, not content.
-- The primary surface is a perceptual field, not windows, panels, or persistent UI chrome.
+- The default state can be a quiet presence with content appearing when useful.
+- The primary surface is a perceptual field that lets windows, panels, and persistent interface chrome recede.
 - Experiences are ephemeral unless persistence adds clear value (and is governed by policy).
 
 ## Modality-Complete Experiences
@@ -61,11 +61,11 @@ Related docs:
 
 ## Accessibility as Personalization
 
-Because experiences are rendered in real time, accessibility is not a separate “mode” or a set of after-the-fact accommodations. The system generates an experience that meets your specific needs and preferences.
+Because experiences are rendered in real time, accessibility is integral to every experience. The system generates each interaction around your specific needs and preferences.
 
 This makes UnisonOS inherently accessible:
 
-- Modality selection is personalized (not assumed).
+- Modality selection is personalized around your preferences and available capabilities.
 - Presentation is tailored (for example: contrast, text size, pacing, audio behavior, Braille focus).
 - Generated experiences implicitly adhere to WCAG-style guidelines (structure, contrast, focus order, readable text, and non-visual alternatives).
 

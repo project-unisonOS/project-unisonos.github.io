@@ -1,9 +1,9 @@
 # Assistant workflows
 
-**Maturity: tested engineering foundation; not a supported production service.**
+**Maturity: tested engineering foundation. Production support remains pending.**
 
 The current implementation focuses on measurable administrative competence
-rather than broad autonomy. Its bounded engineering profile covers:
+with deliberately bounded authority. Its engineering profile covers:
 
 - calendar coordination;
 - email triage, summary, and draft preparation;
@@ -37,7 +37,7 @@ times out or partially fails, Unison shows retry, cancellation, compensation,
 and compatible-provider replacement paths while retaining the original plan
 and local audit.
 
-## Success is not engagement
+## Success means useful outcomes
 
 Locally inspectable outcome evidence measures tasks and commitments completed,
 interruptions avoided, recovery, minimized external calls, accessibility,

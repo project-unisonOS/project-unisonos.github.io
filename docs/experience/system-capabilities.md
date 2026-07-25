@@ -27,7 +27,7 @@ As UnisonOS evolves, new capabilities will be added and existing ones will matur
 
 ## How capabilities connect UnisonOS to the outside world
 
-Capabilities are not ad-hoc integrations. They are declared, validated, and executed through a platform runtime designed to enforce safe defaults.
+Capabilities are declared, validated, and executed through a platform runtime designed to enforce safe defaults.
 
 At a high level, the platform can represent capabilities as:
 

@@ -3,7 +3,7 @@
 Evaluation-only note:
 - the first support candidate is Ubuntu 24.04 LTS native on x86-64 UEFI hardware
 - the canonical native path is documented in [Install UnisonOS](install-unisonos.md)
-- this WSL2 path is for developer evaluation, not a supported install route
+- this WSL2 path is limited to developer evaluation; supported-install qualification remains open
 
 ## Archived channel
 

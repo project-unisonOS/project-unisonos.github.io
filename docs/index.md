@@ -1,24 +1,26 @@
 # Your assistant should work for *you*.
 
-Unison is an open, private personal-assistant platform designed to return time to
-you. **UnisonOS** is the downloadable appliance runtime being built to run Unison
-on your own trusted device.
+<p class="hero-deck">One assistant that works for you. Your information stays private. You decide what to share.</p>
 
-<p class="hero-lede">One assistant that works for you. Your information stays private. You decide what to share.</p>
+<p class="hero-support">
+Unison is an open, private personal-assistant platform designed to return time to
+you. <strong>UnisonOS</strong> is the downloadable appliance runtime being built to run Unison
+on your own trusted device.
+</p>
 
 [Understand the vision](vision.md){ .cta .cta-primary }
 [See the current status](current-status.md){ .cta .cta-secondary }
 
 ## A different incentive
 
-Unison is intended to optimize for your objectives, not advertising, sponsored
-placement, engagement, or a provider's commercial agenda. Its success should be
-measured in useful outcomes, commitments completed, accessibility, recoverability,
-and time returned to you.
+Unison is intended to optimize for your objectives. Advertising, sponsored
+placement, engagement, and provider commercial agendas have no role in its
+decisions. Its success should be measured in useful outcomes, commitments
+completed, accessibility, recoverability, and time returned to you.
 
 <div class="principle-grid">
-  <section class="principle-card"><h3>Private by architecture</h3><p>Your home node is the authority. External models, channels, and backup services are optional, minimized, and replaceable.</p></section>
-  <section class="principle-card"><h3>Personal, not household-wide</h3><p>Each adult has an independent assistant and private data domain. Sharing happens only in explicit context spaces.</p></section>
+  <section class="principle-card"><h3>Your data stays under your control</h3><p>Your trusted device holds the authority. External models, channels, and backup services are optional, minimized, and replaceable.</p></section>
+  <section class="principle-card"><h3>Independent assistants, intentional sharing</h3><p>Each adult has an independent assistant and private data domain. You share selected context through spaces you explicitly approve.</p></section>
   <section class="principle-card"><h3>Accessible from the start</h3><p>Text, speech, visual, touch, Braille, sign, and future modalities must preserve the same meaning and control.</p></section>
 </div>
 
@@ -30,9 +32,9 @@ outbound-first gateway. A low-assurance channel can ask, draft, or notify; a
 sensitive action requires stronger authentication and an understandable
 confirmation.
 
-Unison is not meant to replace your phone or the apps you enjoy. It is meant to
-become an excellent personal, administrative, and executive assistant that can
-coordinate those tools without turning your context into a product.
+Unison can coordinate the phone and apps you already enjoy as an excellent
+personal, administrative, and executive assistant. Your context remains under
+your control throughout that coordination.
 
 ## What exists today
 

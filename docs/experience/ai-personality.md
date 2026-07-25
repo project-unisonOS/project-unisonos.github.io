@@ -7,7 +7,7 @@ See also: [Default System Prompt (Canonical)](system-prompt.md).
 ## Why Separate Model from Identity?
 Models change. Hardware changes. Providers change.
 
-If personality lives inside a model configuration, you lose continuity during upgrades and replacements. UnisonOS instead stores:
+Personality stored independently from model configuration preserves continuity during upgrades and replacements. UnisonOS stores:
 - persistent identity and values
 - mutable priorities and directives
 outside the model, then compiles and injects the active system prompt at runtime.

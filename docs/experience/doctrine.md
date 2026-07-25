@@ -11,8 +11,8 @@ It serves as the canonical source of directional context for all design, enginee
 
 Its purpose is to ensure that UnisonOS:
 
-- Remains intention-centric and does not drift back to legacy computing metaphors
-- Centers people, not “users”
+- Remains intention-centric as it moves beyond legacy computing metaphors
+- Centers the people it serves
 - Prioritizes abstraction over tools, interfaces, and devices
 - Treats multimodal interaction and embodiment as first-class
 - Scales coherently across domains, modalities, and form factors
@@ -24,14 +24,12 @@ Its purpose is to ensure that UnisonOS:
 
 ### 1.1 There Are No “Users”
 
-UnisonOS does not have users.
+UnisonOS serves **people**.
 
-There are **people**.
-
-You are:
-- Intent-driven, not task-driven
-- Objective-oriented, not workflow-bound
-- Continuous over time, not session-bound
+Your relationship with UnisonOS is:
+- Driven by intent
+- Oriented around objectives
+- Continuous over time
 
 The term *user* implies adaptation to a system.  
 UnisonOS inverts this relationship.
@@ -40,8 +38,7 @@ The system adapts to you.
 
 Language matters. As Edward Tufte observed, “There are only two industries that
 call their customers ‘users’: illegal drugs and software.” UnisonOS rejects that
-framing. You are not a “user” of the system. The system exists to serve, adapt
-to, and respect you.
+framing. The system exists to serve, adapt to, and respect you.
 
 ---
 
@@ -56,9 +53,9 @@ A guiding principle:
 > If you believe you need a keyboard to accomplish something, the system has not achieved sufficient abstraction.
 
 Key implications:
-- Keyboards are not primary interfaces
-- Screens are not primary interfaces
-- Commands are not experiential primitives
+- Keyboards are optional input tools
+- Screens are optional output surfaces
+- Commands remain implementation artifacts
 
 They are implementation artifacts.
 
@@ -84,13 +81,13 @@ The system determines:
 - Which abstraction layers apply
 - Which tools or embodiments are appropriate
 
-You remain focused on **outcomes**, not actions.
+You remain focused on **outcomes** while UnisonOS coordinates the actions.
 
 ---
 
 ## 3. Intent as the Atomic Unit
 
-The smallest meaningful unit in UnisonOS is **intent**, not:
+The smallest meaningful unit in UnisonOS is **intent**. The system abstracts interaction mechanics such as:
 - Clicks
 - Keystrokes
 - Commands
@@ -113,7 +110,7 @@ The system continuously:
 
 ---
 
-## 4. Experience Is Generated, Not Navigated
+## 4. Experience Is Generated Around Your Intent
 
 There is no navigation model.
 
@@ -156,14 +153,13 @@ Accessibility needs, sensory preferences, and cognitive constraints are:
 - First-class
 - Applied consistently
 
-They are not optional settings.
+They are integral parts of the experience.
 
 ---
 
 ## 6. Power-On Experience (The First Promise)
 
-Power-on is not a boot sequence.  
-It is the first expression of presence.
+Power-on is the first expression of presence.
 
 ### Visual Path
 - Full black field
@@ -181,14 +177,13 @@ It is the first expression of presence.
 - Audio or haptic acknowledgment
 - Immediate confirmation of presence
 
-The goal is reassurance, not spectacle.
+The goal is calm reassurance.
 
 ---
 
 ## 7. The Renderer
 
-The renderer is not a UI layer.  
-It is a **translation surface** between intent and perception.
+The renderer is a **translation surface** between intent and perception.
 
 Characteristics:
 - Full-field
@@ -203,7 +198,7 @@ It must not resemble:
 - Web pages
 - Application shells
 
-Latency is a trust violation, not merely a performance issue.
+Latency affects trust as well as performance.
 
 ---
 
@@ -234,7 +229,7 @@ Intent may resolve into:
 - Simulation
 - Physical action
 
-Digital-only outcomes are not privileged.
+Digital and physical outcomes receive equal consideration.
 
 ---
 
@@ -259,7 +254,7 @@ Form factor is selected by:
 
 ### 9.3 Actuation as an Agent Choice
 
-Actuation is not manual by default.
+Actuation begins with intent and follows the applicable consent boundary.
 
 Agents determine:
 - Whether physical action is appropriate
@@ -291,9 +286,7 @@ These are implemented as **modular domain capabilities** with:
 
 ## 11. Trust Is the Product
 
-UnisonOS does not sell features.
-
-It earns trust.
+UnisonOS earns trust through every capability and interaction.
 
 Trust is reinforced by:
 - Predictability
@@ -310,7 +303,7 @@ Does this increase or reduce trust?
 
 ## 12. Objectives Over Tasks
 
-UnisonOS serves **objectives**, not moments.
+UnisonOS serves **objectives** across individual moments.
 
 Objectives:
 - Span time
@@ -350,9 +343,7 @@ This statement is approved for direct reuse as agent system context.
 
 ## 15. Closing Principle
 
-UnisonOS is not redefining computing.
-
-It is dissolving it.
+UnisonOS is dissolving the friction of computing.
 
 What remains is:
 - Intent

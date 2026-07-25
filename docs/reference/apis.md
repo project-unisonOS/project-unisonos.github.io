@@ -27,7 +27,7 @@ As the APIs stabilize and converge on consistent conventions, this page can be e
 
 ## Storage API (Reference)
 
-Storage exposes an HTTP surface for unified persistence. Most services access storage through these APIs instead of direct database calls.
+Storage exposes an HTTP surface for unified persistence. Most services use these APIs, which keeps database access inside the storage boundary.
 
 Common endpoints:
 

@@ -51,8 +51,8 @@ remain behind opaque per-person handles, incremental sync deduplicates repeated
 items, and revocation stops further sync. The browser never asks you to paste a
 health or financial provider password.
 
-These are local and sandbox software contracts, not certified production
-connections. Live provider registrations, OCR quality on supported camera
+These are local and sandbox software contracts. Production connection
+certification, live provider registrations, OCR quality on supported camera
 hardware, and production malware scanning remain release qualification work.
 
 ## Private household, health, and financial operations
@@ -198,7 +198,8 @@ discovery-only and cannot authorize an action.
 
 ## What is still required
 
-These controls are implementation and CI evidence, not a support announcement.
+These controls are implementation and CI evidence. A support announcement
+requires the remaining promotion gates.
 Before promotion, the project still needs:
 
 - promotion of the preview image digests and trust roots into a supported

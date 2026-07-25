@@ -19,7 +19,7 @@ artifact stable or supported.
 
 Candidate channel metadata uses Ed25519 thresholds, expiration, monotonic
 versions, channel/hardware binding, and artifact hashes. A valid metadata result
-authorizes download and staging, not activation. Activation requires a verified
+authorizes download and staging. Activation separately requires a verified
 checkpoint, complete staging, restart preview, health and golden-path checks,
 and automatic return to last known good on failure.
 

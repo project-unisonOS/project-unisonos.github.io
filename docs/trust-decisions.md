@@ -8,15 +8,16 @@ alternative, authenticate more strongly, or cancel.
 
 Unknown identity, purpose, audience, context space, assurance, data class,
 channel, recipient, or capability authority denies. Email, websites, documents,
-tools, and model responses are treated as content with provenance, not as
-instructions that can grant themselves permission.
+tools, and model responses are treated as content with provenance. Authority
+comes only from an authenticated person and an applicable policy decision.
 
 Remote inference requires an explicit disclosure decision and a recorded check
 that a suitable local alternative is unavailable. Only the approved fields cross
 the boundary. Credentials are represented by opaque task references and injected
 at the final transport edge, never shown to a planner or model.
 
-These controls are an **accepted Phase 3 implementation**, not a production guarantee.
+These controls are an **accepted Phase 3 implementation**. Production assurance
+still requires the remaining release evidence.
 They currently have contract, policy-matrix, adversarial, minimization,
 capability, confirmation, credential-canary, and semantic accessibility evidence.
 Publication, recursive fresh-clone validation, and final human acceptance

@@ -7,7 +7,7 @@ complete.
 
 ## Multimodal interaction in practice
 
-UnisonOS does not treat any modality as “primary.” Instead, it treats modalities as co-equal channels for expressing intent and receiving outcomes. The same intent can be rendered through different combinations of output and input without changing the meaning.
+UnisonOS treats modalities as co-equal channels for expressing intent and receiving outcomes. The same intent can be rendered through different combinations of output and input without changing the meaning.
 
 Key commitments:
 
