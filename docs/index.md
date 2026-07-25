@@ -13,10 +13,10 @@ on your own trusted device.
 
 ## A different incentive
 
-Unison is intended to optimize for your objectives. Advertising, sponsored
-placement, engagement, and provider commercial agendas have no role in its
-decisions. Its success should be measured in useful outcomes, commitments
-completed, accessibility, recoverability, and time returned to you.
+Unison is intended to optimize for your personal objectives. Advertising,
+sponsored placement, engagement, and provider commercial agendas have no role
+in its decisions. Success is measured in useful outcomes, commitments completed,
+accessibility, recoverability, and time returned to you.
 
 <div class="principle-grid">
   <section class="principle-card"><h3>Your data stays under your control</h3><p>Your trusted device holds the authority. External models, channels, and backup services are optional, minimized, and replaceable.</p></section>
