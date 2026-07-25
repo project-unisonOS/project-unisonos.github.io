@@ -27,6 +27,33 @@ It remains unsupported while physical validation and promotion gates are open.
   simulations.
 - **Replaceable components:** policy-aware model routing and signed, revocable
   capability packages with compatibility and permission review.
+- **Private source onboarding foundation:** encrypted document and image
+  quarantine, private review and correction, source provenance, duplicate and
+  version tracking, rollback and deletion, plus read-only OAuth PKCE, SMART
+  health sandbox, financial test-provider, selected-folder, and bounded MCP
+  connection profiles.
+
+## Private sources and connection foundation
+
+The first three private life operations slices are implemented in software.
+You can select multiple documents or capture multiple camera pages, review
+their names and safety flags, and admit them to a private encrypted source
+library. The intake boundary checks media types, file signatures, archive paths
+and expansion, size, and malware policy before admission. Extracted text,
+metadata, tables, and barcode values retain exact source-region provenance and
+can be corrected without rewriting the original source. Imports can resume or
+roll back, and deletion removes the encrypted object and extracted indexes.
+
+The initial Connection Broker requests only declared read-only scopes. It has
+profiles for generic OAuth Authorization Code with PKCE, SMART on FHIR, a
+financial sandbox, a selected local folder, and bounded MCP resources. Tokens
+remain behind opaque per-person handles, incremental sync deduplicates repeated
+items, and revocation stops further sync. The browser never asks you to paste a
+health or financial provider password.
+
+These are local and sandbox software contracts, not certified production
+connections. Live provider registrations, OCR quality on supported camera
+hardware, and production malware scanning remain release qualification work.
 
 ## Appliance release work now implemented
 
@@ -145,6 +172,9 @@ Before promotion, the project still needs:
   restore, install, update, rollback, removal, and factory-reset results; and
 - a time-bounded opt-in pilot, calibration on real workloads, and an explicit
   human decision before promoting any automatic action class.
+- private household, health, and financial domain packages built on the new
+  intake and connection foundation, followed by live-provider and value-pilot
+  evidence.
 
 Seventeen physical checks are tracked separately so CI or simulation cannot be
 mistaken for hardware acceptance.
