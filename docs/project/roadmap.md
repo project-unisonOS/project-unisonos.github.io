@@ -78,7 +78,37 @@ systems, a real opt-in pilot, and explicit human promotion of each automatic
 action class. Firmware remains blocked until vendor recovery passes on the
 exact hardware.
 
-## Next: broaden a proven base
+## Next: private life operations and easy data onboarding
+
+The next product program is designed to make Unison feel worthwhile from the
+first small piece of context you choose to provide.
+
+The shared foundation will support:
+
+- conversational document and image intake;
+- camera and multi-page scan capture;
+- private encrypted quarantine, local OCR, extraction, duplicate detection,
+  preview, correction, and reversible admission;
+- account connection through minimum-scope OAuth, SMART health authorization,
+  provider exports, bounded MCP, and carefully constrained browser fallback;
+- progressive setup that asks only what is needed for your current goal; and
+- direct Connections, Imports, Sources, Privacy, Disconnect, and Delete
+  controls alongside conversation.
+
+The first three capability areas are:
+
+1. private household operations for inventory, receipts, manuals, warranties,
+   maintenance, renewals, returns, recalls, and procedures;
+2. a private health timeline and visit-preparation experience that preserves
+   provenance and does not diagnose or change treatment; and
+3. read-only personal and family financial attention for obligations,
+   exceptions, forecasts, refunds, subscriptions, and weekly briefs without
+   autonomous money movement.
+
+Every later domain will use the same source, connection, provenance, policy,
+tool, MCP, skill, computer-use, verification, and recovery architecture.
+
+## Broaden a proven base
 
 - Additional communication channels and provider integrations with the same
   identity, disclosure, confirmation, replay, and revocation boundaries.
