@@ -81,7 +81,7 @@ insufficient disk. They exercise successful `N-1` to `N`, failed `N` to
 `N+1`, migration failure, staged and post-activation interruption, and
 replacement-restored state without losing the last known good release or data.
 
-## Adaptive maintenance foundations now implemented
+## Adaptive maintenance software boundaries now implemented
 
 Unison can now build a privacy-minimized profile of the current device, evaluate
 content-free health indicators, match authoritative security evidence to exact
@@ -96,11 +96,23 @@ more efficient model before suggesting a RAM purchase. Hardware candidates fail
 closed unless their architecture, support tier, upgrade topology, firmware, and
 power requirements match the device profile.
 
-The default autonomy is Recommend. This implementation cannot install, restart,
-patch, purchase, or change the appliance. External and community content remains
-untrusted and cannot authorize action. Privileged self-healing, scheduled live
-community collection, physical full-stack qualification, and pilot calibration
-remain on the roadmap.
+The default autonomy is Recommend. You can grant a narrow, revocable
+maintenance window for reversible service recovery, disposable housekeeping,
+signed patch staging, or restoration of a last-known-good model or
+configuration. The Lifecycle boundary independently checks the exact device,
+action class, time window, action and downtime budgets, signed artifact,
+checkpoint, health gate, rollback, and circuit breaker. Every attempted action
+produces a receipt.
+
+Reviewed community sources can now produce sandboxed, content-hashed claims.
+Unison clusters duplicates, records corroboration and conflicts, and may
+propose a bounded local test. External content remains untrusted and can never
+create a grant, approve an artifact, or invoke maintenance.
+
+Eligibility checks now cover OS packages, containers, drivers, model runtimes,
+models, capabilities, and data/configuration. Firmware stays blocked until
+recovery is verified on the exact hardware. System wellbeing also exposes
+allowlisted maintenance history and discovery-only test proposals.
 
 ## What is still required
 
@@ -116,8 +128,8 @@ Before promotion, the project still needs:
 - two named reference systems and a versioned compatibility matrix;
 - physical audio, firmware, Secure Boot, TPM, suspend, thermal, power, backup,
   restore, install, update, rollback, removal, and factory-reset results; and
-- a time-bounded pilot, support runbooks, reliability objectives, and an
-  explicit human release decision.
+- a time-bounded opt-in pilot, calibration on real workloads, and an explicit
+  human decision before promoting any automatic action class.
 
 Seventeen physical checks are tracked separately so CI or simulation cannot be
 mistaken for hardware acceptance.

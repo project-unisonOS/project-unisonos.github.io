@@ -49,22 +49,28 @@ rollback, backup, replacement restore, support-bundle generation, uninstall,
 factory reset, accessibility review, security review, and a reliability pilot.
 Only an explicit human decision can promote it.
 
-## In progress: adaptive maintenance
+## In progress: adaptive maintenance qualification
 
-The first four adaptive-maintenance slices are implemented:
+The adaptive-maintenance software slices are implemented:
 
 - versioned contracts and deterministic adversarial simulation;
 - private device inventory and content-free system health observations;
 - exact installed-component matching against authoritative security evidence;
   and
 - locally relevant recommendations, capacity forecasts, hardware compatibility
-  checks, and the System wellbeing experience.
+  checks, and the System wellbeing experience;
+- exact revocable grants, maintenance windows, budgets, signed staging,
+  checkpoints, canaries, health gates, receipts, circuit breakers, and
+  rollback for reversible action classes;
+- sandboxed community claim collection, corroboration, conflict detection, and
+  local test proposals with no execution authority; and
+- full-stack eligibility, calibration metrics, support runbooks, and pilot
+  promotion gates.
 
-Next, the project will connect exact recommendations to revocable maintenance
-authority, staging, checkpoints, health gates, circuit breakers, and rollback.
-Later work adds sandboxed live community discovery, physical full-stack
-qualification, calibration, and a time-bounded pilot. Internet content will
-remain discovery evidence and will never directly authorize a system change.
+The remaining gates require physical qualification on the named reference
+systems, a real opt-in pilot, and explicit human promotion of each automatic
+action class. Firmware remains blocked until vendor recovery passes on the
+exact hardware.
 
 ## Next: broaden a proven base
 
