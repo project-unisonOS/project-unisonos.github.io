@@ -78,12 +78,12 @@ systems, a real opt-in pilot, and explicit human promotion of each automatic
 action class. Firmware remains blocked until vendor recovery passes on the
 exact hardware.
 
-## Next: private life operations and easy data onboarding
+## In progress: private life operations and easy data onboarding
 
 The next product program is designed to make Unison feel worthwhile from the
 first small piece of context you choose to provide.
 
-The shared foundation will support:
+The first shared foundation is implemented in software:
 
 - conversational document and image intake;
 - camera and multi-page scan capture;
@@ -95,7 +95,15 @@ The shared foundation will support:
 - direct Connections, Imports, Sources, Privacy, Disconnect, and Delete
   controls alongside conversation.
 
-The first three capability areas are:
+This foundation includes canonical source and connection contracts, encrypted
+quarantine, deterministic local extraction and an OCR adapter, provenance,
+correction, rollback, deletion, PKCE, sandbox SMART and financial profiles,
+bounded local and MCP grants, incremental sync receipts, deduplication,
+cross-person denial, and revocation. Production provider certification and
+physical camera quality evidence remain open and are not implied by this
+software gate.
+
+The next three capability areas are:
 
 1. private household operations for inventory, receipts, manuals, warranties,
    maintenance, renewals, returns, recalls, and procedures;
