@@ -38,16 +38,6 @@ main {
   width: 100%;
 }
 
-.status-banner {
-  margin: 4rem auto .5rem;
-  max-width: 62rem;
-  padding: .75rem 1rem;
-  border-left: .35rem solid var(--unison-teal);
-  background: #e6f3f2;
-  color: var(--unison-ink);
-}
-.status-banner a { color: var(--unison-blue-dark); font-weight: 600; }
-
 h1, h2, h3 { color: var(--unison-navy); line-height: 1.2; }
 h1 { font-size: clamp(2.25rem, 6vw, 4.75rem); max-width: 15ch; }
 h2 { margin-top: 2.5rem; }

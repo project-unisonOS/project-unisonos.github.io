@@ -119,6 +119,12 @@
                   {%- endblock %}
 
                     <ul class="nav navbar-nav ms-md-auto">
+                      {%- if page and page.is_homepage %}
+                        <li class="nav-item nav-download">
+                          <a href="{{ 'developers/releases/'|url }}" class="nav-link nav-download-link">Download Unison - Developer Release</a>
+                        </li>
+                      {%- endif %}
+
                       {%- block search_button %}
                         {%- if 'search' in config.plugins %}
                         <li class="nav-item">
@@ -199,13 +205,6 @@
         </nav>
         {%- if config.theme.color_mode != "light" or config.theme.user_color_mode_toggle %}
         <script src="{{ 'js/darkmode.js'|url }}"></script>
-        {%- endif %}
-
-        {%- if page and page.is_homepage %}
-        <aside class="status-banner" aria-label="Project maturity">
-          <strong>Pre-release engineering:</strong> the appliance candidate has tested release, installer, and update controls, but it is not yet supported.
-          <a href="{{ 'current-status/'|url }}"><strong>Read current status</strong></a>.
-        </aside>
         {%- endif %}
 
         <div class="container page-shell">
