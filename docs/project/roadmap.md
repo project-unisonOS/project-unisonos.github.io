@@ -49,6 +49,23 @@ rollback, backup, replacement restore, support-bundle generation, uninstall,
 factory reset, accessibility review, security review, and a reliability pilot.
 Only an explicit human decision can promote it.
 
+## In progress: adaptive maintenance
+
+The first four adaptive-maintenance slices are implemented:
+
+- versioned contracts and deterministic adversarial simulation;
+- private device inventory and content-free system health observations;
+- exact installed-component matching against authoritative security evidence;
+  and
+- locally relevant recommendations, capacity forecasts, hardware compatibility
+  checks, and the System wellbeing experience.
+
+Next, the project will connect exact recommendations to revocable maintenance
+authority, staging, checkpoints, health gates, circuit breakers, and rollback.
+Later work adds sandboxed live community discovery, physical full-stack
+qualification, calibration, and a time-bounded pilot. Internet content will
+remain discovery evidence and will never directly authorize a system change.
+
 ## Next: broaden a proven base
 
 - Additional communication channels and provider integrations with the same

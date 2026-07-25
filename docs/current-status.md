@@ -81,6 +81,27 @@ insufficient disk. They exercise successful `N-1` to `N`, failed `N` to
 `N+1`, migration failure, staged and post-activation interruption, and
 replacement-restored state without losing the last known good release or data.
 
+## Adaptive maintenance foundations now implemented
+
+Unison can now build a privacy-minimized profile of the current device, evaluate
+content-free health indicators, match authoritative security evidence to exact
+installed component versions, forecast capacity pressure, and explain software,
+configuration, model, or compatible hardware adjustments.
+
+The System wellbeing experience reports security, reliability, performance,
+capacity, compatibility, and improvement opportunities. Recommendations include
+the measured need, expected effect, alternatives, authority level, confirmation,
+confidence, and rollback information. Memory pressure recommends a smaller or
+more efficient model before suggesting a RAM purchase. Hardware candidates fail
+closed unless their architecture, support tier, upgrade topology, firmware, and
+power requirements match the device profile.
+
+The default autonomy is Recommend. This implementation cannot install, restart,
+patch, purchase, or change the appliance. External and community content remains
+untrusted and cannot authorize action. Privileged self-healing, scheduled live
+community collection, physical full-stack qualification, and pilot calibration
+remain on the roadmap.
+
 ## What is still required
 
 These controls are implementation and CI evidence, not a support announcement.
