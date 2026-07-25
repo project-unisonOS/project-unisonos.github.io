@@ -88,6 +88,22 @@
   text-align: center;
 }
 
+.navbar.bg-primary .nav-download-link {
+  margin-inline: .5rem;
+  padding: .4rem .8rem;
+  border: 1px solid #fff;
+  border-radius: .4rem;
+  background: #fff;
+  color: var(--nav-bg) !important;
+  font-weight: 700;
+}
+
+.navbar.bg-primary .nav-download-link:hover,
+.navbar.bg-primary .nav-download-link:focus {
+  background: #e6f3f2;
+  color: var(--nav-bg) !important;
+}
+
 @media (min-width: 992px) {
   #navbar-collapse {
     min-width: 0;
@@ -137,6 +153,11 @@
   #navbar-collapse .navbar-nav {
     margin: 0;
   }
+
+  .navbar.bg-primary .nav-download-link {
+    display: inline-block;
+    margin: .5rem 0;
+  }
 }
 
 /* Improve readability in high-contrast/forced-colors environments */
@@ -166,6 +187,12 @@
   .navbar-default .navbar-nav > .active > a:hover {
     color: CanvasText;
     background-color: Highlight;
+  }
+
+  .navbar.bg-primary .nav-download-link {
+    border: 1px solid ButtonText;
+    background: ButtonFace;
+    color: ButtonText !important;
   }
 
   .navbar-default .navbar-toggle {
