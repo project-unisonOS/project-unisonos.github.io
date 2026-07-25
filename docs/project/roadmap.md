@@ -103,7 +103,7 @@ cross-person denial, and revocation. Production provider certification and
 physical camera quality evidence remain open and are not implied by this
 software gate.
 
-The next three capability areas are:
+The next three capability areas are now implemented in software:
 
 1. private household operations for inventory, receipts, manuals, warranties,
    maintenance, renewals, returns, recalls, and procedures;
@@ -115,6 +115,17 @@ The next three capability areas are:
 
 Every later domain will use the same source, connection, provenance, policy,
 tool, MCP, skill, computer-use, verification, and recovery architecture.
+
+Purpose-bound cross-domain links, benefit and claim packets, care and
+continuity records, transition templates, credential expirations, and a unified
+private attention review are also implemented. All external artifacts remain
+drafts, and joining domains never widens disclosure implicitly.
+
+The synthetic calibration baseline meets the configured time-to-value,
+precision, usefulness, burden, privacy, deletion, and time-returned targets.
+The remaining Phase 11 gate is human: a genuinely opted-in pilot,
+representative accessibility feedback, and explicit support decisions for each
+package and live provider.
 
 ## Broaden a proven base
 

@@ -55,6 +55,46 @@ These are local and sandbox software contracts, not certified production
 connections. Live provider registrations, OCR quality on supported camera
 hardware, and production malware scanning remain release qualification work.
 
+## Private household, health, and financial operations
+
+The household, health, finance, and governed cross-domain software packages are
+now implemented over the private source foundation.
+
+Household operations organize products, receipts, manuals, warranties, service
+history, renewals, returns, recalls, subscriptions, procedures, and optional
+read-only Matter and energy observations. Product matching shows the exact
+identifiers compared and its uncertainty. Recall notices require an exact
+owned-product match. Purchases stay private until you explicitly share a copy,
+and repair or service work remains a draft. Unison does not purchase, schedule
+service, or control a physical device through this package.
+
+The private health package normalizes supported FHIR sandbox records, preserves
+clinical and self-reported sources, shows contradictions, supports
+person-selected descriptive trends, and prepares cited timelines, visit briefs,
+and provider-message drafts. Inferred conditions cannot become confirmed
+diagnoses. Unison does not diagnose, change medication or treatment, or dismiss
+urgent care. Deterministic urgent-language rules direct you toward appropriate
+human help without claiming to rule out an emergency.
+
+The read-only finance package reconciles source amounts, distinguishes observed
+facts from inferred categories and forecasts, detects duplicate charges, price
+changes, overdue refunds, subscriptions, and obligations, and prepares a cited
+weekly exception brief. Your private account contributes nothing to household
+totals unless you create an explicit contribution rule. Unison cannot move
+money, trade, open credit, file taxes, close accounts, or submit disputes.
+
+Cross-domain packets require a purpose, selected fields, named recipients, and
+your approval. Removing a link preserves both independent sources. The unified
+attention review explains how risk, deadlines, your selected goals, and review
+burden affect priority.
+
+The synthetic value baseline meets the current targets with a four-minute first
+useful result, 96 percent extraction precision, 90 percent useful-attention
+precision, two attention items weekly, complete deletion, 35 estimated minutes
+returned, and no boundary or unsafe-action incidents. These are synthetic
+software results. A genuinely opted-in human pilot and explicit human package
+and provider decisions remain required.
+
 ## Appliance release work now implemented
 
 The first support candidate is a native Ubuntu 24.04 LTS, x86-64, UEFI
@@ -172,9 +212,8 @@ Before promotion, the project still needs:
   restore, install, update, rollback, removal, and factory-reset results; and
 - a time-bounded opt-in pilot, calibration on real workloads, and an explicit
   human decision before promoting any automatic action class.
-- private household, health, and financial domain packages built on the new
-  intake and connection foundation, followed by live-provider and value-pilot
-  evidence.
+- live-provider certification and a genuinely opted-in value pilot for the
+  implemented household, health, and financial packages.
 
 Seventeen physical checks are tracked separately so CI or simulation cannot be
 mistaken for hardware acceptance.
