@@ -7,11 +7,11 @@ governed.
 
 The node remains authoritative even when it uses a cloud model, messaging
 provider, or encrypted storage provider. Those services supply transport,
-inference, or ciphertext storage; they do not become the identity or memory of
-the assistant.
+inference, or ciphertext storage. The node retains the assistant's identity and
+memory.
 
 Remote interaction is outbound-first: the node establishes approved connections
-rather than exposing a public administrative service by default. Backup, device
+while keeping the administrative service private by default. Backup, device
 sync, and remote access are separate subsystems with separate permissions.
 
 !!! info "Initial target"

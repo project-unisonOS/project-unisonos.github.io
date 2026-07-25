@@ -3,7 +3,7 @@
 Evaluation-only note:
 - the first support candidate is Ubuntu 24.04 LTS native on x86-64 UEFI hardware
 - the canonical native path is documented in [Install UnisonOS](install-unisonos.md)
-- this bare-metal ISO path is for evaluation and hardware exploration, not a supported install route
+- this bare-metal ISO path is limited to evaluation and hardware exploration; supported-install qualification remains open
 
 ## Archived channel
 

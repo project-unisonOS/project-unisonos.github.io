@@ -201,10 +201,12 @@
         <script src="{{ 'js/darkmode.js'|url }}"></script>
         {%- endif %}
 
+        {%- if page and page.is_homepage %}
         <aside class="status-banner" aria-label="Project maturity">
           <strong>Pre-release engineering:</strong> the appliance candidate has tested release, installer, and update controls, but it is not yet supported.
-          <a href="{{ 'current-status/'|url }}">Read current status</a>.
+          <a href="{{ 'current-status/'|url }}"><strong>Read current status</strong></a>.
         </aside>
+        {%- endif %}
 
         <div class="container page-shell">
             {%- block content %}

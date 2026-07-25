@@ -15,9 +15,8 @@ The approved appliance topology has six principal boundaries:
 6. **Unison Surface** renders the same semantic meaning through accessible text,
    visual, speech, and other supported experiences.
 
-These are security and responsibility boundaries. They do not require six
-containers: the personal-appliance profile can combine modules in-process when
-doing so does not weaken isolation.
+These are security and responsibility boundaries. The personal-appliance
+profile can combine modules in fewer containers while preserving isolation.
 
 ## A request in motion
 

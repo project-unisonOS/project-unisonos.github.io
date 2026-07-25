@@ -1,7 +1,8 @@
 # Roadmap
 
-This roadmap describes the order of work, not a release date. Passing a software
-or CI gate does not substitute for physical-device evidence.
+This roadmap describes the order of work. Release dates require separate
+decisions, and physical-device evidence remains mandatory after software or CI
+gates pass.
 
 ## Now: complete the appliance release path
 

@@ -23,7 +23,8 @@ uses:
   plan, transactional activation, and installation receipt.
 
 The older `compose.native.yaml` route and repository-oriented installer remain
-useful engineering inputs, but they are not a supported public appliance.
+useful engineering inputs. Supported public installation follows a separate
+promotion gate.
 
 ## Checks already implemented
 

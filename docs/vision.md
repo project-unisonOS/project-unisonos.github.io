@@ -11,7 +11,7 @@ party's objective for your own.
 
 ## Product principles
 
-- You are the principal, not the product.
+- You are the principal. The system serves your interests and rejects incentives that turn your attention or context into a product.
 - Local authority and replaceable providers preserve continuity and choice.
 - Relationship awareness never becomes automatic access.
 - Accessibility is part of correctness, including confirmation and recovery.

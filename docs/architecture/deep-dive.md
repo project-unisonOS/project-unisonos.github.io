@@ -60,7 +60,7 @@ In current deployments:
 
 - **No cloud dependency by default**: the platform is designed to run fully on local hardware.
 - **Remote calls are policy-gated**: if you enable a remote inference provider or external connector, it must be explicit, auditable, and consent-aware.
-- **Artifacts and sensitive state**: durable data flows through the storage and context APIs, not ad-hoc per-service databases.
+- **Artifacts and sensitive state**: durable data flows through the storage and context APIs. This provides one governed alternative to ad hoc per-service databases.
 
 ## Edge-First and Optional Cloud
 
@@ -145,7 +145,7 @@ In a compliant flow:
 Capabilities are declared in a manifest and validated against a platform schema before being persisted or executed. A manifest describes:
 
 - the capability **type** (tool, MCP server, skill pack, A2A peer, workflow)
-- **version pinning** (exact semver, not ranges)
+- **version pinning** with exact semantic versions
 - **origin/provenance** (local or URL + digest/signature fields)
 - **runtime** characteristics
 - **permissions** (especially network egress allowlists)

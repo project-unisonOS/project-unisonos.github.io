@@ -41,7 +41,7 @@ inferred ones, review recurring obligations, identify possible duplicate
 charges or price increases, notice overdue refunds, and prepare a cited weekly
 exception brief.
 
-Forecasts are local ranges with confidence and assumptions, not promises. Your
+Forecasts are local ranges with confidence and assumptions. Your
 private account is excluded from household totals unless you explicitly include
 a contribution record. Dispute, reimbursement, and cancellation communication
 remains a draft. Unison cannot transfer funds, trade, open credit, file a tax

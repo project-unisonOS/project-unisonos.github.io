@@ -14,7 +14,8 @@ vulnerability results, Ed25519 signatures, and Sigstore evidence.
 The release workflow downloaded those public assets again, verified their
 integrity and signatures, completed an installer transaction, and confirmed
 that incomplete and tampered mirrors fail closed. This is release-path
-evidence, not physical-device qualification or a support announcement.
+evidence. Physical-device qualification and a support announcement require
+their own gates.
 
 ## Runtime contract
 

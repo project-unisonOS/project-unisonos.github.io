@@ -22,8 +22,8 @@ LTS, x86-64, and UEFI define the first candidate boundary.
 - 20 GB free storage for the minimum model profile
 - Docker 26 to 29 and Docker Compose 2.24 or newer
 
-These are enforced software-contract values, not proof that a particular
-machine is supported. Recommended capacity will be set from measured latency,
+These are enforced software-contract values. Support for a particular machine
+requires separate evidence. Recommended capacity will be set from measured latency,
 memory, storage, acoustic, thermal, and energy results.
 
 ## Physical evidence still pending
