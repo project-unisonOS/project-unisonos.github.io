@@ -27,6 +27,10 @@ It remains unsupported while physical validation and promotion gates are open.
   simulations.
 - **Replaceable components:** policy-aware model routing and signed, revocable
   capability packages with compatibility and permission review.
+- **Governed model lifecycle:** signed per-version model manifests, hard
+  task/privacy/hardware eligibility, inspectable routing, untrusted semantic
+  proposals, synthetic golden evaluation, bounded canaries, content-free health
+  gates, and automatic rollback to a retained prior version.
 - **Private source onboarding foundation:** encrypted document and image
   quarantine, private review and correction, source provenance, duplicate and
   version tracking, rollback and deletion, plus read-only OAuth PKCE, SMART
@@ -54,6 +58,32 @@ health or financial provider password.
 These are local and sandbox software contracts. Production connection
 certification, live provider registrations, OCR quality on supported camera
 hardware, and production malware scanning remain release qualification work.
+
+## Model routing and lifecycle status
+
+Unison now defines bounded interpretation, extraction, vision, semantic
+construction, synthesis, and conversation tasks. Availability is inventoried
+separately from eligibility. Signed immutable manifests describe each exact
+model version, artifact, runtime, task support, privacy limits, hardware needs,
+license, measured quality and latency, approved risk, limitations, and rollback
+compatibility.
+
+The route for each bounded operation records the selected version, minimized
+disclosure, rejected candidates, rank evidence, and fallback. Models cannot
+broaden context, select a remote provider, create recipients or actions, remove
+recovery, or override deterministic facts. High-risk content follows a
+deterministic language path.
+
+Candidates run against synthetic golden semantic journeys in shadow before a
+bounded canary. Content-free health gates cover contract success, semantic
+success, fallback, errors, and latency. A degraded canary returns to the
+retained prior version without changing your identity, memory, permissions,
+pending actions, or interaction preferences.
+
+This is implemented software with synthetic qualification. Physical CPU, GPU,
+RAM, storage, energy, thermal, and realistic contention evidence remains open.
+No model and hardware combination is currently supported by the semantic
+experience program.
 
 ## Private household, health, and financial operations
 

@@ -43,6 +43,13 @@ tiers: reference, compatible, community-tested, and unsupported. Installer
 enforcement and public guidance will derive from the same versioned matrix.
 Seventeen physical checks are waiting for compatible hardware.
 
+The model lifecycle now has signed manifests, deterministic task routing,
+untrusted proposal validation, golden shadow evaluation, bounded canaries,
+content-free health gates, and automatic rollback in software. Its synthetic
+qualification matrix intentionally lists no supported model. Physical model and
+runtime measurements will populate that matrix alongside the appliance
+qualification work.
+
 ### Release candidate and pilot
 
 The candidate must pass clean install, first run, supported journeys, update,
@@ -132,8 +139,8 @@ package and live provider.
 
 - Additional communication channels and provider integrations with the same
   identity, disclosure, confirmation, replay, and revocation boundaries.
-- Additional local and remote model profiles with explicit data, cost, risk,
-  and availability policies.
+- Physically qualified local and remote model profiles using the implemented
+  data, cost, risk, hardware, lifecycle, and rollback policies.
 - More capabilities and daily workflows with recoverable external execution.
 - Representative assistive-technology research and hardware qualification.
 - ARM64 and additional appliance forms only after the x86-64 lifecycle passes.

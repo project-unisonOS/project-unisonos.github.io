@@ -230,6 +230,26 @@ API details live in [Reference → APIs](../reference/apis.md#actuation-vdi-api-
 
 Inference is a dedicated service that runs models and exposes a stable API to the rest of the platform. Providers are swappable behind the inference boundary.
 
+Inference routes each bounded interpretation, extraction, vision, semantic
+construction, synthesis, or conversation operation independently. Candidates
+come from a signature-verified registry. Hard eligibility evaluates task and
+structured-output support, privacy and disclosure, risk, offline state,
+hardware compatibility, measured latency, cost, license, artifact integrity,
+and support status before an inspectable person-aligned ranking is applied.
+
+Model-assisted semantic output uses a typed, provenance-bearing proposal that
+is always untrusted. Deterministic services reconcile source versions, exact
+facts, recipients, actions, recovery, and required meaning. High-risk and exact
+content uses a deterministic language path.
+
+New versions pass golden semantic journeys in shadow, then may enter a bounded
+canary. Aggregate health gates exclude person content and can automatically
+restore the retained prior version. Hardware qualification records can publish
+a supported combination only after complete physical-device latency, energy,
+thermal, offline, update, rollback, semantic-quality, and safe-fallback evidence.
+The current semantic-experience evidence is synthetic, so its supported matrix
+is empty.
+
 Common configuration knobs:
 
 - `UNISON_INFERENCE_PROVIDER` (example: `ollama`)
