@@ -44,6 +44,16 @@ h2 { margin-top: 2.5rem; }
 
 .hero-deck { color: var(--unison-navy); font-size: clamp(1.45rem, 3vw, 2rem); line-height: 1.35; max-width: 42rem; margin: .5rem 0 1rem; }
 .hero-support { color: var(--unison-muted); font-size: clamp(1.05rem, 1.5vw, 1.2rem); max-width: 48rem; margin: 0 0 1rem; }
+.homepage-hero { display: grid; grid-template-columns: minmax(0, 1.25fr) minmax(18rem, .9fr); gap: clamp(1.5rem, 4vw, 3rem); align-items: start; }
+.hero-copy { min-width: 0; }
+.hero-actions { margin: 0; }
+.creator-credit { color: var(--unison-muted); margin: .25rem 0 0; }
+.creator-credit a { font-weight: 600; white-space: nowrap; }
+.creator-credit .fa-linkedin { margin-left: .2rem; font-size: 1.15em; }
+.at-a-glance { border: 1px solid var(--unison-border); border-top: .4rem solid var(--unison-teal); border-radius: var(--unison-radius); background: #eef7f6; padding: clamp(1rem, 2.5vw, 1.5rem); }
+.at-a-glance h2 { margin: 0 0 1rem; font-size: clamp(1.45rem, 2vw, 1.8rem); }
+.at-a-glance ul { margin: 0; padding-left: 1.2rem; }
+.at-a-glance li + li { margin-top: .8rem; }
 .cta { display: inline-block; margin: .5rem .5rem 1rem 0; padding: .7rem 1rem; border: 2px solid var(--unison-blue); border-radius: .45rem; text-decoration: none; }
 .cta-primary { color: #fff !important; background: var(--unison-blue); }
 .cta-secondary { color: var(--unison-blue) !important; background: #fff; }
@@ -58,10 +68,15 @@ footer {
   padding-inline: clamp(1rem, 3vw, 2rem);
 }
 
+@media (max-width: 62rem) {
+  .homepage-hero { grid-template-columns: 1fr; }
+  .at-a-glance { max-width: 48rem; }
+}
+
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { scroll-behavior: auto !important; transition-duration: .01ms !important; animation-duration: .01ms !important; }
 }
 
 @media (forced-colors: active) {
-  main, .principle-card, .cta { border: 1px solid CanvasText; background: Canvas; color: CanvasText; }
+  main, .principle-card, .at-a-glance, .cta { border: 1px solid CanvasText; background: Canvas; color: CanvasText; }
 }
