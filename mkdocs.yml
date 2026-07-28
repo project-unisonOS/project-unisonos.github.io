@@ -49,7 +49,7 @@ nav:
           - Testing: developers/testing.md
           - Build & Deploy: developers/workflow-design.md
           - Images & Releases: developers/images-builds-and-releases.md
-          - Releases: developers/releases.md
+          - Downloads: developers/releases.md
           - Contributing: developers/contributing.md
       - Reference:
           - Specs & Schemas: reference/specs.md
