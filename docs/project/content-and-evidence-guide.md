@@ -86,3 +86,7 @@ intent-based computing, explain how intent becomes a governed outcome, locate
 authority and continuity in the home, and show how protection follows purpose.
 Detailed experience, architecture, build, and status pages provide the
 supporting contracts and evidence.
+
+The [documentation ownership and freshness policy](documentation-governance.md)
+defines canonical sources, change triggers, review cadence, archival, and the
+public publication gate.
