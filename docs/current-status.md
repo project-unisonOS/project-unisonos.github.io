@@ -36,6 +36,9 @@ It remains unsupported while physical validation and promotion gates are open.
   version tracking, rollback and deletion, plus read-only OAuth PKCE, SMART
   health sandbox, financial test-provider, selected-folder, and bounded MCP
   connection profiles.
+- **Usage-driven taxonomy:** person-scoped signals can propose a tag, subdomain,
+  or security domain; activation, signed security review, exact migration
+  confirmation, and rollback remain separate governed decisions.
 
 ## Private sources and connection foundation
 
