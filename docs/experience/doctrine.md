@@ -1,354 +1,124 @@
-# UnisonOS Experience Doctrine (Canonical)
+# Experience doctrine
 
-This document defines the foundational experience philosophy of UnisonOS. It exists to keep design, engineering, and agent-driven implementation aligned as the system scales.
+<section class="story-hero" aria-labelledby="doctrine-introduction">
+  <p class="story-kicker">Designed around a person</p>
+  <h2 id="doctrine-introduction">Intent, agency, and continuity shape every Unison experience</h2>
+  <p class="story-lead">This doctrine gives designers, engineers, researchers, and coding agents a shared direction for turning intent into useful, trustworthy outcomes.</p>
+</section>
 
----
+## Unison serves people
 
-## Purpose
+Unison begins with a person and what matters to them. The experience adapts to
+their language, preferences, abilities, relationships, environment, and current
+needs. Each person retains independent authority within a household system.
 
-This document defines the **foundational experience philosophy** of UnisonOS.  
-It serves as the canonical source of directional context for all design, engineering, and agent-driven implementation work.
+The word *person* keeps design attention on agency, dignity, and lived context.
+Technical documentation can still use precise terms such as principal,
+operator, participant, or consumer when a contract requires them.
 
-Its purpose is to ensure that UnisonOS:
+## Intent organizes the work
 
-- Remains intention-centric as it moves beyond legacy computing metaphors
-- Centers the people it serves
-- Prioritizes abstraction over tools, interfaces, and devices
-- Treats multimodal interaction and embodiment as first-class
-- Scales coherently across domains, modalities, and form factors
-- Builds and preserves trust as the primary product
+Intent is the desired outcome together with the context that shapes it. Input is
+evidence of intent. The system can propose meaning, ask a useful question, or
+attempt a bounded route when the request is unfamiliar.
 
----
+The interpreted intent remains reviewable. Identity, consent, policy, and
+capability grants establish what the system may access or do. This lets Unison
+feel natural while keeping consequential decisions explicit.
 
-## 1. Foundational Ethos
+<ol class="system-flow doctrine-flow">
+  <li><strong>Understand</strong><span>Interpret the desired outcome, relevant context, preferences, and uncertainty.</span></li>
+  <li><strong>Plan</strong><span>Select eligible services, models, skills, tools, and native modalities.</span></li>
+  <li><strong>Confirm</strong><span>Present sensitive or consequential decisions with their information, recipient, effect, and recovery.</span></li>
+  <li><strong>Act</strong><span>Invoke authorized capabilities through their assigned services and lifecycle controls.</span></li>
+  <li><strong>Reflect</strong><span>Return the outcome, provenance, uncertainty, receipt, and next useful choice.</span></li>
+  <li><strong>Continue</strong><span>Preserve relevant state so the person can resume, correct, cancel, or recover.</span></li>
+</ol>
 
-### 1.1 There Are No “Users”
+## Experiences are generated for the moment
 
-UnisonOS serves **people**.
+Unison assembles the experience from current intent and semantic state. A
+visual composition may use direct controls, structured regions, imagery, text,
+or persistent information when they improve understanding. Conversation,
+Braille, sign, touch, switch, AAC, haptic, and future experiences use forms
+native to those modalities.
 
-Your relationship with UnisonOS is:
-- Driven by intent
-- Oriented around objectives
-- Continuous over time
+The person can engage through familiar software, a generated visual surface,
+conversation, tactile interaction, or a combination. Abstraction succeeds when
+the experience reduces unnecessary procedure while preserving useful evidence
+and control.
 
-The term *user* implies adaptation to a system.  
-UnisonOS inverts this relationship.
+## Every modality deserves a complete path
 
-The system adapts to you.
+A complete experience lets the person express and refine intent, understand
+meaning and privacy state, review choices, confirm, cancel, correct, and
+recover. The structure, pacing, and density can vary while meaning and agency
+remain equivalent.
 
-Language matters. As Edward Tufte observed, “There are only two industries that
-call their customers ‘users’: illegal drugs and software.” UnisonOS rejects that
-framing. The system exists to serve, adapt to, and respect you.
+No visual screen is required for blind or visually impaired use. Conversation
+and Braille provide native paths. Public web content and visual surfaces remain
+compatible with assistive technology as part of their WCAG 2.2 AA obligation.
 
----
+## Presence supports attention
 
-## 2. Abstraction as a Core Principle
+Unison can be quiet when nothing needs attention and direct when progress,
+uncertainty, risk, or a decision matters. Visual, auditory, tactile, and ambient
+cues respect personal preferences and the surrounding environment.
 
-### 2.1 Intent as an Abstraction Boundary
+Presence communicates readiness without competing for attention. Clear status
+communicates active work. Acknowledgment, progress, interruption, completion,
+and recovery remain perceivable through the active modality.
 
-Intent is the primary abstraction layer in UnisonOS.
+## Tools and models remain replaceable
 
-A guiding principle:
+Models interpret, extract, synthesize, and converse within scoped operations.
+Skills and tools provide more repeatable routes. Legacy applications and
+computer-use systems can contribute through authorized capabilities.
 
-> If you believe you need a keyboard to accomplish something, the system has not achieved sufficient abstraction.
+These components support an intent without becoming the authority for identity,
+consent, policy, recipients, incident state, or physical action. Replacing a
+model or tool preserves the person's context, memory, preferences, and pending
+work.
 
-Key implications:
-- Keyboards are optional input tools
-- Screens are optional output surfaces
-- Commands remain implementation artifacts
+## Consequential action follows explicit authority
 
-They are implementation artifacts.
+Digital and physical action begins with a person's intent and proceeds through
+the services responsible for identity, policy, consent, capability grants,
+confirmation, lifecycle safety, and recovery. Agents and models may propose a
+route. The applicable services decide eligibility and enforce the exact grant.
 
----
+Health, finance, legal, identity, emergency, electrical, and physical work
+receive controls suited to their consequences. Qualified human authority
+remains part of the path where professional judgment or immediate safety
+requires it.
 
-### 2.2 From Action to Outcome
+## Trust is experienced over time
 
-Traditional systems require people to:
-- Select tools
-- Navigate interfaces
-- Execute steps
-- Recover from errors
+Unison earns trust by remaining understandable, consistent, private,
+recoverable, and honest about uncertainty. The person can inspect meaningful
+decisions and change preferences, permissions, connections, or direction.
 
-UnisonOS inverts this model.
-
-You express:
-- What they want to accomplish
-- Why it matters
-- Constraints and preferences
-
-The system determines:
-- Which agents act
-- Which abstraction layers apply
-- Which tools or embodiments are appropriate
-
-You remain focused on **outcomes** while UnisonOS coordinates the actions.
-
----
-
-## 3. Intent as the Atomic Unit
-
-The smallest meaningful unit in UnisonOS is **intent**. The system abstracts interaction mechanics such as:
-- Clicks
-- Keystrokes
-- Commands
-- Gestures
-
-Intents may be:
-- Explicit or implicit
-- Short-lived or persistent
-- Singular or composite
-- Digital or world-affecting
-
-The system continuously:
-1. Interprets intent  
-2. Selects agents  
-3. Chooses abstraction layers  
-4. Generates an experience  
-5. Executes actions  
-6. Reflects outcomes  
-7. Learns preferences (within policy bounds)
-
----
-
-## 4. Experience Is Generated Around Your Intent
-
-There is no navigation model.
-
-There are no:
-- Menus
-- App launchers
-- File trees
-- Workspaces
-
-These constructs exist only where abstraction is insufficient.
-
-UnisonOS **generates experiences** appropriate to current intent and context.
-
-What appears is:
-- Contextual
-- Ephemeral unless persistence adds value
-- Tailored to modality and embodiment
-
----
-
-## 5. Multimodal I/O as a First-Class Contract
-
-### 5.1 Modality Independence
-
-Every experience must be **capability-aware**:
-- If a screen is available, the renderer can use it.
-- If there is no screen, the experience must remain complete.
-- Do not assume a keyboard is present.
-- Speech may be unavailable or inappropriate.
-- Multiple simultaneous modalities may be available and should remain coherent.
-
-If an experience collapses when one modality is removed, it is incomplete.
-
----
-
-### 5.2 Needs and Preferences Are Context
-
-Accessibility needs, sensory preferences, and cognitive constraints are:
-- Persistent
-- First-class
-- Applied consistently
-
-They are integral parts of the experience.
-
----
-
-## 6. Power-On Experience (The First Promise)
-
-Power-on is the first expression of presence.
-
-### Visual Path
-- Full black field
-- White UnisonOS logo centered
-- Subtle, organic motion
-- No text
-- No progress indicators
-
-### Auditory Path
-- Calm, distinctive cue
-- Signals presence and readiness
-- Neither mechanical nor anthropomorphic
-
-### Screenless Path
-- Audio or haptic acknowledgment
-- Immediate confirmation of presence
-
-The goal is calm reassurance.
-
----
-
-## 7. The Renderer
-
-The renderer is a **translation surface** between intent and perception.
-
-Characteristics:
-- Full-field
-- Fluid
-- Non-windowed
-- Context-aware
-- Ephemeral by default
-
-It must not resemble:
-- Desktops
-- Dashboards
-- Web pages
-- Application shells
-
-Latency affects trust as well as performance.
-
----
-
-## 8. Legacy Systems and the VDI-Agent
-
-Legacy applications, files, and workflows still exist.
-
-They are accessed via:
-- The VDI-agent
-- Tool invocation
-- Background execution
-
-Rules:
-- You should not need to know when legacy systems are involved
-- Legacy flows are fallback mechanisms
-- VDI is a means, never the experience
-
----
-
-## 9. Actuation and Embodiment
-
-### 9.1 Intent Extends Beyond the Screen
-
-Intent may resolve into:
-- Information
-- Decisions
-- Automation
-- Simulation
-- Physical action
-
-Digital and physical outcomes receive equal consideration.
-
----
-
-### 9.2 Evolving Embodiment
-
-Valid embodiments include:
-- Screens and speakers
-- Audio-only devices
-- Spatial or holographic projections
-- Simulated or immersive environments
-- Robotics and physical automation
-- Assistive and augmentative devices
-
-Form factor is selected by:
-- Intent
-- Context
-- Safety
-- Trust boundaries
-- Capability availability
-
----
-
-### 9.3 Actuation as an Agent Choice
-
-Actuation begins with intent and follows the applicable consent boundary.
-
-Agents determine:
-- Whether physical action is appropriate
-- Which embodiment is safest and most effective
-- How authorization is confirmed
-- How outcomes are reflected
-
-Robotic action is architecturally equivalent to any other intent realization.
-
----
-
-## 10. Domain Modules and High-Trust Capabilities
-
-Certain domains require heightened trust and isolation.
-
-Examples:
-- Health
-- Finance
-- Identity
-- Legal
-
-These are implemented as **modular domain capabilities** with:
-- Clear boundaries
-- Explicit consent
-- Policy-governed agent authority
-- Verifiable behavior
-
----
-
-## 11. Trust Is the Product
-
-UnisonOS earns trust through every capability and interaction.
-
-Trust is reinforced by:
-- Predictability
-- Transparency
-- Respect for intent
-- Respect for boundaries
-- Explainable behavior
-
-Every decision must answer:
-
-Does this increase or reduce trust?
-
----
-
-## 12. Objectives Over Tasks
-
-UnisonOS serves **objectives** across individual moments.
-
-Objectives:
-- Span time
-- Evolve
-- Conflict
-- Require tradeoffs
-
-The system exists to:
-- Help articulate objectives
-- Track progress
-- Surface conflicts
-- Suggest adjustments
-- Act when authorized
-
----
-
-## 13. Non-Negotiable Design Constraints
-
-- No app-centric framing
-- No file-centric primary flows
-- No keyboard-dependent assumptions
-- No modality assumed as default
-- No requirement to “learn” the system
-- No opaque behavior in high-trust domains
-
----
-
-## 14. Canonical Agent Framing
-
-When instructing agents, UnisonOS must always be framed as:
-
-> An intention-centric, multimodal operating surface that abstracts tools, interfaces, and embodiments to generate real-time digital and physical experiences in service of your objectives.
-
-This statement is approved for direct reuse as agent system context.
-
----
-
-## 15. Closing Principle
-
-UnisonOS is dissolving the friction of computing.
-
-What remains is:
-- Intent
-- Trust
-- Action
-- Outcome
-
-Everything else is abstraction.
+Long-term objectives can evolve. Unison helps a person see progress, conflicts,
+deadlines, tradeoffs, and opportunities while keeping final authority with the
+person and the services they have configured.
+
+## A concise design test
+
+Before accepting an experience, ask:
+
+1. Does it begin with the person's intent and context?
+2. Does it work natively through the selected modality?
+3. Are meaning, uncertainty, privacy, and consequences understandable?
+4. Can the person confirm, cancel, correct, and recover?
+5. Does each component stay within its assigned responsibility?
+6. Does the experience preserve continuity without taking control away?
+
+<aside class="evidence-band" aria-label="Doctrine evidence status">
+  <p><strong>Role:</strong> This doctrine guides product decisions. Versioned component contracts and accepted architecture records define implementation responsibilities.</p>
+  <p><strong>Evidence:</strong> Public capability claims continue to follow unit, simulation, hosted CI, physical hardware, and participatory evidence labels.</p>
+</aside>
+
+<nav class="next-path" aria-label="Continue exploring experience design">
+  <a href="../renderer-design-language/"><strong>Explore visual expression</strong><span>Apply the doctrine to generated visual experiences.</span></a>
+  <a href="../multimodal/"><strong>Explore native modalities</strong><span>See how one semantic outcome supports many forms.</span></a>
+</nav>

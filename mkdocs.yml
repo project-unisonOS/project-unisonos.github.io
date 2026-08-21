@@ -25,11 +25,13 @@ nav:
           - Deep Dive: architecture/deep-dive.md
   - Experience:
       - Experience Principles: experience.md
+      - Experience Doctrine: experience/doctrine.md
+      - Visual Experience Language: experience/renderer-design-language.md
       - Multimodal Interaction: experience/multimodal.md
       - Shared Understanding: experience/shared-understanding.md
       - Usage Journeys: experience/usage-journeys.md
       - Journey Implementation Map: experience/journey-implementation.md
-      - AI Personality: experience/ai-personality.md
+      - Personality & Continuity: experience/ai-personality.md
       - Accessibility: accessibility.md
       - Modalities and Ecosystem: ecosystem.md
   - Trust:
