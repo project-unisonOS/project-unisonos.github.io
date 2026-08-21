@@ -157,5 +157,5 @@ journey by preserving the same reviewable structure:
 
 <nav class="next-path" aria-label="Continue exploring Unison">
   <a href="../../how-unison-works/"><strong>Follow intent through the system</strong><span>See how identity, policy, orchestration, and modalities compose an outcome.</span></a>
-  <a href="../../privacy-security/"><strong>Explore privacy and security</strong><span>Understand context separation, authority, monitoring, and recovery.</span></a>
+  <a href="../journey-implementation/"><strong>Follow journeys into implementation</strong><span>Find owning repositories, current evidence, and the next qualification gate.</span></a>
 </nav>

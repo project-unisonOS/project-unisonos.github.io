@@ -17,6 +17,7 @@ nav:
       - Personal Node: personal-node.md
       - Context Spaces: household-context-spaces.md
       - Taxonomy Evolution: taxonomy-evolution.md
+      - Hardware Program: hardware-program.md
       - Remote Assistant: remote-assistant.md
       - System Capabilities: experience/system-capabilities.md
       - Architecture:
@@ -27,6 +28,7 @@ nav:
       - Multimodal Interaction: experience/multimodal.md
       - Shared Understanding: experience/shared-understanding.md
       - Usage Journeys: experience/usage-journeys.md
+      - Journey Implementation Map: experience/journey-implementation.md
       - AI Personality: experience/ai-personality.md
       - Accessibility: accessibility.md
       - Modalities and Ecosystem: ecosystem.md
@@ -48,6 +50,7 @@ nav:
           - Onboarding: developers/onboarding.md
       - Build & Operate:
           - Workspace & Repos: developers/workspace-and-repos.md
+          - Hardware Qualification: developers/hardware.md
           - Devstack Setup: developers/devstack.md
           - Renderer: developers/renderer.md
           - Modality Integration: developers/modality-integration.md
