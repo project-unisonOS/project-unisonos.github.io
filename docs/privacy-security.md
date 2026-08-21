@@ -2,7 +2,7 @@
 
 <section class="story-hero" aria-labelledby="privacy-introduction">
   <p class="story-kicker">Protection follows purpose</p>
-  <h2 id="privacy-introduction">Your intent defines the boundary</h2>
+  <h2 id="privacy-introduction">Your intent gives protection a purpose</h2>
   <p class="story-lead">Unison begins with what a person is trying to accomplish. Identity, context, policy, capabilities, recipients, disclosure, confirmation, and recovery are then resolved around that intent.</p>
 </section>
 
@@ -48,7 +48,7 @@ fields available for one purpose. External disclosure receives its own policy
 decision.
 
 Compartmentalization limits the information available to any service, model,
-channel, capability, or compromised boundary. A health workflow can operate
+channel, capability, or compromised component. A health workflow can operate
 within health context. A financial workflow can use financial context. A
 purpose-bound coordination intent can link selected facts from both spaces while
 the source spaces and their policies remain intact.
@@ -60,7 +60,7 @@ the source spaces and their policies remain intact.
   <section><h3>Identity and keys</h3><p>Independent person, device, service, and context-space identities support authentication, rotation, revocation, and scoped access.</p></section>
   <section><h3>Storage</h3><p>Encrypted records, source artifacts, semantic indexes, and backups follow their context-space and retention policies.</p></section>
   <section><h3>Service isolation</h3><p>Core, trust, capability, inference, channel, and experience services communicate through versioned contracts and scoped identities.</p></section>
-  <section><h3>Continuous policy</h3><p>Person, intent, purpose, recipient, assurance, data class, risk, disclosure, and confirmation are evaluated at meaningful boundaries.</p></section>
+  <section><h3>Continuous policy</h3><p>Person, intent, purpose, recipient, assurance, data class, risk, disclosure, and confirmation are evaluated at meaningful decision points.</p></section>
   <section><h3>Detection and recovery</h3><p>Content-minimized signals, signed updates, quarantine, rollback, credential rotation, backup, and restore support incident response.</p></section>
 </div>
 
@@ -72,7 +72,7 @@ source, or backup provider contributes, Unison prepares the minimum fields
 approved for that operation.
 
 Credentials are represented by opaque task references and injected at the
-transport boundary. External content retains provenance and enters as evidence.
+transport step. External content retains provenance and enters as evidence.
 The person can see the provider, recipient, information disclosed, purpose,
 consequence, reversibility, cost, and available local route before a sensitive
 operation proceeds.
@@ -100,7 +100,7 @@ be recovered together.
 The intended security operations path combines local integrity and behavior
 signals, signed vulnerability and update intelligence, component inventories,
 policy changes, and recovery exercises. The node can identify an affected
-boundary, preserve useful evidence, restrict capabilities, rotate credentials,
+component, preserve useful evidence, restrict capabilities, rotate credentials,
 quarantine components, apply signed updates, and restore a known state.
 
 Security claims follow the same evidence discipline as product claims. New
@@ -120,7 +120,7 @@ establish the required identity, assurance, consent, or policy. Content-minimize
 receipts preserve accountability while primary private content remains in its
 governed context space.
 
-<aside class="evidence-band" aria-label="Privacy and security evidence boundary">
+<aside class="evidence-band" aria-label="Privacy and security evidence">
   <p><strong>Implemented:</strong> Synthetic and local integration evidence covers private and shared context isolation, deny-by-default policy, field minimization, capability grants, exact expiring confirmation, credential canaries, provider-blind backup, and signed-update metadata.</p>
   <p><strong>Being proven:</strong> Supported-appliance validation, long-running intrusion monitoring, representative recovery exercises, TPM-backed operation, and participatory trust evaluation require additional evidence.</p>
   <p><strong>Envisioned:</strong> Qualified hardware security profiles, continuously governed threat-intelligence feeds, privacy-relay profiles, provider partnerships, and supported incident-response operations remain future work.</p>

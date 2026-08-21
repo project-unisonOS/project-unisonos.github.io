@@ -1,50 +1,67 @@
 # People, relationships, and context spaces
 
-Knowing that two people are family, colleagues, or friends helps Unison choose
-tone and relevant context. It does not grant either person access to the other's
-private information.
+<section class="story-hero" aria-labelledby="context-introduction">
+  <p class="story-kicker">Personal by default, shared with purpose</p>
+  <h2 id="context-introduction">A household can coordinate while each person retains authority</h2>
+  <p class="story-lead">Unison uses explicit context spaces to organize private and shared information. Relationships inform the experience, and access follows membership, purpose, consent, and policy.</p>
+</section>
 
-Each assistant starts with a private space. Sharing creates or references an
-explicit context space with a purpose, members, data boundaries, and a distinct
-key domain. Examples might include a household grocery list, a trip with friends,
-or a project with colleagues. Co-location, family membership, inference, and
-device-administrator status never silently promote private records into a shared
-space.
+## Each person begins with a private space
 
-## Accepted Phase 2 foundation
+Knowing that two people are family, colleagues, caregivers, or friends can help
+Unison choose relevant context and an appropriate tone. The relationship itself
+does not grant access to private information.
 
-The accepted implementation applies these rules through a versioned contract and durable
-local repository. Search starts from your private space. Prompt construction
-requires an explicit authorized space and purpose. Sharing makes an auditable copy
-in a shared space while leaving the private source private. Invitations require
-acceptance; member removal revokes access and advances the space key version.
+Each assistant begins with a private space and an independent identity, key,
+credential, data, cache, index, audit, and backup-policy namespace. Search and
+prompt construction begin from an explicitly authorized space and purpose.
 
-You can inspect what is known, why it is known, where it is stored, and who can
-access it, then correct, delete, or explicitly share it. The web controls use
-labels, native keyboard controls, confirmation checkboxes, cancellation, and a
-semantic status region. The final Phase 2 gate is approved and the implementation is
-not yet a supported release.
+## Sharing creates a governed space
 
-The first household model is for independently consenting adults. Child,
-dependent, caregiving, incapacity, and emergency-access roles require a dedicated
-design and safety review and are not represented as ordinary administrator access.
+A shared space records its purpose, members, selected information, policy,
+retention, and key domain. It can support a household grocery list, a trip with
+friends, a care plan, or a project with colleagues.
 
-## Accepted Phase 4 proof
+Sharing creates an auditable item in the selected shared space while the private
+source remains private. Invitations require acceptance. Member removal revokes
+access and advances the shared space key version. Co-location, family status,
+inference, and device administration carry no independent sharing authority.
 
-The accepted proof composes two separate adult assistants on one synthetic
-Ubuntu appliance profile. Each receives distinct identity, key, credential, data,
-cache, index, private context, audit, and backup-policy namespaces. Both can add
-calendar events and grocery items to one explicit household space. Coordination
-reports that it reads zero private sources, and cross-person probes use the same
-denial as nonexistent-resource probes.
+<ol class="system-flow trust-flow">
+  <li><strong>Choose a purpose</strong><span>State the shared outcome and the information needed to support it.</span></li>
+  <li><strong>Select people</strong><span>Identify proposed members and collect the consent required by policy.</span></li>
+  <li><strong>Preview information</strong><span>Review the exact items, fields, retention, and available alternatives.</span></li>
+  <li><strong>Create or update the space</strong><span>Apply membership, keys, policy, and scoped copies through the owning services.</span></li>
+  <li><strong>Keep control visible</strong><span>Support inspection, correction, revocation, deletion, cancellation, and recovery through every native experience.</span></li>
+</ol>
 
-The candidate also adds per-assistant queue, concurrency, CPU, and memory budgets
-so one assistant cannot monopolize the shared scheduler. Invitation, removal,
-share preview, shared artifacts, audit, cancellation, and recovery have semantic,
-keyboard-native controls and status announcements.
+## Shared work preserves personal privacy
 
-The architecture and security gate passed on 2026-07-21. Supported-release
-qualification remains open.
-It does not claim protection from a compromised host administrator, production
-timing-side-channel certification, child/caregiving models, remote channels, or
-provider-blind backup.
+Two adults can contribute calendar events or grocery items to one household
+space. Coordination reads the shared records needed for that intent and reports
+which sources contributed. Private records remain independently governed.
+Cross-person probes receive the same response as requests for resources that do
+not exist, reducing information leakage.
+
+Per-assistant queue, concurrency, CPU, and memory budgets help the shared node
+serve multiple people without allowing one workload to monopolize the
+scheduler.
+
+## Roles that need dedicated care
+
+The first implemented household model covers independently consenting adults.
+Child, dependent, caregiving, incapacity, delegated authority, and emergency
+access require role-specific policy, safety review, revocation, and recovery.
+They will enter supported profiles only after that work receives appropriate
+technical, domain, physical, and participatory evidence.
+
+<aside class="evidence-band" aria-label="Context-space evidence">
+  <p><strong>Implemented:</strong> Versioned contracts and synthetic appliance tests cover private and shared spaces, invitation and removal, key-version changes, scoped sharing, person isolation, resource budgets, audit, cancellation, and recovery.</p>
+  <p><strong>Being proven:</strong> Supported appliance profiles, timing analysis, representative native modalities, and participatory household evaluation require additional evidence.</p>
+  <p><strong>Envisioned:</strong> Qualified child, dependent, caregiving, incapacity, and emergency-access roles remain future design programs.</p>
+</aside>
+
+<nav class="next-path" aria-label="Continue exploring governed context">
+  <a href="../taxonomy-evolution/"><strong>See how organization evolves</strong><span>Follow usage patterns into person-reviewed taxonomy proposals.</span></a>
+  <a href="../privacy-security/"><strong>Review privacy and security</strong><span>Understand the layered controls protecting people, context, and recovery.</span></a>
+</nav>
