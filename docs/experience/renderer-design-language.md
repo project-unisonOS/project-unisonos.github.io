@@ -1,387 +1,131 @@
-# UnisonOS Renderer Design Language Specification (Canonical)
+# Visual experience language
 
-## Purpose
+<section class="story-hero" aria-labelledby="visual-language-introduction">
+  <p class="story-kicker">Meaning takes visual form</p>
+  <h2 id="visual-language-introduction">A generated surface makes the current intent clear</h2>
+  <p class="story-lead">The visual composer turns a governed semantic outcome into an experience that is calm, direct, responsive, and suited to the person and moment.</p>
+</section>
 
-This document defines the **design language and behavioral contract** of the UnisonOS renderer.
+## The semantic outcome comes first
 
-The renderer is a **real-time experiential surface** that translates intent into perception.
+The renderer receives meaning that has already been assembled and checked by
+the responsible platform services. This semantic outcome carries facts,
+relationships, status, provenance, uncertainty, choices, actions,
+confirmation, privacy, cancellation, errors, and recovery.
 
-This specification governs:
-- Motion
-- Layout
-- Presence
-- Transitions
-- Silence and emptiness
-- Modality coexistence
+The renderer composes that state visually and relays the person's interaction.
+It does not decide identity, consent, policy, recipients, disclosure, incident
+state, or actuation. The expression planner coordinates modality selection and
+fallback.
 
-All renderer implementations must conform to this document to avoid regression into legacy interface metaphors.
+## Give the current intent a clear center
 
----
+Visual composition emphasizes what the person is doing now. Supporting context
+remains available in proportion to its relevance. Persistent information earns
+its place by helping the person understand, decide, act, or continue later.
 
-## 1. Core Principle
+<div class="principle-grid">
+  <section class="principle-card"><h3>Purposeful</h3><p>Every visible element supports meaning, progress, a choice, an action, or recovery.</p></section>
+  <section class="principle-card"><h3>Composed</h3><p>Spatial relationships, typography, imagery, regions, and sequence create a coherent field.</p></section>
+  <section class="principle-card"><h3>Progressive</h3><p>The experience leads with what matters now and makes supporting detail easy to reach.</p></section>
+  <section class="principle-card"><h3>Responsive</h3><p>Layout and interaction adapt to the display, input capabilities, environment, and personal preferences.</p></section>
+  <section class="principle-card"><h3>Traceable</h3><p>Changes in state connect to the person's intent, a visible system event, or a safety requirement.</p></section>
+  <section class="principle-card"><h3>Recoverable</h3><p>Cancel, undo, retry, defer, and recovery remain present when the semantic outcome provides them.</p></section>
+</div>
 
-### 1.1 The Renderer Is an Abstraction Boundary
+## Use structure to improve understanding
 
-The renderer sits **between intent and perception**.
+The visual experience can use text, imagery, direct controls, lists, tables,
+cards, panels, timelines, maps, or other structures when they fit the content
+and intent. Their value comes from the meaning they organize rather than from a
+persistent application shell.
 
-Its responsibility is to:
-- Reveal meaning
-- Reduce cognitive load
-- Maintain trust
-- Disappear when not needed
+Navigation can support exploration, history, settings, and durable work. A
+person should understand where they are, what can happen next, and how to
+return. Familiar patterns are welcome when they reduce effort and preserve
+agency.
 
----
+## Let information density follow the task
 
-## 2. Presence Before Information
+A quick status check can be glanceable. Research can support dense comparison
+and source review. Health, financial, and legal work can show exact values,
+provenance, uncertainty, and consequences. The person can ask for more or less
+detail and retain that preference.
 
-### 2.1 Presence Is the First State
+Progressive disclosure can use spatial focus, expansion, sequencing, dialogue,
+or navigation. Important facts and recovery controls remain available without
+requiring the person to remember hidden state.
 
-The renderer’s default state is **presence**. Content appears when it adds value.
+## Make time and progress understandable
 
-Presence means:
-- The system feels available
-- The system feels attentive
-- The system remains quietly available
+The surface acknowledges input promptly and presents honest status for work
+that continues. Progress can be expressed through text, steps, elapsed state,
+motion, sound, haptics, or another perceivable form appropriate to the task.
 
-Presence may be expressed through:
-- Subtle motion
-- Ambient sound
-- Spatial positioning
-- Stillness
+Known progress should be specific. Uncertain work can explain what is happening
+and when the person will receive another update. Interruption preserves enough
+state to resume or recover.
 
-Presence must never:
-- Compete for attention
-- Request action
-- Display menus or affordances
+## Use motion with purpose
 
----
+Motion can communicate relationship, focus, state change, causality, progress,
+and completion. Its pace reflects urgency, cognitive load, and personal
+preference. Calm motion uses restrained timing and physically understandable
+transitions.
 
-### 2.2 Empty Is a Valid State
+Reduced-motion settings receive an equally complete experience through
+stillness, immediate state changes, text, sound, haptics, or other selected
+cues. Meaning never depends on animation alone.
 
-An empty renderer is a valid response.
+## Express presence without demanding attention
 
-Silence, darkness, or stillness may be the **correct response** to intent.
+Presence can be still, visual, auditory, tactile, or ambient. It communicates
+availability and sensing state at a level suited to the environment. Active
+capture, consequential work, urgency, and completion use clear perceivable
+signals.
 
-If there is nothing valuable to present:
-- Present nothing
-- Do not fill space
-- Do not “idle animate” for reassurance
+Quiet is valuable when nothing needs attention. Visible status is valuable when
+the person is waiting, deciding, or monitoring an outcome.
 
-Presence ≠ activity.
+## Coordinate with native modalities
 
----
+Visual expression can work alone or alongside conversation, Braille, sign,
+touch, switches, AAC, haptics, or future modalities. Each expression draws from
+the same semantic state while using its own structure and pacing.
 
-## 3. Layout as a Single Field
+The visual surface avoids becoming a required intermediary for another
+modality. A conversational or Braille experience remains native and complete.
+When modalities operate together, they share state and complement one another.
 
-### 3.1 No Windows, No Panels, No Cards
+## Reinforce trust and consequential choices
 
-The renderer must not implement:
-- Windows
-- Cards
-- Panels
-- Sidebars
-- Docked regions
-
-These imply:
-- Persistent structure
-- Navigation
-- Tool ownership
-
-All content exists within a **single perceptual field**.
-
----
-
-### 3.2 Centering Is Meaningful
-
-The center of the field represents:
-- Current intent
-- Highest relevance
-- Immediate focus
-
-Peripheral regions may be used for:
-- Contextual information
-- Transient cues
-- Secondary awareness
-
-Nothing should be permanently anchored.
-
----
-
-### 3.3 Spatial Hierarchy Over Visual Hierarchy
-
-Hierarchy is conveyed through:
-- Spatial position
-- Depth
-- Motion
-- Temporal sequencing
-
-Avoid relying on:
-- Borders
-- Containers
-- UI chrome
-- Typography alone
-
----
-
-## 4. Motion Language
-
-### 4.1 Motion Is Semantic
-
-Motion is never decorative.
-
-Every motion must communicate at least one of:
-- Intent recognition
-- State change
-- Progression
-- Causality
-- Completion
-
-If motion does not convey meaning, it must be removed.
-
----
-
-### 4.2 Organic Motion
-
-Motion characteristics:
-- Continuous
-- Eased
-- Non-linear
-- Physically plausible
-
-Avoid:
-- Snapping
-- Bouncing
-- Elastic UI effects
-- Gamified transitions
-
-The renderer should feel **alive** through restrained, meaningful motion.
-
----
-
-### 4.3 Motion as Feedback
-
-Motion confirms action while leaving initiation with you.
-
-The renderer should never:
-- Prompt interaction through motion
-- Animate to attract attention unnecessarily
-- Signal urgency unless intent or safety requires it
-
----
-
-## 5. Temporal Design
-
-### 5.1 Time Is a First-Class Dimension
-
-The renderer must respect:
-- Cognitive pacing
-- Sensory load
-- Intent urgency
-
-Transitions should:
-- Match the seriousness of the intent
-- Slow down for reflection
-- Speed up for execution
-
-Time is **contextual**.
-
----
-
-### 5.2 No Artificial Waiting
-
-Loading states, spinners, and progress bars are discouraged.
-
-The renderer should:
-- Acknowledge intent immediately
-- Transition into presence
-- Reveal progress implicitly through motion or state evolution
-
-Waiting should convey active thought and progress.
-
----
-
-## 6. Presence Cues
-
-### 6.1 Visual Presence
-
-Visual presence may include:
-- Subtle breathing motion
-- Gentle luminance shifts
-- Minimal geometric forms
-- Ambient depth changes
-
-Constraints:
-- No text
-- No icons
-- No indicators that imply “clickability”
-
----
-
-### 6.2 Auditory Presence
-
-Auditory cues:
-- Must be calm
-- Must be brief
-- Must be optional
-- Must respect accessibility preferences
-
-Sounds should signal:
-- Awareness
-- Readiness
-- Completion
-
-Never:
-- Notification fatigue
-- Anthropomorphic speech by default
-- Repetitive cues
-
----
-
-### 6.3 Haptic Presence (Where Applicable)
-
-Haptics should:
-- Be deliberate
-- Be rare
-- Reinforce state changes
-
-Never use haptics for decoration.
-
----
-
-## 7. Modality Coexistence
-
-### 7.1 No Primary Modality
-
-The renderer must assume:
-- The screen may disappear
-- Audio may be unavailable
-- Haptics may be absent
-
-No experience should depend on a single modality to preserve meaning.
-
----
-
-### 7.2 Cross-Modal Coherence
-
-When multiple modalities are active:
-- They must reinforce the same meaning
-- They must not duplicate excessively
-- They must not contradict
-
-The renderer orchestrates modalities into one coherent experience.
-
----
-
-## 8. Information Density
-
-### 8.1 Less Is the Default
-
-Information density must be:
-- Minimal
-- Contextual
-- Progressive
-
-Reveal information only when:
-- It advances intent
-- It reduces uncertainty
-- It supports decision-making
-
-Never preload “just in case” information.
-
----
-
-### 8.2 Progressive Disclosure Without Navigation
-
-Additional detail is revealed through:
-- Temporal progression
-- Focus shifts
-- Clarifying questions
-- Intent refinement
-
-Never through:
-- Drill-downs
-- Tabs
-- Menus
-- Navigation trees
-
----
-
-## 9. Trust and Safety in Rendering
-
-### 9.1 Renderer Never Surprises
-
-The renderer must never:
-- Change state without cause
-- Introduce information without relevance
-- Trigger physical actuation cues without confirmation
-
-All perceivable changes must be traceable to:
-- Intent
-- System state
-- Safety requirements
-
----
-
-### 9.2 High-Trust Domains
-
-In domains like health, finance, or actuation:
-- Motion must slow
-- Transitions must clarify causality
-- Confirmations must be explicit
-- Ambiguity must be reduced
-
-The renderer shifts tone to reinforce seriousness.
-
----
-
-## 10. Actuation Representation
-
-### 10.1 Physical Action Is Reflected
-
-When physical actuation occurs:
-- The renderer reflects state and outcome
-- It reflects the meaningful state and outcome
-- It reserves mechanical detail for requests that need it
-
-Actuation is treated as **intent resolution**. Mechanical detail remains available when you request it.
-
----
-
-## 11. Anti-Patterns (Explicitly Forbidden)
-
-The renderer must not implement:
-- App-like surfaces
-- Persistent dashboards
-- File metaphors
-- Toolbars
-- Icons implying actions
-- Cursor-centric interaction models
-- Keyboard-first assumptions
-
-If these appear, abstraction has failed.
-
----
-
-## 12. Canonical Renderer Test
-
-Before approving any renderer behavior, ask:
-
-1. Does this expose system structure?
-2. Does this require learning?
-3. Does this assume a device?
-4. Does this add cognitive load?
-5. Does this reduce trust?
-
-If any answer is “yes,” the design must be revised.
-
----
-
-## 13. Closing Principle
-
-The renderer is successful when it feels:
-- Inevitable
-- Calm
-- Obvious
-- Forgettable
-
-The best renderer is the one you never have to think about.
+Sensitive decisions show the person, purpose, information, provider, recipient,
+consequence, reversibility, cost, and recovery that apply. Visual emphasis
+reflects actual urgency and supports comprehension without creating pressure.
+
+The renderer presents confirmation and returns the person's decision to the
+responsible service. Physical action, financial movement, disclosure, and other
+high-impact work proceed only through their authorized lifecycle.
+
+## Review every visual experience
+
+Ask:
+
+1. Is the current intent and status easy to understand?
+2. Does each element earn attention through useful meaning or control?
+3. Are sources, uncertainty, privacy, and consequences clear?
+4. Can the person navigate, confirm, cancel, correct, and recover?
+5. Does the experience remain complete with reduced motion and at supported
+   reflow and zoom settings?
+6. Can another modality express the same semantic state natively?
+
+<aside class="evidence-band" aria-label="Visual experience evidence status">
+  <p><strong>Implemented:</strong> Semantic outcomes, visual composition, accessibility preferences, confirmation, cancellation, recovery, and synthetic equivalence have software evidence.</p>
+  <p><strong>Being proven:</strong> Representative displays, input devices, realistic concurrent workloads, and participatory visual evaluation remain qualification work.</p>
+  <p><strong>Web requirement:</strong> Public documentation and web-based visual surfaces are evaluated against WCAG 2.2 AA, including keyboard use, reflow, zoom, contrast, focus, forced colors, and reduced motion.</p>
+</aside>
+
+<nav class="next-path" aria-label="Continue exploring expression design">
+  <a href="../multimodal/"><strong>Review multimodal interaction</strong><span>Connect visual composition to the shared semantic model.</span></a>
+  <a href="../../developers/renderer/"><strong>Build the renderer</strong><span>Follow the component entry point and validation guidance.</span></a>
+</nav>

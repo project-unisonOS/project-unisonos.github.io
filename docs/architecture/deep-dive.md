@@ -275,4 +275,5 @@ UnisonOS separates the model from the assistant identity. The model is treated a
 - Compiled prompt path: `~/.unison/prompt/compiled/active_system_prompt.md`
 - Observability: `prompt.injection.applied` trace events include prompt path + hash (prompt content is never logged).
 
-See [Default System Prompt (Canonical)](../experience/system-prompt.md) for the base prompt text.
+See [assistant prompt and priorities](../experience/system-prompt.md) for the
+layering model and the current implementation source.
