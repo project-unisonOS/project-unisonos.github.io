@@ -41,6 +41,7 @@ nav:
   - Build:
       - Get Started:
           - Install UnisonOS: developers/install-unisonos.md
+          - Evaluate the Preview: developers/evaluate-preview.md
           - Appliance Release Lifecycle: developers/appliance-release-lifecycle.md
           - Archived WSL2 Channel: developers/install-wsl2.md
           - Archived Linux VM Channel: developers/install-linux-vm.md
@@ -49,6 +50,7 @@ nav:
           - Prerequisites: developers/prerequisites.md
           - Onboarding: developers/onboarding.md
       - Build & Operate:
+          - Contributor Task Finder: developers/task-finder.md
           - Workspace & Repos: developers/workspace-and-repos.md
           - Hardware Qualification: developers/hardware.md
           - Devstack Setup: developers/devstack.md
@@ -68,6 +70,7 @@ nav:
       - Current Status: current-status.md
       - Roadmap: project/roadmap.md
       - Content & Evidence Guide: project/content-and-evidence-guide.md
+      - Documentation Governance: project/documentation-governance.md
       - Terminology: terminology.md
       - Governance: project/governance.md
       - License: project/license.md

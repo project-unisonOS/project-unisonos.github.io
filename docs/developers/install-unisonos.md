@@ -66,4 +66,6 @@ download. Their pages remain as historical engineering context only:
 [bare metal](install-bare-metal.md).
 
 Review the [release lifecycle](appliance-release-lifecycle.md) and
-[compatibility status](../reference/compatibility.md) before evaluating.
+[compatibility status](../reference/compatibility.md) before evaluating. The
+[preview evaluation walkthrough](evaluate-preview.md) begins with artifact
+review and integrity verification before any system changes.
