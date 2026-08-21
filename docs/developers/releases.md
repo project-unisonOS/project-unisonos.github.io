@@ -27,4 +27,4 @@ and vulnerability records. Do not use this preview for production or
 irreplaceable personal data.
 
 Follow the [preview evaluation walkthrough](evaluate-preview.md) for an
-artifact-first review and a bounded isolated-installation path.
+artifact-first review and an isolated installation path.

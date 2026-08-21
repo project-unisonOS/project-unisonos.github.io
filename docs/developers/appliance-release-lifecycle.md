@@ -103,7 +103,7 @@ The simulated transaction then:
 2. copies and verifies personal data and the current installation receipt;
 3. stages the complete target without changing the active release;
 4. atomically activates the target;
-5. runs a bounded health sequence; and
+5. runs a focused health sequence; and
 6. promotes the new receipt only after health succeeds.
 
 Failed migration, health, or post-activation interruption restores the

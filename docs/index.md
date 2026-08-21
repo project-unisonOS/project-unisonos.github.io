@@ -57,7 +57,7 @@ testing, and explicit authority.
 
 <ol class="evolution-path" aria-label="How a request can become a reusable local capability">
   <li><strong>A new request</strong><span>You ask naturally, even when no predefined workflow exists.</span></li>
-  <li><strong>Bounded resolution</strong><span>Unison combines approved tools, retrieval, and inference to pursue an outcome.</span></li>
+  <li><strong>Governed resolution</strong><span>Unison combines approved tools, retrieval, and inference to pursue an outcome.</span></li>
   <li><strong>A repeated pattern</strong><span>The system notices reusable structure without placing private content in operational telemetry.</span></li>
   <li><strong>Your review</strong><span>You can accept, change, defer, or reject the proposed capability.</span></li>
   <li><strong>A local capability</strong><span>Only reviewed, tested, and authorized behavior can become reusable.</span></li>

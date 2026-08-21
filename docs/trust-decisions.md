@@ -53,7 +53,7 @@ the goal, context, constraints, recipient, or desired experience while
 preserving a natural conversational flow.
 
 <aside class="evidence-band" aria-label="Trust-decision evidence">
-  <p><strong>Implemented:</strong> Synthetic fixtures cover policy matrices, adversarial content, field minimization, capability grants, exact confirmation, expiration, credential canaries, and semantic accessibility.</p>
+  <p><strong>Implemented:</strong> Synthetic fixtures cover policy matrices, adversarial content, field minimization, capability grants, exact confirmation, expiration, credential exposure detection, and semantic accessibility.</p>
   <p><strong>Being proven:</strong> Supported providers, physical appliance profiles, representative devices, participatory evaluation, and release evidence require additional qualification.</p>
 </aside>
 

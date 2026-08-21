@@ -56,7 +56,7 @@ copies already obtained.
 
 ## Current limits
 
-- The implementation passed its bounded engineering gate. Supported backup
+- The implementation passed its engineering gate. Supported backup
   subscriptions and provider partnerships require separate decisions.
 - The S3-compatible contract does not imply endorsement of a particular public
   provider.

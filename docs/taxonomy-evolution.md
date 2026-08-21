@@ -37,7 +37,7 @@ asking and choose the structure that fits.
 
 Novel requests remain available through governed inference. A taxonomy proposal
 improves repeated work and organization while the system continues pursuing new
-intent through bounded routes.
+intent through governed routes.
 
 ## Three levels of organization
 

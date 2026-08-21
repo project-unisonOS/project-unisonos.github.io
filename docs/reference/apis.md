@@ -29,7 +29,7 @@ host-facing surfaces to loopback.
 | Context graph | [`unison-context-graph`](https://github.com/project-unisonOS/unison-context-graph) | Experimental | Graph views over governed context |
 | Intent graph | [`unison-intent-graph`](https://github.com/project-unisonOS/unison-intent-graph) | Experimental | Early intent relationship service |
 | Storage | [`unison-storage`](https://github.com/project-unisonOS/unison-storage) | Internal evolving | Authorized persistence, objects, audit records, and backup foundations |
-| Inference | [`unison-inference`](https://github.com/project-unisonOS/unison-inference) | Internal evolving | Bounded local and external model execution |
+| Inference | [`unison-inference`](https://github.com/project-unisonOS/unison-inference) | Internal evolving | Governed local and external model execution |
 | Capability registry and host | [`unison-capabilities`](https://github.com/project-unisonOS/unison-capabilities) | Internal evolving with signed packages | Capability discovery, grants, and invocation boundaries |
 | Actuation | [`unison-actuation`](https://github.com/project-unisonOS/unison-actuation) | Experimental, high-impact boundary | Deterministic execution of authorized action envelopes |
 | Semantic experience surface | [`unison-experience-renderer`](https://github.com/project-unisonOS/unison-experience-renderer) | Internal evolving with versioned SEM contracts | Native visual expression and interaction relay |

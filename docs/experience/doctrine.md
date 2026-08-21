@@ -20,7 +20,7 @@ operator, participant, or consumer when a contract requires them.
 
 Intent is the desired outcome together with the context that shapes it. Input is
 evidence of intent. The system can propose meaning, ask a useful question, or
-attempt a bounded route when the request is unfamiliar.
+attempt a governed route when the request is unfamiliar.
 
 The interpreted intent remains reviewable. Identity, consent, policy, and
 capability grants establish what the system may access or do. This lets Unison

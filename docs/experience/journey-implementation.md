@@ -61,7 +61,7 @@ coverage, and financial authority stays with the person and applicable experts.
 disclosure, source comparison, privacy routes, and resumable outcomes.
 
 **Evidence now:** deterministic-first resolution, untrusted-content handling,
-bounded inference, citations, cancellation, partial outcomes, and proposed skill
+governed inference, citations, cancellation, partial outcomes, and proposed skill
 evolution have unit and hosted CI evidence.
 
 **Next gate:** provider-specific privacy verification, residual-metadata

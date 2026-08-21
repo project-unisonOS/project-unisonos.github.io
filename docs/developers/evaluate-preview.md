@@ -93,7 +93,7 @@ Stop when preflight reports a hard blocker or when the plan differs from the
 machine and paths you intended to evaluate. Warnings such as clock or audio
 findings belong in the result record.
 
-After activation, evaluate only the bounded lifecycle appropriate to the
+After activation, evaluate only the lifecycle appropriate to the
 candidate:
 
 1. inspect the installation receipt and active release;

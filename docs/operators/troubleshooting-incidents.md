@@ -26,7 +26,7 @@ Stop when a layer fails and preserve its evidence before making a change.
 
 1. **Environment:** confirm the selected profile, host resources, clock, disk,
    Docker, network route, and exact source revision.
-2. **Process:** confirm required services and bounded health endpoints.
+2. **Process:** confirm required services and focused health endpoints.
 3. **Contract:** run the narrow component test for the failing behavior.
 4. **Boundary:** run the matching workspace smoke or security-overlay test.
 5. **State:** reconcile receipts, checkpoints, migrations, configuration, and
@@ -55,7 +55,7 @@ integration boundary, not a substitute for the focused component check.
 | Symptom | First checks | Safe next action |
 | --- | --- | --- |
 | System does not start | environment profile, capacity, Compose state, earliest failing service | Preserve the first error and inspect only that component's documented prerequisites |
-| Health check fails | service health, dependency health, recent bounded logs | Restart only through the selected environment lifecycle, then rerun the same check |
+| Health check fails | service health, dependency health, recent scoped logs | Restart only through the selected environment lifecycle, then rerun the same check |
 | Request is denied | authenticated principal, assurance, consent, policy, grant, context space | Preserve the denial and establish the missing authority through its owning flow |
 | Unexpected disclosure or recipient | disclosure decision, selected fields, provider, recipient, receipt | Stop the workflow, revoke the scoped grant when authorized, and enter the security path below |
 | Context appears missing | person, context space, source provenance, index freshness, retention state | Verify source state before rebuilding a derived index or restoring a checkpoint |

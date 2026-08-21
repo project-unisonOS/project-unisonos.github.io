@@ -121,7 +121,7 @@ receipts preserve accountability while primary private content remains in its
 governed context space.
 
 <aside class="evidence-band" aria-label="Privacy and security evidence">
-  <p><strong>Implemented:</strong> Synthetic and local integration evidence covers private and shared context isolation, deny-by-default policy, field minimization, capability grants, exact expiring confirmation, credential canaries, provider-blind backup, and signed-update metadata.</p>
+  <p><strong>Implemented:</strong> Synthetic and local integration evidence covers private and shared context isolation, deny-by-default policy, field minimization, capability grants, exact expiring confirmation, credential exposure detection, provider-blind backup, and signed-update metadata.</p>
   <p><strong>Being proven:</strong> Supported-appliance validation, long-running intrusion monitoring, representative recovery exercises, TPM-backed operation, and participatory trust evaluation require additional evidence.</p>
   <p><strong>Envisioned:</strong> Qualified hardware security profiles, continuously governed threat-intelligence feeds, privacy-relay profiles, provider partnerships, and supported incident-response operations remain future work.</p>
 </aside>

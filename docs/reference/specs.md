@@ -31,7 +31,7 @@ Shared contract families include:
 - capability package, action envelope, result, receipt, and recovery;
 - Semantic Experience Model, expression plan, interaction profile, observation,
   modality adapter, and equivalence evidence;
-- model manifest, task requirement, route decision, evaluation, canary, and
+- model manifest, task requirement, route decision, evaluation, limited rollout, and
   rollback;
 - release manifest, bundle index, system-change plan, installation receipt,
   update metadata, checkpoint, and health promotion; and

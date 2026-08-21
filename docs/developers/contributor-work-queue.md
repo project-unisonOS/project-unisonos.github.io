@@ -1,6 +1,6 @@
 # Contributor work queue
 
-This queue turns current Unison gaps into bounded starting points for people and
+This queue turns current Unison gaps into focused starting points for people and
 their coding agents. It does not authorize work outside the named authority or
 upgrade evidence beyond the required class.
 
@@ -54,7 +54,7 @@ authority, tests, and handoff remain durable.
 - **Repositories:** affected component owners and `unison-workspace`.
 - **Authority:** deterministic incident classification remains outside models
   and renderers.
-- **Checks:** focused negative test, privacy canaries, recovery path, and
+- **Checks:** focused negative test, privacy leakage probes, recovery path, and
   workspace boundary test.
 - **Evidence:** unit and simulation.
 
@@ -94,7 +94,7 @@ authority, tests, and handoff remain durable.
 - **Authority:** participation is explicit and revocable; private requests stay
   in governed context; only the approved content-free measurement contract can
   enter aggregate review.
-- **Evidence:** participatory. Synthetic canary results remain separate.
+- **Evidence:** participatory. Synthetic evaluation results remain separate.
 
 ### CQ-07: Sign-language research framing
 
