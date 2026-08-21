@@ -10,17 +10,21 @@ theme:
 
 nav:
   - Home: index.md
-  - Product:
+  - Why Unison:
       - Vision: vision.md
       - How It Works: how-unison-works.md
+  - System:
       - Personal Node: personal-node.md
       - Context Spaces: household-context-spaces.md
       - Remote Assistant: remote-assistant.md
+      - System Capabilities: experience/system-capabilities.md
+      - Architecture:
+          - Overview: architecture/overview.md
+          - Deep Dive: architecture/deep-dive.md
   - Experience:
       - Experience Principles: experience.md
       - Multimodal Interaction: experience/multimodal.md
       - AI Personality: experience/ai-personality.md
-      - System Capabilities: experience/system-capabilities.md
       - Accessibility: accessibility.md
       - Modalities and Ecosystem: ecosystem.md
   - Trust:
@@ -29,10 +33,7 @@ nav:
       - Assistant Workflows: assistant-workflows.md
       - Private Life Operations: private-life-operations.md
       - Trust Decisions: trust-decisions.md
-  - Developers:
-      - Architecture:
-          - Overview: architecture/overview.md
-          - Deep Dive: architecture/deep-dive.md
+  - Build:
       - Get Started:
           - Install UnisonOS: developers/install-unisonos.md
           - Appliance Release Lifecycle: developers/appliance-release-lifecycle.md
@@ -56,11 +57,12 @@ nav:
           - APIs: reference/apis.md
           - Security: reference/security.md
           - Compatibility: reference/compatibility.md
-  - Project:
+  - Status:
       - Current Status: current-status.md
+      - Roadmap: project/roadmap.md
+      - Content & Evidence Guide: project/content-and-evidence-guide.md
       - Terminology: terminology.md
       - Governance: project/governance.md
-      - Roadmap: project/roadmap.md
       - License: project/license.md
 
 plugins:
