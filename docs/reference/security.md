@@ -6,7 +6,7 @@ explains what these protections mean for a person.
 
 ## Contract owners and stability
 
-| Area | Canonical owners | Current stability |
+| Area | Owning repositories | Current stability |
 | --- | --- | --- |
 | Principal and session identity | `unison-auth` | Internal evolving with signed and versioned request contracts |
 | Consent and policy | `unison-consent`, `unison-policy` | Internal evolving, deny by default |

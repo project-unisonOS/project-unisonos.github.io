@@ -103,7 +103,7 @@ The first shared foundation is implemented in software:
 - direct Connections, Imports, Sources, Privacy, Disconnect, and Delete
   controls alongside conversation.
 
-This foundation includes canonical source and connection contracts, encrypted
+This foundation includes maintained source and connection contracts, encrypted
 quarantine, deterministic local extraction and an OCR adapter, provenance,
 correction, rollback, deletion, PKCE, sandbox SMART and financial profiles,
 bounded local and MCP grants, incremental sync receipts, deduplication,
