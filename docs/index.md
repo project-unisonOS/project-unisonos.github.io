@@ -20,23 +20,23 @@
   </div>
 </section>
 
-## Most AI starts with a service. Unison starts with a person.
+## A system assembled around you
 
-<p class="section-intro">Your life should not have to fit inside a provider's product. Unison is being designed so the system, its models, and its ways of interacting can be assembled around you.</p>
+<p class="section-intro">Unison brings the parts of personal intelligence together under your authority. Each part can evolve while your context and relationship with the system remain continuous.</p>
 
-<div class="contrast-grid">
-  <section><p class="contrast-label">Common today</p><h3>Context lives with a provider</h3><p>Your accumulated history is tied to an account, product, and commercial relationship.</p></section>
-  <section class="contrast-unison"><p class="contrast-label">The Unison direction</p><h3>Authority stays with you</h3><p>Your trusted system holds the authoritative context. Models and services are replaceable participants.</p></section>
-  <section><p class="contrast-label">Common today</p><h3>One interface for everyone</h3><p>People adapt themselves to the product and receive variations of the same screen or conversation.</p></section>
-  <section class="contrast-unison"><p class="contrast-label">The Unison direction</p><h3>A native experience for each person</h3><p>Meaning can be composed through conversation, visual presentation, Braille, touch, or future modalities.</p></section>
+<div class="affirmation-grid">
+  <section><h3>Your context has a home</h3><p>Your trusted system holds authoritative identity, memory, preferences, goals, and policy.</p></section>
+  <section><h3>Your experience is composed for you</h3><p>Meaning can become conversation, visual presentation, Braille, touch, or a future modality suited to you.</p></section>
+  <section><h3>Models and services are replaceable</h3><p>Local and external participants contribute through governed, inspectable contracts.</p></section>
+  <section><h3>Your goals guide the system</h3><p>Skills, tools, and inference work together to pursue useful outcomes within your policies.</p></section>
 </div>
 
 ## It becomes yours through use
 
 Unison can use nondeterministic inference when a request is new, while looking
 for reliable structures that can make repeated work faster and more consistent.
-A useful pattern can become an inspectable proposal. It never silently acquires
-authority.
+A useful pattern can become an inspectable proposal. Activation requires review,
+testing, and explicit authority.
 
 <ol class="evolution-path" aria-label="How a request can become a reusable local capability">
   <li><strong>A new request</strong><span>You ask naturally, even when no predefined workflow exists.</span></li>
@@ -52,9 +52,9 @@ authority.
 
 <div class="meaning-layout">
   <div>
-    <p class="section-intro">Unison does not assume everyone should receive the same screen.</p>
+    <p class="section-intro">Unison composes a native experience for each person and situation.</p>
     <p>The system first represents the outcome, relationships, choices, uncertainty, risk, and available actions in an experience. It can then compose a native expression for the person, device, and situation.</p>
-    <p>A conversational experience is not a visual interface read aloud. A Braille experience is not a visual focus feed. Each modality should preserve equivalent understanding and control by using its own strengths.</p>
+    <p>Conversation uses dialogue, pacing, and auditory structure. Braille uses tactile navigation and concise spatial organization. Each modality preserves equivalent understanding and control through its own strengths.</p>
     <p><a href="experience/multimodal/">Explore multimodal interaction</a></p>
   </div>
   <div class="expression-stack" aria-label="Examples of native expressions of one governed meaning">
@@ -68,7 +68,7 @@ authority.
 
 ## Private enough for the whole of life
 
-<p class="section-intro">A useful personal intelligence system may eventually hold information that should never become one undifferentiated archive.</p>
+<p class="section-intro">A useful personal intelligence system can organize sensitive information into separately governed spaces.</p>
 
 <div class="space-map" aria-label="Examples of separately governed context spaces"><span>Personal</span><span>Household</span><span>Health</span><span>Financial</span><span>Legal</span><span>Home and devices</span></div>
 
@@ -90,7 +90,7 @@ remain optional, minimized, and replaceable.
   <section><p class="journey-number">06</p><h3>Stay useful offline</h3><p>Provide locally available repair, maintenance, utility, and emergency-reference guidance when outside connectivity is unavailable.</p></section>
 </div>
 
-<p class="evidence-note"><strong>Safety boundary:</strong> Offline guidance is an intended resilience capability. It is not certified emergency, medical, electrical, gas, or repair advice, and it cannot replace qualified help.</p>
+<p class="evidence-note"><strong>Safety boundary:</strong> Offline guidance is an intended supplemental reference capability. People should contact emergency services and qualified medical, electrical, gas, and repair professionals whenever those resources are available and appropriate.</p>
 
 ## Built today. Being proven. Envisioned.
 
@@ -111,8 +111,8 @@ and the longer-term vision. [Review the complete current status and evidence](cu
 </div>
 
 <section class="closing-statement" aria-labelledby="closing-title">
-  <h2 id="closing-title">Intelligence should not require surrendering the story of your life.</h2>
-  <p>Let's build another path.</p>
+  <h2 id="closing-title">Your intelligence system can keep the story of your life under your authority.</h2>
+  <p>Let's build that future together.</p>
   <div class="hero-actions" aria-label="Next steps">
     <a class="cta cta-primary" href="architecture/overview/">Understand the architecture</a>
     <a class="cta cta-secondary" href="developers/workspace-and-repos/">Explore the repositories</a>
