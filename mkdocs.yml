@@ -1,6 +1,6 @@
-site_name: UnisonOS
+site_name: Unison
 site_author: Darryl Adams
-site_description: A private personal assistant designed to work for you on your own trusted device.
+site_description: Open-source personal intelligence, built around one person and designed to run under their authority.
 site_url: https://project-unisonos.github.io
 
 docs_dir: docs

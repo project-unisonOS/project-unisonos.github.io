@@ -1,5 +1,5 @@
 :root {
-  --nav-bg: #0a2a66;
+  --nav-bg: #0b0e0c;
   --nav-text: #ffffff;
 }
 
@@ -81,6 +81,10 @@
   flex: 0 0 auto;
   font-weight: 700;
   letter-spacing: -0.02em;
+}
+
+body.homepage .navbar-brand {
+  color: #9bd7b2 !important;
 }
 
 .nav-search {

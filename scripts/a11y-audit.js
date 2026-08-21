@@ -128,7 +128,13 @@ async function runWithPlaywright() {
         }
       }
 
-      const axeBuilder = new AxeBuilder({ page }).withTags(['wcag2a', 'wcag2aa']);
+      const axeBuilder = new AxeBuilder({ page }).withTags([
+        'wcag2a',
+        'wcag2aa',
+        'wcag21a',
+        'wcag21aa',
+        'wcag22aa'
+      ]);
       const report = await axeBuilder.analyze();
       results.push({
         url: pageUrl,
@@ -172,7 +178,7 @@ function runAxeInJsdom(html, pageUrl) {
   return window.axe.run(window.document, {
     runOnly: {
       type: 'tag',
-      values: ['wcag2a', 'wcag2aa']
+      values: ['wcag2a', 'wcag2aa', 'wcag21a', 'wcag21aa', 'wcag22aa']
     }
   });
 }
