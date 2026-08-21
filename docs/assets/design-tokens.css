@@ -114,7 +114,7 @@ body.homepage h1 {
   max-width: 18ch;
   margin: 0 0 clamp(1.5rem, 4vw, 3rem);
   font-family: Georgia, "Times New Roman", serif;
-  font-size: clamp(3rem, 8vw, 7rem);
+  font-size: clamp(2.85rem, 7vw, 6rem);
   font-weight: 400;
   letter-spacing: -0.045em;
   line-height: .96;
@@ -343,7 +343,7 @@ body.homepage footer { color: var(--home-muted); }
 }
 
 @media (max-width: 46rem) {
-  body.homepage h1 { font-size: clamp(2.65rem, 14vw, 4.4rem); }
+  body.homepage h1 { font-size: clamp(2.5rem, 13vw, 4rem); }
   .contrast-grid,
   .journey-grid,
   .maturity-grid,
