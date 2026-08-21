@@ -36,9 +36,9 @@ authority remains independently governed.
 
 <ol class="system-flow compact-flow">
   <li><strong>Hardware root</strong><span>Secure boot, measured boot, TPM-backed keys, and future hardware security modules establish device integrity where qualified hardware supports them.</span></li>
-  <li><strong>Encrypted storage</strong><span>Keys and context-space boundaries protect data at rest and support selective backup, export, rotation, and deletion.</span></li>
+  <li><strong>Encrypted storage</strong><span>Keys and context-space controls protect data at rest and support selective backup, export, rotation, and deletion.</span></li>
   <li><strong>Isolated services</strong><span>Core, trust, capabilities, inference, channels, and surfaces retain scoped identities and communication paths.</span></li>
-  <li><strong>Continuous policy</strong><span>Identity, purpose, recipient, risk, disclosure, and confirmation are evaluated at meaningful boundaries.</span></li>
+  <li><strong>Continuous policy</strong><span>Identity, purpose, recipient, risk, disclosure, and confirmation are evaluated at meaningful decision points.</span></li>
   <li><strong>Detection and recovery</strong><span>Content-minimized security signals, signed updates, rollback, quarantine, backup, and restore support resilient operation.</span></li>
 </ol>
 
@@ -56,7 +56,7 @@ and permissions.
 
 Offline packages can preserve locally available reference guidance and tools
 for maintenance, utilities, and emergency preparation. Published provenance,
-freshness, jurisdiction, and safety boundaries remain part of that material.
+freshness, jurisdiction, and safety constraints remain part of that material.
 
 ## Storage that can evolve
 
@@ -89,13 +89,13 @@ builds toward hardware expected in 2027 and 2028. Published compatibility data
 will connect each profile to the models, capabilities, latency, energy use, and
 evidence it can support.
 
-<aside class="evidence-band" aria-label="Personal node evidence boundary">
+<aside class="evidence-band" aria-label="Personal node evidence">
   <p><strong>Approved initial target:</strong> Ubuntu 24.04 LTS on x86-64.</p>
   <p><strong>Current evidence:</strong> Software contracts, synthetic fixtures, hosted CI, release artifacts, and backup foundations.</p>
   <p><strong>Future qualification:</strong> Hardware roots, redundant storage profiles, thermal behavior, acoustic performance, power delivery, radio integration, and installation guidance require physical systems and measured evidence.</p>
 </aside>
 
 <nav class="next-path" aria-label="Continue exploring personal infrastructure">
-  <a href="../privacy-security/"><strong>Review privacy and security</strong><span>See the layered posture and context-space boundaries.</span></a>
+  <a href="../privacy-security/"><strong>Review privacy and security</strong><span>See the layered posture and context-space controls.</span></a>
   <a href="../backup-recovery/"><strong>Review backup and recovery</strong><span>Follow continuity through backup, restore, export, and deletion.</span></a>
 </nav>

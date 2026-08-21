@@ -1,38 +1,71 @@
-# Architecture Overview
+# Architecture overview
 
-This page summarizes how the core Unison services cooperate to deliver edge-first, real-time generated experiences.
+<section class="story-hero" aria-labelledby="architecture-introduction">
+  <p class="story-kicker">Replaceable parts, durable personal authority</p>
+  <h2 id="architecture-introduction">Unison organizes services around intent</h2>
+  <p class="story-lead">The architecture separates identity, policy, context, orchestration, capabilities, inference, actuation, and experience so each can evolve without transferring another service's authority.</p>
+</section>
 
-## Core Control Plane
+## A governed path through the system
 
-- **Intent Graph**: First stop for intents coming from the experience renderer, Agent VDI, or I/O services. Normalizes requests and forwards them to the orchestrator.
-- **Orchestrator**: Central router and planner. Enforces auth and consent, orchestrates skills/tools, calls inference, and manages conversational or task state.
-- **Policy and Consent**: Evaluate safety and consent before actions are executed and provide audit records.
-- **Auth**: Issues and validates tokens for service-to-service and person-bound flows.
-- **Inference**: Gateway to model providers (local-first; remote providers are optional), invoked by the orchestrator when generation is needed.
+<ol class="system-flow">
+  <li><strong>Observe intent</strong><span>A local or remote modality service contributes speech, text, touch, Braille, imagery, device events, or another qualified signal.</span></li>
+  <li><strong>Resolve person and purpose</strong><span>Identity, assurance, consent, policy, and context services establish the authority and information available for the work.</span></li>
+  <li><strong>Plan the route</strong><span>The orchestrator selects deterministic workflows and composes governed inference for novel portions of the request.</span></li>
+  <li><strong>Use capabilities</strong><span>Tools, connectors, skills, and agents receive scoped grants and return structured results with provenance and side-effect state.</span></li>
+  <li><strong>Validate consequence</strong><span>Responsible policy and actuation services evaluate recipients, disclosure, risk, confirmation, and recovery.</span></li>
+  <li><strong>Compose the experience</strong><span>A semantic outcome becomes a native conversational, visual, Braille, tactile, or future-modality expression.</span></li>
+</ol>
 
-## Context, Storage, and Profiles
+## Responsibilities stay with their owners
 
-- **Context**: The consent-aware profile and session store (typically backed by Postgres in the devstack and platform compose).
-- **Context Graph**: Maintains graph-shaped context used for recall, relationships, and cross-signal fusion (devstack uses Neo4j; other deployments may run the graph service with Postgres-backed persistence).
-- **Storage**: Durable KV + artifacts + vault + audit, exposed through a single service API (metadata in Postgres; artifacts stored on the local storage volume).
+| Responsibility | Primary architectural role |
+| --- | --- |
+| Identity and assurance | Auth and channel identity services establish who is present and the strength of that claim. |
+| Consent and policy | Trust services decide which purpose, context, disclosure, recipient, and action are authorized. |
+| Context and memory | Context and storage services retain governed sources, relationships, derived views, receipts, and lifecycle policy. |
+| Orchestration | Intent and orchestration services maintain the human objective, plan work, and reconcile capability and model results. |
+| Capability execution | Capability services discover and run declared tools, skills, connectors, and agent peers through scoped grants. |
+| Model execution | Inference services route eligible local or remote models and return untrusted, provenance-bearing proposals. |
+| Physical or digital action | Actuation services execute validated action envelopes and report exact side effects and recovery state. |
+| Native expression | Modality services and Unison Surface compose semantic outcomes and return proposed person responses. |
 
-Together, these services implement secure edge profiles that other components can read and update under policy and consent.
+No model, renderer, adapter, tool, or external content becomes an authority for
+identity, consent, policy, recipients, incident state, disclosure, or
+actuation.
 
-## Experience and I/O Surfaces
+## Data remains governed through its lifecycle
 
-- **Experience Renderer**: The real-time renderer that turns system state into an experience, and turns multimodal inputs into intents for the control plane.
-- **Agent VDI**: A desktop/browser automation actuator used when an outcome requires interacting with graphical software.
-- **I/O Services (speech, vision, core, BCI, braille, sign, …)**: Device-side emitters that normalize modality events into the control plane.
+Postgres provides durable service state in current profiles. Redis supports
+low-latency coordination and caching. Graph services can use Neo4j or supported
+persistence alternatives. Source artifacts and generated files pass through
+the storage service. Platform profiles can use NATS and JetStream for durable
+event streaming.
 
-## Runtime and Devstack
+Authoritative records remain distinct from replaceable indexes, embeddings,
+summaries, caches, and graph edges. Context-space policy determines retention,
+sharing, disclosure, backup, export, deletion, and the derived views eligible
+for rebuilding.
 
-- **Devstack**: Docker Compose wiring for local end-to-end runs. Brings up the control plane, inference, renderer, I/O services, and backing services such as Postgres, Redis, and Neo4j.
-- **Base Images**: Shared base images used by service Dockerfiles.
-- **Shared Docs and Libraries**: Canonical specs and schemas plus shared Python helpers for auth, tracing, HTTP, and envelope validation.
+## Profiles support different development and deployment needs
 
-## Models in the Architecture
+The development stack uses Docker Compose to connect service repositories and
+support focused integration work. Platform and infrastructure repositories
+define appliance topology, release profiles, observability, updates, backup,
+and recovery. A profile can combine services into fewer containers while
+preserving their responsibilities and contracts.
 
-- **Inference is a service**: the orchestrator calls one inference service over HTTP, keeping model runtimes out of individual services.
-- **Model packs**: releases ship versioned “model packs” that describe which models to load for a given modality/task and where to put them on disk. See [Model Packs](deep-dive.md#model-packs).
+Local operation is preferred when the available hardware and policy support the
+intent. Authorized external models, providers, channels, research routes, and
+encrypted backup can participate through explicit grants and disclosure
+decisions.
 
-Next: see [Architecture Deep Dive](deep-dive.md) for flows, boundaries, and model execution details.
+<aside class="evidence-band" aria-label="Architecture overview evidence">
+  <p><strong>Implemented:</strong> Component services, shared contracts, development composition, synthetic journeys, and hosted CI provide the current software foundation.</p>
+  <p><strong>Being proven:</strong> Supported appliance profiles, model and hardware combinations, physical actuation, long-running resilience, and participatory experience require additional evidence.</p>
+</aside>
+
+<nav class="next-path" aria-label="Continue exploring the architecture">
+  <a href="../deep-dive/"><strong>Read the architecture deep dive</strong><span>Follow contracts, runtime profiles, capabilities, storage, actuation, and inference.</span></a>
+  <a href="../../reference/apis/"><strong>Find service owners</strong><span>Open the API and service directory for repositories and stability information.</span></a>
+</nav>

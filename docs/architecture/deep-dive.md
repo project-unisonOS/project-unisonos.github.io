@@ -1,279 +1,153 @@
-# Architecture Deep Dive
-
-This page describes how the current UnisonOS stack is wired end-to-end in the devstack and platform compose.
-
-## End-to-End Flow (Input → Intent → Outcome → Render)
-
-1. **Input** arrives from an I/O service (speech, vision, BCI, etc.), the experience renderer, or an actuator (Agent VDI).
-2. **Intent Graph** normalizes the request and forwards it to the orchestrator.
-3. **Orchestrator** coordinates the turn:
-   - Reads/writes profile and session state via **Context**.
-   - Enforces **Auth**, **Policy**, and **Consent** for sensitive actions.
-   - Calls **Inference** when generation or planning is needed.
-   - Routes to tools/services (for example: **Storage**, **Comms**, or actuation via **Agent VDI**).
-4. **Results** are returned as structured outputs (and storage references for artifacts), then rendered by the experience renderer in real time.
-
-## Envelopes and Service Contracts
-
-Unison services share a small set of consistent patterns:
-
-- **Intent envelopes**: normalize what you want across modalities.
-- **Action envelopes**: describe tool/actuator work (including step plans for high-impact operations).
-- **Result/event envelopes**: return outcomes and emit state transitions for traceability.
-
-These envelopes allow the orchestrator to reason over heterogeneous tools while keeping governance (policy/consent/audit) centralized.
-
-## Shared Library: `unison-common`
-
-Most Python services in the stack share a common runtime library: `unison-common`.
-
-What it provides today:
-
-- **Envelope validation**: programmatic + JSON Schema validation helpers used across services.
-- **Schemas shipped with the runtime**: model pack manifest schema, prompt schemas/templates, and the multimodal manifest schema.
-- **Prompt engine + injection**: compiles layered prompt inputs under `UNISON_PROMPT_ROOT` and injects the compiled system prompt at model call sites.
-- **Model pack tooling**: validates and resolves model pack manifests and supports “required pack” enforcement via configuration.
-- **Tracing + logging**: OpenTelemetry helpers, middleware, and structured logging utilities.
-- **Auth and request utilities**: JWT helpers, idempotency middleware, HTTP client helpers, and replay tooling used for debugging.
-
-Where to look:
-
-- Repo: https://github.com/project-unisonOS/unison-common
-- Runtime schemas: `unison-common/src/unison_common/schemas/`
-
-## Persistence and Messaging (What Runs Under the Hood)
-
-In current deployments:
-
-- **Postgres** stores durable service state (context, storage metadata, and other service persistence).
-- **Redis** provides low-latency coordination and caching.
-- **Neo4j** is used in the devstack for graph persistence (context graph / intent graph); other deployments may run graph services without Neo4j.
-- **Artifacts** (downloads, generated files, etc.) are stored on the local storage volume via the storage service.
-- **NATS/JetStream** is used in the platform compose for asynchronous event streaming; the devstack primarily wires services together with HTTP for simplicity.
-
-## Devstack vs Platform Compose
-
-- **Devstack (`unison-workspace/unison-devstack`)**: optimized for local development, includes Neo4j and optional tooling (for example, an Ollama provider for inference).
-- **Platform compose (`unison-platform/compose/compose.yaml`)**: reference service topology with Postgres/Redis and NATS/JetStream for event streaming, plus optional observability profiles.
-
-## Security and Governance Boundaries
-
-- **No cloud dependency by default**: the platform is designed to run fully on local hardware.
-- **Remote calls are policy-gated**: if you enable a remote inference provider or external connector, it must be explicit, auditable, and consent-aware.
-- **Artifacts and sensitive state**: durable data flows through the storage and context APIs. This provides one governed alternative to ad hoc per-service databases.
-
-## Edge-First and Optional Cloud
-
-UnisonOS is designed to run primarily on edge devices. Cloud connectivity is optional and must be explicitly configured, auditable, and consent-aware.
-
-### Edge First Runtime
-
-- Core services (orchestrator, policy, auth, consent, context, context-graph, storage, inference, intent-graph, renderer, I/O) run on the device.
-- Local models are loaded via inference when configured (for example, through devstack profiles or production compose).
-- Profiles and context are stored locally in consent-aware services backed by local infrastructure (for example: Postgres + Redis, and Neo4j in the devstack).
-
-### Optional Cloud Inference
-
-- Inference can be configured to reach remote model providers.
-- Whether remote providers are used is controlled by configuration, policy, and consent.
-
-### Profile Sync (Current Status)
-
-- Current releases treat **profiles, context, and artifacts as on-device state**. There is no default “profile sync to cloud” behavior in the core stack.
-- If you add synchronization as an integration, treat it as a high-impact data flow: explicit consent, audit events, and offline-first behavior.
-
-## Components (Current Stack)
-
-Core control plane:
-
-- **Orchestrator**: Central intent router and coordinator.
-- **Intent Graph**: Front-end for routing intents into the orchestrator.
-- **Policy / Consent / Auth**: Governance and identity primitives for all sensitive flows.
-- **Inference**: Model execution gateway (local-first, provider-backed).
-- **Capability Resolver**: Capability discovery/installation/execution gate that enforces manifests, policy, and safe defaults.
-
-State and data:
-
-- **Context**: Profile + session store (consent-aware).
-- **Context Graph**: Graph-shaped context used for recall/relationships (Neo4j in devstack).
-- **Storage**: Durable KV + artifacts + vault + audit behind a single service API.
-
-Actuation and I/O:
-
-- **Experience Renderer**: Real-time renderer that turns state into an experience and emits intents back into the control plane.
-- **Agent VDI**: Desktop/browser automation actuator used for GUI-only workflows.
-- **I/O services**: Speech, vision, sign, Braille, BCI, and other modality adapters.
-
-Infrastructure commonly used:
-
-- **Postgres** (durable persistence)
-- **Redis** (cache/coordination)
-- **Neo4j** (graph persistence in devstack)
-- **NATS/JetStream** (event streaming in platform compose)
-
-## System Capabilities (Resolver, Manifests, and Safe Execution)
-
-UnisonOS uses a capability system to connect intents to concrete tools, connectors, MCP servers, and skill packs. This system is designed to keep execution **policy-governed** and **auditable**, and to prevent ad-hoc “direct tool calls” that bypass platform controls.
-
-### Authority model (planner contract)
-
-At a high level:
-
-- The **interaction model** turns input into structured intent (it does not execute).
-- The **planner/orchestrator** is responsible for planning and must resolve capabilities before any execution step.
-- The **capability resolver** is the execution gate:
-  - discovers candidates for an intent
-  - installs (when allowed)
-  - runs an installed/declared capability
-  - persists manifest state
-  - enforces policy, permissions, and safe defaults
-
-This separation is what allows UnisonOS to add new tools and integrations without expanding the trusted surface area of the orchestrator itself.
-
-### Capability lifecycle (end-to-end)
-
-In a compliant flow:
-
-1. Planner calls `capability.search(intent, constraints)` to discover candidates.
-2. Planner calls `capability.resolve(step)` to select/validate a concrete candidate.
-3. Planner calls `capability.install(candidate)` if the capability is not already available locally (and policy allows).
-4. Planner calls `capability.run(capability_id, args)` to execute.
-5. Resolver persists state and exposes inventory operations (`capability.list/get/remove`).
-
-### Manifests: the source of truth
-
-Capabilities are declared in a manifest and validated against a platform schema before being persisted or executed. A manifest describes:
-
-- the capability **type** (tool, MCP server, skill pack, A2A peer, workflow)
-- **version pinning** with exact semantic versions
-- **origin/provenance** (local or URL + digest/signature fields)
-- **runtime** characteristics
-- **permissions** (especially network egress allowlists)
-- **trust level** and enablement state
-- **secrets** as references only (never embedded values)
-
-### Seeded capabilities: base + local layering
-
-Images can ship with a curated baseline manifest:
-
-- `manifest.base.json`: read-only, shipped in the image
-- `manifest.local.json`: mutable, persisted on disk
-
-Resolver view = merge(base + local), where local overrides base entries by `id`. Runtime writes (installs, enablement changes, secret bindings) always go to the local manifest.
-
-This makes “out-of-the-box” experiences fast (common local tools resolve immediately), while still allowing safe customization and resets (local state can be cleared without modifying the shipped baseline).
-
-### Connectors, OAuth onboarding, and secrets (no secrets in manifests)
-
-Network connectors (email/calendar/chat/etc.) are typically shipped **disabled by default** and require explicit onboarding:
-
-- The resolver supports OAuth device authorization flows suitable for headless / voice-first environments.
-- Refresh tokens are stored in a secrets backend and referenced in the manifest via opaque handles (for example, `secret://...`).
-- Audit logs are structured and redacted so token material never appears in logs.
-
-### Egress controls and runtime enforcement
-
-All outbound calls for registry discovery, OAuth, MCP tool invocation, and A2A delegation are expected to pass through a single egress control point:
-
-- **deny-by-default** for non-loopback egress unless allowlisted by policy
-- per-capability `permissions.network` enforcement with explicit allowlists
-- safe defaults for binding and authentication (local-only service surfaces unless explicitly configured)
-
-## Storage and Persistence
-
-Storage is the unified persistence layer for UnisonOS artifacts and durable service records. It provides a single API for:
-
-- Durable key/value records
-- Working memory entries
-- Vault entries (encrypted blobs)
-- Audit events
-- Objects (binary artifacts + metadata)
-
-In current implementations, the storage service persists metadata to **Postgres** (required in production; SQLite is only allowed for local/dev), and stores object payloads on the local storage volume.
-
-Responsibilities:
-
-- **Working memory**: Long-lived state for tasks and sessions, including summaries and embeddings metadata.
-- **Vault**: Encrypted secrets such as credentials, tokens, and API keys.
-- **Objects and files**: Documents, downloads, and artifacts with metadata.
-- **Audit**: Append-only records of who did what and when for sensitive operations.
-
-Security and privacy:
-
-- Per-person and per-tenant scoping is enforced at the API layer.
-- Secrets and sensitive fields are encrypted at rest.
-- Audit events are append-only to preserve provenance.
-
-## Actuation (VDI and VPN)
-
-Actuation is the layer that allows UnisonOS to cause effects in external systems beyond returning text or speech. Actuators are governed by policy and consent.
-
-VDI provides a headless desktop/browser environment used for GUI-style web flows (multi-page sites, downloads, workflows that lack APIs).
-
-VPN boundary:
-
-- The VDI container shares a network namespace with a VPN client.
-- All VDI egress is expected to pass through that VPN boundary so traffic has predictable egress and can fail closed.
-
-Intent → VDI flow (high level):
-
-1. Intent arrives and is normalized into an envelope.
-2. Orchestrator checks policy/consent.
-3. Orchestrator emits an Action Envelope describing steps.
-4. Actuation selects VDI when a browser/desktop workflow is required.
-5. VDI executes steps and writes artifacts to storage.
-6. Results return to the orchestrator and are rendered in the experience.
-
-Contract ownership and stability details live in the
-[API and service directory](../reference/apis.md#service-directory).
-
-## Inference and Model Execution
-
-Inference is a dedicated service that runs models and exposes a stable API to the rest of the platform. Providers are swappable behind the inference boundary.
-
-Inference routes each bounded interpretation, extraction, vision, semantic
-construction, synthesis, or conversation operation independently. Candidates
-come from a signature-verified registry. Hard eligibility evaluates task and
-structured-output support, privacy and disclosure, risk, offline state,
-hardware compatibility, measured latency, cost, license, artifact integrity,
-and support status before an inspectable person-aligned ranking is applied.
-
-Model-assisted semantic output uses a typed, provenance-bearing proposal that
-is always untrusted. Deterministic services reconcile source versions, exact
-facts, recipients, actions, recovery, and required meaning. High-risk and exact
-content uses a deterministic language path.
-
-New versions pass golden semantic journeys in shadow, then may enter a bounded
-canary. Aggregate health gates exclude person content and can automatically
-restore the retained prior version. Hardware qualification records can publish
-a supported combination only after complete physical-device latency, energy,
-thermal, offline, update, rollback, semantic-quality, and safe-fallback evidence.
-The current semantic-experience evidence is synthetic, so its supported matrix
-is empty.
-
-Common configuration knobs:
-
-- `UNISON_INFERENCE_PROVIDER` (example: `ollama`)
-- `UNISON_INFERENCE_MODEL` (example: `qwen2.5:1.5b`)
-- `UNISON_MODEL_DIR` (example: `/var/lib/unison/models`)
-
-### Model Packs
-
-Model-pack tooling provides a development and evaluation path for installing
-weights offline or from a configured source. Model packs are not yet part of a
-supported appliance release.
-
-- Default model directory: `/var/lib/unison/models` (override: `UNISON_MODEL_DIR`)
-- CLI: `unison-models list|verify|install --path <pack.tgz>|install --fetch <url-or-alias>`
-- Boot enforcement: `UNISON_MODEL_PACK_REQUIRED=pack_id@version`
-
-### Prompt Engine and System Prompt Injection
-
-UnisonOS separates the model from the assistant identity. The model is treated as stateless: UnisonOS compiles and injects the active system prompt at runtime.
-
-- Prompt root: `UNISON_PROMPT_ROOT` (default: `~/.unison/prompt`)
-- Compiled prompt path: `~/.unison/prompt/compiled/active_system_prompt.md`
-- Observability: `prompt.injection.applied` trace events include prompt path + hash (prompt content is never logged).
+# Architecture deep dive
+
+<section class="story-hero" aria-labelledby="deep-dive-introduction">
+  <p class="story-kicker">Contracts connect independently owned services</p>
+  <h2 id="deep-dive-introduction">The runtime carries intent, authority, evidence, and recovery</h2>
+  <p class="story-lead">This page maps the current development and platform topology without turning a deployment detail into product authority.</p>
+</section>
+
+## End-to-end flow
+
+1. A modality adapter contributes an observation and evidence of intent.
+2. Intent services normalize the proposed objective and route it to the
+   orchestrator.
+3. Auth, consent, policy, context, and storage services resolve the person,
+   purpose, applicable information, and authority.
+4. The orchestrator plans deterministic steps and bounded inference, then asks
+   the capability service to resolve eligible operations.
+5. Capabilities and inference return structured results, provenance,
+   uncertainty, and side-effect state.
+6. Policy validates consequential disclosures and recipients. Actuation
+   validates and executes authorized action envelopes.
+7. The semantic outcome carries meaning, choices, confirmation, cancellation,
+   and recovery to each native modality service.
+8. Content-minimized receipts preserve important decisions and results.
+
+## Shared contracts
+
+Unison services exchange versioned structures rather than transferring their
+responsibilities:
+
+- intent and observation contracts carry proposed human objectives and input
+  evidence;
+- capability declarations describe operations, permissions, provenance,
+  runtime needs, and failure behavior;
+- grants bind purpose, data, credentials, authority, and duration;
+- action envelopes describe validated physical or digital operations;
+- semantic outcomes carry facts, provenance, uncertainty, choices, actions,
+  confirmation, cancellation, privacy state, errors, and recovery; and
+- receipts record important decisions, side effects, and available recovery
+  with minimized content.
+
+`unison-common` owns shared Python helpers and runtime schemas for these
+interactions. Component repositories own their service contracts and focused
+tests. The workspace pins compatible revisions and runs integration gates.
+
+## Current runtime profiles
+
+The development stack connects services through Docker Compose and commonly
+uses Postgres, Redis, and Neo4j. It favors discoverability and focused local
+integration. The platform topology adds durable event streaming through NATS
+and JetStream and supports release-oriented observability and lifecycle work.
+
+Named infrastructure profiles describe environment purpose, machines,
+services, networks, secrets references, storage, and evidence expectations.
+Profiles can package services differently while retaining contract behavior and
+responsibility ownership.
+
+## Context, storage, and derived views
+
+Context services govern identity-linked profile and session information,
+relationships, source provenance, memory policy, and purpose-specific access.
+Storage services retain durable records, artifacts, encrypted material, audit
+events, and object metadata. Current non-development profiles use Postgres for
+metadata and local volumes for object payloads.
+
+Relational records and source artifacts can remain authoritative while vector
+indexes, summaries, caches, and graph edges support retrieval. Derived views
+carry source revisions and can be invalidated and rebuilt when policy, source
+content, model version, or taxonomy changes.
+
+## Capability lifecycle
+
+A declared capability can represent a local tool, connector, MCP server, skill,
+workflow, or agent peer. Its manifest describes an exact version, origin,
+integrity, runtime, permissions, network destinations, secret references,
+enablement, and evidence.
+
+A compliant route follows this sequence:
+
+1. search for candidates that fit the intent and constraints;
+2. resolve eligibility against installation, policy, and environment state;
+3. install or enable the selected version when authorized;
+4. issue a scoped grant for the operation;
+5. run the capability and collect its structured result; and
+6. preserve side effects, errors, and recovery in the semantic outcome and
+   receipt.
+
+Credentials remain in an approved secrets service and enter a connector at the
+final authorized transport step. Network egress follows capability allowlists
+and platform policy.
+
+## Inference and model lifecycle
+
+Inference is a dedicated service. Each model version has a signed manifest that
+describes origin, interface, license, supported tasks, artifact integrity,
+hardware compatibility, and measured behavior. Eligibility evaluates task,
+structured output, privacy, disclosure, risk, offline state, latency, quality,
+cost, support status, and available hardware before ranking.
+
+Model output remains an untrusted proposal. Deterministic services reconcile
+source revisions, exact facts, recipients, actions, and required meaning.
+Candidate model versions run golden semantic journeys in shadow before bounded
+canaries. Content-free health signals can trigger rollback to a retained
+version.
+
+Model-pack tooling supports development and evaluation. Supported appliance
+claims require complete physical-device evidence for latency, energy, thermal
+behavior, offline operation, updates, rollback, semantic quality, and safe
+fallback.
+
+## Prompt and assistant continuity
+
+The model remains replaceable. The prompt engine compiles base behavior,
+person-approved identity, priorities, and session instructions into the active
+model request. Content hashes and trace events support inspection without
+logging the prompt content.
 
 See [assistant prompt and priorities](../experience/system-prompt.md) for the
-layering model and the current implementation source.
+layering model and maintained implementation source.
+
+## Actuation and external systems
+
+Actuation accepts authorized action envelopes and reports exact side effects.
+Browser and desktop automation can use an isolated VDI environment when an
+external system lacks an appropriate API. Network policy can route that
+environment through a selected VPN or privacy path and stop egress when the
+route is unavailable.
+
+The orchestrator proposes work. Policy validates authority and confirmation.
+The actuation service owns deterministic execution and recovery. The renderer
+communicates state and returns the person's proposed response through the
+semantic contract.
+
+## Failure and recovery
+
+Service contracts expose timeout, partial completion, cancellation,
+idempotency, compensation, and retry state. A provider or model failure can
+yield a local alternative, compatible substitute, durable partial outcome, or
+clear recovery step without discarding the person's original intent.
+
+Backup and restore protect identity, policy, context, and operational
+continuity together. Release profiles retain signed update metadata, rollout
+state, health evidence, and a known rollback target.
+
+<aside class="evidence-band" aria-label="Architecture deep-dive evidence">
+  <p><strong>Software evidence:</strong> Unit, integration, simulation, and hosted CI cover shared contracts, grants, routing, storage, semantic outcomes, synthetic actuation, and rollback foundations.</p>
+  <p><strong>Qualification ahead:</strong> Physical hardware, supported providers, network privacy, representative modalities, resilience, and person-centered evaluation require evidence in their owning programs.</p>
+</aside>
+
+<nav class="next-path" aria-label="Continue from the architecture deep dive">
+  <a href="../../reference/apis/"><strong>Open the service directory</strong><span>Find repositories, contract owners, and stability information.</span></a>
+  <a href="../../developers/workspace-and-repos/"><strong>Enter the development workspace</strong><span>See how component revisions and integration checks fit together.</span></a>
+</nav>

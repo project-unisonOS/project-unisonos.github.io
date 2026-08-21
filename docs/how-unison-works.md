@@ -3,7 +3,7 @@
 <section class="story-hero" aria-labelledby="works-introduction">
   <p class="story-kicker">Intent becomes a governed outcome</p>
   <h2 id="works-introduction">Natural interaction, inspectable execution</h2>
-  <p class="story-lead">Unison accepts a person's intent in the modality available to them, assembles a bounded route through context, skills, tools, and models, and returns an experience suited to that person and situation.</p>
+  <p class="story-lead">Unison accepts a person's intent in the modality available to them, assembles a governed route through context, skills, tools, and models, and returns an experience suited to that person and situation.</p>
 </section>
 
 ## Intent is the organizing unit
@@ -30,7 +30,7 @@ the person is trying to accomplish.
   <li><strong>Record useful evidence</strong><span>A content-minimized receipt explains important decisions, actions, confirmations, and recovery paths.</span></li>
 </ol>
 
-## Six cooperating boundaries
+## Six cooperating responsibilities
 
 <div class="story-grid boundary-grid">
   <section><h3>Unison Core</h3><p>Understands requests, assembles relevant context, plans bounded work, and produces semantic outcomes.</p></section>
@@ -42,7 +42,7 @@ the person is trying to accomplish.
 </div>
 
 The personal-appliance profile can combine modules into fewer containers while
-retaining their security and responsibility boundaries.
+retaining their security controls and responsibilities.
 
 ## Authority stays explicit
 
@@ -61,7 +61,7 @@ continuous.
 
 Each model version has a signed manifest describing its origin, interface,
 license, support state, and measured behavior. The Inference Broker evaluates
-the task, context boundary, offline state, hardware, latency, quality, cost, and
+the task, context policy, offline state, hardware, latency, quality, cost, and
 authorized disclosure before applying an inspectable ranking.
 
 Candidate versions run synthetic semantic journeys in shadow and then progress
@@ -87,12 +87,12 @@ appropriate to their risk. The system can explain the active person, context
 space, capability, recipient, important evidence, and available next action
 while retaining content-minimized operational logs.
 
-<aside class="evidence-band" aria-label="Architecture evidence boundary">
+<aside class="evidence-band" aria-label="Architecture evidence">
   <p><strong>Software evidence:</strong> Governance, routing, semantic journeys, capability grants, and rollback controls are exercised with synthetic fixtures and hosted CI.</p>
   <p><strong>Qualification ahead:</strong> Supported model and hardware combinations require physical measurement, representative-device evaluation, and published compatibility evidence.</p>
 </aside>
 
 <nav class="next-path" aria-label="Continue exploring the system">
   <a href="../personal-node/"><strong>See where continuity lives</strong><span>Explore the personal node and its protection layers.</span></a>
-  <a href="../architecture/overview/"><strong>Read the architecture overview</strong><span>Continue into component contracts and deployment boundaries.</span></a>
+  <a href="../architecture/overview/"><strong>Read the architecture overview</strong><span>Continue into component contracts and deployment responsibilities.</span></a>
 </nav>
