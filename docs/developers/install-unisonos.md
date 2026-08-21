@@ -1,7 +1,7 @@
 # Installation status and paths
 
 UnisonOS has one public software preview and no supported production
-installation. This page is the canonical public router for installation,
+installation. This page is the primary public route for installation,
 evaluation, and development paths.
 
 ## Choose a path

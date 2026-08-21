@@ -88,6 +88,6 @@ Detailed experience, architecture, build, and status pages provide the
 supporting contracts and evidence.
 
 The [documentation ownership and freshness policy](documentation-governance.md)
-defines canonical sources, change triggers, review cadence, archival, and the
+defines owning sources, change triggers, review cadence, archival, and the
 public publication gate. The [public evidence index](evidence-index.md) maps
 major public claims to their evidence owners and remaining promotion gates.

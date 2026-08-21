@@ -10,7 +10,7 @@ The repository that owns behavior also owns its normative contract, component
 README, tests, and implementation evidence. Shared and public documentation
 summarize and link that source.
 
-| Information | Canonical owner |
+| Information | Owning source |
 | --- | --- |
 | Runtime behavior and component contract | Implementing component repository |
 | Cross-service integration revision and task state | `unison-workspace` |
@@ -21,7 +21,7 @@ summarize and link that source.
 | Public narrative, navigation, and maturity summary | Public documentation site |
 
 A public page remains explanatory. It cannot upgrade a component, release,
-hardware configuration, provider, modality, or journey beyond its canonical
+hardware configuration, provider, modality, or journey beyond its owning
 evidence.
 
 ## Required updates with a change
@@ -63,7 +63,7 @@ context and never replaces a source revision.
 | Hardware or provider evidence | Update the exact revision-bound matrix and any public maturity summary |
 | Quarterly public review | Check navigation, terminology, external links, maturity labels, and owner mappings |
 | Security incident or important correction | Publish the authorized correction and recovery guidance promptly |
-| Page without an identifiable canonical source | Assign an owner, link a source, or archive the page |
+| Page without an identifiable owning source | Assign an owner, link a source, or archive the page |
 
 Automation should validate internal links, strict builds, accessibility, schema
 references, release tags, and known owner mappings. Human review remains

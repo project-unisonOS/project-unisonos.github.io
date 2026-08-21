@@ -1,6 +1,6 @@
 # Public evidence index
 
-This index connects Unison's material public claims to their canonical evidence
+This index connects Unison's material public claims to their owning evidence
 owners. It is a navigation aid, not an independent promotion authority.
 
 ## Read an evidence claim
@@ -21,7 +21,7 @@ into a supported capability.
 
 ## Claim and source map
 
-| Public claim area | Current evidence | Canonical source | Open gate |
+| Public claim area | Current evidence | Owning source | Open gate |
 | --- | --- | --- | --- |
 | Person and context isolation | Unit, integration, and hosted CI cover independent identities, default-deny access, and cross-person isolation | [`unison-workspace` current-state record](https://github.com/project-unisonOS/unison-workspace/blob/main/docs/planning/UNISON_CURRENT_STATE.md) and owning trust/context repositories | Long-running and participatory privacy evaluation |
 | Governed intent and capability execution | Unit and integration evidence cover policy-aware routing, exact grants, confirmations, cancellation, and receipts | [`unison-workspace` implementation plan](https://github.com/project-unisonOS/unison-workspace/blob/main/docs/planning/UNISON_IMPLEMENTATION_PLAN.md) and owning orchestrator, policy, consent, and capability repositories | Supported provider and real-workload qualification |

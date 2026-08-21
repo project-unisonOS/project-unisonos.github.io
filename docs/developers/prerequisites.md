@@ -5,7 +5,7 @@ its own signed host requirements and preflight checks.
 
 ## Supported development topology
 
-Use Linux for canonical component and workspace validation. The current project
+Use Linux for authoritative component and workspace validation. The current project
 topology uses Windows and coding agents as a control plane and an Ubuntu 24.04
 system as the stable Linux build and integration host. WSL2 remains useful for
 local development.

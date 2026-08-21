@@ -41,7 +41,7 @@ manifest rejects missing, mutable, and example zero digests.
 ## Bundle trust
 
 The candidate assembler packages the manifest and all declared runtime inputs
-under a canonical Ed25519-signed index. The bootstrap checks the signature
+under a maintained Ed25519-signed index. The bootstrap checks the signature
 against a separately trusted public key before privilege elevation. It rejects
 changed, missing, extra, or duplicate content; unsafe archive paths; a
 substituted key; and disagreement among the manifest, Compose file, image
@@ -74,7 +74,7 @@ destroying personal data.
 
 ## Update trust
 
-Development, preview, and stable channels use canonical signed metadata.
+Development, preview, and stable channels use signed release metadata.
 Ed25519 roles have explicit thresholds. The verifier checks:
 
 - metadata type, role, and signature threshold;
