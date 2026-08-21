@@ -261,4 +261,7 @@ appliance or put irreplaceable personal data into an evaluator installation.
 Continue with the [appliance release lifecycle](developers/appliance-release-lifecycle.md),
 [current download](developers/releases.md),
 [installation status](developers/install-unisonos.md), or
-[compatibility guidance](reference/compatibility.md).
+[compatibility guidance](reference/compatibility.md). Evaluators can use the
+[operator handbook](operators/handbook.md) for a task-oriented operating path
+and the [public evidence index](project/evidence-index.md) to inspect the source
+and open gate for each major claim.

@@ -144,3 +144,5 @@ sensitive security detail.
 Continue with the [trust decisions](../trust-decisions.md),
 [backup and recovery](../backup-recovery.md), or
 [appliance release lifecycle](../developers/appliance-release-lifecycle.md).
+Evaluators diagnosing a possible security boundary failure should follow the
+[troubleshooting and incident guide](../operators/troubleshooting-incidents.md).
