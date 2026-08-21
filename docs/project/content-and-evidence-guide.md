@@ -31,6 +31,15 @@ for supporting detail.
 
 ## Person and system language
 
+- **Intent-based computing** is Unison's organizing model. A person expresses
+  what they want to accomplish, and the system uses their current context,
+  needs, preferences, and policies to assemble a governed route and generate an
+  appropriate experience.
+- **Intent** is the desired outcome together with the identity, context, needs,
+  preferences, timing, relationships, constraints, and experience that shape
+  it. Input is evidence of intent, and the interpreted intent remains a
+  reviewable system proposal until applicable identity and policy establish
+  authority.
 - **Unison** is the complete assistant platform and experience.
 - **UnisonOS** is the Linux appliance runtime and operating surface.
 - **Personal node** is the trusted household system where identity, context,
@@ -58,7 +67,8 @@ review before publication.
 ## Current narrative path
 
 The primary public journey proceeds from the homepage through Vision, How
-Unison Works, and Personal Node. These pages introduce the promise, explain how
-intent becomes a governed outcome, and locate authority and continuity in the
-home. Detailed trust, experience, architecture, build, and status pages provide
-the supporting contracts and evidence.
+Unison Works, Personal Node, and Privacy and Security. These pages introduce
+intent-based computing, explain how intent becomes a governed outcome, locate
+authority and continuity in the home, and show how protection follows purpose.
+Detailed experience, architecture, build, and status pages provide the
+supporting contracts and evidence.

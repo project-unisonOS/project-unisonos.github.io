@@ -1,24 +1,55 @@
 # Understandable trust decisions
 
-Unison should never make a sensitive decision feel like a vague permission box.
-Before external or high-risk work, it presents the exact action, recipients,
-information used, purpose, consequence, reversibility, cost, and alternatives.
-You can confirm that exact action, use less information, choose a local
-alternative, authenticate more strongly, or cancel.
+Sensitive work deserves a decision that a person can understand. Unison presents
+the interpreted intent, exact action, recipients, information used, purpose,
+consequence, reversibility, cost, alternatives, and recovery path before
+external or higher-risk work proceeds.
 
-Unknown identity, purpose, audience, context space, assurance, data class,
-channel, recipient, or capability authority denies. Email, websites, documents,
-tools, and model responses are treated as content with provenance. Authority
-comes only from an authenticated person and an applicable policy decision.
+The person can confirm the exact action, use less information, change a
+recipient, select a local route, authenticate more strongly, defer, or cancel.
+The resulting decision applies to that bounded operation and carries an
+expiration appropriate to its risk.
 
-Remote inference requires an explicit disclosure decision and a recorded check
-that a suitable local alternative is unavailable. Only the approved fields cross
-the boundary. Credentials are represented by opaque task references and injected
-at the final transport edge, never shown to a planner or model.
+## Authority comes from the person and policy
 
-These controls are an **accepted Phase 3 implementation**. Production assurance
-still requires the remaining release evidence.
-They currently have contract, policy-matrix, adversarial, minimization,
-capability, confirmation, credential-canary, and semantic accessibility evidence.
-Publication, recursive fresh-clone validation, and final human acceptance
-completed on 2026-07-21.
+Authenticated identity establishes whose intent is being considered. Applicable
+policy resolves purpose, audience, context spaces, assurance, data classes,
+channels, recipients, and capability authority. When required authority or
+assurance is incomplete, Unison explains the boundary and offers an appropriate
+route to establish it.
+
+Email, websites, documents, tools, and model responses enter as content with
+provenance. They can contribute evidence to a plan. Authority remains with the
+authenticated person and the applicable policy decision.
+
+## Remote participation receives a disclosure decision
+
+Remote inference includes a recorded evaluation of eligible local routes. When
+an authorized remote model is selected, the disclosure decision identifies the
+provider, task, approved fields, purpose, retention expectations, residual
+metadata, and available alternatives.
+
+Credentials travel as opaque task references through planning and inference.
+The capability boundary injects the credential at the final transport edge for
+the authorized operation.
+
+## Intent remains reviewable
+
+A channel or model can propose an interpretation of what a person wants to
+accomplish. Confirmation can include the interpreted intent when ambiguity,
+consequence, disclosure, or risk makes that understanding important. The person
+can refine the goal, context, constraints, recipient, or desired experience
+before work continues.
+
+This design lets natural interaction begin the process while identity, consent,
+policy, and confirmation retain decision authority.
+
+<aside class="evidence-band" aria-label="Trust decision evidence boundary">
+  <p><strong>Accepted Phase 3 implementation:</strong> Contract, policy-matrix, adversarial, minimization, capability, confirmation, credential-canary, and semantic accessibility evidence is complete with synthetic fixtures.</p>
+  <p><strong>Production assurance ahead:</strong> Supported providers, physical appliance profiles, representative devices, participatory evaluation, and release evidence require additional qualification.</p>
+</aside>
+
+<nav class="next-path" aria-label="Continue exploring trust boundaries">
+  <a href="../privacy-security/"><strong>Return to privacy and security</strong><span>See how intent, context spaces, and layered protection work together.</span></a>
+  <a href="../private-life-operations/"><strong>Explore private life operations</strong><span>Follow these boundaries through household, health, financial, and coordination work.</span></a>
+</nav>
