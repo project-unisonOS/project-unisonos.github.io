@@ -58,6 +58,9 @@ for supporting detail.
 - **Shared understanding** lets people receive different native expressions of
   the same governed semantic state while preserving equivalent meaning and
   control.
+- **Usage journey** connects a person's intent to governed context,
+  orchestration, native experience, authority, outcome, recovery, and an
+  explicit evidence maturity label.
 
 ## Accessible editorial patterns
 

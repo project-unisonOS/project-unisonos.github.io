@@ -99,12 +99,12 @@ remain optional, minimized, and replaceable.
 ## One system, many kinds of work
 
 <div class="journey-grid">
-  <section><p class="journey-number">01</p><h3>Run the household</h3><p>Understand products, maintenance, commitments, energy, and the work that keeps daily life moving.</p></section>
-  <section><p class="journey-number">02</p><h3>See the whole decision</h3><p>Consider health needs alongside cost, coverage, preferences, and the questions that still need human expertise.</p></section>
-  <section><p class="journey-number">03</p><h3>Research with context</h3><p>Investigate choices, preserve sources and uncertainty, and turn findings into an actionable next step.</p></section>
-  <section><p class="journey-number">04</p><h3>Learn your way</h3><p>Shape explanations, pacing, curriculum, and output around each person's goals and communication needs.</p></section>
-  <section><p class="journey-number">05</p><h3>Build shared understanding</h3><p>Help people engage with the same meaning through different native input and output modalities.</p></section>
-  <section><p class="journey-number">06</p><h3>Stay useful offline</h3><p>Provide locally available repair, maintenance, utility, and emergency-reference guidance when outside connectivity is unavailable.</p></section>
+  <section><p class="journey-number">01</p><h3>Run the household</h3><p>Understand products, maintenance, commitments, energy, and the work that keeps daily life moving.</p><a href="experience/usage-journeys/#household-operations">Explore household operations</a></section>
+  <section><p class="journey-number">02</p><h3>See the whole decision</h3><p>Consider health needs alongside cost, coverage, preferences, and the questions that still need human expertise.</p><a href="experience/usage-journeys/#health-finance-and-insurance">Explore connected decisions</a></section>
+  <section><p class="journey-number">03</p><h3>Research with context</h3><p>Investigate choices, preserve sources and uncertainty, and turn findings into an actionable next step.</p><a href="experience/usage-journeys/#contextual-research">Explore contextual research</a></section>
+  <section><p class="journey-number">04</p><h3>Learn your way</h3><p>Shape explanations, pacing, curriculum, and output around each person's goals and communication needs.</p><a href="experience/usage-journeys/#personalized-education">Explore personalized education</a></section>
+  <section><p class="journey-number">05</p><h3>Build shared understanding</h3><p>Help people engage with the same meaning through different native input and output modalities.</p><a href="experience/usage-journeys/#shared-understanding">Explore shared understanding</a></section>
+  <section><p class="journey-number">06</p><h3>Stay useful offline</h3><p>Provide locally available repair, maintenance, utility, and emergency-reference guidance when outside connectivity is unavailable.</p><a href="experience/usage-journeys/#offline-macgyver-mode">Explore offline MacGyver mode</a></section>
 </div>
 
 <p class="evidence-note"><strong>Safety boundary:</strong> Offline guidance is an intended supplemental reference capability. People should contact emergency services and qualified medical, electrical, gas, and repair professionals whenever those resources are available and appropriate.</p>

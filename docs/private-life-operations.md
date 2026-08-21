@@ -5,6 +5,11 @@ precisely because they are private. The common foundation keeps original
 sources, recognized facts, your corrections, model inferences, account
 connections, recommendations, and external drafts distinct.
 
+The [usage journeys](experience/usage-journeys.md) show how these foundations
+become intent-centered experiences across household operations, connected
+health and financial decisions, research, education, shared understanding, and
+offline assistance.
+
 ## Household operations
 
 You can build useful household context from one receipt, product label, manual,
