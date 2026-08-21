@@ -104,6 +104,53 @@ h2 { margin-top: 2.5rem; }
 }
 .journey-scene h3 { margin: .2rem 0 .6rem; }
 .journey-scene p:last-child { margin-bottom: 0; }
+.journey-directory {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: .75rem;
+  margin: 2rem 0 3rem;
+}
+.journey-directory a {
+  display: flex;
+  min-height: 3.5rem;
+  align-items: center;
+  gap: .75rem;
+  padding: .75rem 1rem;
+  color: var(--unison-ink);
+  background: #eef7f3;
+  border: 1px solid #9bbdb3;
+  border-radius: .5rem;
+  font-weight: 700;
+  text-decoration: none;
+}
+.journey-directory a:hover,
+.journey-directory a:focus { background: #dcefe7; }
+.journey-directory span { color: #0c6658; font-size: .82rem; letter-spacing: .08em; }
+.journey-intent {
+  padding: 1.1rem 1.25rem;
+  background: #eef7f3;
+  border-left: .3rem solid #167665;
+  font-size: 1.12rem;
+}
+.journey-contract {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1px;
+  margin: 1.5rem 0;
+  overflow: hidden;
+  background: var(--unison-border);
+  border: 1px solid var(--unison-border);
+  border-radius: .65rem;
+}
+.journey-contract div { padding: 1rem 1.15rem; background: var(--unison-paper); }
+.journey-contract dt { color: var(--unison-navy); font-weight: 800; }
+.journey-contract dd { margin: .35rem 0 0; }
+.journey-maturity {
+  margin: 1.5rem 0 3rem;
+  padding: .85rem 1rem;
+  background: #f7f3e9;
+  border-left: .3rem solid #9a632e;
+}
 .scene-label {
   margin: 0;
   color: #0c6658;
@@ -542,6 +589,8 @@ body.homepage footer { color: var(--home-muted); }
   .next-path { grid-template-columns: 1fr; }
   .system-flow li { grid-template-columns: 2.5rem minmax(0, 1fr); }
   .system-flow li span { grid-column: 2; }
+  .journey-directory,
+  .journey-contract { grid-template-columns: 1fr; }
 }
 
 @media (forced-colors: active) {
@@ -571,13 +620,22 @@ body.homepage footer { color: var(--home-muted); }
   .journey-scene section,
   .system-flow li,
   .evidence-band,
-  .next-path a { color: CanvasText; background: Canvas; border-color: CanvasText; }
+  .next-path a,
+  .journey-directory a,
+  .journey-intent,
+  .journey-contract,
+  .journey-contract div,
+  .journey-maturity { color: CanvasText; background: Canvas; border-color: CanvasText; }
   .story-hero *,
   .story-grid *,
   .journey-scene *,
   .system-flow *,
   .evidence-band *,
-  .next-path * { color: CanvasText !important; }
+  .next-path *,
+  .journey-directory *,
+  .journey-intent *,
+  .journey-contract *,
+  .journey-maturity * { color: CanvasText !important; }
   .intent-path * { color: CanvasText !important; }
   .unison-mark::before { display: none; }
   body.homepage main * { color: CanvasText !important; }
