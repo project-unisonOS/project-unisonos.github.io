@@ -13,7 +13,7 @@ relationships, status, uncertainty, provenance, urgency, choices, actions,
 confirmation, privacy state, cancellation, errors, and recovery that a person
 needs to understand.
 
-A modality adapter contributes two bounded translations:
+A modality adapter contributes two focused translations:
 
 1. It turns speech, text, touch, Braille input, sign, images, device events, or
    future signals into evidence of intent.
@@ -21,7 +21,7 @@ A modality adapter contributes two bounded translations:
    and situation.
 
 Identity, consent, policy, and actuation authority remain with their owning
-platform services. This common boundary lets independent modality teams innovate
+platform services. This common contract lets independent modality teams innovate
 while preserving equivalent understanding and control.
 
 ## Native experiences use each modality's strengths
@@ -32,7 +32,7 @@ while preserving equivalent understanding and control.
   <section><h3>Braille and tactile</h3><p>Structured tactile regions, routing, concise labels, status cells, and direct navigation support native reading and control.</p></section>
   <section><h3>Touch and physical controls</h3><p>Buttons, switches, gestures, haptics, and tangible controls provide direct input and perceivable state.</p></section>
   <section><h3>Sign language</h3><p>Language-aware recognition and expressive signing support communication through a person's selected sign language.</p></section>
-  <section><h3>Future BCI</h3><p>Qualified signals can support constrained intent expression, selection, timing, and control through the same governed boundary.</p></section>
+  <section><h3>Future BCI</h3><p>Qualified signals can support constrained intent expression, selection, timing, and control through the same governed contract.</p></section>
 </div>
 
 A person can combine modalities. Conversation can accompany a tactile map.
@@ -78,14 +78,14 @@ it can establish, and how a person pauses, revokes, or recovers its use.
 ## A stable contract for independent teams
 
 Voice, visual, Braille, sign, tactile, switch, AAC, haptic, and BCI contributors
-integrate through the same intent and semantic-outcome boundaries. The contract
+integrate through the same intent and semantic-outcome contract. It
 also carries identity and assurance claims, capability declarations, policy
 references, confirmation state, cancellation, recovery, provenance, and
 evidence labels.
 
 [Read the modality integration contract](../developers/modality-integration.md).
 
-<aside class="evidence-band" aria-label="Multimodal evidence boundary">
+<aside class="evidence-band" aria-label="Multimodal evidence">
   <p><strong>Implemented:</strong> Semantic outcome, intent routing, modality service, speech, visual, Braille, sign, and BCI software foundations have unit, simulation, or hosted CI evidence in their owning components.</p>
   <p><strong>Being proven:</strong> Native experiences on representative devices, cross-modal continuity, hardware matrices, latency, privacy indicators, and participatory evaluation require additional evidence.</p>
   <p><strong>Envisioned:</strong> Supported household modality profiles, expressive sign output, mature tactile composition, and qualified BCI interaction remain future work.</p>
@@ -93,5 +93,5 @@ evidence labels.
 
 <nav class="next-path" aria-label="Continue exploring multimodal Unison">
   <a href="../shared-understanding/"><strong>Experience shared understanding</strong><span>See how people collaborate through different native modalities.</span></a>
-  <a href="../../developers/modality-integration/"><strong>Build a modality adapter</strong><span>Use the common intent and semantic experience boundary.</span></a>
+  <a href="../../developers/modality-integration/"><strong>Build a modality adapter</strong><span>Use the common intent and semantic experience contract.</span></a>
 </nav>
