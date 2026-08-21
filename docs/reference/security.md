@@ -43,7 +43,7 @@ Unison is designed to preserve:
 | Inference | local and external model execution | Models receive minimized context and contribute proposals without identity, policy, consent, or action authority. |
 | Channel Gateway | local and remote transport | Identity binding, replay protection, rate controls, assurance, and disclosure policy apply before requests enter core. |
 | Unison Surface | native visual, conversational, Braille, and future expressions | Renderers preserve the semantic outcome and relay person decisions without granting access or executing actions. |
-| Appliance lifecycle | install, update, maintenance, rollback, and removal | Signed artifacts, exact authorization, checkpoints, bounded health gates, receipts, and recovery govern system change. |
+| Appliance lifecycle | install, update, maintenance, rollback, and removal | Signed artifacts, exact authorization, checkpoints, focused health gates, receipts, and recovery govern system change. |
 
 ## Person and context isolation
 
@@ -106,7 +106,7 @@ The public preview carries:
 
 Threshold-signed update metadata covers expiration, version monotonicity,
 channel and hardware binding, artifact integrity, and root-key rotation.
-Staging verifies complete targets before activation. Checkpoints, bounded health
+Staging verifies complete targets before activation. Checkpoints, focused health
 promotion, safe resume, and rollback protect the last known good release.
 
 ## External content and services
@@ -131,7 +131,7 @@ content stays out of operational telemetry.
 
 The response path can restrict a capability, revoke a grant, rotate a
 credential, quarantine a component, stage a signed update, roll back a change,
-or restore a verified checkpoint. Each action remains bounded by the authority
+or restore a verified checkpoint. Each action remains scoped to the authority
 and recovery requirements of its owner. Firmware changes stay blocked until
 vendor recovery is proven on the exact hardware.
 

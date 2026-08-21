@@ -53,7 +53,7 @@ personal data, policy, or storage is unhealthy.
 | Layer | Review | Healthy evidence |
 | --- | --- | --- |
 | Host | capacity, time, Docker, filesystem, and network state | Required resources are available and the selected environment profile matches |
-| Runtime | container state and bounded health endpoints | Required services are running and health checks pass |
+| Runtime | container state and focused health endpoints | Required services are running and health checks pass |
 | Trust | authentication, policy, consent, and credential boundaries | Expected requests succeed and denied requests remain denied |
 | Context | storage, provenance, indexes, and lifecycle | Synthetic records remain isolated, readable, and attributable |
 | Experience | semantic outcome and active modality | Meaning, choices, cancellation, and recovery remain available |

@@ -21,7 +21,7 @@ remove safety rules, widen access, or grant capabilities.
   <section><h3>Identity guidance</h3><p>Relatively stable preferences describe communication, privacy posture, and how the assistant should challenge assumptions.</p></section>
   <section><h3>Current priorities</h3><p>Mutable directives reflect what matters now and can change as goals, projects, health, finances, or household responsibilities evolve.</p></section>
   <section><h3>Session context</h3><p>Authorized information for one intent gives the interaction immediate relevance without rewriting lasting preferences.</p></section>
-  <section><h3>Model profile</h3><p>A selected model contributes language or reasoning for a bounded task while the other layers preserve continuity.</p></section>
+  <section><h3>Model profile</h3><p>A selected model contributes language or reasoning for the current task while the other layers preserve continuity.</p></section>
 </div>
 
 ## A person can guide change naturally
@@ -52,7 +52,7 @@ for the selected operation. Replacing a model therefore preserves identity,
 preferences, priorities, memory, permissions, and pending work.
 
 Portability still requires a qualified model to interpret the instructions
-reliably. Model evaluation, canaries, health gates, and rollback protect that
+reliably. Model evaluation, limited rollouts, health gates, and rollback protect that
 transition before promotion.
 
 ## Privacy remains person specific

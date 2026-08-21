@@ -30,7 +30,7 @@ complete repair/removal integration.
 ### Signed updates and rollback
 
 Threshold-signed metadata, independently verified staging authorization,
-checkpointed complete-target staging, atomic activation, bounded health
+checkpointed complete-target staging, atomic activation, focused health
 promotion, safe resume, and automatic or explicit rollback simulations are in
 place. Remaining work connects these controls to real promoted downloads,
 physical reboot cycles, release notes, offline updates, revocation, and
@@ -44,7 +44,7 @@ enforcement and public guidance will derive from the same versioned matrix.
 Seventeen physical checks are waiting for compatible hardware.
 
 The model lifecycle now has signed manifests, deterministic task routing,
-untrusted proposal validation, golden shadow evaluation, bounded canaries,
+untrusted proposal validation, golden shadow evaluation, limited rollouts,
 content-free health gates, and automatic rollback in software. Its synthetic
 qualification matrix intentionally lists no supported model. Physical model and
 runtime measurements will populate that matrix alongside the appliance
@@ -68,7 +68,7 @@ The adaptive-maintenance software slices are implemented:
 - locally relevant recommendations, capacity forecasts, hardware compatibility
   checks, and the System wellbeing experience;
 - exact revocable grants, maintenance windows, budgets, signed staging,
-  checkpoints, canaries, health gates, receipts, circuit breakers, and
+  checkpoints, staged rollouts, health gates, receipts, circuit breakers, and
   rollback for reversible action classes;
 - sandboxed community claim collection, corroboration, conflict detection, and
   local test proposals with no execution authority; and
@@ -98,7 +98,7 @@ The first shared foundation is implemented in software:
 - private encrypted quarantine, local OCR, extraction, duplicate detection,
   preview, correction, and reversible admission;
 - account connection through minimum-scope OAuth, SMART health authorization,
-  provider exports, bounded MCP, and carefully constrained browser fallback;
+  provider exports, approved MCP access, and carefully constrained browser fallback;
 - progressive setup that asks only what is needed for your current goal; and
 - direct Connections, Imports, Sources, Privacy, Disconnect, and Delete
   controls alongside conversation.
@@ -106,7 +106,7 @@ The first shared foundation is implemented in software:
 This foundation includes maintained source and connection contracts, encrypted
 quarantine, deterministic local extraction and an OCR adapter, provenance,
 correction, rollback, deletion, PKCE, sandbox SMART and financial profiles,
-bounded local and MCP grants, incremental sync receipts, deduplication,
+scoped local and MCP grants, incremental sync receipts, deduplication,
 cross-person denial, and revocation. Production provider certification and
 physical camera quality evidence remain open and are not implied by this
 software gate.
@@ -150,7 +150,7 @@ package and live provider.
 - Multi-device and multi-writer synchronization.
 - Federation between independently governed homes.
 - Richer spatial, haptic, sign, Braille, switch, and AAC interaction.
-- Carefully bounded smart-home and physical actuation.
+- Carefully governed smart-home and physical actuation.
 
 ## Where to follow implementation
 

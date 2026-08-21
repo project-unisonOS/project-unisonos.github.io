@@ -23,7 +23,7 @@ the person is trying to accomplish.
 <ol class="system-flow">
   <li><strong>Receive and interpret intent</strong><span>A local or remote channel captures speech, text, touch, Braille, visual input, device events, or another supported modality and maps it into a proposed human objective.</span></li>
   <li><strong>Establish the person and context</strong><span>The trust layer resolves identity, assurance, active context spaces, consent, preferences, needs, and the policies that apply.</span></li>
-  <li><strong>Assemble a route</strong><span>Core selects reliable workflows where they fit and composes bounded inference, retrieval, or planning for novel parts of the request.</span></li>
+  <li><strong>Assemble a route</strong><span>Core selects reliable workflows where they fit and composes governed inference, retrieval, or planning for novel parts of the request.</span></li>
   <li><strong>Grant capabilities</strong><span>Tools and connectors receive the data, credentials, purpose, and duration authorized for their portion of the work.</span></li>
   <li><strong>Evaluate the outcome</strong><span>Policy checks facts, sources, recipients, risk, confirmation, provenance, and recovery before an action or response proceeds.</span></li>
   <li><strong>Compose the experience</strong><span>The semantic result becomes a native conversational, visual, Braille, tactile, or future-modality experience.</span></li>
@@ -33,7 +33,7 @@ the person is trying to accomplish.
 ## Six cooperating responsibilities
 
 <div class="story-grid boundary-grid">
-  <section><h3>Unison Core</h3><p>Understands requests, assembles relevant context, plans bounded work, and produces semantic outcomes.</p></section>
+  <section><h3>Unison Core</h3><p>Understands requests, assembles relevant context, plans work, and produces semantic outcomes.</p></section>
   <section><h3>Personal Data and Trust Store</h3><p>Binds identity, governs private and shared context, brokers keys and credentials, evaluates policy, and retains audit evidence.</p></section>
   <section><h3>Capability Host</h3><p>Contains tools and connectors within scoped grants for data, authority, purpose, and time.</p></section>
   <section><h3>Channel Gateway</h3><p>Normalizes local and remote interaction, binds channel identities, detects replay, and applies assurance requirements.</p></section>
@@ -65,13 +65,13 @@ the task, context policy, offline state, hardware, latency, quality, cost, and
 authorized disclosure before applying an inspectable ranking.
 
 Candidate versions run synthetic semantic journeys in shadow and then progress
-through bounded canaries. Content-free health signals support rollback to a
+through limited rollouts. Content-free health signals support rollback to a
 retained version. Exact facts and higher-risk actions receive deterministic
 validation and policy-controlled confirmation.
 
 ## Capabilities can evolve through use
 
-A novel request can begin with bounded inference. Repetition can reveal stable
+A novel request can begin with governed inference. Repetition can reveal stable
 structure such as familiar inputs, recurring tools, predictable policy checks,
 or a consistent output. Unison can turn that structure into a proposal with a
 clear purpose, permissions, tests, and evidence requirements.

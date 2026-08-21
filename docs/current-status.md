@@ -17,7 +17,7 @@ It remains unsupported while physical validation and promotion gates are open.
 - **Privacy and control:** default-deny policy, minimized disclosure, exact
   confirmations, revocable permissions, audit records, and untrusted-content
   handling.
-- **Useful workflows:** bounded calendar, mail, commitment, household, contact,
+- **Useful workflows:** calendar, mail, commitment, household, contact,
   research, and travel journeys with cancellation and recovery.
 - **Interaction foundations:** semantic responses, local speech, captions,
   interruption controls, keyboard operation, high contrast, reduced motion,
@@ -29,12 +29,12 @@ It remains unsupported while physical validation and promotion gates are open.
   capability packages with compatibility and permission review.
 - **Governed model lifecycle:** signed per-version model manifests, hard
   task/privacy/hardware eligibility, inspectable routing, untrusted semantic
-  proposals, synthetic golden evaluation, bounded canaries, content-free health
+  proposals, synthetic golden evaluation, limited rollouts, content-free health
   gates, and automatic rollback to a retained prior version.
 - **Private source onboarding foundation:** encrypted document and image
   quarantine, private review and correction, source provenance, duplicate and
   version tracking, rollback and deletion, plus read-only OAuth PKCE, SMART
-  health sandbox, financial test-provider, selected-folder, and bounded MCP
+  health sandbox, financial test-provider, selected-folder, and approved MCP
   connection profiles.
 - **Usage-driven taxonomy:** person-scoped signals can propose a tag, subdomain,
   or security domain; activation, signed security review, exact migration
@@ -53,7 +53,7 @@ roll back, and deletion removes the encrypted object and extracted indexes.
 
 The initial Connection Broker requests only declared read-only scopes. It has
 profiles for generic OAuth Authorization Code with PKCE, SMART on FHIR, a
-financial sandbox, a selected local folder, and bounded MCP resources. Tokens
+financial sandbox, a selected local folder, and approved MCP resources. Tokens
 remain behind opaque per-person handles, incremental sync deduplicates repeated
 items, and revocation stops further sync. The browser never asks you to paste a
 health or financial provider password.
@@ -64,22 +64,22 @@ hardware, and production malware scanning remain release qualification work.
 
 ## Model routing and lifecycle status
 
-Unison now defines bounded interpretation, extraction, vision, semantic
+Unison now defines interpretation, extraction, vision, semantic
 construction, synthesis, and conversation tasks. Availability is inventoried
 separately from eligibility. Signed immutable manifests describe each exact
 model version, artifact, runtime, task support, privacy limits, hardware needs,
 license, measured quality and latency, approved risk, limitations, and rollback
 compatibility.
 
-The route for each bounded operation records the selected version, minimized
+The route for each operation records the selected version, minimized
 disclosure, rejected candidates, rank evidence, and fallback. Models cannot
 broaden context, select a remote provider, create recipients or actions, remove
 recovery, or override deterministic facts. High-risk content follows a
 deterministic language path.
 
 Candidates run against synthetic golden semantic journeys in shadow before a
-bounded canary. Content-free health gates cover contract success, semantic
-success, fallback, errors, and latency. A degraded canary returns to the
+limited rollout. Content-free health gates cover contract success, semantic
+success, fallback, errors, and latency. A degraded rollout returns to the
 retained prior version without changing your identity, memory, permissions,
 pending actions, or interaction preferences.
 
@@ -162,7 +162,7 @@ The candidate release path now has:
   versions, channel/hardware binding, artifact integrity, and dual-authority
   root-key rotation; and
 - an independently verified staging authorization, pre-update data and receipt
-  checkpoint, complete target staging, atomic activation, bounded health
+  checkpoint, complete target staging, atomic activation, focused health
   promotion, safe interruption resume, and automatic or explicit rollback.
 - a public unsupported prerelease containing a signed x86-64 bundle, 13
   digest-pinned runtime images, checksums, source correspondence, SPDX
@@ -206,7 +206,7 @@ produces a receipt.
 
 Reviewed community sources can now produce sandboxed, content-hashed claims.
 Unison clusters duplicates, records corroboration and conflicts, and may
-propose a bounded local test. External content remains untrusted and can never
+propose a local test. External content remains untrusted and can never
 create a grant, approve an artifact, or invoke maintenance.
 
 Eligibility checks now cover OS packages, containers, drivers, model runtimes,
@@ -244,7 +244,7 @@ Before promotion, the project still needs:
 - two named reference systems and a versioned compatibility matrix;
 - physical audio, firmware, Secure Boot, TPM, suspend, thermal, power, backup,
   restore, install, update, rollback, removal, and factory-reset results; and
-- a time-bounded opt-in pilot, calibration on real workloads, and an explicit
+- a time-limited opt-in pilot, calibration on real workloads, and an explicit
   human decision before promoting any automatic action class.
 - live-provider certification and a genuinely opted-in value pilot for the
   implemented household, health, and financial packages.

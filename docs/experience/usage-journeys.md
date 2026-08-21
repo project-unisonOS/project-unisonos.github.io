@@ -9,7 +9,7 @@
 Every journey begins with a person's desired outcome. Unison resolves the
 relevant identity, context, policy, capabilities, and modality before composing
 an experience. Deterministic skills and tools provide reliable routes for known
-work. Bounded inference helps pursue novel requests and can surface repeatable
+work. Governed inference helps pursue novel requests and can surface repeatable
 patterns for review as future capabilities.
 
 <nav class="journey-directory" aria-label="Usage journeys">
@@ -27,7 +27,7 @@ patterns for review as future capabilities.
 
 <dl class="journey-contract">
   <div><dt>Governed context</dt><dd>Household inventory, manuals, receipts, warranties, maintenance history, utility information, schedules, and approved sensor observations.</dd></div>
-  <div><dt>Orchestration</dt><dd>Product matching, maintenance rules, recall checks, cited retrieval, scheduling drafts, and bounded inference for unfamiliar symptoms or equipment.</dd></div>
+  <div><dt>Orchestration</dt><dd>Product matching, maintenance rules, recall checks, cited retrieval, scheduling drafts, and governed inference for unfamiliar symptoms or equipment.</dd></div>
   <div><dt>Native experience</dt><dd>A conversational briefing, visual workboard, Braille task structure, or another registered modality presents priorities, evidence, uncertainty, and available actions.</dd></div>
   <div><dt>Authority and safety</dt><dd>The person approves sharing, scheduling, purchases, and physical actions. Device control requires a separate authorized actuation contract.</dd></div>
 </dl>
@@ -85,7 +85,7 @@ proposed as reusable skills after review and testing.
 
 <dl class="journey-contract">
   <div><dt>Governed context</dt><dd>Learning goals, demonstrated understanding, chosen curriculum, accessibility preferences, pace, interests, and guardian or educator policies where applicable.</dd></div>
-  <div><dt>Orchestration</dt><dd>Curriculum planning, retrieval from approved materials, adaptive explanation, practice generation, deterministic assessment rules, and bounded inference for new questions.</dd></div>
+  <div><dt>Orchestration</dt><dd>Curriculum planning, retrieval from approved materials, adaptive explanation, practice generation, deterministic assessment rules, and governed inference for new questions.</dd></div>
   <div><dt>Native experience</dt><dd>Concepts can become dialogue, tactile structure, visual demonstration, guided action, sign language through a future adapter, or another modality registered through the common contract.</dd></div>
   <div><dt>Authority and safety</dt><dd>The learner controls pace, explanation style, and feedback. Applicable household, educator, and age-aware policies govern sources, sharing, and external actions.</dd></div>
 </dl>

@@ -57,7 +57,7 @@ agents working across Unison's product, software, hardware, and evidence.
 | Term | Meaning |
 | --- | --- |
 | **Deterministic route** | A versioned, inspectable path whose important rules, inputs, outputs, and authority checks are defined and testable. |
-| **Bounded inference** | Nondeterministic model participation constrained by task, context, disclosure, tools, validation, policy, uncertainty, and recovery. |
+| **Governed inference** | Nondeterministic model participation guided by task, context, disclosure, tools, validation, policy, uncertainty, and recovery. |
 | **Receipt** | A content-minimized record of an important decision, action, confirmation, affected boundary, result, and available recovery. |
 | **Evidence class** | The environment in which a claim was tested: unit, simulation, hosted CI, physical hardware, or participatory. |
 | **Implemented** | Behavior present in code with identified evidence. |

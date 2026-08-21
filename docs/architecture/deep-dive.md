@@ -13,7 +13,7 @@
    orchestrator.
 3. Auth, consent, policy, context, and storage services resolve the person,
    purpose, applicable information, and authority.
-4. The orchestrator plans deterministic steps and bounded inference, then asks
+4. The orchestrator plans deterministic steps and governed inference, then asks
    the capability service to resolve eligible operations.
 5. Capabilities and inference return structured results, provenance,
    uncertainty, and side-effect state.
@@ -99,8 +99,8 @@ cost, support status, and available hardware before ranking.
 
 Model output remains an untrusted proposal. Deterministic services reconcile
 source revisions, exact facts, recipients, actions, and required meaning.
-Candidate model versions run golden semantic journeys in shadow before bounded
-canaries. Content-free health signals can trigger rollback to a retained
+Candidate model versions run golden semantic journeys in shadow before limited
+rollouts. Content-free health signals can trigger rollback to a retained
 version.
 
 Model-pack tooling supports development and evaluation. Supported appliance
