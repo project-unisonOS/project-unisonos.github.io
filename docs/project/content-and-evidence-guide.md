@@ -50,6 +50,14 @@ for supporting detail.
   through an explicit grant.
 - **Modality** is a native form of input or output connected through the common
   semantic experience contract.
+- **Semantic outcome** is the governed representation of meaning, relationships,
+  state, provenance, uncertainty, choices, actions, confirmation, privacy,
+  cancellation, and recovery that can be expressed through any modality.
+- **Native experience** uses the language, structure, pacing, navigation, and
+  interaction strengths of a person's modality directly.
+- **Shared understanding** lets people receive different native expressions of
+  the same governed semantic state while preserving equivalent meaning and
+  control.
 
 ## Accessible editorial patterns
 

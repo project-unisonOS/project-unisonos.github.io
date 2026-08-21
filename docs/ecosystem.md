@@ -1,38 +1,63 @@
 # Modalities and governed ecosystem
 
-Unison expands through independently certified slices. The current engineering
-foundation supports local streaming speech with captions and interruption,
-an adaptive keyboard/screen-reader visual surface, privacy/cost/risk-aware model
-routing, and signed, compatibility-checked, revocable capability packages.
+Unison grows through independently maintained modality adapters and capability
+packages connected by common contracts. Voice, visual, Braille, sign, tactile,
+switch, AAC, haptic, BCI, and future teams can develop in parallel while
+preserving person-level authority and semantic continuity.
 
-## Current support
+## Common integration point
 
-- Local speech input can be interrupted by voice or a labelled **Stop speech**
-  control. Partial and final captions provide a non-voice path.
-- Visual output supports keyboard operation, screen readers, high contrast,
-  reduced motion, and a simplified-language preference.
-- Model routing prefers local execution and cannot silently exceed the selected
-  disclosure, location, cost, risk, or offline boundary.
-- Capability updates expose permission additions and require explicit review
-  before gaining authority. Unknown publishers, invalid signatures,
-  incompatible versions, and revoked packages fail closed.
+Every modality adapter contributes evidence of intent and composes governed
+semantic outcomes. Platform services retain identity, consent, policy, incident
+state, capability authority, and physical actuation decisions.
 
-Every semantic outcome retains confirmation, cancellation, retry, recovery, and
-dismiss actions when a modality or provider becomes unavailable.
+A signed capability declaration identifies supported devices, languages,
+features, data paths, assurance, interruption, confirmation, recovery, offline
+behavior, compatibility, maintainers, software inventory, and evidence. The
+orchestrator selects eligible adapters for the person, intent, device, and
+context.
 
-## Experimental and deferred
+[Read the modality integration contract](developers/modality-integration.md).
 
-Braille, sign, switch/AAC, and haptic projects remain experimental until their
-hardware matrices, maintenance ownership, incident procedures, and research
-with people who use those access methods are complete. Simulation alone is not
-release evidence.
+## Current engineering foundation
 
-BCI, robotics, spatial control, and autonomous financial actions remain
-deferred and are not part of the current engineering boundary.
+- Semantic outcomes carry meaning, provenance, uncertainty, privacy state,
+  actions, confirmation, cancellation, retry, and recovery.
+- Intent routing accepts modality evidence through governed channel and
+  orchestration boundaries.
+- Speech supports local streaming foundations, captions, interruption, and
+  content-minimized operational evidence.
+- Visual software supports semantic composition, keyboard operation, contrast,
+  reflow, zoom, and reduced motion.
+- Braille, sign, and BCI components provide experimental software contracts and
+  simulation evidence in their owning repositories.
+- Model routing and capability packages enforce disclosure, location, cost,
+  risk, compatibility, signature, and revocation policy.
 
-## Extension requirements
+## Qualification path
 
-New adapters and capability packages must declare assurance, privacy and
-metadata behavior, cancellation and fallback, compatibility, maintainer and
-incident contacts, signed provenance, and an SBOM. Ecosystem expansion never
-turns a modality, model, channel, or delegated agent into independent authority.
+An adapter progresses through declared experimental capability, software
+evidence, representative hardware, cross-modal continuity, adversarial
+validation, participatory evaluation, incident readiness, and a published
+compatibility profile.
+
+Braille, sign, switch, AAC, haptic, BCI, robotics, and spatial-control support
+depends on the hardware matrices, maintenance ownership, incident procedures,
+and participatory evidence appropriate to each capability. Simulation provides
+engineering evidence and a foundation for physical qualification.
+
+## Independent contribution
+
+Modality teams own their language, device, interaction, performance, and
+maintenance expertise. The platform contract gives every team the same route
+into intent, identity claims, policy context, semantic outcomes, confirmation,
+and recovery.
+
+New adapters declare assurance, privacy, metadata, retention, cancellation,
+fallback, compatibility, provenance, and support ownership. Signed packages and
+revocation protect the ecosystem as implementations and maintainers evolve.
+
+<aside class="evidence-band" aria-label="Ecosystem evidence boundary">
+  <p><strong>Available now:</strong> Component repositories, shared architectural boundaries, software contracts, and synthetic evidence support parallel development.</p>
+  <p><strong>Qualification ahead:</strong> Support claims require representative devices, published compatibility, participatory evaluation, and operational ownership.</p>
+</aside>

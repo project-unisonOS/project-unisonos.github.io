@@ -24,6 +24,7 @@ nav:
   - Experience:
       - Experience Principles: experience.md
       - Multimodal Interaction: experience/multimodal.md
+      - Shared Understanding: experience/shared-understanding.md
       - AI Personality: experience/ai-personality.md
       - Accessibility: accessibility.md
       - Modalities and Ecosystem: ecosystem.md
@@ -47,6 +48,7 @@ nav:
           - Workspace & Repos: developers/workspace-and-repos.md
           - Devstack Setup: developers/devstack.md
           - Renderer: developers/renderer.md
+          - Modality Integration: developers/modality-integration.md
           - Testing: developers/testing.md
           - Build & Deploy: developers/workflow-design.md
           - Images & Releases: developers/images-builds-and-releases.md
