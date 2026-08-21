@@ -51,6 +51,8 @@ nav:
           - Onboarding: developers/onboarding.md
       - Build & Operate:
           - Contributor Task Finder: developers/task-finder.md
+          - Operator Handbook: operators/handbook.md
+          - Troubleshooting & Incidents: operators/troubleshooting-incidents.md
           - Workspace & Repos: developers/workspace-and-repos.md
           - Hardware Qualification: developers/hardware.md
           - Devstack Setup: developers/devstack.md
@@ -71,6 +73,7 @@ nav:
       - Roadmap: project/roadmap.md
       - Content & Evidence Guide: project/content-and-evidence-guide.md
       - Documentation Governance: project/documentation-governance.md
+      - Public Evidence Index: project/evidence-index.md
       - Terminology: terminology.md
       - Governance: project/governance.md
       - License: project/license.md
