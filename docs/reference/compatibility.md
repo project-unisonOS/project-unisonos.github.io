@@ -1,46 +1,68 @@
-# Compatibility
+# Compatibility and support status
 
-No physical configuration is currently represented as supported. Ubuntu 24.04
-LTS, x86-64, and UEFI define the first candidate boundary.
+No physical system, model, peripheral, provider, or modality device is
+currently represented as supported. Ubuntu 24.04 LTS, x86-64, and UEFI define
+the first appliance candidate boundary.
 
-## Support tiers
+## Status terms
 
-| Tier | Meaning |
-| --- | --- |
-| Reference | A named system on which the complete release gate is repeated |
-| Compatible | A configuration that meets the enforced profile and passes the published suite |
-| Community-tested | Useful external evidence that has not completed the maintained support gate |
-| Unsupported | Known incompatible or outside the declared target |
+| Status | Meaning | Promotion authority |
+| --- | --- | --- |
+| Reference | The complete release gate passes repeatedly on a named, versioned system | Release and hardware qualification owners |
+| Compatible | The exact configuration meets the enforced profile and passes the published suite | Maintained compatibility decision |
+| Community-tested | External evidence is useful and attributable but has not completed the maintained gate | Evidence review only |
+| Unsupported | Outside the declared profile, known incompatible, or not yet qualified | No support claim |
+| Archived | A historical route or artifact retained for context | No current installation claim |
 
-## Candidate minimums
+## Current matrix
 
-- Ubuntu 24.04 LTS
-- x86-64 CPU with virtualization support
-- UEFI
-- 4 CPU cores
-- 8 GB RAM
-- 20 GB free storage for the minimum model profile
-- Docker 26 to 29 and Docker Compose 2.24 or newer
+| Area | Candidate or active boundary | Current status | Evidence owner |
+| --- | --- | --- | --- |
+| Appliance host | Ubuntu 24.04 LTS, x86-64, UEFI | Unsupported preview | `unison-platform`, `unison-hardware` |
+| Runtime | Signed 13-service digest-pinned candidate | Software preview | `unison-platform` release assets |
+| Development | Ubuntu and WSL2 workspace workflows | Development only | `unison-workspace`, `unison-infrastructure` |
+| Models | Signed manifests and synthetic qualification | No supported model profile | `unison-inference`, `unison-platform` |
+| Audio and other peripherals | Contract and test plans | No supported device matrix | modality owner, `unison-hardware` |
+| Conversation, visual, and Braille | Software contracts and synthetic expressions | No participatory support claim | modality owners and semantic experience evidence |
+| Sign, BCI, switch/AAC, and haptics | Modular integration boundary and early research | Experimental or envisioned | modality-specific owner |
+| Backup providers | S3-compatible engineering contract | No supported provider | `unison-storage` |
+| Health and financial providers | Sandbox and read-only connection contracts | No certified live provider | package and connection owners |
 
-These are enforced software-contract values. Support for a particular machine
-requires separate evidence. Recommended capacity will be set from measured latency,
-memory, storage, acoustic, thermal, and energy results.
+## Candidate software minimums
 
-## Physical evidence still pending
+The signed preview contract currently evaluates:
 
-The qualification ledger contains 17 tests covering:
+- Ubuntu 24.04 LTS;
+- x86-64 CPU with virtualization support;
+- UEFI;
+- 4 CPU cores;
+- 8 GB RAM;
+- 20 GB free storage for the minimum model profile; and
+- Docker 26 through 29 with Docker Compose 2.24 or newer.
 
-- cold start, reboot, shutdown, disk pressure, clock skew, and dependency loss;
-- clean install, interruption, repeat install, repair, removal, and reset;
-- keyboard, screen reader, captions, and non-voice onboarding;
-- real update and automatic rollback cycles;
-- firmware, Secure Boot, TPM, storage, thermals, and power;
-- USB and Bluetooth microphones and speakers;
-- suspend, resume, and peripheral reconnection;
-- backup and replacement restore;
-- public-download installation; and
-- a full reference-matrix pilot.
+These are enforced software-contract values for the preview. They do not make a
+particular machine compatible. Recommended capacity requires measured latency,
+memory, storage, acoustic, thermal, energy, and concurrent-workload evidence.
 
-Installer warnings and this page will eventually be generated from the same
-versioned matrix. Until that matrix contains candidate-bound lab records, no
-model or peripheral should be inferred as supported.
+## Evidence required for a supported matrix
+
+Qualification binds results to the exact system, firmware, CPU, accelerator,
+memory, storage, network, peripheral, release, model profile, and test method.
+The open physical program covers:
+
+- cold start, reboot, shutdown, suspend, resume, disk pressure, clock skew, and
+  dependency loss;
+- clean install, interruption, repeat install, repair, update, rollback,
+  removal, and factory reset;
+- keyboard and non-voice onboarding plus native modality devices;
+- firmware, Secure Boot, TPM, storage integrity, thermal, acoustic, and power;
+- USB and Bluetooth attachment and reconnection;
+- backup and replacement restore; and
+- installation from public artifacts using only public documentation.
+
+The versioned matrix and installer must agree before promotion. Community
+reports remain community-tested until the maintained gate is repeated.
+
+Review [installation status and paths](../developers/install-unisonos.md), the
+[public evidence index](../project/evidence-index.md), or
+[`unison-hardware`](https://github.com/project-unisonOS/unison-hardware).

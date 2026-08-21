@@ -1,31 +1,45 @@
-# Prerequisites
+# Development prerequisites
 
-Unison is developed and tested primarily on Ubuntu (including WSL2) with Docker. This page summarizes the recommended setup.
+These prerequisites apply to repository development. The public preview carries
+its own signed host requirements and preflight checks.
 
-## Operating System
+## Supported development topology
 
-- Ubuntu 22.04 or 24.04 (native or under WSL2 on Windows).
-- Windows 11 with WSL2 for a Windows-based workflow.
+Use Linux for canonical component and workspace validation. The current project
+topology uses Windows and coding agents as a control plane and an Ubuntu 24.04
+system as the stable Linux build and integration host. WSL2 remains useful for
+local development.
 
-## Hardware
+## Required tools
 
-- Minimum: 4 CPUs and 8 GB RAM.
-- Recommended for smoother Docker builds and inference:
-  - 6 to 8 CPUs.
-  - 12 to 16 GB RAM.
-- At least 40 GB of free SSD storage.
+- Git with recursive submodule support
+- Python 3.12 and virtual environments
+- Docker with Docker Compose v2
+- Bash and standard Linux command-line tools
+- Node.js for components and documentation checks that declare it
 
-## Tools
+Component READMEs own additional dependencies and exact version constraints.
+Use the workspace bootstrap and validation commands instead of assembling a
+parallel toolchain from this summary.
 
-- Docker Desktop with WSL2 backend and Docker Compose v2.
-- Python 3.10+ (3.12 recommended) and `pip`.
-- Node.js 18+ for tooling and the Electron shell.
-- Git and `make`.
+## Capacity guidance
 
-Optional but recommended:
+Development capacity depends on the components and models selected. The full
+stack requires more resources than a focused component test. Begin with the
+workspace environment validation and use the named development profile as the
+authority for CPU, memory, storage, and service selection.
 
-- VS Code with extensions for Docker, Python, YAML, and Markdown.
-- `direnv` or a `.env` file mechanism for managing secrets locally.
+No development profile implies appliance compatibility, model support, or
+measured performance. The [compatibility reference](../reference/compatibility.md)
+tracks the separate appliance boundary.
 
-For detailed setup notes, see the internal developer guide in `unison-docs/dev/developer-guide.md` and `unison-docs/dev/SETUP.md`.
+## Local security
 
+- Keep secrets in ignored local configuration or an approved secret store.
+- Never commit credentials, tokens, private keys, recovery material, personal
+  records, raw household media, or machine-specific network details.
+- Use synthetic fixtures for development and public evidence.
+- Use the security overlay when validating internal network exposure.
+- Preserve unrelated work and use a clean branch or worktree.
+
+Continue with [developer setup](onboarding.md).

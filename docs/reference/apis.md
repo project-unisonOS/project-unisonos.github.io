@@ -1,59 +1,64 @@
-# APIs
+# API and service contracts
 
-Each core Unison service exposes an HTTP API, typically documented by its README and OpenAPI UI.
+Component repositories own Unison's service contracts. This public directory
+identifies the owner and stability boundary; a component README, versioned
+schema, generated OpenAPI document, and contract tests remain authoritative.
 
-## Service Index
+## Stability labels
 
-- Control plane services (orchestrator, intent-graph, policy, consent, auth, inference).
-- Context and storage services.
-- Experience and IO services (renderer, agent-vdi, io-core, io-speech, io-vision).
+| Label | Meaning |
+| --- | --- |
+| Versioned | Consumers select an explicit contract version with documented compatibility behavior |
+| Internal evolving | Used by pinned workspace components and may change through coordinated workspace updates |
+| Experimental | Available for research or early integration without a compatibility promise |
+| Release lifecycle | Governed by signed release inputs, receipts, and promotion policy rather than an ordinary public API promise |
 
-## Experience Renderer APIs (High Level)
+No service API is currently advertised as a supported public internet API. The
+candidate runtime keeps internal services off host ports and binds its intended
+host-facing surfaces to loopback.
 
-The experience renderer is a first-class service in the stack. In most deployments you interact with it via the browser UI, and it exchanges intents/results with the control plane.
+## Service directory
 
-See Architecture pages for system roles:
+| Area | Contract owner | Current stability | Primary responsibility |
+| --- | --- | --- | --- |
+| Request orchestration | [`unison-orchestrator`](https://github.com/project-unisonOS/unison-orchestrator) | Internal evolving with versioned shared payloads | Intent routing, governed resolution, and semantic outcome construction |
+| Authentication | [`unison-auth`](https://github.com/project-unisonOS/unison-auth) | Internal evolving | Principal, session, and assurance binding |
+| Consent | [`unison-consent`](https://github.com/project-unisonOS/unison-consent) | Internal evolving | Consent records and revocation |
+| Policy | [`unison-policy`](https://github.com/project-unisonOS/unison-policy) | Internal evolving | Purpose, disclosure, confirmation, retention, and action decisions |
+| Context and memory | [`unison-context`](https://github.com/project-unisonOS/unison-context) | Internal evolving with versioned records | Governed context, provenance, lifecycle, and resolution history |
+| Context graph | [`unison-context-graph`](https://github.com/project-unisonOS/unison-context-graph) | Experimental | Graph views over governed context |
+| Intent graph | [`unison-intent-graph`](https://github.com/project-unisonOS/unison-intent-graph) | Experimental | Early intent relationship service |
+| Storage | [`unison-storage`](https://github.com/project-unisonOS/unison-storage) | Internal evolving | Authorized persistence, objects, audit records, and backup foundations |
+| Inference | [`unison-inference`](https://github.com/project-unisonOS/unison-inference) | Internal evolving | Bounded local and external model execution |
+| Capability registry and host | [`unison-capabilities`](https://github.com/project-unisonOS/unison-capabilities) | Internal evolving with signed packages | Capability discovery, grants, and invocation boundaries |
+| Actuation | [`unison-actuation`](https://github.com/project-unisonOS/unison-actuation) | Experimental, high-impact boundary | Deterministic execution of authorized action envelopes |
+| Semantic experience surface | [`unison-experience-renderer`](https://github.com/project-unisonOS/unison-experience-renderer) | Internal evolving with versioned SEM contracts | Native visual expression and interaction relay |
+| Modality integration | [`unison-io-core`](https://github.com/project-unisonOS/unison-io-core) | Versioned adapter boundary | Observation, expression, capability, and fallback integration |
+| Communication channels | [`unison-comms`](https://github.com/project-unisonOS/unison-comms) | Internal evolving | Identity-bound and replay-protected remote transport |
+| Appliance lifecycle | [`unison-platform`](https://github.com/project-unisonOS/unison-platform) and [`unison-updates`](https://github.com/project-unisonOS/unison-updates) | Release lifecycle | Install, update, health promotion, rollback, repair, and removal |
 
-- [Architecture Overview](../architecture/overview.md)
-- [Architecture Deep Dive](../architecture/deep-dive.md)
-- [Inference and Model Execution](../architecture/deep-dive.md#inference-and-model-execution)
+Models, renderers, adapters, tools, and channels contribute observations or
+proposals. They do not own identity, consent, policy, incident state,
+disclosure, or actuation authority.
 
-## API Documentation
+## Find an exact operation
 
-- Look for API sections in each service’s README.
-- Where available, use the service’s built-in API documentation endpoints when running locally or in devstack.
+1. open the owning repository at the workspace-pinned revision;
+2. read its `AGENTS.md` when present and its README;
+3. locate the versioned request and response schema or generated OpenAPI file;
+4. inspect the contract and negative-boundary tests; and
+5. use the workspace Compose profile to determine whether the service is
+   reachable from the selected environment.
 
-As the APIs stabilize and converge on consistent conventions, this page can be expanded into a more detailed, cross-service reference.
+An interactive API UI, when a component provides one, describes that running
+revision. It does not create a compatibility or support promise.
 
-## Storage API (Reference)
+## Change a contract
 
-Storage exposes an HTTP surface for unified persistence. Most services use these APIs, which keeps database access inside the storage boundary.
+A contract change begins with the owner and includes versioning or migration,
+affected consumers, denial and recovery behavior, focused tests, workspace
+acceptance, and documentation impact. Publish component revisions before
+updating workspace gitlinks.
 
-Common endpoints:
-
-- Memory:
-  - `POST /memory`: Write or update session memory entries with optional TTL.
-  - `GET /memory/{session_id}`: Retrieve a session memory entry.
-- Vault:
-  - `POST /vault`: Store or update a secret or token blob.
-  - `GET /vault/{key_id}`: Retrieve a secret when authorized.
-- Objects:
-  - `POST /objects`: Upload files or binary artifacts; returns a storage ID and metadata.
-  - `GET /objects/{obj_id}`: Download an object by ID with appropriate authorization.
-- Audit:
-  - `POST /audit`: Append structured audit events (actor, action, target, timestamps).
-
-For architectural context, see [Storage & Persistence](../architecture/deep-dive.md#storage-and-persistence).
-
-## Actuation / VDI API (Reference)
-
-The actuation surface exposes endpoints used by the orchestrator to execute high impact tasks. VDI is one actuator that follows the same envelope pattern as other tools.
-
-Common endpoints:
-
-- `POST /actuate`: Submit an Action Envelope for deterministic execution.
-- `POST /vdi/tasks/browse`: Ask the actuation service to run a browser-navigation task through the VDI agent.
-- `POST /vdi/tasks/form-submit`: Submit a form task through the VDI path.
-- `POST /vdi/tasks/download`: Run a download task through the VDI path and persist resulting artifacts.
-
-See [Actuation / VDI & VPN](../architecture/deep-dive.md#actuation-vdi-and-vpn) for the intent → action → result flow and the VPN boundary.
+Continue with [specifications and schemas](specs.md) or the
+[contributor task finder](../developers/task-finder.md).

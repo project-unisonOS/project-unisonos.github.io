@@ -26,7 +26,7 @@ agents working across Unison's product, software, hardware, and evidence.
 | **Authority** | The right, established by identity and policy, to access information, disclose it, make a decision, or perform an action. Models, renderers, and external content provide proposals rather than authority. |
 | **Grant** | An exact, revocable authorization for a capability to use specified data, credentials, purpose, recipient, authority, and duration. |
 | **Capability** | A versioned skill, tool, connector, or workflow that acts through an explicit grant. |
-| **Capability Host** | The architectural boundary that contains tools and connectors, injects authorized credentials, enforces grants, and returns results and receipts. The implementation repository is `unison-capability`; the runtime service identifier is `unison-capability-host`. |
+| **Capability Host** | The architectural boundary that contains tools and connectors, injects authorized credentials, enforces grants, and returns results and receipts. The implementation repository is `unison-capabilities`; the runtime service identifier is `unison-capability-host`. |
 
 ## Context and memory
 

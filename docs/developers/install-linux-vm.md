@@ -1,4 +1,6 @@
-# Install UnisonOS as a Linux VM
+# Archived Linux VM installation channel
+
+**Status: archived. No current VM disk image is published.**
 
 Evaluation-only note:
 - the first support candidate is Ubuntu 24.04 LTS native on x86-64 UEFI hardware

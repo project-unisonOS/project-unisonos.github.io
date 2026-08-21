@@ -4,6 +4,21 @@ This reference maps Unison's security posture to its technical authority
 boundaries and current evidence. The [privacy and security narrative](../privacy-security.md)
 explains what these protections mean for a person.
 
+## Contract owners and stability
+
+| Area | Canonical owners | Current stability |
+| --- | --- | --- |
+| Principal and session identity | `unison-auth` | Internal evolving with signed and versioned request contracts |
+| Consent and policy | `unison-consent`, `unison-policy` | Internal evolving, deny by default |
+| Context and storage isolation | `unison-context`, `unison-storage` | Internal evolving with versioned records and lifecycle |
+| Capability and actuation authority | `unison-capabilities`, `unison-actuation` | Internal evolving; actuation remains a high-impact experimental boundary |
+| Release and update trust | `unison-platform`, `unison-updates` | Signed release lifecycle |
+| Hardware security and qualification | `unison-hardware`, `unison-infrastructure` | Planned and being proven on named profiles |
+
+The owning repository's versioned contract and negative tests are normative.
+The workspace pins compatible revisions. This page summarizes their public
+security meaning without creating a new authority.
+
 ## Security objectives
 
 Unison is designed to preserve:

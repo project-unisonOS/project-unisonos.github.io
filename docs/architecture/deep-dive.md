@@ -224,7 +224,8 @@ Intent → VDI flow (high level):
 5. VDI executes steps and writes artifacts to storage.
 6. Results return to the orchestrator and are rendered in the experience.
 
-API details live in [Reference → APIs](../reference/apis.md#actuation-vdi-api-reference).
+Contract ownership and stability details live in the
+[API and service directory](../reference/apis.md#service-directory).
 
 ## Inference and Model Execution
 
