@@ -81,7 +81,7 @@ Every participant can:
 Equivalent participation focuses on meaning and agency. The amount, pacing, and
 organization of information can vary by modality and person.
 
-<aside class="evidence-band" aria-label="Shared understanding evidence boundary">
+<aside class="evidence-band" aria-label="Shared understanding evidence">
   <p><strong>Journey status:</strong> These scenarios are design targets backed by semantic and modality software contracts.</p>
   <p><strong>Evidence required:</strong> Representative devices and participatory evaluation with blind, Deaf, mobility-disabled, and other modality users are required before supported-experience claims.</p>
 </aside>

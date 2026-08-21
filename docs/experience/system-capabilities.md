@@ -1,67 +1,76 @@
-# System Capabilities
+# System capabilities
 
-UnisonOS connects to tools, services, and external resources through a growing
-set of **system capabilities**. Capabilities bridge what you ask for (your
-“intent”) and the concrete mechanism that fulfills it, such as local tools,
-connectors, MCP servers, or skill packs.
+<section class="story-hero" aria-labelledby="capabilities-introduction">
+  <p class="story-kicker">Intent becomes useful work</p>
+  <h2 id="capabilities-introduction">Capabilities give orchestration a practical reach</h2>
+  <p class="story-lead">Unison connects a person's intent to local tools, governed services, skills, models, and other agents. Each capability declares what it can do, what information it needs, and which controls apply.</p>
+</section>
 
-## What you experience
+## The experience begins with the outcome
 
-Capabilities are designed to feel like “Unison just knows how to do it,” while still keeping safety, consent, and privacy explicit where it matters.
+A person can ask Unison to prepare a meeting, investigate a household problem,
+organize records, or continue a longer project. The orchestrator resolves that
+intent into a plan and selects capabilities that fit the purpose, available
+context, current environment, and applicable policy.
 
-Examples of experiences powered by capabilities:
+The experience presents the useful result, its sources, uncertainty, pending
+choices, and any action that requires confirmation. Tool names and provider
+details remain available when they help a person understand or audit the work.
 
-- **Instant local answers and actions**
-  - “What device am I on?” → host and OS information
-  - “Summarize system health” → CPU/memory/disk and bounded process inspection
-  - “Read this file and summarize it” → scoped filesystem read
-- **Workflows that compose multiple tools**
-  - “Summarize my recent meetings” → calendar + meeting artifacts + summarization
-  - “Find that email and draft a response” → email search + drafting (draft-only unless explicitly enabled)
-  - “Give me a system diagnostics summary I can share” → safe local inspection + formatted output
-- **Optional connectors to external systems (disabled by default)**
-  - Email and calendar providers
-  - Chat/workspace providers (for example, Slack-style integrations)
+## Capabilities have declared roles
 
-As UnisonOS evolves, new capabilities will be added and existing ones will mature, expanding what Unison can do while keeping the execution model consistent.
+<div class="story-grid boundary-grid">
+  <section><h3>Local tools</h3><p>Inspect approved system state, work with scoped files, calculate exact values, and perform other operations on the personal node.</p></section>
+  <section><h3>Connectors</h3><p>Reach services such as calendars, email, household devices, and selected information providers through governed network routes.</p></section>
+  <section><h3>Skills</h3><p>Define repeatable procedures, required inputs, safety checks, evidence, and recovery for work that benefits from a consistent route.</p></section>
+  <section><h3>Model services</h3><p>Interpret novel requests, propose plans, transform information, and generate candidate outputs within the authority granted to the surrounding workflow.</p></section>
+  <section><h3>Agent peers</h3><p>Accept delegated work with an explicit purpose, data scope, capability set, time limit, and return contract.</p></section>
+  <section><h3>Modality services</h3><p>Translate evidence of intent and express semantic outcomes through conversation, visual presentation, Braille, sign, touch, and future interaction forms.</p></section>
+</div>
 
-## How capabilities connect UnisonOS to the outside world
+Capabilities provide operations and evidence. Identity, consent, policy,
+recipients, disclosure, incident state, and physical actuation remain with the
+platform services responsible for those decisions.
 
-Capabilities are declared, validated, and executed through a platform runtime designed to enforce safe defaults.
+## Connection follows person-level authority
 
-At a high level, the platform can represent capabilities as:
+When a capability needs an account, device, network route, or protected context,
+Unison presents the purpose, requested access, expected disclosure, retention,
+and available alternatives. The applicable person or operator can approve the
+grant allowed by policy.
 
-- **Local tools** (no network, fast, safe-by-default)
-- **Connectors** (networked integrations, typically requiring onboarding)
-- **MCP servers / tools** (a standardized tool transport aligned with modern agentic runtimes)
-- **Skill packs** (curated procedural bundles that planners can follow for common tasks)
-- **A2A peers** (delegated work to another agent, mediated by the platform)
+Credentials live in an approved secrets service. Capability declarations carry
+references to credentials and context rather than secret values. Networked
+operations pass through policy and egress controls, and receipts record the
+provider, purpose, disclosure, result, and recovery state appropriate to the
+action.
 
-## Onboarding and privacy (what happens when you “connect” something)
+## Deterministic routes grow through use
 
-Some capabilities require account access (email/calendar/chat). Those are shipped **disabled by default** and require onboarding before use.
+Unison prefers a tested skill or exact tool when one fits the request. Governed
+inference supports novel work and composes capabilities when a complete route is
+not yet available. Repeated successful patterns can become proposals for a new
+or improved skill.
 
-In practice, you can expect:
+A proposal records the triggering intent, candidate procedure, required
+permissions, failure behavior, tests, and evidence. Review and versioning turn
+the useful pattern into a dependable shared capability while preserving a route
+for future requests that remain novel.
 
-1. **Clear enablement moments**
-   - Unison will not silently turn on connectors or network access.
-   - When a connector is needed, the system prompts for explicit enablement (or an operator enables it).
-2. **OAuth flows designed for headless / voice-first environments**
-   - Onboarding uses device-style authorization flows where possible.
-3. **No secrets stored in capability manifests**
-   - Tokens and credentials are stored in a secrets backend.
-   - Manifests store only references/handles, never token values.
-4. **Policy-governed network behavior**
-   - Each connector has explicit network allowlists and is executed through policy/egress gates.
+## Failure remains part of the outcome
 
-## Growth over time
+A capability reports partial results, timeouts, unavailable providers,
+uncertainty, and side effects in a form the orchestrator can reason about. The
+experience can then offer retry, substitution, cancellation, compensation, or a
+useful partial result while retaining the person's original intent.
 
-The shipped baseline capabilities cover common local actions and provide placeholders for connectors. Additional capabilities can be discovered and installed from configured registries when policy allows.
+<aside class="evidence-band" aria-label="System capability evidence">
+  <p><strong>Implemented:</strong> Capability declarations, local tools, connector foundations, skill execution, model routing, policy checks, and synthetic fixtures have software evidence in their owning repositories.</p>
+  <p><strong>Being proven:</strong> Supported providers, recovery behavior, network privacy, installation flows, and representative household integrations require additional hosted, physical, and participatory evidence.</p>
+  <p><strong>Envisioned:</strong> A broad community capability ecosystem and routine skill evolution from household use remain future program outcomes.</p>
+</aside>
 
-This means the set of available capabilities will expand over time as:
-
-- more connectors and tool surfaces become available,
-- skill packs mature into richer workflows,
-- safety policies and trust verification improve.
-
-The goal is consistent: UnisonOS grows its ability to help, without growing a “wild west” of uncontrolled integrations.
+<nav class="next-path" aria-label="Continue exploring Unison capabilities">
+  <a href="../../assistant-workflows/"><strong>Follow a composed workflow</strong><span>See how capabilities support useful administrative outcomes.</span></a>
+  <a href="../../developers/workflow-design/"><strong>Design a repeatable workflow</strong><span>Define purpose, authority, tests, and recovery for a deterministic route.</span></a>
+</nav>

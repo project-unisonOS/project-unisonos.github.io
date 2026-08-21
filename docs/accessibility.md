@@ -57,7 +57,7 @@ works for people who use the modality.
 A supported claim identifies the modality, devices, languages or notation,
 capabilities, environment, and evidence collected.
 
-<aside class="evidence-band" aria-label="Accessibility evidence boundary">
+<aside class="evidence-band" aria-label="Accessibility evidence">
   <p><strong>Implemented:</strong> Semantic outcome, modality service, accessibility preference, and golden-journey foundations have software evidence.</p>
   <p><strong>Being proven:</strong> Native experiences on representative voice, visual, Braille, sign, switch, AAC, tactile, and haptic devices require physical and participatory evidence.</p>
   <p><strong>Envisioned:</strong> Broad supported-device matrices and qualified future modalities will grow through independent contributor programs.</p>
@@ -65,5 +65,5 @@ capabilities, environment, and evidence collected.
 
 <nav class="next-path" aria-label="Continue exploring accessible experiences">
   <a href="../experience/shared-understanding/"><strong>See shared understanding</strong><span>Follow people collaborating through different native experiences.</span></a>
-  <a href="../developers/modality-integration/"><strong>Read the integration contract</strong><span>Build against the common intent and semantic outcome boundary.</span></a>
+  <a href="../developers/modality-integration/"><strong>Read the integration contract</strong><span>Build against the common intent and semantic outcome contract.</span></a>
 </nav>
