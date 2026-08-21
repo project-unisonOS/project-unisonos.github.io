@@ -1,30 +1,146 @@
-# Security
+# Security reference
 
-Security and privacy are built into UnisonOS by design. The sections that follow describe how the platform remains trustworthy for you and your data.
+This reference maps Unison's security posture to its technical authority
+boundaries and current evidence. The [privacy and security narrative](../privacy-security.md)
+explains what these protections mean for a person.
 
-## Core stance (plain language)
+## Security objectives
 
-- **Identity and trust**: Every service proves who it is before it talks to another. Mutual TLS, or two way HTTPS, ensures data only flows between trusted components.
-- **Least privilege everywhere**: Each component only gets the minimum access it needs. Networks are segmented so a compromise in one area does not open the rest.
-- **Signed software**: Images and artifacts are cryptographically signed and verified before release to prevent tampering.
-- **Safe handling of secrets**: Passwords, keys, and tokens never live in source code. They are injected at runtime from secure stores.
-- **Privacy by design**: Data is classified as public, internal, sensitive, or highly sensitive and treated accordingly, with encryption, access checks, and minimal logging. Consent is enforced before sensitive data is used.
-- **Defense in depth**: Containers run as non root with locked down permissions and security profiles. Health and safety checks are built in so services fail safely.
-- **Policy and consent enforcement**: A central policy layer governs who can access what, and high risk actions such as device control require extra confirmation and trusted devices.
-- **Logging and auditing with redaction**: Important security events are logged in a structured way without personal or secret data. Alerts trigger on unusual patterns such as repeated login failures, policy denials, or signature verification failures.
-- **Automation and updates**: Automated scans watch for vulnerable dependencies. Shared security checks run in every repository and dependency management keeps components current.
-- **Accessibility and privacy for labs features**: Opt in features such as wake words default to off and can be centrally disabled. They are designed to keep audio local unless explicitly configured otherwise.
+Unison is designed to preserve:
 
-## Data Boundaries and Auditability
+- independent person-level authority inside a household;
+- confidentiality and compartmentalization of context spaces;
+- integrity and provenance of software, models, sources, decisions, and receipts;
+- availability through checkpoints, rollback, backup, restore, and replaceable
+  components;
+- least authority for models, tools, channels, renderers, and external services;
+  and
+- understandable confirmation and recovery for consequential work.
 
-- **Context** holds per-person profile/session state (consent-aware).
-- **Storage** holds artifacts, vault entries, and audit events.
-- **Graph services** may maintain graph-shaped state for recall and relationships.
+## Authority boundaries
 
-Sensitive flows should emit audit events and avoid logging personal data or secrets.
+| Boundary | Owns | Security requirement |
+| --- | --- | --- |
+| Trust layer | person, device, service, and channel identity | Authentication and assurance establish the principal before policy evaluation. |
+| Policy | consent, purpose, disclosure, confirmation, retention, and action rules | Decisions are explicit, versioned, deny by default, and independent from models and renderers. |
+| Context and storage | governed records, spaces, key-domain handles, provenance, and lifecycle | Authorization filters records before semantic ranking. Derived indexes never become access-control authorities. |
+| Capability Host | tools, connectors, credentials, and external actions | Each invocation receives an exact grant for data, purpose, recipient, authority, and duration. |
+| Inference | local and external model execution | Models receive minimized context and contribute proposals without identity, policy, consent, or action authority. |
+| Channel Gateway | local and remote transport | Identity binding, replay protection, rate controls, assurance, and disclosure policy apply before requests enter core. |
+| Unison Surface | native visual, conversational, Braille, and future expressions | Renderers preserve the semantic outcome and relay person decisions without granting access or executing actions. |
+| Appliance lifecycle | install, update, maintenance, rollback, and removal | Signed artifacts, exact authorization, checkpoints, bounded health gates, receipts, and recovery govern system change. |
 
-## Reporting Issues
+## Person and context isolation
 
-Please report suspected vulnerabilities privately using the contact in the project’s security policy (e.g., **darryl.adams@accessinsights.net**). Do not open public issues for security findings.
+Each person has an independent identity and namespace for assistants, keys,
+credentials, data, caches, and indexes. Household membership establishes a
+relationship and supplies no automatic access to another person's private
+context.
 
-For detailed technical notes, see the SECURITY documents and threat models in the docs repository.
+Context spaces define purpose, membership, fields, data class, sharing,
+retention, backup, recovery, and key-domain handling. Cross-domain work uses an
+explicit purpose-bound link containing only selected fields. Revocation,
+correction, deletion, retention expiry, and key rotation invalidate affected
+derived views and produce receipts.
+
+Usage-driven taxonomy can propose a tag, subdomain, or protected security
+domain. A model can recommend organization. Activation, security controls, and
+record migration require separate governed decisions. See
+[taxonomy evolution](../taxonomy-evolution.md).
+
+## Cryptography and key handling
+
+- Backup objects use locally created AES-256-GCM envelopes and Ed25519-signed,
+  encrypted manifests.
+- Release bundles and update metadata use signed manifests and verified trust
+  roots. Published preview images include keyless signature and supply-chain
+  evidence.
+- Security-domain migration uses distinct logical key-domain handles and
+  re-encrypts selected stored content through the key-broker boundary.
+- Credentials remain behind opaque references and are injected at the transport
+  boundary for an authorized operation.
+- Rotation, revocation, rollback detection, and independently held checkpoints
+  form part of the key lifecycle.
+
+Current tests establish software behavior with development key custody.
+TPM-backed keys, Secure Boot, measured boot, hardware security modules, and
+physical recovery ceremonies require qualification on named hardware.
+
+## Service and workload isolation
+
+The supported runtime contract uses immutable image digests, separates internal
+services from developer host ports, and binds host-facing surfaces to loopback.
+Service, trust, capability, inference, channel, and experience responsibilities
+remain separated through versioned contracts, including when a personal-node
+profile combines modules into fewer containers.
+
+Container and dependency workflows scan source-correspondent images and reject
+fixable critical findings at the release gate. Non-root execution, restricted
+permissions, network policy, secret injection, and service authentication are
+deployment controls that must be verified for each promoted profile.
+
+## Software supply chain
+
+The public preview carries:
+
+- digest-pinned runtime images and deterministic release inputs;
+- checksums, source correspondence, SPDX inventory, and provenance;
+- Ed25519 release signatures and Sigstore evidence;
+- vulnerability evidence tied to the candidate; and
+- public-download verification that rejects incomplete or modified assets.
+
+Threshold-signed update metadata covers expiration, version monotonicity,
+channel and hardware binding, artifact integrity, and root-key rotation.
+Staging verifies complete targets before activation. Checkpoints, bounded health
+promotion, safe resume, and rollback protect the last known good release.
+
+## External content and services
+
+Websites, messages, documents, provider data, tool responses, model output, and
+community claims enter as untrusted evidence with provenance. They cannot grant
+authority, alter policy, select a recipient, approve an artifact, or invoke a
+physical action.
+
+External participation receives minimized fields under an explicit disclosure
+decision. The decision can include provider, recipient, purpose, consequence,
+reversibility, cost, and available local route. Privacy relay, VPN, and
+de-identified query profiles are intended options whose residual metadata and
+provider limitations remain visible.
+
+## Detection and response
+
+Content-minimized signals can cover authentication failures, replay attempts,
+policy denials, integrity changes, vulnerable installed components, health-gate
+failures, circuit breakers, and unusual service behavior. Primary private
+content stays out of operational telemetry.
+
+The response path can restrict a capability, revoke a grant, rotate a
+credential, quarantine a component, stage a signed update, roll back a change,
+or restore a verified checkpoint. Each action remains bounded by the authority
+and recovery requirements of its owner. Firmware changes stay blocked until
+vendor recovery is proven on the exact hardware.
+
+## Evidence status
+
+| Maturity | Evidence |
+| --- | --- |
+| Implemented | Unit, simulation, local integration, and hosted CI cover person and context isolation, deny-by-default policy, capability grants, exact confirmations, governed memory, signed releases, update rollback, encrypted backup, and synthetic incident paths. |
+| Being proven | Physical boot and key custody, long-running intrusion monitoring, reboot health gates, repeated recovery exercises, supported model profiles, representative modality devices, and participatory trust evaluation. |
+| Envisioned | Qualified hardware security profiles, supported security operations, governed threat-intelligence feeds, privacy relay profiles, and independently reviewed household-appliance deployments. |
+
+Passing software checks establishes the listed software behavior. It does not
+establish production security, physical resistance, provider certification, or
+supported appliance operation.
+
+## Vulnerability reporting
+
+Report suspected vulnerabilities privately through the repository's
+[security policy](https://github.com/project-unisonOS/unison-workspace/security/policy).
+Include the affected repository and revision, observed behavior, reproduction
+information, and potential impact when it is safe to do so. Public issues are
+appropriate after coordinated disclosure or when the report contains no
+sensitive security detail.
+
+Continue with the [trust decisions](../trust-decisions.md),
+[backup and recovery](../backup-recovery.md), or
+[appliance release lifecycle](../developers/appliance-release-lifecycle.md).

@@ -46,6 +46,9 @@ for supporting detail.
   policy, and continuity live.
 - **Context space** is a separately governed collection of information with its
   own purpose, membership, access, sharing, retention, and security policy.
+- **Usage-driven taxonomy** is person-scoped organization that can grow from
+  repeated patterns through an explainable proposal, explicit approval, and a
+  separate reversible migration decision.
 - **Capability** is a versioned skill, tool, connector, or workflow that acts
   through an explicit grant.
 - **Modality** is a native form of input or output connected through the common
