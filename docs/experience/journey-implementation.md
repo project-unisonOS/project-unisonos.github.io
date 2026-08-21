@@ -1,10 +1,14 @@
 # Journey implementation map
 
-This map connects the six public usage journeys to the repositories, shared
-contracts, evidence, and next qualification gates that make them actionable for
-contributors and coding agents. Repository ownership identifies the primary
-implementation boundary. Identity, policy, context, semantic experience, and
-receipts remain shared platform responsibilities.
+<section class="story-hero" aria-labelledby="implementation-introduction">
+  <p class="story-kicker">From a person's intent to owned work</p>
+  <h2 id="implementation-introduction">Each journey connects to repositories, evidence, and a next gate</h2>
+  <p class="story-lead">This map helps contributors and coding agents find the software owners, shared contracts, current evidence, and qualification work behind the six public usage journeys.</p>
+</section>
+
+Repository ownership identifies the primary implementation home. Identity,
+policy, context, semantic experience, and receipts remain shared platform
+responsibilities.
 
 ## Shared platform foundation
 
@@ -96,10 +100,10 @@ fixture evidence.
 
 **Primary implementation:** `unison-orchestrator`, `unison-context`,
 `unison-storage`, `unison-inference`, `unison-capabilities`, `unison-policy`, and
-the modality repositories provide the runtime boundaries. Signed offline
+the modality repositories provide the runtime controls. Signed offline
 knowledge packaging and domain review need dedicated ownership.
 
-**Evidence now:** offline-state contracts, deterministic hazard boundaries,
+**Evidence now:** offline-state contracts, deterministic hazard controls,
 local-model fallback, source provenance, degraded operation, and the simulated
 water-leak journey establish a software foundation.
 
@@ -107,11 +111,11 @@ water-leak journey establish a software foundation.
 freshness and revocation procedures, supported local model profiles,
 representative outage testing, and conservative physical demonstrations.
 
-## Contributor workflow
+## Take a journey into development
 
 For a journey contribution:
 
-1. begin with the person intent and prohibited outcomes;
+1. begin with the person's intent, desired outcome, and safety constraints;
 2. identify the owning repository and shared contract versions;
 3. define context spaces, grants, authority, confirmation, and recovery;
 4. add deterministic fixtures before model-dependent behavior;
@@ -123,3 +127,8 @@ The [workspace and repository guide](../developers/workspace-and-repos.md)
 provides the complete repository directory. The
 [current status](../current-status.md) remains the public source for maturity
 claims.
+
+<nav class="next-path" aria-label="Continue from the journey implementation map">
+  <a href="../usage-journeys/"><strong>Return to the usage journeys</strong><span>Start with the person, situation, and intended outcome.</span></a>
+  <a href="../../developers/task-finder/"><strong>Find contributor work</strong><span>Choose a task by repository, evidence need, or project interest.</span></a>
+</nav>

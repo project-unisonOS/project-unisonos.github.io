@@ -105,7 +105,7 @@ sources, unresolved concepts, and the learner's chosen next step.
 <dl class="journey-contract">
   <div><dt>Governed context</dt><dd>An explicit shared space contains the agreed evidence and task state. Each participant's private records, preferences, and modality state remain independently governed.</dd></div>
   <div><dt>Orchestration</dt><dd>A common semantic outcome carries meaning, provenance, uncertainty, choices, confirmation, cancellation, and recovery across every expression.</dd></div>
-  <div><dt>Native experience</dt><dd>One person might use conversational and Braille interaction while another uses a visual and touch composition. Future sign language or BCI adapters connect at the same semantic boundary.</dd></div>
+  <div><dt>Native experience</dt><dd>One person might use conversational and Braille interaction while another uses a visual and touch composition. Future sign language or BCI adapters connect through the same semantic contract.</dd></div>
   <div><dt>Authority and safety</dt><dd>Each participant controls their own disclosures and confirmations. The shared action advances only with the authority required by its policy.</dd></div>
 </dl>
 
@@ -124,7 +124,7 @@ remains private. Explore the detailed [shared understanding scenarios](shared-un
   <div><dt>Governed context</dt><dd>Locally stored emergency references, household systems, manuals, shutoff locations, supplies, accessibility needs, and selected emergency information remain available during an outage.</dd></div>
   <div><dt>Orchestration</dt><dd>A local model works with versioned offline knowledge packages, deterministic hazard rules, exact-device manuals, source provenance, freshness metadata, and jurisdiction-aware guidance.</dd></div>
   <div><dt>Native experience</dt><dd>Concise conversation, visual steps, Braille instructions, alerts, or another available modality adapts to urgency, environmental constraints, and the person's interaction needs.</dd></div>
-  <div><dt>Authority and safety</dt><dd>Emergency services and qualified medical, gas, electrical, and repair help receive priority whenever available. High-risk guidance uses conservative boundaries and explicit confirmation.</dd></div>
+  <div><dt>Authority and safety</dt><dd>Emergency services and qualified medical, gas, electrical, and repair help receive priority whenever available. High-risk guidance uses conservative safety controls and explicit confirmation.</dd></div>
 </dl>
 
 The system can identify the relevant local shutoff record, present cited manual
@@ -144,7 +144,7 @@ journey by preserving the same reviewable structure:
 
 <ol class="system-flow">
   <li><strong>State the person's intent</strong><span>Describe the desired outcome, current situation, needs, preferences, and constraints.</span></li>
-  <li><strong>Identify governed context</strong><span>Name each context space, purpose, minimum disclosure, retention rule, and authority boundary.</span></li>
+  <li><strong>Identify governed context</strong><span>Name each context space, purpose, minimum disclosure, retention rule, and responsible authority.</span></li>
   <li><strong>Compose the route</strong><span>Show deterministic skills, tools, retrieval, models, inference bounds, and fallback behavior.</span></li>
   <li><strong>Design native experiences</strong><span>Preserve one semantic outcome while using the strengths of every supported modality.</span></li>
   <li><strong>Define control and recovery</strong><span>Place confirmation, cancellation, receipts, incident handling, and professional escalation where they belong.</span></li>
@@ -152,7 +152,7 @@ journey by preserving the same reviewable structure:
 </ol>
 
 <div class="evidence-band">
-  <p><strong>Evidence boundary:</strong> These journeys combine implemented foundations, capabilities being proven, and envisioned experiences. Each journey states its maturity. The <a href="../../current-status/">current status</a> page is the source for repository-level evidence.</p>
+  <p><strong>Evidence:</strong> These journeys combine implemented foundations, capabilities being proven, and envisioned experiences. Each journey states its maturity. The <a href="../../current-status/">current status</a> page is the source for repository-level evidence.</p>
 </div>
 
 <nav class="next-path" aria-label="Continue exploring Unison">

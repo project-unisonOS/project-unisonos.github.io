@@ -1,53 +1,80 @@
 # Assistant workflows
 
-**Maturity: tested engineering foundation. Production support remains pending.**
+<section class="story-hero" aria-labelledby="workflow-introduction">
+  <p class="story-kicker">Useful work under personal authority</p>
+  <h2 id="workflow-introduction">Unison carries intent through a reviewable plan</h2>
+  <p class="story-lead">Administrative workflows combine context, deterministic skills, governed inference, and external capabilities to help a person move from a request to a durable outcome.</p>
+</section>
 
-The current implementation focuses on measurable administrative competence
-with deliberately bounded authority. Its engineering profile covers:
+## A request becomes a purposeful plan
 
-- calendar coordination;
-- email triage, summary, and draft preparation;
-- reminders, follow-up, and commitment review;
-- shared household coordination;
-- relationship-aware contact recall;
-- document retrieval and website research;
-- travel option and itinerary planning.
+A person might ask Unison to prepare for the week, gather documents for an
+appointment, coordinate a household commitment, research travel, or draft a
+reply. The plan identifies:
 
-## You can inspect the plan
+- the outcome and current constraints;
+- the context spaces needed for that purpose;
+- the skills, tools, models, and providers involved;
+- recipients and information proposed for disclosure;
+- choices, confirmation points, and recovery routes; and
+- related commitments that may be affected.
 
-Before acting, Unison identifies the purpose, selected context spaces,
-capabilities, providers, recipients, information disclosed, reversibility,
-charter constraints, and related commitments. External or consequential steps
-require approval of the exact action and recipients.
+The person can inspect the plan at the level of detail useful to them. A native
+conversation, visual composition, Braille experience, or another supported
+modality preserves the same purpose, choices, and control.
 
-Email, websites, documents, and provider responses are untrusted content. They
-cannot grant permission, change recipients, or override your charter and
-privacy policy.
+## Common workflow patterns
 
-## Draft and proposal first
+<div class="story-grid boundary-grid">
+  <section><h3>Prepare and organize</h3><p>Bring together schedules, records, commitments, and relevant context for a meeting, appointment, trip, or household activity.</p></section>
+  <section><h3>Find and explain</h3><p>Retrieve documents and trusted sources, compare evidence, preserve citations, and compose an explanation suited to the person and moment.</p></section>
+  <section><h3>Coordinate</h3><p>Propose calendar changes, reminders, follow-ups, shared household plans, and relationship-aware communication.</p></section>
+  <section><h3>Draft</h3><p>Prepare messages, forms, summaries, itineraries, and other artifacts for review through an appropriate native experience.</p></section>
+</div>
 
-Email remains draft-first. Calendar coordination remains proposal-first. The
-current boundary does not automatically send, publish, book, purchase, pay, or
-perform high-impact actuation.
+## External content contributes evidence
 
-## Failures stay visible
+Email, websites, documents, tool output, and provider responses can inform the
+plan. They do not establish identity, consent, policy, recipients, or authority.
+The responsible platform services validate proposed disclosures and
+consequential actions against the person's current grants and policies.
 
-Provider calls use idempotency keys to prevent silent duplicates. If a provider
-times out or partially fails, Unison shows retry, cancellation, compensation,
-and compatible-provider replacement paths while retaining the original plan
-and local audit.
+The tested foundation keeps email in a draft-first route and calendar changes
+in a proposal-first route. Sending, publishing, booking, purchasing, payment,
+and high-impact actuation require separately qualified capabilities and the
+confirmation defined by policy.
 
-## Success means useful outcomes
+## Progress and failure remain visible
 
-Locally inspectable outcome evidence measures tasks and commitments completed,
-interruptions avoided, recovery, minimized external calls, accessibility,
-estimated or user-confirmed time returned, and privacy-boundary incidents.
-Advertising, sponsored placement, engagement, attention capture, personal-data
-acquisition, and provider lock-in are prohibited ranking signals.
+The experience communicates which work is complete, which provider is pending,
+what partial result is already useful, and whether any side effect occurred.
+Provider calls use idempotency controls where supported. Timeouts and partial
+failures can lead to retry, provider substitution, cancellation, compensation,
+or a durable partial outcome while preserving the original intent.
 
-## Honest limits
+## Repetition can improve the system
 
-Mandatory acceptance uses synthetic fake providers without personal data.
-Live-provider acceptance is optional and limited to dedicated synthetic
-accounts and reversible draft/proposal actions. This phase does not provide a
-supported booking, purchasing, payments, or professional-advice service.
+A novel request can use governed inference to assemble a safe route from
+available capabilities. When similar requests recur, Unison can propose a
+repeatable skill with explicit inputs, authority, tests, failure handling, and
+evidence. The person or responsible contributor reviews that proposal before it
+becomes part of the dependable workflow library.
+
+## Success is an outcome a person values
+
+Locally inspectable evidence can measure completed commitments, useful recovery,
+reduced interruptions, minimized external calls, accessibility, and estimated
+or person-confirmed time returned. Ranking follows the person's goals and
+policies. Sponsorship, attention capture, personal-data acquisition, and
+provider preference carry no authority to change that purpose.
+
+<aside class="evidence-band" aria-label="Assistant workflow evidence">
+  <p><strong>Implemented:</strong> Synthetic fixtures exercise calendar coordination, email triage and drafting, reminders, household coordination, document retrieval, website research, and travel planning.</p>
+  <p><strong>Being proven:</strong> Supported provider profiles, live recovery behavior, native modality completion, and person-confirmed usefulness require additional hosted and participatory evidence.</p>
+  <p><strong>Current support:</strong> The engineering foundation is tested with fake providers and dedicated synthetic accounts. Production service claims await explicit qualification.</p>
+</aside>
+
+<nav class="next-path" aria-label="Continue exploring assistant workflows">
+  <a href="../experience/usage-journeys/"><strong>Explore life-centered journeys</strong><span>See workflows in household, health, research, education, shared, and offline contexts.</span></a>
+  <a href="../developers/workflow-design/"><strong>Design a workflow</strong><span>Turn a recurring request into a governed and testable route.</span></a>
+</nav>
