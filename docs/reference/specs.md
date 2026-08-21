@@ -6,7 +6,7 @@ behavior owns its normative contract and tests.
 
 ## Contract hierarchy
 
-| Contract area | Canonical owner | Consumer rule |
+| Contract area | Owning repository | Consumer rule |
 | --- | --- | --- |
 | Shared runtime payloads and Python bindings | [`unison-common`](https://github.com/project-unisonOS/unison-common) | Import or validate the declared version; never copy the schema into a service |
 | Component-specific API and state | Implementing component repository | Follow its README, schema, migration, and contract tests |
@@ -53,7 +53,7 @@ cannot create trusted contract fields merely by emitting matching JSON.
 
 ## Change sequence
 
-1. identify the canonical owner and affected authority boundary;
+1. identify the owning repository and affected authority boundary;
 2. update the normative schema and bindings;
 3. add positive, negative, migration, cancellation, and recovery tests as
    applicable;

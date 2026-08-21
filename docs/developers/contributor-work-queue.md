@@ -75,7 +75,7 @@ authority, tests, and handoff remain durable.
 
 ### CQ-05: Evidence-link and freshness automation
 
-- **Objective:** Check canonical evidence links, release identifiers, owner
+- **Objective:** Check maintained evidence links, release identifiers, owner
   mappings, archived routes, and time-sensitive status markers on a schedule.
 - **Non-goals:** Deciding whether evidence is sufficient or rewriting maturity
   claims automatically.
@@ -132,7 +132,7 @@ participatory evidence.
 ## Claim and handoff
 
 Use the [agent-ready starting sequence](task-finder.md#the-agent-ready-starting-sequence).
-The task packet records objective, non-goals, canonical sources, starting
+The task packet records objective, non-goals, authoritative sources, starting
 commits, environment, writable repositories, authority limits, ordered checks,
 evidence class, recovery, security and accessibility constraints, unresolved
 risks, and next action.

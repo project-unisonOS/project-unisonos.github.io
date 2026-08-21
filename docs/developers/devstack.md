@@ -20,7 +20,7 @@ From a `unison-workspace` checkout:
 ./scripts/smoke.sh
 ```
 
-Under the hood, this composes the canonical wiring file plus the ports overlay:
+Under the hood, this composes the maintained wiring file plus the ports overlay:
 
 ```bash
 docker compose -p unison-devstack \
