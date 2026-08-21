@@ -3,6 +3,10 @@
 The first candidate boundary is Ubuntu 24.04 LTS on x86-64 UEFI systems. No
 reference system has completed the physical release gate yet.
 
+The broader [hardware program](../hardware-program.md) connects this immediate
+qualification work to modular nodes, a possible household rack, dated BOMs,
+open design sources, and the 2027 and 2028 component horizon.
+
 ## What software can check now
 
 The installer preflight can report:
