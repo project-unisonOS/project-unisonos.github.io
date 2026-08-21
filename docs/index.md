@@ -4,7 +4,7 @@
   <div class="home-hero-copy">
     <p class="eyebrow">Open source. Local first. Made to become yours.</p>
     <h2 id="home-introduction" class="hero-deck">Unison is a different path for personal AI.</h2>
-    <p class="hero-lead">It is an open-source project for creating a truly personal intelligence system at home. Unison keeps your evolving context under your authority, adapts to how you communicate and live, and uses the best available mix of local models, deterministic tools, and carefully governed external services.</p>
+    <p class="hero-lead">It is an open-source project for intent-based computing at home. You begin with what you want to accomplish. Unison uses your current context, needs, preferences, and policies to assemble an appropriate path and generate the experience that supports you.</p>
     <div class="hero-actions" aria-label="Introduction links">
       <a class="cta cta-primary" href="vision/">Explore the vision</a>
       <a class="cta cta-secondary" href="current-status/">See what works today</a>
@@ -12,10 +12,10 @@
     </div>
     <p class="status-note"><strong>Current state:</strong> Experimental software is available now. Integrated hardware and real-world pilots are still in development.</p>
   </div>
-  <div class="unison-mark" aria-label="Unison brings your context, models, tools, skills, devices, and preferred modalities together as your personal intelligence system.">
-    <p class="unison-mark-label">A personal system, composed for you</p>
+  <div class="unison-mark" aria-label="Unison transforms your intent through governed context, models, tools, skills, devices, and preferred modalities into your personal experience.">
+    <p class="unison-mark-label">Intent becomes your experience</p>
     <div class="unison-equation" aria-hidden="true">
-      <span>Your context</span><b>+</b><span>Models, tools, and skills</span><b>+</b><span>Your devices and modalities</span><b>=</b><strong>Your Unison</strong>
+      <span>Your intent and context</span><b>+</b><span>Governed models, tools, and skills</span><b>+</b><span>Your devices and modalities</span><b>=</b><strong>Your experience</strong>
     </div>
   </div>
 </section>
@@ -29,6 +29,23 @@
   <section><h3>Your experience is composed for you</h3><p>Meaning can become conversation, visual presentation, Braille, touch, or a future modality suited to you.</p></section>
   <section><h3>Models and services are replaceable</h3><p>Local and external participants contribute through governed, inspectable contracts.</p></section>
   <section><h3>Your goals guide the system</h3><p>Skills, tools, and inference work together to pursue useful outcomes within your policies.</p></section>
+</div>
+
+## Intent-based computing
+
+<div class="meaning-layout">
+  <div>
+    <p class="section-intro">Everything begins with what you are trying to accomplish.</p>
+    <p>Intent brings together your desired outcome, current context, needs, preferences, timing, and boundaries. You can express it naturally through any supported modality. Unison then resolves the relevant identity and policy, assembles suitable capabilities, and generates an experience for the person and situation.</p>
+    <p>This organizing principle lets models, tools, interfaces, and devices evolve while the human objective remains central.</p>
+    <p><a href="how-unison-works/">Follow an intent through the system</a></p>
+  </div>
+  <ol class="intent-path" aria-label="How intent becomes a personal experience">
+    <li><strong>Express</strong><span>You communicate what you want to accomplish.</span></li>
+    <li><strong>Understand</strong><span>Unison resolves your context, needs, preferences, and constraints.</span></li>
+    <li><strong>Orchestrate</strong><span>Policy governs the selected skills, tools, models, and information.</span></li>
+    <li><strong>Experience</strong><span>The outcome arrives in a form suited to you and the moment.</span></li>
+  </ol>
 </div>
 
 ## It becomes yours through use

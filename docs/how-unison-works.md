@@ -6,11 +6,23 @@
   <p class="story-lead">Unison accepts a person's intent in the modality available to them, assembles a bounded route through context, skills, tools, and models, and returns an experience suited to that person and situation.</p>
 </section>
 
+## Intent is the organizing unit
+
+Intent describes the outcome a person is seeking together with the context that
+shapes it: identity, needs, preferences, timing, constraints, relationships, and
+the experience available in the moment. A spoken sentence, Braille command,
+gesture, image, device event, or structured workflow can all express intent.
+
+The intent remains centered on the human objective as Unison selects context,
+policy, deterministic capabilities, governed inference, and a native output
+modality. This allows the route and expression to change while preserving what
+the person is trying to accomplish.
+
 ## A request in motion
 
 <ol class="system-flow">
-  <li><strong>Receive intent</strong><span>A local or remote channel captures speech, text, touch, Braille, visual input, device events, or another supported modality.</span></li>
-  <li><strong>Establish the person and space</strong><span>The trust layer resolves identity, assurance, active context space, consent, and the policies that apply.</span></li>
+  <li><strong>Receive and interpret intent</strong><span>A local or remote channel captures speech, text, touch, Braille, visual input, device events, or another supported modality and maps it into a proposed human objective.</span></li>
+  <li><strong>Establish the person and context</strong><span>The trust layer resolves identity, assurance, active context spaces, consent, preferences, needs, and the policies that apply.</span></li>
   <li><strong>Assemble a route</strong><span>Core selects reliable workflows where they fit and composes bounded inference, retrieval, or planning for novel parts of the request.</span></li>
   <li><strong>Grant capabilities</strong><span>Tools and connectors receive the data, credentials, purpose, and duration authorized for their portion of the work.</span></li>
   <li><strong>Evaluate the outcome</strong><span>Policy checks facts, sources, recipients, risk, confirmation, provenance, and recovery before an action or response proceeds.</span></li>

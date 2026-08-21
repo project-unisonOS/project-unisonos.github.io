@@ -52,6 +52,11 @@ uncertainty, confirmation, and recovery.
 
 ## A system that keeps finding a path
 
+Unison is intent-based computing. Intent captures what a person wants to
+accomplish together with their current context, needs, preferences, timing, and
+boundaries. It gives the system a stable human objective while models, tools,
+devices, and interaction modalities remain flexible.
+
 Reliable skills, tools, and workflows provide consistent routes for familiar
 work. Governed inference helps resolve novel requests and ambiguous situations.
 When recurring requests reveal a useful pattern, Unison can prepare a proposed
