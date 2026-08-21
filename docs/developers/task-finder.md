@@ -8,7 +8,7 @@ below to find the owning repository, required context, and evidence gate.
 
 | I want to contribute to | Start with | Primary repositories |
 | --- | --- | --- |
-| Intent resolution, routing, skills, or tools | [How Unison works](../how-unison-works.md) and the applicable journey | `unison-orchestrator`, `unison-intent-graph`, `unison-capability` |
+| Intent resolution, routing, skills, or tools | [How Unison works](../how-unison-works.md) and the applicable journey | `unison-orchestrator`, `unison-intent-graph`, `unison-capabilities` |
 | Identity, privacy, consent, or policy | [Security reference](../reference/security.md) and [trust decisions](../trust-decisions.md) | `unison-auth`, `unison-consent`, `unison-policy`, `unison-context` |
 | Memory, retrieval, provenance, or taxonomy | [Context spaces](../household-context-spaces.md) and [taxonomy evolution](../taxonomy-evolution.md) | `unison-context`, `unison-storage`, `unison-context-graph`, `unison-common` |
 | Models, local inference, or lifecycle routing | [Architecture](../architecture/overview.md) and [current status](../current-status.md) | `unison-inference`, `unison-orchestrator`, `unison-platform` |
@@ -90,5 +90,6 @@ the durable project state.
 - Documentation changes follow the [ownership and freshness policy](../project/documentation-governance.md).
 - The handoff records unresolved risks and the next action.
 
-Continue with the [contribution workflow](contributing.md) or
+Continue with the [contributor work queue](contributor-work-queue.md),
+[contribution workflow](contributing.md), or
 [development environment](devstack.md).

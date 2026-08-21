@@ -14,7 +14,7 @@ receipts remain shared platform responsibilities.
 | Intent resolution and orchestration | [`unison-orchestrator`](https://github.com/project-unisonOS/unison-orchestrator), [`unison-intent-graph`](https://github.com/project-unisonOS/unison-intent-graph) |
 | Person identity, consent, and policy | [`unison-auth`](https://github.com/project-unisonOS/unison-auth), [`unison-consent`](https://github.com/project-unisonOS/unison-consent), [`unison-policy`](https://github.com/project-unisonOS/unison-policy) |
 | Governed context, memory, and durable data | [`unison-context`](https://github.com/project-unisonOS/unison-context), [`unison-context-graph`](https://github.com/project-unisonOS/unison-context-graph), [`unison-storage`](https://github.com/project-unisonOS/unison-storage) |
-| Models, tools, and external capabilities | [`unison-inference`](https://github.com/project-unisonOS/unison-inference), [`unison-capability`](https://github.com/project-unisonOS/unison-capability), [`unison-agent-vdi`](https://github.com/project-unisonOS/unison-agent-vdi) |
+| Models, tools, and external capabilities | [`unison-inference`](https://github.com/project-unisonOS/unison-inference), [`unison-capabilities`](https://github.com/project-unisonOS/unison-capabilities), [`unison-agent-vdi`](https://github.com/project-unisonOS/unison-agent-vdi) |
 | Native modality expression | [`unison-experience-renderer`](https://github.com/project-unisonOS/unison-experience-renderer), [`unison-io-core`](https://github.com/project-unisonOS/unison-io-core), modality-specific I/O repositories |
 | Release and deployment evidence | [`unison-platform`](https://github.com/project-unisonOS/unison-platform), [`unison-devstack`](https://github.com/project-unisonOS/unison-devstack), [`unison-infrastructure`](https://github.com/project-unisonOS/unison-infrastructure) |
 
@@ -23,7 +23,7 @@ receipts remain shared platform responsibilities.
 **Primary implementation:** governed source intake, household inventory,
 maintenance rules, exact product matching, recall evidence, procedures, and
 draft external actions span `unison-context`, `unison-storage`,
-`unison-orchestrator`, `unison-policy`, `unison-capability`, and
+`unison-orchestrator`, `unison-policy`, `unison-capabilities`, and
 `unison-io-vision`.
 
 **Evidence now:** unit and simulation evidence covers private sources, product
@@ -51,7 +51,7 @@ coverage, and financial authority stays with the person and applicable experts.
 
 ## Contextual research
 
-**Primary implementation:** `unison-orchestrator`, `unison-capability`,
+**Primary implementation:** `unison-orchestrator`, `unison-capabilities`,
 `unison-agent-vdi`, `unison-network-vpn`, `unison-context`, and
 `unison-inference` own query planning, governed retrieval, provenance,
 disclosure, source comparison, privacy routes, and resumable outcomes.
@@ -95,7 +95,7 @@ fixture evidence.
 ## Offline MacGyver mode
 
 **Primary implementation:** `unison-orchestrator`, `unison-context`,
-`unison-storage`, `unison-inference`, `unison-capability`, `unison-policy`, and
+`unison-storage`, `unison-inference`, `unison-capabilities`, `unison-policy`, and
 the modality repositories provide the runtime boundaries. Signed offline
 knowledge packaging and domain review need dedicated ownership.
 

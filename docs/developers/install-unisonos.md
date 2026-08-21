@@ -1,71 +1,80 @@
-# Install UnisonOS
+# Installation status and paths
 
-There is not yet a supported production installation. The first downloadable
-software preview targets Ubuntu 24.04 LTS on x86-64 UEFI hardware.
+UnisonOS has one public software preview and no supported production
+installation. This page is the canonical public router for installation,
+evaluation, and development paths.
 
-Start from the
-[v0.6.0-preview.1 release page](https://github.com/project-unisonOS/unison-platform/releases/tag/v0.6.0-preview.1).
-Download the bundle, `SHA256SUMS`, its Ed25519 signature, and the preview public
-key from that one release. Do not mix assets from different versions.
+## Choose a path
 
-## Native candidate route
+| Your goal | Current path | Status |
+| --- | --- | --- |
+| Inspect the release without changing a system | Verify the public assets and evidence | Available, unsupported preview |
+| Evaluate the native appliance transaction | Use a disposable Ubuntu 24.04 LTS x86-64 UEFI system | Available, unsupported preview |
+| Develop Unison components | Use `unison-workspace` on Ubuntu or WSL2 with Docker | Active development path |
+| Install an everyday household appliance | Wait for a promoted release and named compatible hardware | Not available |
+| Use a WSL image, VM image, or installer ISO | Review archived engineering history only | Archived, no current artifact |
+
+The current candidate is
+[`v0.6.0-preview.1`](https://github.com/project-unisonOS/unison-platform/releases/tag/v0.6.0-preview.1),
+published July 24, 2026. Keep irreplaceable personal information out of an
+evaluator installation.
+
+## Evaluate the public preview
+
+The preview targets Ubuntu 24.04 LTS on x86-64 UEFI hardware. Download the
+bundle, `SHA256SUMS`, its Ed25519 signature, and the preview public key from the
+same release. Verify the artifact and review its exact system-change plan before
+installation.
 
 The candidate is owned by
 [`unison-platform`](https://github.com/project-unisonOS/unison-platform) and
-uses:
+contains:
 
-- `installer/install-native.sh` and `unisonctl`;
+- the native installer and `unisonctl` lifecycle entry point;
 - `compose/compose.supported.yaml`;
-- a release-provided environment containing one digest-pinned image reference
-  for every required service; and
-- a deterministic supported-release manifest; and
-- a signed deterministic bundle, pre-privilege verifier, exact system-change
-  plan, transactional activation, and installation receipt.
+- one digest-pinned image reference for every required service;
+- a deterministic release manifest and signed bundle;
+- pre-privilege verification and an exact system-change plan; and
+- transactional activation and an installation receipt.
 
-The older `compose.native.yaml` route and repository-oriented installer remain
-useful engineering inputs. Supported public installation follows a separate
-promotion gate.
+Follow the [preview evaluation walkthrough](evaluate-preview.md). It offers
+artifact-only, integrity, and isolated-install depths without implying support.
 
-## Checks already implemented
+## Develop from the workspace
 
-Automated preflight evaluates Ubuntu version, architecture, CPU, RAM, free
-storage, virtualization, UEFI, Docker/Compose, clock state, and audio presence.
-Unsupported platform or resource conditions block the simulated candidate.
+The development path uses
+[`unison-workspace`](https://github.com/project-unisonOS/unison-workspace) as
+the version and integration authority. It pins component repositories and
+provides bootstrap, doctor, startup, smoke-test, security-overlay, and shutdown
+commands.
 
-The transaction layer supports versioned staging, digest verification, atomic
-activation, idempotent reinstall, injected-interruption recovery, repair, safe
-software removal, and separately confirmed factory reset.
+Continue with [developer setup](onboarding.md), then use the
+[workspace and repository guide](workspace-and-repos.md). Development
+environments do not establish appliance or hardware compatibility.
 
-## What the published preview proves
+## Understand what the preview proves
 
-The publication workflow rebuilt ten project images from recorded source
-commits, pinned all 13 runtime images by digest, signed project images, emitted
-SBOM and provenance evidence, applied available OS security updates, and
-published vulnerability results. A separate job downloaded the public release,
-verified the complete asset set, installed it into a clean temporary prefix,
-and rejected incomplete and tampered copies.
+Automated evidence covers platform preflight, deterministic release inputs,
+artifact signatures and digests, public-download verification, simulated
+transactional installation, interruption recovery, repair, safe software
+removal, and separately confirmed factory reset.
 
-## What is not yet validated
+It does not establish clean physical installation, reboot and power recovery,
+accessible first run, microphone and speaker behavior, TPM operation, thermal
+and energy limits, update and rollback on a physical device, replacement
+restore, or supported household use.
 
-Do not treat this as production installation guidance until the project
-promotes an immutable release candidate and records:
+Review the [appliance release lifecycle](appliance-release-lifecycle.md),
+[compatibility reference](../reference/compatibility.md), and
+[public evidence index](../project/evidence-index.md) for exact gates.
 
-- clean installation on two named reference systems;
-- reboot and real power-interruption recovery;
-- accessible first run and owner/recovery enrollment;
-- microphone, speaker, USB, and Bluetooth results;
-- update, rollback, backup, and replacement restore;
-- uninstall and factory reset on the exact candidate; and
-- verification using only public downloads and documentation.
+## Historical channels
 
-## Historical evaluator channels
+The current release publishes no WSL distribution, VM disk image, or installer
+ISO. Their historical pages remain available as archived engineering context:
 
-Older WSL2, Linux VM, and split ISO artifacts are not part of the current
-download. Their pages remain as historical engineering context only:
-[WSL2](install-wsl2.md), [Linux VM](install-linux-vm.md), and
-[bare metal](install-bare-metal.md).
+- [archived WSL2 channel](install-wsl2.md);
+- [archived Linux VM channel](install-linux-vm.md); and
+- [archived bare-metal ISO channel](install-bare-metal.md).
 
-Review the [release lifecycle](appliance-release-lifecycle.md) and
-[compatibility status](../reference/compatibility.md) before evaluating. The
-[preview evaluation walkthrough](evaluate-preview.md) begins with artifact
-review and integrity verification before any system changes.
+Historical artifacts and instructions do not become current installation paths.

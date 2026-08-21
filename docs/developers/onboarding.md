@@ -1,84 +1,72 @@
-# Developer Onboarding
+# Developer setup
 
-This page consolidates the developer onboarding flow. Use it as the default path; follow the linked pages for deeper details when needed.
+Use this path to create an agent-readable, reproducible Unison development
+environment. Installation and appliance evaluation follow the separate
+[installation status and paths](install-unisonos.md).
 
-## 1) Get Started
+## 1. Read the workspace contract
 
-Recommended path: run the devstack locally (WSL2 or Linux) and iterate against real services.
+Open [`unison-workspace`](https://github.com/project-unisonOS/unison-workspace)
+and read, in order:
 
-- Next step: [Prerequisites](prerequisites.md)
-- Then: [Workspace & Repos](workspace-and-repos.md) → [Devstack Setup](devstack.md)
+1. `AGENTS.md`;
+2. `docs/agent-contributor-model.md`;
+3. `docs/repo-map.md`;
+4. the target component README; and
+5. the applicable journey, contract, and task packet.
 
-## 2) Install Options (Offline / Online)
+The workspace is the integration manifest. Components own their runtime code,
+normative contracts, focused tests, and implementation evidence.
 
-Model packs are experimental, versioned additions to the development stack.
+## 2. Validate the host
 
-- Offline model packs: `unison-models install --path /path/to/pack.tgz`
-- Online model packs: `unison-models install --fetch https://…/pack.tgz`
-- Details: [Install Options](install-options.md) and [Model Packs](../architecture/deep-dive.md#model-packs)
+Use an Ubuntu development environment that meets the
+[development prerequisites](prerequisites.md). From the workspace root, run:
 
-## 3) Prerequisites
+```bash
+./scripts/bootstrap-dev.sh
+python3 ./scripts/validate-dev-environment.py
+./scripts/doctor.sh
+```
 
-Unison is developed and tested primarily on Ubuntu (native or under WSL2).
+If the target packet names another entry point, follow that packet. Record the
+host, Python version, workspace revision, submodule revisions, and results in
+the durable handoff.
 
-- OS: Ubuntu 22.04/24.04 (or Windows 11 + WSL2)
-- Tools: Docker (Compose v2), Python 3.10+ (3.12 recommended), Node.js 18+, Git, `make`
-- Details: [Prerequisites](prerequisites.md)
+## 3. Select the smallest environment
 
-## 4) Workspace & Repos
+Focused component work begins in the owning repository with its README and
+narrow test. Cross-component work uses the workspace-pinned revisions.
 
-The recommended workflow is the workspace meta-repo (submodules) so versions stay aligned.
+Start the development stack when the task requires live integration:
 
-- Bootstrap: `./scripts/bootstrap.sh`
-- Start devstack: `./scripts/up.sh` (ports) or `./scripts/up-security.sh` (no host ports)
-- Smoke test: `./scripts/smoke.sh` (or `./scripts/smoke-security.sh`)
-- Details: [Workspace & Repos](workspace-and-repos.md)
+```bash
+./scripts/up.sh
+./scripts/smoke.sh
+```
 
-## 5) Devstack Setup
+Use the internal-network security profile when host ports are unnecessary:
 
-Devstack is the canonical local wiring of the core control plane, renderer, inference, and backing services.
+```bash
+./scripts/up-security.sh
+./scripts/smoke-security.sh
+```
 
-- Bring-up and profiles: [Devstack Setup](devstack.md)
+## 4. Make and validate the change
 
-## 6) Renderer
+Use a clean branch or worktree. Preserve unrelated contributor work. Run the
+narrowest relevant component test first, then the applicable workspace boundary
+test. Keep unit, simulation, hosted CI, physical hardware, and participatory
+evidence labels distinct.
 
-The experience renderer is the primary “surface” during development and evaluation.
+## 5. Leave a durable handoff
 
-- How to run and connect surfaces: [Renderer](renderer.md)
+Record objective, non-goals, starting revisions, environment, changed
+contracts, exact checks and results, evidence class, commits, pull requests,
+unresolved risks, recovery, and next action. Update the component first, then
+update the workspace gitlink after the component revision is pushed and
+validated.
 
-## 7) Build, Deploy, and Images
-
-There is no supported installation yet. Ubuntu 24.04 LTS on x86-64 UEFI
-hardware is the first native support candidate.
-
-The candidate contract lives in `unison-platform` and centers on the native
-installer, `unisonctl`, `compose/compose.supported.yaml`, digest-pinned image
-inputs, and the deterministic release manifest.
-
-The current platform release publishes one native x86-64 unsupported preview.
-WSL2 remains useful for development, but current releases do not publish WSL,
-VM, or ISO images.
-
-- How builds/releases are orchestrated: [Build, Deploy, and Images](workflow-design.md)
-- Image types + local reproduction commands: [Images, Builds, and Releases](images-builds-and-releases.md)
-
-## 8) Testing
-
-Start with the smallest test that covers your change (unit), then expand to integration/smoke as needed.
-
-- Details: [Testing](testing.md)
-
-## 9) Hardware Deployment
-
-Use the hardware guidance when you’re validating device installs, networking, and ports on real machines.
-
-- Details: [Hardware Deployment](hardware.md)
-
-## 10) Releases
-
-Release docs should be read with one priority in mind:
-
-- current Ubuntu native preview and its verification evidence first
-- historical evaluator artifacts only as archived engineering context
-
-- Start here: [Releases](releases.md)
+Find work in the [contributor queue](contributor-work-queue.md), review the
+[contribution workflow](contributing.md), or continue to the
+[development stack](devstack.md).

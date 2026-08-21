@@ -40,17 +40,14 @@ nav:
       - Trust Decisions: trust-decisions.md
   - Build:
       - Get Started:
-          - Install UnisonOS: developers/install-unisonos.md
+          - Installation Status & Paths: developers/install-unisonos.md
           - Evaluate the Preview: developers/evaluate-preview.md
+          - Developer Setup: developers/onboarding.md
+          - Development Prerequisites: developers/prerequisites.md
           - Appliance Release Lifecycle: developers/appliance-release-lifecycle.md
-          - Archived WSL2 Channel: developers/install-wsl2.md
-          - Archived Linux VM Channel: developers/install-linux-vm.md
-          - Archived Bare Metal Channel: developers/install-bare-metal.md
-          - Install Options: developers/install-options.md
-          - Prerequisites: developers/prerequisites.md
-          - Onboarding: developers/onboarding.md
       - Build & Operate:
           - Contributor Task Finder: developers/task-finder.md
+          - Contributor Work Queue: developers/contributor-work-queue.md
           - Operator Handbook: operators/handbook.md
           - Troubleshooting & Incidents: operators/troubleshooting-incidents.md
           - Workspace & Repos: developers/workspace-and-repos.md
@@ -83,6 +80,7 @@ plugins:
   - redirects:
       redirect_maps:
         developers/evaluate-alpha.md: developers/releases.md
+        developers/install-options.md: developers/install-unisonos.md
         developers/renderer-and-shell.md: developers/renderer.md
 
 markdown_extensions:
