@@ -108,7 +108,7 @@ async function runWithPlaywright() {
     for (const urlPath of urls) {
       const pageUrl = `${baseUrl}${urlPath}`;
       const page = await context.newPage();
-      await page.goto(pageUrl, { waitUntil: 'domcontentloaded' });
+      await page.goto(pageUrl, { waitUntil: 'load' });
       if (page.url() !== pageUrl) {
         throw new Error(`Unexpected navigation while auditing ${pageUrl}: ${page.url()}`);
       }
@@ -126,7 +126,13 @@ async function runWithPlaywright() {
         if (!mediaPreferences.reducedMotion || !mediaPreferences.forcedColors) {
           throw new Error('Media preference smoke failed for reduced motion or forced colors.');
         }
+        await page.emulateMedia({ reducedMotion: 'no-preference', forcedColors: 'none' });
       }
+
+      await page.evaluate(async () => {
+        await document.fonts.ready;
+        await new Promise((resolve) => requestAnimationFrame(() => requestAnimationFrame(resolve)));
+      });
 
       const axeBuilder = new AxeBuilder({ page }).withTags([
         'wcag2a',
