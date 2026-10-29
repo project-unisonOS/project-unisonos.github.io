@@ -1,9 +1,9 @@
-# Personal intelligence. Built around one person. Open to everyone.
+# Your intelligence system can keep the story of your life under your authority.
 
 <section class="home-hero" aria-labelledby="home-introduction">
   <div class="home-hero-copy">
     <p class="eyebrow">Open source. Local first. Made to become yours.</p>
-    <h2 id="home-introduction" class="hero-deck">Unison is a different path for personal AI.</h2>
+    <h2 id="home-introduction" class="hero-deck">Let's build that future together.</h2>
     <p class="hero-lead">It is an open-source project for intent-based computing at home. You begin with what you want to accomplish. Unison uses your current context, needs, preferences, and policies to assemble an appropriate path and generate the experience that supports you.</p>
     <div class="hero-actions" aria-label="Introduction links">
       <a class="cta cta-primary" href="vision/">Explore the vision</a>
