@@ -4,7 +4,23 @@ This roadmap describes the order of work. Release dates require separate
 decisions, and physical-device evidence remains mandatory after software or CI
 gates pass.
 
-## Now: complete the appliance release path
+## Now: security enforcement and one useful read-only journey
+
+First verify authenticated boundaries and private persistence, then connect one
+canonical intent path through governed context and accessible output. A bounded
+deterministic brief can be tested while model-runtime qualification proceeds
+separately. The first health demonstration uses synthetic tracker
+observations and activity records to explain what changed, what did not, and
+what remains unknown. It must preserve source provenance and avoid unsupported
+clinical claims. Real-data enrollment requires separate permission and verified
+release protections.
+
+Calendar synchronization and, later, explicitly authorized meeting attendance
+follow the same intent-to-outcome approach. Purchases and genetics remain later,
+separately governed tracks. Hardware expansion and repository consolidation are
+not prerequisites for proving the first useful journey.
+
+## Continuing appliance release qualification
 
 ### Deterministic runtime and release inputs
 
