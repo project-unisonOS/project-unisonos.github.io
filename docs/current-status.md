@@ -1,5 +1,42 @@
 # Current status
 
+## October 2026 engineering focus
+
+As of October 29, the next product demonstration is a read-only personal wellness
+brief built from synthetic observations, with source associations and explicit
+uncertainty. A merged experimental implementation reports changed, unchanged and unknown
+observations through authenticated input and encrypted test storage. Its policy
+decisions are controlled fixtures; it is not configured in production or released
+for private health records. Genetics and clinical decisions remain outside scope.
+
+Validated changes to authenticated intent handling, transactional source/domain
+storage and update-test fixtures have merged into their component repositories.
+The workspace validation also passes its encrypted backup/restore integration.
+These merges have not been deployed as an operational runtime, and the merged
+workspace now pins the reviewed storage and synthetic journey components.
+Local inference remains an experimental draft awaiting runtime qualification.
+Additional storage authority protections are under review; local checks are not
+a release claim. The synthetic facts are manually associated with source records,
+not proof of verified extraction from source bytes.
+
+Evidence: [orchestrator #47](https://github.com/project-unisonOS/unison-orchestrator/pull/47),
+[storage #34](https://github.com/project-unisonOS/unison-storage/pull/34),
+[platform #44](https://github.com/project-unisonOS/unison-platform/pull/44), and
+[workspace #57](https://github.com/project-unisonOS/unison-workspace/pull/57).
+The merged [synthetic wellness implementation](https://github.com/project-unisonOS/unison-orchestrator/pull/49)
+passed 329 component tests; [workspace #58](https://github.com/project-unisonOS/unison-workspace/pull/58)
+passed its corrected synthetic integration and phase checks. These tests use
+controlled policy decisions and in-process storage transport. The separate
+[storage authority draft](https://github.com/project-unisonOS/unison-storage/pull/36)
+records the next bounded security packet.
+
+The foundations listed below describe implemented modules and scoped tests.
+They do not establish uniform enforcement across every runtime path or readiness
+for everyday private health use. Real provider integration, complete security
+review, recovery and update qualification, and accessible participant evaluation
+remain required. The software-only preview remains unsupported.
+
+
 **UnisonOS is pre-release engineering software.** The privacy, household,
 workflow, backup, multimodal, installer, and update foundations are increasingly
 complete and tested. There is still no supported appliance release for everyday
@@ -51,14 +88,15 @@ metadata, tables, and barcode values retain exact source-region provenance and
 can be corrected without rewriting the original source. Imports can resume or
 roll back, and deletion removes the encrypted object and extracted indexes.
 
-The initial Connection Broker requests only declared read-only scopes. It has
+The prototype Connection Broker models declared read-only scopes. It has
 profiles for generic OAuth Authorization Code with PKCE, SMART on FHIR, a
 financial sandbox, a selected local folder, and approved MCP resources. Tokens
 remain behind opaque per-person handles, incremental sync deduplicates repeated
 items, and revocation stops further sync. The browser never asks you to paste a
 health or financial provider password.
 
-These are local and sandbox software contracts. Production connection
+These are local and sandbox software contracts, not evidence of a completed
+production OAuth exchange or live provider access. Production connection
 certification, live provider registrations, OCR quality on supported camera
 hardware, and production malware scanning remain release qualification work.
 
