@@ -15,6 +15,15 @@ what remains unknown. It must preserve source provenance and avoid unsupported
 clinical claims. Real-data enrollment requires separate permission and verified
 release protections.
 
+Before any real-record pilot, qualify one or two exact export formats, durable
+consent and revocation, traceable extraction, user-visible export/delete controls,
+and recovery that cannot restore revoked authority. The current candidate uses
+synthetic JSON only; it does not establish compatibility with a health vendor.
+The proposed eventual trial is one consenting adult and a bounded read-only period,
+with changed/unchanged/unknown briefs and minimal interaction burden. Enrollment,
+retention, operational security and accessible user validation need explicit review.
+Backup rollback, other derivative stores and physical recovery remain open gates.
+
 Calendar synchronization and, later, explicitly authorized meeting attendance
 follow the same intent-to-outcome approach. Purchases and genetics remain later,
 separately governed tracks. Hardware expansion and repository consolidation are

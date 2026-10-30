@@ -2,33 +2,28 @@
 
 ## October 2026 engineering focus
 
-As of October 29, the next product demonstration is a read-only personal wellness
-brief built from synthetic observations, with source associations and explicit
-uncertainty. A merged experimental implementation reports changed, unchanged and unknown
-observations through authenticated input and encrypted test storage. Its policy
-decisions are controlled fixtures; it is not configured in production or released
-for private health records. Genetics and clinical decisions remain outside scope.
+The first health demonstration is a read-only wellness brief using synthetic
+sleep and activity observations. The merged implementation reports changed,
+unchanged and unknown through authenticated input and encrypted test storage.
+It is not deployed as an operational assistant or released for private records.
 
-Validated changes to authenticated intent handling, transactional source/domain
-storage and update-test fixtures have merged into their component repositories.
-The workspace validation also passes its encrypted backup/restore integration.
-These merges have not been deployed as an operational runtime, and the merged
-workspace now pins the reviewed storage and synthetic journey components.
-Local inference remains an experimental draft awaiting runtime qualification.
-Additional storage authority protections are under review; local checks are not
-a release claim. The synthetic facts are manually associated with source records,
-not proof of verified extraction from source bytes.
+[Storage #36](https://github.com/project-unisonOS/unison-storage/pull/36) and
+[workspace #59](https://github.com/project-unisonOS/unison-workspace/pull/59)
+merged after independent review. Storage passed 75 tests; the workspace passed
+its authenticated synthetic integration, phase checks and encrypted backup test.
+Those fixtures manually associate facts with source records; they do not prove
+extraction from original source bytes.
 
-Evidence: [orchestrator #47](https://github.com/project-unisonOS/unison-orchestrator/pull/47),
-[storage #34](https://github.com/project-unisonOS/unison-storage/pull/34),
-[platform #44](https://github.com/project-unisonOS/unison-platform/pull/44), and
-[workspace #57](https://github.com/project-unisonOS/unison-workspace/pull/57).
-The merged [synthetic wellness implementation](https://github.com/project-unisonOS/unison-orchestrator/pull/49)
-passed 329 component tests; [workspace #58](https://github.com/project-unisonOS/unison-workspace/pull/58)
-passed its corrected synthetic integration and phase checks. These tests use
-controlled policy decisions and in-process storage transport. The separate
-[storage authority draft](https://github.com/project-unisonOS/unison-storage/pull/36)
-records the next bounded security packet.
+The next **draft** prerequisite packet adds a separate, disabled-by-default
+synthetic export path: persistent owner consent, deterministic byte-to-fact
+provenance and recoverable deletion across source/domain stores. Component and
+integration tests are software evidence, not a supported real-record pilot.
+This work remains subject to independent review and is not deployed.
+
+A bounded CPU experiment produced text from a small local model, but did not
+follow the requested response format. It establishes execution only. Inference
+quality, immutable artifact-to-runtime binding and deployment remain separate gates.
+No additional model experiment is part of the export-first work.
 
 The foundations listed below describe implemented modules and scoped tests.
 They do not establish uniform enforcement across every runtime path or readiness
